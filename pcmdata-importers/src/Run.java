@@ -1,4 +1,4 @@
-import org.opencompare.api.java.PCM;
+import org.opencompare.api.java.*;
 
 public class Run { 
 
@@ -6,11 +6,15 @@ public class Run {
 		// TODO Auto-generated method stub
 		
 		PCM p = null;
+		AbstractFeature a = null;
+		a.setName("titre"); 
+		p.addFeature(a);
+		Cell c = null;
 		
-		p.addFeature(null);
+		c.setContent("de");
+		
 		
 		// serializer in CSV or pcm format
-
 	}
 
 }
