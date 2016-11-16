@@ -100,7 +100,7 @@ public class OmdbtoProduct {
 		
 		String films = "" ;
 		List<Product> film = new ArrayList<Product>() ;
-		for(int i=0;i<2000;i++)
+		for(int i=0;i<1000;i++)
 		{
 			
 			
@@ -131,9 +131,9 @@ public class OmdbtoProduct {
 	public static String ProductMovie(Product p, List<Product> film){
 		film.add(p) ;
 		String sortie = "" ;
-		 sortie  += p.imdbID + " ; ";
-		 sortie  += p.Title + " ; " ;
-		 sortie  += p.imdbRating + " ; ";
+		 sortie  += "\""+ p.imdbID + "\";\"";
+		 sortie  += p.Title + "\";\"" ;
+		 sortie  += p.imdbRating + "\";\"";
 		 int cpt = 0 ;
 		 //affichage du genre du film parcours de la liste
 		 for(String g : p.Genre){
@@ -142,13 +142,13 @@ public class OmdbtoProduct {
 				 cpt++ ;
 			 }
 			 else{
-				 sortie  += " , " + g;
+				 sortie  += "," + g;
 			 }
 			 	
 		 }
-		 sortie  += " ; ";
+		 sortie  += "\";\"";
 		 
-		 sortie  += p.Director + " ; ";
+		 sortie  += p.Director + "\";\"";
 		 cpt = 0 ;
 		 for(String a : p.Actors){
 			 if(cpt == 0){
@@ -156,11 +156,11 @@ public class OmdbtoProduct {
 				 cpt ++ ;
 			 }
 			 else{
-				 sortie  += " , " + a;
+				 sortie  += "," + a;
 			 }
 		 }
-		 sortie  += " ; ";
-		 sortie  += p.Year + " ; ";
+		 sortie  += "\";\"";
+		 sortie  += p.Year + "\";";
 
 		 String Newligne=System.getProperty("line.separator"); 
 		 sortie += Newligne;
@@ -169,10 +169,10 @@ public class OmdbtoProduct {
 	
 	public static String ProductSerie (Product p , List<Product> film){
 		 film.add(p) ; 
-		 String sortie = "" ;
-		 sortie  += p.imdbID + " ; ";
-		 sortie  += p.Title + " ; " ;
-		 sortie  += p.imdbRating + " ; ";
+		 String sortie = "\"" ;
+		 sortie  += p.imdbID + "\";\"";
+		 sortie  += p.Title + "\";\"" ;
+		 sortie  += p.imdbRating + "\";\"";
 		 int cpt = 0 ;
 		 //affichage du genre du film parcours de la liste
 		 for(String g : p.Genre){
@@ -181,13 +181,13 @@ public class OmdbtoProduct {
 				 cpt++ ;
 			 }
 			 else{
-				 sortie  += " , " + g;
+				 sortie  += "," + g;
 			 }
 			 	
 		 }
-		 sortie  += " ; ";
+		 sortie  += "\";\"";
 		 
-		 sortie  += p.Director + " ; ";
+		 sortie  += p.Director + "\";\"";
 		 cpt = 0 ;
 		 for(String a : p.Actors){
 			 if(cpt == 0){
@@ -195,11 +195,11 @@ public class OmdbtoProduct {
 				 cpt ++ ;
 			 }
 			 else{
-				 sortie  += " , " + a;
+				 sortie  += ","+ a;
 			 }
 		 }
-		 sortie  += " ; ";
-		 sortie  += p.Year + " ; ";
+		 sortie  += "\";\"";
+		 sortie  += p.Year + "\";";
 
 		 String Newligne=System.getProperty("line.separator"); 
 		 sortie += Newligne;
