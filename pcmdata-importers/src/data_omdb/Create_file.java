@@ -28,7 +28,7 @@ public class Create_file {
           }
           i++;
         }
-        System.out.println("\n");
+        System.out.println("\n") ;
       } catch (NullPointerException e) {
         //L'instruction peut générer une NullPointerException
         //s'il n'y a pas de sous-fichier !
