@@ -18,7 +18,7 @@ public class Create_file {
       System.out.println(file.getAbsolutePath());
       try {
         int i = 1;	
-        //On parcourt la liste des fichiers et répertoires
+        //On parcourt la liste des fichiers et répert oires
         for(File nom : file.listFiles()){
           //S'il s'agit d'un dossier, on ajoute un "/"
           System.out.print("\t\t" + ((nom.isDirectory()) ? nom.getName()+"/" : nom.getName()));
