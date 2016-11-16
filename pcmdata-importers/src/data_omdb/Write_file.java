@@ -12,9 +12,9 @@ public class Write_file {
     
     public static void write_file(){
     	 //Créer un nom de fichier basé sur la date et l'heure
-        String filename="test.txt";
+        String filename="data_omdb.csv";
         //ouvrir le fichier
-        File file = new File("C:/Users/jules/Documents/omdb_data/"+filename);
+        File file = new File("output/"+filename);
         try {
             PrintStream printStream = new PrintStream(file);
             System.setOut(printStream);

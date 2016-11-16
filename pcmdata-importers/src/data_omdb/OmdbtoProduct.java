@@ -100,7 +100,7 @@ public class OmdbtoProduct {
 		
 		String films = "" ;
 		List<Product> film = new ArrayList<Product>() ;
-		for(int i=0;i<1000;i++)
+		for(int i=0;i<2000;i++)
 		{
 			
 			
