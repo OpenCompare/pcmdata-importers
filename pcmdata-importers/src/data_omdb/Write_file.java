@@ -1,0 +1,27 @@
+package data_omdb;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
+/**
+ * Rediriger les entrées de la console vers un fichier
+ */
+public class Write_file {
+ 
+    public static void main(String[] args) {
+    }
+    
+    public static void write_file(){
+    	 //Créer un nom de fichier basé sur la date et l'heure
+        String filename="test.txt";
+        //ouvrir le fichier
+        File file = new File("C:/Users/jules/Documents/omdb_data/"+filename);
+        try {
+            PrintStream printStream = new PrintStream(file);
+            System.setOut(printStream);
+//            System.out.println("Exemple de log de l'application JAVA");
+//            System.out.println("Tout ce qui apparait dans la console est repris dans le fichier");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+}
