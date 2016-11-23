@@ -22,11 +22,11 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 
-		Stream<Path> paths = Files.walk(Paths.get("input-pcm"));
+		Stream<Path> paths = Files.walk(Paths.get("input-pcm"));  //("../../input-model")); //for non testings inputs
 
 		paths.forEach(filePath -> {
 			if (Files.isRegularFile(filePath)
-					&& filePath.toString().endsWith("2.pcm")) {
+					&& filePath.toString().endsWith(".pcm")) {
 				System.out.println("> PCM imported from " + filePath);
 
 				File pcmFile = new File(filePath.toString());
@@ -56,7 +56,7 @@ public class Main {
 						KMFJSONExporter pcmExporter = new KMFJSONExporter();
 						String pcmString = pcmExporter.export(pcmContainer);
 
-						Path p = Paths.get("output-pcm/"
+						Path p = Paths.get("output-pcm/" //"../../output-model" //for non testings outputs
 								+ filePath.getFileName());
 						try {
 							Files.write(p, pcmString.getBytes());
