@@ -16,51 +16,45 @@ import org.opencompare.api.java.impl.io.KMFJSONExporter;
 import org.opencompare.api.java.io.CSVExporter;
 
 public class PCMInterpreter {
-	
-	
-	
+
 	@Test
 	public void testCSV1() throws Exception {
-		String csvFileName = "foo1.csv";
-		
+		String csvFileName = "input-csv/Comparison_of_HTML_editors.csv";
+
 		PCMContainer pcmContainer = mkPCMInterpreted(csvFileName);
-		
-	 KMFJSONExporter exporter = new KMFJSONExporter();
-	 CSVExporter csvExporter = new CSVExporter();
+
+		KMFJSONExporter exporter = new KMFJSONExporter();
+		CSVExporter csvExporter = new CSVExporter();
 		String json = exporter.export(pcmContainer);
-        String csv = csvExporter.export(pcmContainer);
-		
-	    // Write modified PCM
-        writeToFile("" + csvFileName + ".json", json);
-        writeToFile("" + csvFileName + ".csv", csv);
+		String csv = csvExporter.export(pcmContainer);
+
+		// Write modified PCM
+		writeToFile("" + csvFileName + ".json", json);
+		writeToFile("" + csvFileName + ".csv", csv);
 	}
-	
+
 	public PCMContainer mkPCMInterpreted(String csvFileName) throws IOException {
-		
-		// uninterpreted 
+
+		// uninterpreted
 		List<PCMContainer> pcms = PCMUtil.loadCSV(csvFileName);
 		PCMContainer pcmContainer = pcms.get(0);
 		PCM pcm = pcmContainer.getPcm();
-		
-			   
-	  PCMFactory factory = new PCMFactoryImpl();
-	  CellContentInterpreter interpreter = new CellContentInterpreter(factory);
 
-        pcm.normalize(factory);
-        interpreter.interpretCells(pcm);
-        
-           
-        return pcmContainer;
+		PCMFactory factory = new PCMFactoryImpl();
+		CellContentInterpreter interpreter = new CellContentInterpreter(factory);
 
-		
-		
+		pcm.normalize(factory);
+		interpreter.interpretCells(pcm);
+
+		return pcmContainer;
+
 	}
-	
-	 public void writeToFile(String path, String content) throws IOException {
-	    BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path), StandardCharsets.UTF_8));
-	    writer.write(content);
-	    writer.close();
- }
-			  
+
+	public void writeToFile(String path, String content) throws IOException {
+		BufferedWriter writer = new BufferedWriter(
+				new OutputStreamWriter(new FileOutputStream(path), StandardCharsets.UTF_8));
+		writer.write(content);
+		writer.close();
+	}
 
 }
