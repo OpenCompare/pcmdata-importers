@@ -1,5 +1,6 @@
+import static org.junit.Assert.*;
+
 import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
@@ -7,13 +8,16 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 import org.junit.Test;
+import org.opencompare.api.java.Cell;
 import org.opencompare.api.java.PCM;
 import org.opencompare.api.java.PCMContainer;
 import org.opencompare.api.java.PCMFactory;
+import org.opencompare.api.java.Product;
+import org.opencompare.api.java.Value;
 import org.opencompare.api.java.extractor.CellContentInterpreter;
 import org.opencompare.api.java.impl.PCMFactoryImpl;
 import org.opencompare.api.java.impl.io.KMFJSONExporter;
-import org.opencompare.api.java.io.CSVExporter;
+
 
 public class PCMInterpreter {
 
@@ -34,6 +38,8 @@ public class PCMInterpreter {
 		_serializeToPCMJSON(pcmContainer, csvFileName + ".json");
 				
 	}
+	
+	
 
 	private void _serializeToPCMJSON(PCMContainer pcmContainer, String jsonFileName) throws IOException {
 		KMFJSONExporter exporter = new KMFJSONExporter();
@@ -41,11 +47,12 @@ public class PCMInterpreter {
 		// Write modified PCM
 		writeToFile("" + jsonFileName, json);
 	}
+	
 
 	public PCMContainer mkPCMInterpreted(String csvFileName) throws IOException {
-
-		// uninterpreted
-		List<PCMContainer> pcms = PCMUtil.loadCSV(csvFileName);
+	
+		
+		List<PCMContainer> pcms = PCMUtil.loadCSV(csvFileName); // already interpreted with CellContentInterpreter
 		PCMContainer pcmContainer = pcms.get(0);
 		PCM pcm = pcmContainer.getPcm();
 
