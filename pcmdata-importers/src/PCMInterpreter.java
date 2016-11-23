@@ -51,16 +51,18 @@ public class PCMInterpreter {
 
 	public PCMContainer mkPCMInterpreted(String csvFileName) throws IOException {
 	
-		
 		List<PCMContainer> pcms = PCMUtil.loadCSV(csvFileName); // already interpreted with CellContentInterpreter
 		PCMContainer pcmContainer = pcms.get(0);
+		
+		/* not necessary!
 		PCM pcm = pcmContainer.getPcm();
+
 
 		PCMFactory factory = new PCMFactoryImpl();
 		CellContentInterpreter interpreter = new CellContentInterpreter(factory);
 
 		pcm.normalize(factory);
-		interpreter.interpretCells(pcm);
+		interpreter.interpretCells(pcm);*/
 
 		return pcmContainer;
 
