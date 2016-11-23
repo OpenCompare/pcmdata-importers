@@ -22,15 +22,24 @@ public class PCMInterpreter {
 		String csvFileName = "input-csv/Comparison_of_HTML_editors.csv";
 
 		PCMContainer pcmContainer = mkPCMInterpreted(csvFileName);
+		_serializeToPCMJSON(pcmContainer, csvFileName + ".json");
+		
+	}
+	
+	@Test
+	public void testCSV2() throws Exception {
+		String csvFileName = "input-csv/FIFA16.csv";
 
+		PCMContainer pcmContainer = mkPCMInterpreted(csvFileName);
+		_serializeToPCMJSON(pcmContainer, csvFileName + ".json");
+				
+	}
+
+	private void _serializeToPCMJSON(PCMContainer pcmContainer, String jsonFileName) throws IOException {
 		KMFJSONExporter exporter = new KMFJSONExporter();
-		CSVExporter csvExporter = new CSVExporter();
 		String json = exporter.export(pcmContainer);
-		String csv = csvExporter.export(pcmContainer);
-
 		// Write modified PCM
-		writeToFile("" + csvFileName + ".json", json);
-		writeToFile("" + csvFileName + ".csv", csv);
+		writeToFile("" + jsonFileName, json);
 	}
 
 	public PCMContainer mkPCMInterpreted(String csvFileName) throws IOException {
