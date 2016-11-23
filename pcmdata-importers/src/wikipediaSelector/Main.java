@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -25,49 +27,57 @@ public class Main {
 		 * test.testGettingStarted(); } catch (IOException e) { // TODO
 		 * Auto-generated catch block e.printStackTrace(); }
 		 */
+		
 
-		try (Stream<Path> paths = Files.walk(Paths.get("input-pcm"))) {
-			paths.forEach(filePath -> {
-				if (Files.isRegularFile(filePath) && filePath.toString().endsWith(".pcm")) {
-					System.out.println(filePath);
+	               
+	               
+		Stream<Path> paths = Files.walk(Paths.get("input-pcm"));
+		
 
-					File pcmFile = new File(filePath.toString());
+		paths.forEach(filePath -> {
+			if (Files.isRegularFile(filePath)
+					&& filePath.toString().endsWith(".pcm")) {
+				System.out.println(filePath);
 
-					PCMLoader loader = new KMFJSONLoader();
-					List<PCMContainer> pcmContainers = null;
-					try {
-						pcmContainers = loader.load(pcmFile);
-					} catch (Exception e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
+				File pcmFile = new File(filePath.toString());
 
-					for (PCMContainer pcmContainer : pcmContainers) {
-						// Get the PCM
-						PCM pcm = pcmContainer.getPcm();
+				PCMLoader loader = new KMFJSONLoader();
+				List<PCMContainer> pcmContainers = null;
+				try {
+					pcmContainers = loader.load(pcmFile);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 
-						Boolean thispcmisgood = true;
+				for (PCMContainer pcmContainer : pcmContainers) {
+					// Get the PCM
+					PCM pcm = pcmContainer.getPcm();
 
-						// now determine if the pcm is good
+					Boolean thispcmisgood = true;
 
-						if (thispcmisgood) {
-							KMFJSONExporter pcmExporter = new KMFJSONExporter();
-							String pcmString = pcmExporter.export(pcmContainer);
+					// now determine if the pcm is good
 
-							Path p = Paths.get("output-pcm/" + filePath.getFileName());
-							try {
-								Files.write(p, pcmString.getBytes());
-							} catch (Exception e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							}
-							System.out.println("PCM exported to " + p);
+					if (thispcmisgood) {
+						KMFJSONExporter pcmExporter = new KMFJSONExporter();
+						String pcmString = pcmExporter.export(pcmContainer);
 
+						Path p = Paths.get("output-pcm/"
+								+ filePath.getFileName());
+						try {
+							Files.write(p, pcmString.getBytes());
+						} catch (Exception e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
 						}
+						System.out.println("PCM exported to " + p);
+
 					}
 				}
-			});
-		}
+			}
+		});
+		
+		paths.close();
 
 	}
 
