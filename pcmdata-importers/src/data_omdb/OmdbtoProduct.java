@@ -106,7 +106,9 @@ public class OmdbtoProduct {
 		
 		String films = "" ;
 		List<Product> film = new ArrayList<Product>() ;
-		for(int i=944900;i<945100;i++)
+		String series = "" ;
+		List<Product> serie = new ArrayList<Product>() ;
+		for(int i=900000;i<950000;i++)
 		{
 			
 			
@@ -120,7 +122,7 @@ public class OmdbtoProduct {
 					 System.out.println("on est dans le " + i + "eme id film");
 				 }
 				 else if(p.Type.equals("series")) {
-					 films += ProductSerie(p, film) ;
+					 series += ProductSerie(p, serie) ;
 					 System.out.println("on est dans le " + i + "eme id serie");
 				 }				 
 				 
@@ -129,8 +131,10 @@ public class OmdbtoProduct {
 		}
 		
 		// on �crit le string dans un fichier
-		Write_file.write_file();
+		Write_file.write_file("data_omdb_film.csv");
 		System.out.println(films);
+		Write_file.write_file("data_omdb_serie.csv");
+		System.out.println(series);
 	//	System.out.println(film.size());
 //		System.out.println(film.get(74).Actors.size());
 			

@@ -10,7 +10,7 @@ public class Recuperation_Omdb {
 	public static void main(String[] args) throws IOException, JSONException {
 		String nom_id = "" ;
 		
-		for(int i=944947;i<944948;i++)
+		for(int i=1480055;i<1480056;i++)
 		{
 			long j = 0 ;
 			j = j+i ;
@@ -20,7 +20,7 @@ public class Recuperation_Omdb {
 				nom_id = "0" + nom_id ;
 				taille ++ ;
 			}
-			nom_id = "tt"+nom_id+"&Season=1" ;
+			nom_id = "tt"+nom_id ;
 			System.out.println(nom_id);
 			URL url = new URL("http://www.omdbapi.com/?i="+ nom_id +"&plot=short&r=json") ;
 			BufferedReader in = new BufferedReader (new InputStreamReader(url.openStream(),StandardCharsets.UTF_8)) ;

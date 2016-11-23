@@ -26,6 +26,7 @@ public class Product {
 	String imdbID ;
 	String Type ;
 	int totalSeasons ;
+	String seriesID ;
 	
 	public Product() throws JSONException{
 		this.Title = "";
@@ -47,5 +48,6 @@ public class Product {
 		this.imdbID = "" ;
 		this.Type = "" ;
 		this.totalSeasons = -1;
+		this.seriesID = "";
 	}
 }
