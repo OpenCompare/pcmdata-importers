@@ -6,9 +6,9 @@ import org.json.JSONException;
 
 public class Product {
 	
-	//tous les paramètres du produits
+	//tous les paramï¿½tres du produits
 	String Title ;
-	int Year ;
+	String Year ;
 	String Rated  ;
 	String Released ;
 	String Runtime  ;
@@ -20,15 +20,19 @@ public class Product {
 	List<String> Language ;
 	List<String> Country ;
 	String Poster ;
-	int Metascore ;
-	float imdbRating ; // format 7.7
-	int imdbVotes ; // format 802,661
+	String Metascore ;
+	String imdbRating ; // format 7.7
+	String imdbVotes ; // format 802,661
 	String imdbID ;
 	String Type ;
+	String totalSeasons ;
+	String seriesID ;
+	String Season;
+	String Episode;
 	
 	public Product() throws JSONException{
 		this.Title = "";
-		this.Year = -1 ;
+		this.Year = "" ;
 		this.Rated = "" ;
 		this.Released = "";
 		this.Runtime = "" ;
@@ -40,10 +44,14 @@ public class Product {
 		this.Language = new ArrayList<String>() ;
 		this.Country = new ArrayList<String>() ;
 		this.Poster = "";
-		this.Metascore = -1 ;
-		this.imdbRating = -1 ;
-		this.imdbVotes = -1 ;
+		this.Metascore = "" ;
+		this.imdbRating = "" ;
+		this.imdbVotes = "" ;
 		this.imdbID = "" ;
 		this.Type = "" ;
+		this.totalSeasons = "";
+		this.seriesID = "";
+		this.Season = "";
+		this.Episode = "";
 	}
 }

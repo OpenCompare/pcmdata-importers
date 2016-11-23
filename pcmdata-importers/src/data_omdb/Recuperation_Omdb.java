@@ -10,7 +10,7 @@ public class Recuperation_Omdb {
 	public static void main(String[] args) throws IOException, JSONException {
 		String nom_id = "" ;
 		
-		for(int i=3;i<4;i++)
+		for(int i=1480055;i<1480056;i++)
 		{
 			long j = 0 ;
 			j = j+i ;
@@ -34,7 +34,7 @@ public class Recuperation_Omdb {
 			
 			//on regarde si le film existe
 			if(!(obj.getString("Response").equals("False" ))){
-				//TODO il faut récuperer tous les films pour les mettre en pcm
+				//TODO il faut rï¿½cuperer tous les films pour les mettre en pcm
 				
 				System.out.println("le film est "+obj.getString("Title"));
 			}

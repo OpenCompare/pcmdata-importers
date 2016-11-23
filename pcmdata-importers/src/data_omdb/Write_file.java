@@ -3,16 +3,16 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
 /**
- * Rediriger les entrées de la console vers un fichier
+ * Rediriger les entrï¿½es de la console vers un fichier
  */
 public class Write_file {
  
     public static void main(String[] args) {
     }
     
-    public static void write_file(){
-    	 //Créer un nom de fichier basé sur la date et l'heure
-        String filename="data_omdb.csv";
+    public static void write_file(String f){
+    	 //Crï¿½er un nom de fichier basï¿½ sur la date et l'heure
+        String filename=f;
         //ouvrir le fichier
         File file = new File("output/"+filename);
         try {
@@ -24,4 +24,6 @@ public class Write_file {
             e.printStackTrace();
         }
     }
+    
+    
 }
