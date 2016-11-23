@@ -15,29 +15,19 @@ import org.opencompare.api.java.PCMContainer;
 import org.opencompare.api.java.impl.io.KMFJSONExporter;
 import org.opencompare.api.java.impl.io.KMFJSONLoader;
 import org.opencompare.api.java.io.CSVExporter;
+import org.opencompare.api.java.io.CSVLoader;
 import org.opencompare.api.java.io.PCMLoader;
 
 public class Main {
 
 	public static void main(String[] args) throws IOException {
-		// TODO Auto-generated method stub
 
-		/*
-		 * GettingStartedTest test = new GettingStartedTest(); try {
-		 * test.testGettingStarted(); } catch (IOException e) { // TODO
-		 * Auto-generated catch block e.printStackTrace(); }
-		 */
-		
-
-	               
-	               
 		Stream<Path> paths = Files.walk(Paths.get("input-pcm"));
-		
 
 		paths.forEach(filePath -> {
 			if (Files.isRegularFile(filePath)
-					&& filePath.toString().endsWith(".pcm")) {
-				System.out.println(filePath);
+					&& filePath.toString().endsWith("2.pcm")) {
+				System.out.println("> PCM imported from " + filePath);
 
 				File pcmFile = new File(filePath.toString());
 
@@ -54,7 +44,11 @@ public class Main {
 					// Get the PCM
 					PCM pcm = pcmContainer.getPcm();
 
-					Boolean thispcmisgood = true;
+					PCMInfoContainer pcmic = new PCMInfoContainer(pcm);
+
+					PCMPredicateFilter pFilter = new PCMPredicateMinProduct();//new PCMCompositeFilter(); //for using multiple filters
+					
+					Boolean thispcmisgood = pFilter.isSatisfiable(pcmic);
 
 					// now determine if the pcm is good
 
@@ -70,13 +64,13 @@ public class Main {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
-						System.out.println("PCM exported to " + p);
+						System.out.println("> PCM exported to " + p);
 
 					}
 				}
 			}
 		});
-		
+
 		paths.close();
 
 	}

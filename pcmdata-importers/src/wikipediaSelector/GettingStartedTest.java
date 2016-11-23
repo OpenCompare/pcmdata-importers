@@ -42,7 +42,7 @@ public class GettingStartedTest {
             MyPCMPrinter myPrinter = new MyPCMPrinter();
             myPrinter.print(pcm);
 
-/*
+
             // Browse the cells of the PCM
             for (Product product : pcm.getProducts()) {
                 for (Feature feature : pcm.getConcreteFeatures()) {
@@ -63,12 +63,12 @@ public class GettingStartedTest {
                 }
             }
             
-*/            
+            
             /*
             KMFJSONExporter csvExporter = new KMFJSONExporter();
             String csv = csvExporter.export(pcmContainer);
             */
-            
+            /*
             // Export the PCM container to CSV
             CSVExporter csvExporter = new CSVExporter();
             String csv = csvExporter.export(pcmContainer);
@@ -78,7 +78,7 @@ public class GettingStartedTest {
             Path outputFile = Files.createTempFile("oc-", ".csv");
             Files.write(outputFile, csv.getBytes());
             System.out.println("PCM exported to " + outputFile);
-
+             */
         }
 
     }
