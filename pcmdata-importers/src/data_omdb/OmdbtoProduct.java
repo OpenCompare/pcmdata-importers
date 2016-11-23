@@ -67,6 +67,12 @@ public class OmdbtoProduct {
 			}
 			pro.imdbID = obj.getString("imdbID") ;
 			pro.Type = obj.getString("Type") ;
+			try {
+				pro.totalSeasons = obj.getInt("totalSeasons");
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				pro.totalSeasons = -1;
+			}
 			
 			return pro ;
 			
@@ -100,27 +106,29 @@ public class OmdbtoProduct {
 		
 		String films = "" ;
 		List<Product> film = new ArrayList<Product>() ;
-		for(int i=0;i<1000;i++)
+		for(int i=944900;i<945100;i++)
 		{
 			
 			
 			 Product p  = createProductFromJson(idToJson(i)) ;
 			 if(p != null)
 			 {
-				 System.out.println("on est dans le " + i + "eme film ou serie");
-				 //on regarde si c'est un film ou une série
+				 
+				 //on regarde si c'est un film ou une sï¿½rie
 				 if(p.Type.equals("movie")){
 					 films += ProductMovie(p, film) ;
+					 System.out.println("on est dans le " + i + "eme id film");
 				 }
 				 else if(p.Type.equals("series")) {
 					 films += ProductSerie(p, film) ;
+					 System.out.println("on est dans le " + i + "eme id serie");
 				 }				 
 				 
 			 }
 			
 		}
 		
-		// on écrit le string dans un fichier
+		// on ï¿½crit le string dans un fichier
 		Write_file.write_file();
 		System.out.println(films);
 	//	System.out.println(film.size());
@@ -199,11 +207,14 @@ public class OmdbtoProduct {
 			 }
 		 }
 		 sortie  += "\";\"";
-		 sortie  += p.Year + "\";";
+		 sortie  += p.Year + "\";\"";
+		 
+		 sortie  += p.totalSeasons +"\";";
 
 		 String Newligne=System.getProperty("line.separator"); 
 		 sortie += Newligne;
 		 
+		 System.out.println(sortie);
 		 
 		 return sortie ;
 	}

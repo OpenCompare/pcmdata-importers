@@ -6,7 +6,7 @@ import org.json.JSONException;
 
 public class Product {
 	
-	//tous les paramètres du produits
+	//tous les paramï¿½tres du produits
 	String Title ;
 	int Year ;
 	String Rated  ;
@@ -25,6 +25,7 @@ public class Product {
 	int imdbVotes ; // format 802,661
 	String imdbID ;
 	String Type ;
+	int totalSeasons ;
 	
 	public Product() throws JSONException{
 		this.Title = "";
@@ -45,5 +46,6 @@ public class Product {
 		this.imdbVotes = -1 ;
 		this.imdbID = "" ;
 		this.Type = "" ;
+		this.totalSeasons = -1;
 	}
 }
