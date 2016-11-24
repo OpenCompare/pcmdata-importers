@@ -17,11 +17,11 @@ import org.json.JSONObject;
 public class OmdbtoProduct {
 		
 	
-	public static Product createProductFromId(String id){
+	public static OMDBProduct createProductFromId(String id){
 		return null ;
 	}
 	
-	public static Product createProductFromJson(JSONObject obj) throws JSONException  {
+	public static OMDBProduct createProductFromJson(JSONObject obj) throws JSONException  {
 		
 		List<String> vide = new ArrayList<String>();
 		vide.add("");
@@ -33,7 +33,7 @@ public class OmdbtoProduct {
 			return null ;
 		}
 		else{
-			Product pro = new Product() ;
+			OMDBProduct pro = new OMDBProduct() ;
 			
 			try {
 				pro.Title = obj.getString("Title") ;
@@ -259,25 +259,12 @@ public class OmdbtoProduct {
 	}
 	
 	public String mkCSV(OMDBMediaType t) throws JSONException, IOException {
-		
-		
-		String pdt = "" ;
-		List<Product> pdts = new ArrayList<Product>() ; // unuseful
-	
-		for(int i=944000;i<944100;i++)
-		{
-				
-			 Product p  = createProductFromJson(idToJson(i)) ;
-			 if (p != null)
-			 {
-				 //on regarde si c'est un film ou une serie
-				 if(p.Type.equals(t.toString()))
-					 pdts.add(p);
-					 pdt += OMDBProductFactory.getInstance().mkProduct(p, t); 				 		 
-			 }
-		}
-				
-		return pdt;		
+		Collection<OMDBMediaType> omTypes = new ArrayList<OMDBMediaType>();
+		omTypes.add(t);
+		Map<OMDBMediaType, String> csvs = mkCSVs(omTypes);
+		if (!csvs.containsKey(t))
+			return "";
+		return csvs.get(t);
 	}
 	
 	
@@ -289,18 +276,18 @@ public class OmdbtoProduct {
 		for(int i=944000;i<944100;i++)
 		{
 					
-			 Product p  = createProductFromJson(idToJson(i)) ;
+			 OMDBProduct p  = createProductFromJson(idToJson(i)) ;
 			 if (p != null)
 			 {
-				 //on regarde si c'est un film ou une serie
+				 // on regarde si c'est un film ou une serie
 				 String oType = p.Type;
 				 for (OMDBMediaType omType : omTypes) {
 					 if(oType.equals(omType.toString())) {
 						 String pdt = omdbTypes2CSV.get(omType);
 						 if (pdt == null)
 							 omdbTypes2CSV.put(omType, "");
-						 else {
-							 pdt += OMDBProductFactory.getInstance().mkProduct(p, omType);
+						 else {							 
+							 pdt += OMDBCSVProductFactory.getInstance().mkCSVProduct(p, omType) + System.getProperty("line.separator");
 							 omdbTypes2CSV.put(omType, pdt);
 						 }
 					 }

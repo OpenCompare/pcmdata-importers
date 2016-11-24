@@ -40,7 +40,7 @@ public class OMDBTest {
 	@Test 
 	public void testOMDBSeries1() throws IOException, JSONException {
 		String m = new OmdbtoProduct().mkCSV(OMDBMediaType.SERIES);
-		
+		assertTrue(m.split("\r\n|\r|\n").length > 0);
 		BufferedWriter writer = new BufferedWriter(
 				new OutputStreamWriter 
 				(new FileOutputStream("output/data_omdb_serie.csv"), 
@@ -52,6 +52,7 @@ public class OMDBTest {
 	@Test 
 	public void testOMDBEpisodes1() throws IOException, JSONException {
 		String m = new OmdbtoProduct().mkCSV(OMDBMediaType.EPISODE);
+		
 		
 		BufferedWriter writer = new BufferedWriter(
 				new OutputStreamWriter 
@@ -78,7 +79,7 @@ public class OMDBTest {
 			
 			// check some properties of "pcm"
 			assertNotNull(pcm);			
-			assertEquals(93, pcm.getProducts().size());
+			assertEquals(44, pcm.getProducts().size());
 	}
 	
 	
@@ -115,7 +116,9 @@ public class OMDBTest {
         List<PCMContainer> pcmC = csvL.load(csvs.get(OMDBMediaType.MOVIE));
         PCM pcm = pcmC.get(0).getPcm();
         assertNotNull(pcm);
-        assertEquals(33, pcm.getProducts().size());
+        
+        assertEquals(csvs.get(OMDBMediaType.MOVIE).split("\r\n|\r|\n").length - 1, pcm.getProducts().size());
+      	
         
         CSVLoader csvL2 = new CSVLoader(
                 new PCMFactoryImpl(),
@@ -124,9 +127,19 @@ public class OMDBTest {
         List<PCMContainer> pcmC2 = csvL2.load(csvs.get(OMDBMediaType.EPISODE));
         PCM pcm2 = pcmC2.get(0).getPcm();
         assertNotNull(pcm2);
-        assertEquals(44, pcm2.getProducts().size());
         
-				
+        assertEquals(csvs.get(OMDBMediaType.EPISODE).split("\r\n|\r|\n").length - 1, pcm2.getProducts().size());
+        
+        CSVLoader csvL3 = new CSVLoader(
+                new PCMFactoryImpl(),
+                new CellContentInterpreter(new PCMFactoryImpl()), 
+                PCMDirection.PRODUCTS_AS_LINES);
+        List<PCMContainer> pcmC3 = csvL3.load(csvs.get(OMDBMediaType.SERIES));
+        PCM pcm3 = pcmC3.get(0).getPcm();
+        assertNotNull(pcm3);
+        
+        assertEquals(csvs.get(OMDBMediaType.SERIES).split("\r\n|\r|\n").length - 1, pcm3.getProducts().size());
+      			
 		
 	}
 
