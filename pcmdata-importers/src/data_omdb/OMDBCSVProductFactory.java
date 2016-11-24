@@ -1,5 +1,9 @@
 package data_omdb;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class OMDBCSVProductFactory {
 	
 	private static OMDBCSVProductFactory _instance = null;
@@ -40,6 +44,7 @@ public class OMDBCSVProductFactory {
 		 out  += "\""+ p.imdbID + "\";\"";
 		 out  += p.Title + "\";\"" ;
 		 out  += p.imdbRating + "\";\"";
+		 out  += p.Runtime + "\";\"";
 		 out  += p.imdbVotes + "\";\"";
 		 int cpt = 0 ;
 		 //affichage du genre du film parcours de la liste
@@ -228,6 +233,26 @@ public class OMDBCSVProductFactory {
 		 out  += p.Plot + "\";";
 		 
 		 return out ;
+	}
+
+	public String mkHeaders(OMDBMediaType t) {
+		String str = "";
+		List<String> headers = new ArrayList<String>();
+		if (t.equals(OMDBMediaType.MOVIE))
+				headers = Arrays.asList("imdbID", "title", "imdbRating", "runtime", "imdbVotes", "genre", "director", 
+		 "writer", "actors", "language", "country", "year", "metascore", "poster", "plot");
+		else if (t.equals(OMDBMediaType.SERIES)) {
+			// TODO
+		}
+		else { // EPISODES
+			// TODO
+		}
+		
+		for (String h : headers) {
+			str += h + ";";
+		}
+		return str;
+		
 	}
 
 }

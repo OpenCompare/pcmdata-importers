@@ -19,6 +19,7 @@ import org.opencompare.api.java.impl.PCMFactoryImpl;
 import org.opencompare.api.java.io.CSVLoader;
 import org.opencompare.api.java.io.PCMDirection;
 
+import data_omdb.OMDBCSVProductFactory;
 import data_omdb.OMDBMediaType;
 import data_omdb.OmdbtoProduct;
 
@@ -27,13 +28,14 @@ public class OMDBTest {
 	
 	@Test 
 	public void testOMDBFilms1() throws IOException, JSONException {
+		String h = OMDBCSVProductFactory.getInstance().mkHeaders(OMDBMediaType.MOVIE);
 		String m = new OmdbtoProduct().mkCSV(OMDBMediaType.MOVIE);
 		
 		BufferedWriter writer = new BufferedWriter(
 				new OutputStreamWriter 
 				(new FileOutputStream("output/data_omdb_film.csv"), 
 						StandardCharsets.UTF_8));
-		writer.write(m);
+		writer.write(h + System.getProperty("line.separator") + m);
 		writer.close();
 	}
 	

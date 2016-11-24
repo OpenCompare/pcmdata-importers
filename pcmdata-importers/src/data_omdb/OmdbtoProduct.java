@@ -33,15 +33,27 @@ public class OmdbtoProduct {
 			return null ;
 		}
 		else{
-			OMDBProduct pro = new OMDBProduct() ;
+			OMDBProduct pro = new OMDBProduct() ;			
 			
+			// TODO this is weird 
+			// I will explain in the next session how to fix it
+			// basically you need only one try/catch for handling JSONException
+			// you need to initialize the String to empty string in case there is 
+			// no key in the JSON (but normally the key is here!)
+			// I also suggest to keep N/A => it means more than an empty cell!
+			// Overall the solution will be 
+			// pro.Title = obj.getString("Title"); and that's all!
+			pro.Title = obj.getString("Title") ;
+			
+			// instead of 
+			/*
 			try {
 				pro.Title = obj.getString("Title") ;
 				if(pro.Title.equals("N/A")) pro.Title="";
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				pro.Title = "";
-			}
+			}*/
 			
 			
 			try {
