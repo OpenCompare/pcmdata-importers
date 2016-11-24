@@ -1,10 +1,12 @@
-package wikipediaSelector;
+package pcm_Filter.pcm_predicate;
 
 import org.opencompare.model.PCM;
 
-public class PCMPredicateMinProduct implements PCMPredicateFilter {
+import pcm_Filter.PCMInfoContainer;
 
-	public static final int minimumRows = 3;  
+public class PCMPredicateMinRowProduct implements PCMPredicateFilter {
+
+	public static final int minimumRows = 3;
 	
 	@Override
 	public boolean isSatisfiable(PCMInfoContainer pcmic) {

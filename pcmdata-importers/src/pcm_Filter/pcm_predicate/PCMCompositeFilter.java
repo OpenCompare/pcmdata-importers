@@ -1,13 +1,20 @@
-package wikipediaSelector;
+package pcm_Filter.pcm_predicate;
 
 import java.util.Collection;
+import java.util.LinkedList;
 
 import org.opencompare.model.PCM;
+
+import pcm_Filter.PCMInfoContainer;
 
 public class PCMCompositeFilter implements PCMPredicateFilter {
 	
 	private Collection<PCMPredicateFilter> filters;
 
+	public PCMCompositeFilter() {
+		filters = new LinkedList<>();
+	}
+	
 	@Override
 	public boolean isSatisfiable(PCMInfoContainer pcmic) {
 		for (PCMPredicateFilter pcmPredicateFilter : filters) {
@@ -15,6 +22,10 @@ public class PCMCompositeFilter implements PCMPredicateFilter {
 				return false;
 		}
 		return true;
+	}
+	
+	public void addFilter(PCMPredicateFilter filter){
+		filters.add(filter);
 	}
 	
 	// add (AND)

@@ -1,4 +1,4 @@
-package wikipediaSelector;
+package pcm_Filter;
 
 import org.opencompare.api.java.*;
 import org.opencompare.api.java.util.PCMVisitor;

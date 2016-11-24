@@ -1,4 +1,4 @@
-package wikipediaSelector;
+package pcm_Filter;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,6 +17,11 @@ import org.opencompare.api.java.impl.io.KMFJSONLoader;
 import org.opencompare.api.java.io.CSVExporter;
 import org.opencompare.api.java.io.CSVLoader;
 import org.opencompare.api.java.io.PCMLoader;
+
+import pcm_Filter.pcm_predicate.PCMCompositeFilter;
+import pcm_Filter.pcm_predicate.PCMPredicateFilter;
+import pcm_Filter.pcm_predicate.PCMPredicateMinColumnProduct;
+import pcm_Filter.pcm_predicate.PCMPredicateMinRowProduct;
 
 public class Main {
 
@@ -46,10 +51,15 @@ public class Main {
 
 					PCMInfoContainer pcmic = new PCMInfoContainer(pcm);
 
-					PCMPredicateFilter pFilter = new PCMPredicateMinProduct();//new PCMCompositeFilter(); //for using multiple filters
+					PCMCompositeFilter pFilter = new PCMCompositeFilter(); //for using multiple filters
+					pFilter.addFilter(new PCMPredicateMinRowProduct());
+					pFilter.addFilter(new PCMPredicateMinColumnProduct());
+					
 					
 					Boolean thispcmisgood = pFilter.isSatisfiable(pcmic);
-
+					
+					//Boolean thispcmisgood = false;
+					
 					// now determine if the pcm is good
 
 					if (thispcmisgood) {
