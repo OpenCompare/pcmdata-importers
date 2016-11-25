@@ -10,20 +10,33 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Logger;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class OmdbtoProduct {
-		
+/**
+ * 
+ * Import from OMDB REST APIs (JSON format) a "product representation" 
+ * that is then transformed into a CSV
+ *
+ */
+public class OMDBToProduct {
 	
-	public static OMDBProduct createProductFromId(String id){
-		return null ;
-	}
+	private static final Logger _log = Logger.getLogger(OMDBToProduct.class.getName());
+	
+		
+	/*
+	 * TODO
+	 * Could be parameters of procedures
+	 */
+	public static final int STARTING_OMDB_ID = 944000;
+	public static final int NUMBER_OF_OMDB_PRODUCTS = 200; 
+
 	
 	public static OMDBProduct createProductFromJson(JSONObject obj) throws JSONException  {
 		
-		List<String> vide = new ArrayList<String>();
+		List<String> vide = new ArrayList<String>(); // FIXME very dangerous to reuse the same reference
 		vide.add("");
 		
 
@@ -93,7 +106,7 @@ public class OmdbtoProduct {
                 if(pro.Genre.contains("N/A")) pro.Genre= vide ;
             } catch (JSONException e) {
                 // TODO Auto-generated catch block
-                pro.Genre= vide;
+                pro.Genre= vide; // TODO: same list reference for all attributes!
             }
 			
 			
@@ -269,7 +282,15 @@ public class OmdbtoProduct {
 		JSONObject obj = new JSONObject(input) ;
 		return obj ;
 	}
+
+
 	
+	/**
+	 * @param t OMDB entries can be movies, series, episodes, etc. 
+	 * @return a CSV representation of all OMDB entries that are of type specified by t
+	 * @throws JSONException
+	 * @throws IOException
+	 */
 	public String mkCSV(OMDBMediaType t) throws JSONException, IOException {
 		Collection<OMDBMediaType> omTypes = new ArrayList<OMDBMediaType>();
 		omTypes.add(t);
@@ -280,21 +301,29 @@ public class OmdbtoProduct {
 	}
 	
 	
+	/**
+	 * TODO generalize and design a "filter" for retaining only some OMDB entries
+	 * @param omTypes OMDB entries can be movies, series, episodes, etc.
+	 * @return a CSV representation of all OMDB entries that are of one of the type specified by omTypes 
+	 * @throws JSONException
+	 * @throws IOException
+	 */
 	public Map<OMDBMediaType, String> mkCSVs(Collection<OMDBMediaType> omTypes) throws JSONException, IOException {
 		
 		
 		Map<OMDBMediaType, String> omdbTypes2CSV = new HashMap<OMDBMediaType, String>();
 	
-		for(int i=944000;i<944100;i++)
-		{
+		for(int i = STARTING_OMDB_ID ; i < (STARTING_OMDB_ID + NUMBER_OF_OMDB_PRODUCTS); i++)	{
 					
 			 OMDBProduct p  = createProductFromJson(idToJson(i)) ;
 			 if (p != null)
 			 {
-				 // on regarde si c'est un film ou une serie
+				 // seeking if it is a movie, an episode, etc.
 				 String oType = p.Type;
-				 for (OMDBMediaType omType : omTypes) {
-					 if(oType.equals(omType.toString())) {
+				 boolean found = false;
+				 for (OMDBMediaType omType : omTypes) {					
+					 if(oType.equals(omType.toString())) { 
+						 found = true;
 						 String pdt = omdbTypes2CSV.get(omType);
 						 if (pdt == null)
 							 omdbTypes2CSV.put(omType, "");
@@ -302,9 +331,15 @@ public class OmdbtoProduct {
 							 pdt += OMDBCSVProductFactory.getInstance().mkCSVProduct(p, omType) + System.getProperty("line.separator");
 							 omdbTypes2CSV.put(omType, pdt);
 						 }
-					 }
+					 }					 
 				}
-				  				 		 
+				if(!found) 
+					 _log.warning("Unknown type " + oType);  
+						 
+			 }
+			 
+			 else {
+				 _log.warning("Unable to load OMDB entry " + i);  
 			 }
 		}
 				

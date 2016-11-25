@@ -21,7 +21,7 @@ import org.opencompare.api.java.io.PCMDirection;
 
 import data_omdb.OMDBCSVProductFactory;
 import data_omdb.OMDBMediaType;
-import data_omdb.OmdbtoProduct;
+import data_omdb.OMDBToProduct;
 
 
 public class OMDBTest {
@@ -29,7 +29,7 @@ public class OMDBTest {
 	@Test 
 	public void testOMDBFilms1() throws IOException, JSONException {
 		String h = OMDBCSVProductFactory.getInstance().mkHeaders(OMDBMediaType.MOVIE);
-		String m = new OmdbtoProduct().mkCSV(OMDBMediaType.MOVIE);
+		String m = new OMDBToProduct().mkCSV(OMDBMediaType.MOVIE);
 		
 		BufferedWriter writer = new BufferedWriter(
 				new OutputStreamWriter 
@@ -41,7 +41,7 @@ public class OMDBTest {
 	
 	@Test 
 	public void testOMDBSeries1() throws IOException, JSONException {
-		String m = new OmdbtoProduct().mkCSV(OMDBMediaType.SERIES);
+		String m = new OMDBToProduct().mkCSV(OMDBMediaType.SERIES);
 		assertTrue(m.split("\r\n|\r|\n").length > 0);
 		BufferedWriter writer = new BufferedWriter(
 				new OutputStreamWriter 
@@ -53,7 +53,7 @@ public class OMDBTest {
 	
 	@Test 
 	public void testOMDBEpisodes1() throws IOException, JSONException {
-		String m = new OmdbtoProduct().mkCSV(OMDBMediaType.EPISODE);
+		String m = new OMDBToProduct().mkCSV(OMDBMediaType.EPISODE);
 		
 		
 		BufferedWriter writer = new BufferedWriter(
@@ -80,32 +80,31 @@ public class OMDBTest {
 	        PCM pcm = pcmC.get(0).getPcm();
 			
 			// check some properties of "pcm"
-			assertNotNull(pcm);			
-			assertEquals(44, pcm.getProducts().size());
+			assertNotNull(pcm);		
 	}
 	
 	
 	@Test 
 	public void test3() throws IOException, JSONException {
 		System.err.println("" + 
-				new OmdbtoProduct().mkCSVs(Arrays.asList(OMDBMediaType.SERIES)));
+				new OMDBToProduct().mkCSVs(Arrays.asList(OMDBMediaType.SERIES)));
 	}
 	
 	@Test 
 	public void test4() throws IOException, JSONException {
 		System.err.println("" + 
-				new OmdbtoProduct().mkCSVs(Arrays.asList(OMDBMediaType.MOVIE)));
+				new OMDBToProduct().mkCSVs(Arrays.asList(OMDBMediaType.MOVIE)));
 	}
 	
 	@Test 
 	public void test5() throws IOException, JSONException {
 		System.err.println("" + 
-				new OmdbtoProduct().mkCSVs(Arrays.asList(OMDBMediaType.EPISODE)));
+				new OMDBToProduct().mkCSVs(Arrays.asList(OMDBMediaType.EPISODE)));
 	}
 	
 	@Test 
 	public void test6() throws IOException, JSONException {
-		Map<OMDBMediaType, String> csvs = new OmdbtoProduct().mkCSVs(Arrays.asList(
+		Map<OMDBMediaType, String> csvs = new OMDBToProduct().mkCSVs(Arrays.asList(
 				OMDBMediaType.SERIES, 
 				OMDBMediaType.EPISODE,
 				OMDBMediaType.MOVIE
@@ -119,7 +118,9 @@ public class OMDBTest {
         PCM pcm = pcmC.get(0).getPcm();
         assertNotNull(pcm);
         
-        assertEquals(csvs.get(OMDBMediaType.MOVIE).split("\r\n|\r|\n").length - 1, pcm.getProducts().size());
+        int nbProduct1 = csvs.get(OMDBMediaType.MOVIE).split("\r\n|\r|\n").length;
+        
+        assertEquals(nbProduct1 - 1, pcm.getProducts().size());
       	
         
         CSVLoader csvL2 = new CSVLoader(
@@ -130,7 +131,10 @@ public class OMDBTest {
         PCM pcm2 = pcmC2.get(0).getPcm();
         assertNotNull(pcm2);
         
-        assertEquals(csvs.get(OMDBMediaType.EPISODE).split("\r\n|\r|\n").length - 1, pcm2.getProducts().size());
+        int nbProduct2 = csvs.get(OMDBMediaType.EPISODE).split("\r\n|\r|\n").length;
+        
+        
+        assertEquals(nbProduct2 - 1, pcm2.getProducts().size());
         
         CSVLoader csvL3 = new CSVLoader(
                 new PCMFactoryImpl(),
@@ -140,8 +144,14 @@ public class OMDBTest {
         PCM pcm3 = pcmC3.get(0).getPcm();
         assertNotNull(pcm3);
         
-        assertEquals(csvs.get(OMDBMediaType.SERIES).split("\r\n|\r|\n").length - 1, pcm3.getProducts().size());
-      			
+        int nbProduct3 = csvs.get(OMDBMediaType.SERIES).split("\r\n|\r|\n").length;
+        
+        assertEquals(nbProduct3 - 1, pcm3.getProducts().size());
+        
+        assertEquals(nbProduct1 + nbProduct2 + nbProduct3, OMDBToProduct.NUMBER_OF_OMDB_PRODUCTS);
+      	
+        
+        
 		
 	}
 
