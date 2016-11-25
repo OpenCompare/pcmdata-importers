@@ -25,13 +25,26 @@ import pcm_Filter.pcm_predicate.PCMPredicateMinRowProduct;
 
 public class Main {
 
+	public static final boolean writefile = true;
+
+	public static final String inputpath = "input-pcm";
+	public static final String outputpath = "output-pcm/";
+
+	// "input-pcm" testing inputs
+	// "../../input-model" prod inputs
+	// "D:/Windows/input-pcm"
+
+	// "output-pcm/" //test outputs
+	// "../../output-model" //prod outputs
+
 	public static void main(String[] args) throws IOException {
 
-		Stream<Path> paths = Files.walk(Paths.get("input-pcm"));  //("../../input-model")); //for non testings inputs
+		long startTime = System.nanoTime();
+
+		Stream<Path> paths = Files.walk(Paths.get(inputpath));
 
 		paths.forEach(filePath -> {
-			if (Files.isRegularFile(filePath)
-					&& filePath.toString().endsWith(".pcm")) {
+			if (Files.isRegularFile(filePath) && filePath.toString().endsWith(".pcm")) {
 				System.out.println("> PCM imported from " + filePath);
 
 				File pcmFile = new File(filePath.toString());
@@ -41,7 +54,6 @@ public class Main {
 				try {
 					pcmContainers = loader.load(pcmFile);
 				} catch (Exception e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 
@@ -51,37 +63,37 @@ public class Main {
 
 					PCMInfoContainer pcmic = new PCMInfoContainer(pcm);
 
-					PCMCompositeFilter pFilter = new PCMCompositeFilter(); //for using multiple filters
+					// for using multiple filters
+					PCMCompositeFilter pFilter = new PCMCompositeFilter();
 					pFilter.addFilter(new PCMPredicateMinRowProduct());
 					pFilter.addFilter(new PCMPredicateMinColumnProduct());
-					
-					
-					Boolean thispcmisgood = pFilter.isSatisfiable(pcmic);
-					
-					//Boolean thispcmisgood = false;
-					
-					// now determine if the pcm is good
 
-					if (thispcmisgood) {
-						KMFJSONExporter pcmExporter = new KMFJSONExporter();
-						String pcmString = pcmExporter.export(pcmContainer);
+					Boolean isNicePCM = pFilter.isSatisfiable(pcmic);
 
-						Path p = Paths.get("output-pcm/" //"../../output-model" //for non testings outputs
-								+ filePath.getFileName());
-						try {
-							Files.write(p, pcmString.getBytes());
-						} catch (Exception e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
+					if (writefile) {
+						// now determine if the pcm is good
+						if (isNicePCM) {
+							KMFJSONExporter pcmExporter = new KMFJSONExporter();
+							String pcmString = pcmExporter.export(pcmContainer);
+
+							Path p = Paths.get(outputpath + filePath.getFileName());
+							try {
+								Files.write(p, pcmString.getBytes());
+							} catch (Exception e) {
+								e.printStackTrace();
+							}
+							System.out.println("> PCM exported to " + p);
 						}
-						System.out.println("> PCM exported to " + p);
-
 					}
 				}
 			}
 		});
 
 		paths.close();
+
+		long endTime = System.nanoTime();
+		System.out.println("Took " + (endTime - startTime) / (1000000) + " ms");
+		System.out.println("Took " + (endTime - startTime) / (1000000000) + " s");
 
 	}
 
