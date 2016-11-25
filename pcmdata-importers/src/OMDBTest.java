@@ -148,7 +148,7 @@ public class OMDBTest {
         
         assertEquals(nbProduct3 - 1, pcm3.getProducts().size());
         
-        assertEquals(nbProduct1 + nbProduct2 + nbProduct3, OMDBToProduct.NUMBER_OF_OMDB_PRODUCTS);
+        assertTrue((nbProduct1 + nbProduct2 + nbProduct3) <= OMDBToProduct.NUMBER_OF_OMDB_PRODUCTS);
       	
         
         
