@@ -6,6 +6,7 @@ public class Run {
 		
 		OFFactsCSVCreator creator = new OFFactsCSVCreator();
 		String canned = creator.getAllProductsInCategory("en:canned-meals");
+		System.out.println(canned);
 		//String sucre = creator.getAllProductsWithIngredient("sucre");
 		creator.close();
 		OFFactsCSVCreator.createCSVFromString("canned-meals", canned);

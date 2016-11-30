@@ -16,11 +16,12 @@ public class OFFactsCSVCreator {
 
 	private MongoClient mongo;
 	private MongoCollection<Document> collection;
+	private String separator = ";";
 	
 	public OFFactsCSVCreator(){
 		
 		mongo = new MongoClient();
-		collection = mongo.getDatabase("off").getCollection("products");
+		collection = mongo.getDatabase("off-fr").getCollection("products");
 		System.out.println(collection.count() + " products in database");
 		
 	}
@@ -32,12 +33,18 @@ public class OFFactsCSVCreator {
 		MongoCursor<Document> cursor = test.iterator();
 		Document product;
 		int count = 0;
+		String res  = "id;product_name;countries;ingredients";
 		while(cursor.hasNext()){
 			product = cursor.next();
+			res += "\n";
+			res += product.getString("id") + separator;
+			res += "\"" + product.getString("product_name") + "\"" + separator;
+			res += "\"" + product.getString("countries") + "\"" + separator;
+			res += "\"" + product.get("ingredients_tags") + "\"" + separator;
 			count++;
 		}
 		System.out.println(count + " products in the category " + category);
-		return "TODO";
+		return res;
 	}
 
 	public String getAllProductsWithIngredient(String ingredient){
@@ -46,21 +53,25 @@ public class OFFactsCSVCreator {
 		FindIterable<Document> test = collection.find(whereQuery);
 		MongoCursor<Document> cursor = test.iterator();
 		Document product;
-		String res;
+		String res = "id;product_name;";
 		int count = 0;
 		while(cursor.hasNext()){
 			product = cursor.next();
+			res += "\n";
+			res += product.getString("id") + separator;
+			res += product.getString("product_name") + separator ;
+
 			count++;
 		}
 		
 		System.out.println(count + " products containing " + ingredient);
-		return "TODO";
+		return res;
 	}
 
 	public static void createCSVFromString(String fileName, String content){
 		DateFormat dateFormat = new SimpleDateFormat("-ddMMyyyy-HHmmss");
 		Date date = new Date();
-		String newFileName = "output/" + fileName + dateFormat.format(date) + ".csv";
+		String newFileName = "output/" + fileName /* + dateFormat.format(date)*/ + ".csv";
 		File file = new File(newFileName);
 
 		try {
