@@ -5,8 +5,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.LinkedList;
+
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -14,12 +13,10 @@ import org.opencompare.api.java.PCM;
 import org.opencompare.api.java.PCMContainer;
 import org.opencompare.api.java.impl.io.KMFJSONExporter;
 import org.opencompare.api.java.impl.io.KMFJSONLoader;
-import org.opencompare.api.java.io.CSVExporter;
-import org.opencompare.api.java.io.CSVLoader;
+
 import org.opencompare.api.java.io.PCMLoader;
 
 import pcm_Filter.pcm_predicate.PCMCompositeFilter;
-import pcm_Filter.pcm_predicate.PCMPredicateFilter;
 import pcm_Filter.pcm_predicate.PCMPredicateMinColumnProduct;
 import pcm_Filter.pcm_predicate.PCMPredicateMinRowProduct;
 
@@ -27,15 +24,16 @@ public class Main {
 
 	public static final boolean writefile = true;
 
-	public static final String inputpath = "input-pcm";
-	public static final String outputpath = "output-pcm/";
+	public static final String inputpath = "../../input-model";
+	public static final String outputpath = "output-pcm-JS/";
 
 	// "input-pcm" testing inputs
 	// "../../input-model" prod inputs
 	// "D:/Windows/input-pcm"
 
 	// "output-pcm/" //test outputs
-	// "../../output-model" //prod outputs
+	// "../../output-model/" //prod outputs
+	// "output-pcm-JS/" //PCM prod for JS Team
 
 	public static void main(String[] args) throws IOException {
 
