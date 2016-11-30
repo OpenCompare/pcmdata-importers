@@ -24,8 +24,8 @@ public class Main {
 
 	public static final boolean writefile = true;
 
-	public static final String inputpath = "../../input-model";
-	public static final String outputpath = "output-pcm-JS/";
+	public static final String inputpath = "input-pcm";
+	public static final String outputpath = "output-pcm/";
 
 	// "input-pcm" testing inputs
 	// "../../input-model" prod inputs
@@ -42,7 +42,7 @@ public class Main {
 		Stream<Path> paths = Files.walk(Paths.get(inputpath));
 
 		paths.forEach(filePath -> {
-			if (Files.isRegularFile(filePath) && filePath.toString().endsWith(".pcm")) {
+			if (Files.isRegularFile(filePath) && filePath.toString().endsWith("2.pcm")) {
 				System.out.println("> PCM imported from " + filePath);
 
 				File pcmFile = new File(filePath.toString());
