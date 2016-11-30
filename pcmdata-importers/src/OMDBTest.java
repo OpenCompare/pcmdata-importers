@@ -6,6 +6,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -16,6 +19,7 @@ import org.opencompare.api.java.PCM;
 import org.opencompare.api.java.PCMContainer;
 import org.opencompare.api.java.extractor.CellContentInterpreter;
 import org.opencompare.api.java.impl.PCMFactoryImpl;
+import org.opencompare.api.java.impl.io.KMFJSONExporter;
 import org.opencompare.api.java.io.CSVLoader;
 import org.opencompare.api.java.io.PCMDirection;
 
@@ -147,9 +151,45 @@ public class OMDBTest {
         int nbProduct3 = csvs.get(OMDBMediaType.SERIES).split("\r\n|\r|\n").length;
         
         assertEquals(nbProduct3 - 1, pcm3.getProducts().size());
-        
         assertTrue((nbProduct1 + nbProduct2 + nbProduct3) <= OMDBToProduct.NUMBER_OF_OMDB_PRODUCTS);
       	
+        
+        
+		
+	}
+	
+	@Test 
+	public void testMovies() throws IOException, JSONException {
+		
+		CSVLoader csvL = new CSVLoader(
+                new PCMFactoryImpl(),
+                new CellContentInterpreter(new PCMFactoryImpl()), 
+                PCMDirection.PRODUCTS_AS_LINES);
+		
+		String h = OMDBCSVProductFactory.getInstance().mkHeaders(OMDBMediaType.MOVIE);
+		String m = new OMDBToProduct().mkCSV(OMDBMediaType.MOVIE);
+
+		String csv = h + System.getProperty("line.separator") + m;
+		
+        List<PCMContainer> pcmC = csvL.load(csv);
+        PCMContainer pcmContainer = pcmC.get(0);
+        PCM pcm = pcmContainer.getPcm();
+        assertNotNull(pcm);
+        int nbProduct1 = csv.split("\r\n|\r|\n").length;
+        assertEquals(nbProduct1 - 1, pcm.getProducts().size());
+        
+        // serialize PCM to JSON (.pcm format)
+        
+        KMFJSONExporter pcmExporter = new KMFJSONExporter();
+		String pcmString = pcmExporter.export(pcmC.get(0));
+
+		Path p = Paths.get("output/" + "movies.json");
+		try {
+			Files.write(p, pcmString.getBytes());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+    
         
         
 		
