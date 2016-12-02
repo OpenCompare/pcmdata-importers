@@ -3,8 +3,6 @@ package pcm_Filter.pcm_predicate;
 import java.util.Collection;
 import java.util.LinkedList;
 
-import org.opencompare.model.PCM;
-
 import pcm_Filter.PCMInfoContainer;
 
 public class PCMCompositeFilter implements PCMPredicateFilter {

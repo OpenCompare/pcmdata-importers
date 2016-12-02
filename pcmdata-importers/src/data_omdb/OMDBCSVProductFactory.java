@@ -177,6 +177,7 @@ public class OMDBCSVProductFactory {
 		 out  += p.seriesID + "\";\"";
 		 out  += p.Season + "\";\"";
 		 out  += p.Episode + "\";\"";
+		 out  += p.Runtime + "\";\"";
 		 out  += p.imdbRating + "\";\"";
 		 out  += p.imdbVotes + "\";\"";
 		 int cpt = 0 ;
@@ -242,10 +243,12 @@ public class OMDBCSVProductFactory {
 				headers = Arrays.asList("imdbID", "title", "imdbRating", "runtime", "imdbVotes", "genre", "director", 
 		 "writer", "actors", "language", "country", "year", "metascore", "poster", "plot");
 		else if (t.equals(OMDBMediaType.SERIES)) {
-			// TODO
+			headers = Arrays.asList("imdbID", "title", "totalSeasons", "imdbRating", "imdbVotes", "genre", "director", 
+					 "writer", "actors", "language", "country", "year", "metascore", "poster", "plot");
 		}
 		else { // EPISODES
-			// TODO
+			headers = Arrays.asList("imdbID", "title", "seriesID", "season", "episode","runtime", "imdbRating", "imdbVotes", "genre", "director", 
+					 "writer", "actors", "language", "country", "year", "metascore", "poster", "plot");
 		}
 		
 		for (String h : headers) {
