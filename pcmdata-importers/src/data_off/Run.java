@@ -14,19 +14,16 @@ public class Run {
 		//System.out.println(canned);
 		//String pureeTomate = creator.getAllProductsWithIngredient("puree-de-tomate-mi-reduite");
 		
-		Set<String> cat = creator.getCategoriesWithBetween(1000, 5000);
+		Set<String> cat = creator.getCategoriesWithBetween(1000, 1200);
 		int max = cat.size();
 		int count = 0;
-		String temp;
 		for(String s : cat){
 			count++;
 			System.out.println(s + " " + count + " / " + max);
-			temp = creator.getAllProductsInCategory(s, true);
-			if(s.contains(":")){
-				s = s.substring(s.indexOf(":")+1);
-			}
-			OFFactsCSVCreator.createCSVFromString(s, temp);
+			creator.createCSVFromCategory(s, true);
 		}
+		
+		creator.printStats();
 		
 		//OFFactsCSVCreator.createCSVFromString("beers", creator.getAllProductsInCategory("en:beers", true));
 		

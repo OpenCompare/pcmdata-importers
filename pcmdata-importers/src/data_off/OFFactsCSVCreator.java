@@ -36,7 +36,15 @@ public class OFFactsCSVCreator {
 	private MongoCollection<Document> collection;
 	private String separator = ";";
 	private String quotes = "\"";
-
+	
+	/*
+	 * Temporary variable for stats
+	 */
+	
+	int totalProducts = 0;
+	int notFoundThroughAPI = 0;
+	int noImageFound = 0;
+	
 	public OFFactsCSVCreator(){
 
 		mongo = new MongoClient();
@@ -45,44 +53,64 @@ public class OFFactsCSVCreator {
 
 	}
 
-	@SuppressWarnings("unchecked")
-	public String getAllProductsInCategory(String category, boolean getImageUrl) throws IOException, JSONException{
+	public MongoCursor<Document> getMongoCursorForCategory(String category){
 		BasicDBObject whereQuery = new BasicDBObject();
 		whereQuery.put("categories_tags", category);
 		FindIterable<Document> test = collection.find(whereQuery);
 		MongoCursor<Document> cursor = test.iterator();
+		return cursor;
+	}
+
+	public void createCSVFromCategory(String category, boolean getImageUrl) throws IOException, JSONException{
+		MongoCursor<Document> cursor = getMongoCursorForCategory(category);
 		Document product;
-		List<Document> ingredientsList;
-//		Map<Integer, String> map = new HashMap<Integer, String>();
+		String header  = "id;product_name;countries;ingredients;brands;stores;image_url;\n";
+		String res = "";
 		int count = 0;
-		String res  = "id;product_name;countries;ingredients;brands;stores;image_url;";
+		
+		if(category.contains(":")){
+			category = category.replace(':', '_');
+		}
+		createCSVFromString(category, header);
 		while(cursor.hasNext()){
+			count++;
 			product = cursor.next();
-			res += "\n";
-			String id = product.getString("id");
-			res += id + separator;
-//			if(id != null){
-//				if(map.containsKey(id.length())){
-//					
-//				}else{
-//					map.put(id.length(), id);
-//				}
-//			}
-			res += quotes + product.get("product_name") + quotes + separator;
-			res += quotes + product.get("countries") + quotes + separator;
-			ingredientsList = (ArrayList<Document>) product.get("ingredients");
-			res += quotes;
-			for(Document o : ingredientsList){//check for null, catch exception
+			res += getProductFromDocument(product, getImageUrl);
+			if(count%1000 == 0){
+				System.out.println(count + " products done");
+				appendStringToCSV(category, res);
+				res = "";
+			}
+		}
+		if(!res.isEmpty()){
+			System.out.println(count + " products in category " + category);
+			appendStringToCSV(category, res);
+		}
+	}
+
+	@SuppressWarnings("unchecked")
+	public String getProductFromDocument(Document product, boolean getImageUrl) throws IOException, JSONException{
+		List<Document> ingredientsList;
+		String res  = "";
+
+		String id = product.getString("id");
+		res += id + separator;
+		res += quotes + product.get("product_name") + quotes + separator;
+		res += quotes + product.get("countries") + quotes + separator;
+		ingredientsList = (ArrayList<Document>) product.get("ingredients");
+		res += quotes;
+		try{
+			for(Document o : ingredientsList){
 				res += quotes + o.getString("id") + "/" + o.getString("text") + quotes + ",";
 			}
-			res += quotes + separator;
-			res += quotes + product.get("brands") + quotes + separator;
-			res += quotes + product.get("stores") + quotes + separator;
-			res += quotes + (getImageUrl?getImageUrl(id):null) + quotes + separator;
-			count++;
+		}catch(NullPointerException e){
+			System.err.println("Product " + id + " null pointer exception on ingredientsList");
 		}
-//		System.out.println(map.toString());
-		System.out.println(count + " products in the category " + category);
+		res += quotes + separator;
+		res += quotes + product.get("brands") + quotes + separator;
+		res += quotes + product.get("stores") + quotes + separator;
+		res += quotes + (getImageUrl?getImageUrl(id):null) + quotes + separator;
+		res += "\n";
 		return res;
 	}
 
@@ -92,14 +120,19 @@ public class OFFactsCSVCreator {
 		String input = in.readLine();
 		in.close();
 		JSONObject json = new JSONObject(input);
+		totalProducts++;
 		if(json.getString("status_verbose").equals("product not found")){
 			System.out.println("Product " + id + " not found");
+			
+			notFoundThroughAPI++;
+			
 			return null;
 		}else{
 			try {
 				return json.getJSONObject("product").getString("image_url");
 			} catch (JSONException e) {
 				System.out.println("No image found for product " + id);
+				noImageFound++;
 			}
 		}
 		return null;
@@ -127,8 +160,9 @@ public class OFFactsCSVCreator {
 	}
 
 	public static void createCSVFromString(String fileName, String content){
-//		DateFormat dateFormat = new SimpleDateFormat("-ddMMyyyy-HHmmss");
-//		Date date = new Date();
+		System.out.println("Writing to file " + fileName);
+		//		DateFormat dateFormat = new SimpleDateFormat("-ddMMyyyy-HHmmss");
+		//		Date date = new Date();
 		String newFileName = "off_output/" + fileName /* + dateFormat.format(date)*/ + ".csv";
 		File file = new File(newFileName);
 
@@ -139,9 +173,19 @@ public class OFFactsCSVCreator {
 			e1.printStackTrace();
 		}
 
-		System.out.println(file.exists()?"File exists":"File doesnt exist");
 		try (Writer writer = new BufferedWriter(new FileWriter(file))) {
 			writer.write(content);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void appendStringToCSV(String fileName, String content){
+		String newFileName = "off_output/" + fileName /* + dateFormat.format(date)*/ + ".csv";
+		File file = new File(newFileName);
+
+		try (Writer writer = new BufferedWriter(new FileWriter(file, true))) {
+			writer.append(content);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -190,6 +234,15 @@ public class OFFactsCSVCreator {
 
 	public void close(){
 		mongo.close();
+	}
+
+	public void printStats() {
+		String print = "\n#######\n\nTotal = " + totalProducts;
+		print += "\nNot found Products through API = " + notFoundThroughAPI;
+		print += "\nNo image found = " + (noImageFound+notFoundThroughAPI);
+		print += "\nNot Found Products/Total Product = " + notFoundThroughAPI*100/totalProducts + "%";
+		print += "\nNot Found Image/Total Product = " + (noImageFound+notFoundThroughAPI)*100/totalProducts + "%";
+		System.out.println(print);		
 	}
 
 
