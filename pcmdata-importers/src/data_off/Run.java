@@ -1,6 +1,7 @@
 package data_off;
 
 import java.io.IOException;
+import java.util.HashSet;
 import java.util.Set;
 
 import org.json.JSONException;
@@ -10,27 +11,42 @@ public class Run {
 	public static void main(String[] arg0) throws IOException, JSONException{
 		
 		OFFactsCSVCreator creator = new OFFactsCSVCreator();
-		//String canned = creator.getAllProductsInCategory("en:canned-meals");
-		//System.out.println(canned);
-		//String pureeTomate = creator.getAllProductsWithIngredient("puree-de-tomate-mi-reduite");
 		
-		Set<String> cat = creator.getCategoriesWithBetween(1000, 1200);
+//		Set<String> cat10001500 = new HashSet<String>();
+//		cat10001500.add("en:carbonated-drinks");
+//		cat10001500.add("en:pasteurized-cheeses");
+//		cat10001500.add("en:fresh-vegetables");
+//		cat10001500.add("en:hot-beverages");
+//		cat10001500.add("en:breads");
+//		cat10001500.add("en:plant-based-spreads");
+//		cat10001500.add("en:fresh-plant-based-foods");
+//		cat10001500.add("en:seeds");
+//		cat10001500.add("en:beers");
+//		cat10001500.add("en:fats");
+//		cat10001500.add("en:canned-vegetables");
+//		cat10001500.add("en:chips-and-fries");
+//		cat10001500.add("en:fruit-juices");
+//		cat10001500.add("en:breakfast-cereals");
+//		cat10001500.add("en:candies");
+//		cat10001500.add("en:microwave-meals");
+//		cat10001500.add("en:meals-with-meat");
+//		cat10001500.add("en:cow-cheeses");
+//		int max = cat10001500.size();
+		
+		Set<String> cat = creator.getCategoriesWithBetween(1000, 100000);
 		int max = cat.size();
+		
 		int count = 0;
 		for(String s : cat){
 			count++;
 			System.out.println(s + " " + count + " / " + max);
-			creator.createCSVFromCategory(s, true);
+			creator.createCSVFromCategory(s, false);
+//			creator.createListFromCategory(s, false);
 		}
 		
 		creator.printStats();
-		
-		//OFFactsCSVCreator.createCSVFromString("beers", creator.getAllProductsInCategory("en:beers", true));
-		
+		creator.resetStats();
 		
 		creator.close();
-		//OFFactsCSVCreator.createCSVFromString("canned-meals", canned);
-		//OFFactsCSVCreator.createCSVFromString("puree-de-tomate-mi-reduite", pureeTomate);
-		//OFFactsCSVCreator.createCSVFromString("off_categories1000", categories);
 	}
 }

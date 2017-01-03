@@ -1,0 +1,98 @@
+package data_off;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.bson.Document;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import com.mongodb.client.MongoCursor;
+
+import scala.Array;
+
+public class OFFToProduct {
+	
+	private static boolean GET_IMAGE_URL = false;
+	
+	
+	public static void setGetImageUrl(boolean getImageUrl){
+		GET_IMAGE_URL = getImageUrl;
+	}
+	
+	public static List<String[]> mkOFFProductsStrings(List<OFFProduct> products) throws IOException{
+		List<String[]> res = new ArrayList<>();
+		for(OFFProduct p : products){
+			String[] strArr = new String[7];
+			strArr[0] = p.getId();
+			strArr[1] = p.getProduct_name();
+			strArr[2] = p.getCountriesString();
+			strArr[3] = p.getIngredientsString();
+			strArr[4] = p.getBrandsString();
+			strArr[5] = p.getStoresString();
+			strArr[6] = p.getImage_url();
+			res.add(strArr);
+		}
+		return res;
+	}
+	
+	public static List<OFFProduct> mkOFFProductsFromMongoCursor(MongoCursor<Document> cursor) throws IOException, JSONException{
+		List<OFFProduct> list = new ArrayList<>();
+		Document product;
+		int count = 0;
+		String out = "+";
+		while(cursor.hasNext()){
+			product = cursor.next();
+			list.add(mkOFFProductFromBSON(product));
+			count++;
+			if(count%1000 == 0){
+				out += "+";
+				System.out.println(count + " products done");
+				System.out.println(out);
+			}
+		}
+		System.out.println(count + " products done");
+		return list;
+	}
+
+	@SuppressWarnings("unchecked")
+	public static OFFProduct mkOFFProductFromBSON(Document product) throws IOException, JSONException{
+		OFFProduct OFFProduct = new OFFProduct();
+
+		OFFProduct.setId(product.getString("id"));
+		OFFProduct.setProduct_name(product.getString("product_name"));
+		OFFProduct.setCountriesFromString(product.getString("countries"));
+		OFFProduct.setIngredientsFromObject(product.get("ingredients"));
+		OFFProduct.setBrandsFromString(product.getString("brands"));
+		OFFProduct.setStoresFromString(product.getString("stores"));
+		OFFProduct.setImage_url((GET_IMAGE_URL?getImageUrl(OFFProduct.getId()):""));
+		
+		return OFFProduct;
+	}
+	
+	
+	
+	private static String getImageUrl(String id) throws IOException, JSONException {
+		URL url = new URL("http://world.openfoodfacts.org/api/v0/product/"+ id +".json");
+		BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream(), StandardCharsets.UTF_8));
+		String input = in.readLine();
+		in.close();
+		JSONObject json = new JSONObject(input);
+		if(json.getString("status_verbose").equals("product not found")){
+			System.out.println("Product " + id + " not found");
+			return "";
+		}else{
+			try {
+				return json.getJSONObject("product").getString("image_url");
+			} catch (JSONException e) {
+				System.out.println("No image found for product " + id);
+			}
+		}
+		return "";
+	}
+}
