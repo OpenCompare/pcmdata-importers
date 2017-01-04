@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.bson.Document;
+
+import com.opencsv.CSVWriter;
+
+import data_off.OFFToProduct;
+
 public class OMDBCSVProductFactory {
 	
 	private static OMDBCSVProductFactory _instance = null;
@@ -40,15 +46,31 @@ public class OMDBCSVProductFactory {
 	
 	public String mkCSVProductMovie(OMDBProduct p) {
 		
+		//TODO OFFactsCSVCreate 
+		/*CSVWriter csvwriter = new CSVWriter(writer, ';', '"');
+		String[] header  = {"id","product_name","countries","ingredients","brands","stores","image_url"};
+		csvwriter.writeNext(header);//writing the header
+		Document product;
+		int count = 0;
+		while(cursor.hasNext()){
+			product = cursor.next();
+			csvwriter.writeNext(OFFToProduct.mkOFFProductStrings(OFFToProduct.mkOFFProductFromBSON(product)));
+			count++;*/
+		
+		
+		
+		
  		 String out = "" ;
-		 out  += "\""+ p.imdbID + "\";\"";
-		 out  += p.Title + "\";\"" ;
-		 out  += p.imdbRating + "\";\"";
-		 out  += p.Runtime + "\";\"";
-		 out  += p.imdbVotes + "\";\"";
+ 		 
+ 		 
+		 out  += "\""+ p.getImdbID() + "\";\"";
+		 out  += p.getTitle() + "\";\"" ;
+		 out  += p.getImdbRating() + "\";\"";
+		 out  += p.getRuntime() + "\";\"";
+		 out  += p.getImdbVotes() + "\";\"";
 		 int cpt = 0 ;
 		 //affichage du genre du film parcours de la liste
-		 for(String g : p.Genre){
+		 for(String g : p.getGenre()){
 			 if(cpt == 0){
 				out  +=  g ;
 				 cpt++ ;
@@ -60,10 +82,10 @@ public class OMDBCSVProductFactory {
 		 }
 		 out  += "\";\"";
 		 
-		 out  += p.Director + "\";\"";
-		 out  += p.Writer + "\";\"";
+		 out  += p.getDirector() + "\";\"";
+		 out  += p.getWriter() + "\";\"";
 		 cpt = 0 ;
-		 for(String a : p.Actors){
+		 for(String a : p.getActors()){
 			 if(cpt == 0){
 				 out  += a;
 				 cpt ++ ;
@@ -74,7 +96,7 @@ public class OMDBCSVProductFactory {
 		 }
 		 out  += "\";\"";
 		 cpt = 0 ;
-		 for(String b : p.Language){
+		 for(String b : p.getLanguage()){
 			 if(cpt == 0){
 				 out  += b;
 				 cpt ++ ;
@@ -84,7 +106,7 @@ public class OMDBCSVProductFactory {
 			 }
 		 }
 		 out  += "\";\"";cpt = 0 ;
-		 for(String c : p.Country){
+		 for(String c : p.getCountry()){
 			 if(cpt == 0){
 				 out  += c;
 				 cpt ++ ;
@@ -94,10 +116,10 @@ public class OMDBCSVProductFactory {
 			 }
 		 }
 		 out  += "\";\"";
-		 out  += p.Year + "\";\"";
-		 out  += p.Metascore + "\";\"";
-		 out  += p.Poster + "\";\"";
-		 out  += p.Plot + "\";";
+		 out  += p.getYear() + "\";\"";
+		 out  += p.getMetascore() + "\";\"";
+		 out  += p.getPoster() + "\";\"";
+		 out  += p.getPlot() + "\";";
 		 
 		 
 
@@ -107,14 +129,14 @@ public class OMDBCSVProductFactory {
 	public String mkCSVProductSerie (OMDBProduct p) {
 
 		 String out = "" ;
-		 out  += "\""+ p.imdbID + "\";\"";
-		 out  += p.Title + "\";\"" ;
-		 out  += p.totalSeasons +"\";\"";
-		 out  += p.imdbRating + "\";\"";
-		 out  += p.imdbVotes + "\";\"";
+		 out  += "\""+ p.getImdbID() + "\";\"";
+		 out  += p.getTitle() + "\";\"" ;
+		 out  += p.getTotalSeasons() +"\";\"";
+		 out  += p.getImdbRating() + "\";\"";
+		 out  += p.getImdbVotes() + "\";\"";
 		 int cpt = 0 ;
 		 //affichage du genre du film parcours de la liste
-		 for(String g : p.Genre){
+		 for(String g : p.getGenre()){
 			 if(cpt == 0){
 				out  +=  g ;
 				 cpt++ ;
@@ -126,10 +148,10 @@ public class OMDBCSVProductFactory {
 		 }
 		 out  += "\";\"";
 		 
-		 out  += p.Director + "\";\"";
-		 out  += p.Writer + "\";\"";
+		 out  += p.getDirector() + "\";\"";
+		 out  += p.getWriter() + "\";\"";
 		 cpt = 0 ;
-		 for(String a : p.Actors){
+		 for(String a : p.getActors()){
 			 if(cpt == 0){
 				 out  += a;
 				 cpt ++ ;
@@ -140,7 +162,7 @@ public class OMDBCSVProductFactory {
 		 }
 		 out  += "\";\"";
 		 cpt = 0 ;
-		 for(String b : p.Language){
+		 for(String b : p.getLanguage()){
 			 if(cpt == 0){
 				 out  += b;
 				 cpt ++ ;
@@ -150,7 +172,7 @@ public class OMDBCSVProductFactory {
 			 }
 		 }
 		 out  += "\";\"";cpt = 0 ;
-		 for(String c : p.Country){
+		 for(String c : p.getCountry()){
 			 if(cpt == 0){
 				 out  += c;
 				 cpt ++ ;
@@ -160,10 +182,10 @@ public class OMDBCSVProductFactory {
 			 }
 		 }
 		 out  += "\";\"";
-		 out  += p.Year + "\";\"";
-		 out  += p.Metascore + "\";\"";
-		 out  += p.Poster + "\";\"";
-		 out  += p.Plot + "\";";
+		 out  += p.getYear() + "\";\"";
+		 out  += p.getMetascore() + "\";\"";
+		 out  += p.getPoster() + "\";\"";
+		 out  += p.getPlot() + "\";";
 		 
 			 
 		 return out ;
@@ -172,17 +194,17 @@ public class OMDBCSVProductFactory {
 	public String mkCSVProductEpisode(OMDBProduct p){
 
 		String out = "";
-		 out  += "\""+ p.imdbID + "\";\"";
-		 out  += p.Title + "\";\"" ;
-		 out  += p.seriesID + "\";\"";
-		 out  += p.Season + "\";\"";
-		 out  += p.Episode + "\";\"";
-		 out  += p.Runtime + "\";\"";
-		 out  += p.imdbRating + "\";\"";
-		 out  += p.imdbVotes + "\";\"";
+		 out  += "\""+ p.getImdbID() + "\";\"";
+		 out  += p.getTitle() + "\";\"" ;
+		 out  += p.getSeriesID() + "\";\"";
+		 out  += p.getSeason() + "\";\"";
+		 out  += p.getEpisode() + "\";\"";
+		 out  += p.getRuntime() + "\";\"";
+		 out  += p.getImdbRating() + "\";\"";
+		 out  += p.getImdbVotes() + "\";\"";
 		 int cpt = 0 ;
 		 //affichage du genre du film parcours de la liste
-		 for(String g : p.Genre){
+		 for(String g : p.getGenre()){
 			 if(cpt == 0){
 				out  +=  g ;
 				 cpt++ ;
@@ -194,10 +216,10 @@ public class OMDBCSVProductFactory {
 		 }
 		 out  += "\";\"";
 		 
-		 out  += p.Director + "\";\"";
-		 out  += p.Writer + "\";\"";
+		 out  += p.getDirector() + "\";\"";
+		 out  += p.getWriter() + "\";\"";
 		 cpt = 0 ;
-		 for(String a : p.Actors){
+		 for(String a : p.getActors()){
 			 if(cpt == 0){
 				 out  += a;
 				 cpt ++ ;
@@ -208,7 +230,7 @@ public class OMDBCSVProductFactory {
 		 }
 		 out  += "\";\"";
 		 cpt = 0 ;
-		 for(String b : p.Language){
+		 for(String b : p.getLanguage()){
 			 if(cpt == 0){
 				 out  += b;
 				 cpt ++ ;
@@ -218,7 +240,7 @@ public class OMDBCSVProductFactory {
 			 }
 		 }
 		 out  += "\";\"";cpt = 0 ;
-		 for(String c : p.Country){
+		 for(String c : p.getCountry()){
 			 if(cpt == 0){
 				 out  += c;
 				 cpt ++ ;
@@ -228,10 +250,10 @@ public class OMDBCSVProductFactory {
 			 }
 		 }
 		 out  += "\";\"";
-		 out  += p.Year + "\";\"";
-		 out  += p.Metascore + "\";\"";
-		 out  += p.Poster + "\";\"";
-		 out  += p.Plot + "\";";
+		 out  += p.getYear() + "\";\"";
+		 out  += p.getMetascore() + "\";\"";
+		 out  += p.getPoster() + "\";\"";
+		 out  += p.getPlot() + "\";";
 		 
 		 return out ;
 	}

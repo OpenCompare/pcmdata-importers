@@ -51,33 +51,33 @@ public class OMDBToProduct {
 			
 		
 			try {
-			pro.Title = obj.getString("Title") ;
-			pro.Year = obj.getString("Year");
-			pro.Rated = obj.getString("Rated");
+			pro.setImdbID(obj.getString("imdbID"));
+			pro.setTitle(obj.getString("Title"));
+			pro.setYear(obj.getString("Year"));
+			pro.setRated(obj.getString("Rated"));
 			
-			pro.Plot = obj.getString("Plot");
-			if(!pro.Plot.equals("N/A")) {
-				pro.Plot = "http://www.imdb.com/title/"+ pro.imdbID + "/plotsummary?ref_=tt_ov_pl";
+			pro.setPlot(obj.getString("Plot"));
+			if(!pro.getPlot().equals("N/A")) {
+				pro.setPlot("http://www.imdb.com/title/"+ pro.getImdbID() + "/plotsummary?ref_=tt_ov_pl");
 			}
-			pro.Released = obj.getString("Released");
-			pro.Runtime = obj.getString("Runtime");
-			pro.Genre = Arrays.asList(obj.getString("Genre").split(", "));
-			pro.Director = obj.getString("Director") ;
-			pro.Writer = obj.getString("Writer") ;
-			pro.Actors = Arrays.asList(obj.getString("Actors").split(", "));
-			pro.Language = Arrays.asList(obj.getString("Language").split(", "));
-			pro.Country = Arrays.asList(obj.getString("Country").split(", "));
-			pro.Poster = obj.getString("Poster");
-			pro.Metascore = obj.getString("Metascore");
-			pro.imdbRating = obj.getString("imdbRating");
-			pro.imdbVotes = obj.getString("imdbVotes").replaceAll(",", "");
-			pro.imdbID = obj.getString("imdbID");
-			pro.Type = obj.getString("Type");
+			pro.setReleased(obj.getString("Released"));
+			pro.setRuntime(obj.getString("Runtime"));
+			pro.setGenreFromString(obj.getString("Genre"));
+			pro.setDirector(obj.getString("Director")) ;
+			pro.setWriter(obj.getString("Writer"));
+			pro.setActorsFromString(obj.getString("Actors"));
+			pro.setLanguageFromString(obj.getString("Language"));
+			pro.setCountryFromString(obj.getString("Country"));
+			pro.setPoster(obj.getString("Poster"));
+			pro.setMetascore(obj.getString("Metascore"));
+			pro.setImdbRating(obj.getString("imdbRating"));
+			pro.setImdbVotes(obj.getString("imdbVotes").replaceAll(",", ""));
+			pro.setType(obj.getString("Type"));
 			
-			pro.totalSeasons = obj.getString("totalSeasons");
-			pro.seriesID = obj.getString("seriesID");
-			pro.Season = obj.getString("Season");
-			pro.Episode = obj.getString("Episode");
+			pro.setTotalSeasons(obj.getString("totalSeasons"));
+			pro.setSeriesID(obj.getString("seriesID"));
+			pro.setSeason(obj.getString("Season"));
+			pro.setEpisode(obj.getString("Episode"));
 		
 			}
 			catch (JSONException e) {
@@ -147,7 +147,7 @@ public class OMDBToProduct {
 			 if (p != null)
 			 {
 				 // seeking if it is a movie, an episode, etc.
-				 String oType = p.Type;
+				 String oType = p.getType();
 				 boolean found = false;
 				 for (OMDBMediaType omType : omTypes) {					
 					 if(oType.equals(omType.toString())) { 
