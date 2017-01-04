@@ -1,18 +1,25 @@
 package data_off;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 
+import org.opencompare.api.java.AbstractFeature;
 import org.opencompare.api.java.PCMContainer;
+import org.opencompare.api.java.Product;
+import org.opencompare.api.java.extractor.CellContentInterpreter;
+import org.opencompare.api.java.impl.PCMFactoryImpl;
 import org.opencompare.api.java.impl.io.KMFJSONExporter;
+import org.opencompare.api.java.io.CSVLoader;
+import org.opencompare.api.java.io.PCMDirection;
 
 
 public class PCMInterpreter {
-	
+
 	public static void CSVToPCM(String filename) throws IOException{
 		_serializeToPCMJSON(mkPCMInterpreted(filename), filename.replace(".csv", ".json"));
 	}
@@ -21,28 +28,26 @@ public class PCMInterpreter {
 		KMFJSONExporter exporter = new KMFJSONExporter();
 		String json = exporter.export(pcmContainer);
 		// Write modified PCM
-		writeToFile("" + jsonFileName, json);
+		writeToFile(jsonFileName, json);
 	}
-	
+
 
 	public static PCMContainer mkPCMInterpreted(String csvFileName) throws IOException {
-	
-		List<PCMContainer> pcms = PCMUtil.loadCSV(csvFileName); // already interpreted with CellContentInterpreter
-		PCMContainer pcmContainer = pcms.get(0);
+
+		CSVLoader csvL = new CSVLoader(
+				new PCMFactoryImpl(),
+				new CellContentInterpreter(new PCMFactoryImpl()), 
+				';', '"',
+				PCMDirection.PRODUCTS_AS_LINES);
+		List<PCMContainer> pcmC = csvL.load(new File(csvFileName));
+		PCMContainer pcmContainer = pcmC.get(0);
+
+//		System.out.println("--- Products ---");
+//		for (AbstractFeature product : pcmContainer.getPcm().getFeatures()) {
+//			System.out.println(product.getName());
+//		}
 		
-/*		not necessary!
-		PCM pcm = pcmContainer.getPcm();
-
-
-		PCMFactory factory = new PCMFactoryImpl();
-		CellContentInterpreter interpreter = new CellContentInterpreter(factory);
-
-		pcm.normalize(factory);
-		interpreter.interpretCells(pcm);
-*//*		System.out.println(PCMUtil.getFeature(
-				pcmContainer.getPcm(), "id")
-				.getName()); // TODO NULL POINTER EXCEPTION
-*/		return pcmContainer;
+		return pcmContainer;
 
 	}
 
