@@ -44,8 +44,7 @@ public class Run {
 //			creator.createListFromCategory(s, false);
 		}
 		
-		creator.printStats();
-		creator.resetStats();
+		OFFStats.printStats();
 		
 		creator.close();
 	}

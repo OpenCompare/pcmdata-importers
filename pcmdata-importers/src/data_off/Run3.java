@@ -1,16 +1,17 @@
 package data_off;
 
-import java.util.Set;
+import java.io.IOException;
 
 public class Run3 {
 
 	public static void main(String[] args) {
-		OFFactsCSVCreator creator = new OFFactsCSVCreator();
-		
-		Set<String> cat = creator.getCategoriesWithBetween(10000, 100000);
-		System.out.println(cat.toString());
-		
-		creator.close();
+
+		String temp = "off_output/en_beers.csv";
+		try {
+			OFFPCMCreator.mkPCMFromCSV(temp);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

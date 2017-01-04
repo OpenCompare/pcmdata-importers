@@ -25,18 +25,22 @@ public class OFFToProduct {
 		GET_IMAGE_URL = getImageUrl;
 	}
 	
+	public static String[] mkOFFProductStrings(OFFProduct product) throws IOException{
+		String[] strArr = new String[7];
+		strArr[0] = product.getId();
+		strArr[1] = product.getProduct_name();
+		strArr[2] = product.getCountriesString();
+		strArr[3] = product.getIngredientsString();
+		strArr[4] = product.getBrandsString();
+		strArr[5] = product.getStoresString();
+		strArr[6] = product.getImage_url();
+		return strArr;
+	}
+	
 	public static List<String[]> mkOFFProductsStrings(List<OFFProduct> products) throws IOException{
 		List<String[]> res = new ArrayList<>();
 		for(OFFProduct p : products){
-			String[] strArr = new String[7];
-			strArr[0] = p.getId();
-			strArr[1] = p.getProduct_name();
-			strArr[2] = p.getCountriesString();
-			strArr[3] = p.getIngredientsString();
-			strArr[4] = p.getBrandsString();
-			strArr[5] = p.getStoresString();
-			strArr[6] = p.getImage_url();
-			res.add(strArr);
+			res.add(mkOFFProductStrings(p));
 		}
 		return res;
 	}
@@ -78,6 +82,7 @@ public class OFFToProduct {
 	
 	
 	private static String getImageUrl(String id) throws IOException, JSONException {
+		OFFStats.TOTAL_PRODUCTS++;
 		URL url = new URL("http://world.openfoodfacts.org/api/v0/product/"+ id +".json");
 		BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream(), StandardCharsets.UTF_8));
 		String input = in.readLine();
@@ -85,11 +90,13 @@ public class OFFToProduct {
 		JSONObject json = new JSONObject(input);
 		if(json.getString("status_verbose").equals("product not found")){
 			System.out.println("Product " + id + " not found");
+			OFFStats.PRODUCTS_NOT_FOUND_THROUGH_API++;
 			return "";
 		}else{
 			try {
 				return json.getJSONObject("product").getString("image_url");
 			} catch (JSONException e) {
+				OFFStats.IMAGES_NOT_FOUND++;
 				System.out.println("No image found for product " + id);
 			}
 		}

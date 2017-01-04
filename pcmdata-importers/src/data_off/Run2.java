@@ -11,12 +11,9 @@ public static void main(String[] arg0) throws IOException, JSONException{
 		
 		OFFactsCSVCreator creator = new OFFactsCSVCreator();
 		
-		creator.createCSVFromCategory("en:beverages", false);
+		creator.createCSVFromCategory("en:beers", true);
 		
-//		creator.printStats();
-		
-//		List<String> list = creator.createListFromCategory("en:dairies", false);
-//		System.out.println(list.size());
+		OFFStats.printStats();
 		
 		creator.close();
 	}
