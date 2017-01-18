@@ -100,17 +100,6 @@ public class OFFactsCSVCreator {
 		return 0;
 	}
 
-	public static void appendStringToCSV(String fileName, String content){
-		String newFileName = "off_output/" + fileName /* + dateFormat.format(date)*/ + ".csv";
-		File file = new File(newFileName);
-
-		try (Writer writer = new BufferedWriter(new FileWriter(file, true))) {
-			writer.append(content);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-
 	@SuppressWarnings("unchecked")
 	public Set<String> getCategoriesWithBetween(int min, int max){
 		FindIterable<Document> test = collection.find();

@@ -21,7 +21,7 @@ import org.opencompare.api.java.io.PCMDirection;
 public class PCMInterpreter {
 
 	public static void CSVToPCM(String filename) throws IOException{
-		_serializeToPCMJSON(mkPCMInterpreted(filename), filename.replace(".csv", ".json"));
+		_serializeToPCMJSON(mkPCMInterpreted(filename),filename.replace("off_output/", "off_output/json/").replace(".csv", ".json"));
 	}
 
 	private static void _serializeToPCMJSON(PCMContainer pcmContainer, String jsonFileName) throws IOException {

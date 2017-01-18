@@ -18,14 +18,14 @@ import org.apache.commons.io.FileUtils;
 public class OFFDumpRetriever {
 	
 	private static OFFDumpRetriever _instance = null;
-	private static final Logger _log = Logger.getLogger(OFFDumpRetriever.class.getName()); 	
+	private final Logger _log = Logger.getLogger(OFFDumpRetriever.class.getName()); 	
 	public static OFFDumpRetriever getInstance(){
 		if(_instance != null)
 			return _instance;
 		return new OFFDumpRetriever();
 	}
 	
-	public void retrieveDump(String filename){
+	private void retrieveDump(String filename){
 		try {
 			URL url = new URL("http://world.openfoodfacts.org/data/openfoodfacts-mongodbdump.tar.gz");
 			FileUtils.copyURLToFile(url, new File(filename));
@@ -47,7 +47,7 @@ public class OFFDumpRetriever {
 	 * @return  The {@link List} of {@link File}s with the untared content.
 	 * @throws ArchiveException 
 	 */
-	private static List<File> unTar(final File inputFile, final File outputDir) throws FileNotFoundException, IOException, ArchiveException {
+	private List<File> unTar(final File inputFile, final File outputDir) throws FileNotFoundException, IOException, ArchiveException {
 
 	    _log.info(String.format("Untaring %s to dir %s.", inputFile.getAbsolutePath(), outputDir.getAbsolutePath()));
 
@@ -91,7 +91,7 @@ public class OFFDumpRetriever {
 	 *  
 	 * @return  The {@File} with the ungzipped content.
 	 */
-	private static File unGzip(final File inputFile, final File outputDir) throws FileNotFoundException, IOException {
+	private File unGzip(final File inputFile, final File outputDir) throws FileNotFoundException, IOException {
 
 	    _log.info(String.format("Ungzipping %s to dir %s.", inputFile.getAbsolutePath(), outputDir.getAbsolutePath()));
 
@@ -109,15 +109,15 @@ public class OFFDumpRetriever {
 	}
 	
 	public static void main(String[] args) throws FileNotFoundException, IOException, ArchiveException {
-		String gzPath = "/home/mael/workspace/dump.tar.gz";
-		String tarPath = "/home/mael/workspace/dump.tar";
+		String gzPath = "data/temp/openfoodfacts-mongodbdump.tar.gz";
+		String tarPath = "data/dump.tar";
 		File gzFile = new File(gzPath);
 		File tarFile = new File(tarPath);
-		File outputDir = new File("/home/mael/workspace");
+		File outputDir = new File("data/");
 		getInstance().retrieveDump(gzPath);
-		unGzip(gzFile, tarFile);
-		unTar(tarFile, outputDir);
-		Files.delete(gzFile.toPath());
-		Files.delete(tarFile.toPath());
+//		getInstance().unGzip(gzFile, tarFile);
+//		getInstance().unTar(tarFile, outputDir);
+//		Files.delete(gzFile.toPath());
+//		Files.delete(tarFile.toPath());
 	}
 }

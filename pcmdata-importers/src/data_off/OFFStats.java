@@ -14,13 +14,17 @@ public class OFFStats {
 	}
 	
 	public static void printStats(){
-		String print = "\n#######\n\nTotal = " + TOTAL_PRODUCTS;
+		String print;
+		if(OFFToProduct.getImageUrl()){
+		print = "\n#######\n\nTotal = " + TOTAL_PRODUCTS;
 		print += "\nNot found Products through API = " + PRODUCTS_NOT_FOUND_THROUGH_API;
 		print += "\nImage not found = " + IMAGES_NOT_FOUND;
 		print += "\nMissing images = " + (IMAGES_NOT_FOUND+PRODUCTS_NOT_FOUND_THROUGH_API);
 		print += "\nNot Found Products/Total Products = " + PRODUCTS_NOT_FOUND_THROUGH_API*100/TOTAL_PRODUCTS + "%";
-		print += "\nMissing Images/Total Products = " + (IMAGES_NOT_FOUND+PRODUCTS_NOT_FOUND_THROUGH_API)*100/TOTAL_PRODUCTS + "%";
-		
+		print += "\nMissing Images/Total Products = " + (IMAGES_NOT_FOUND+PRODUCTS_NOT_FOUND_THROUGH_API)*100/TOTAL_PRODUCTS + "%\n";
+		}else{
+			print = "\n#######\n\nTotal Products = " + TOTAL_PRODUCTS + "\n";
+		}
 		System.out.println(print);
 	}
 }

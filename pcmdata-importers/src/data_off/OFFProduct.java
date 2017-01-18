@@ -6,6 +6,9 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.logging.Logger;
+import java.util.Set;
 
 import org.bson.Document;
 
@@ -22,6 +25,8 @@ import kotlin.MapIterator;
  *
  */
 public class OFFProduct {
+	
+	private final Logger _log = Logger.getLogger(OFFProduct.class.getName());
 
 	private String id;
 	private String product_name;
@@ -29,10 +34,12 @@ public class OFFProduct {
 	private Map<String, String> ingredients;
 	private String[] brands;
 	private String[] stores;
+	private Map<String, Float> nutriments;
 	private String image_url;
 
 	public OFFProduct(){
 		ingredients = new HashMap<>();
+		nutriments = new HashMap<>();
 	}
 
 	public String getId() {
@@ -139,6 +146,51 @@ public class OFFProduct {
 
 	}
 
+	public Map<String, Float> getNutriments() {
+		return nutriments;
+	}
+
+	public String getNutrimentsString() throws IOException{
+		return OFFactsCSVCreator.OBJECT_MAPPER.writeValueAsString(nutriments);
+	}
+
+	public void setNutriments(Map<String, Float> nutriments) {
+		this.nutriments = nutriments;
+	}
+
+	public void setNutrimentsFromObject(Object nutriments){
+		try{
+			Set<Entry<String, Object>> nutrimentsSet = ((Document) nutriments).entrySet();
+			if(nutrimentsSet.size() > 0){
+				Object o;
+				String key, value;
+				for(Entry<String, Object> e : nutrimentsSet){
+					key = e.getKey();
+					o = e.getValue();
+					if(key.endsWith("_value") || key.equals("energy_100g")){
+//						System.out.println(key + " '" + o + "'");
+						if(o.getClass().equals(Integer.class)){
+//							System.out.println("###################");
+							this.nutriments.put(key,((Integer) o).floatValue());
+						}else if(o.getClass().equals(Double.class)){
+							this.nutriments.put(key,((Double) o).floatValue());
+						}else{
+							value = (String) o;
+							try{this.nutriments.put(key, Float.valueOf(value));}catch(java.lang.NumberFormatException excep){
+								excep.printStackTrace();
+							}
+						}
+					}
+				}
+			}else{
+				this.nutriments = null;
+			}
+		}catch(NullPointerException e){
+			_log.warning("Product " + id + " null pointer exception on nutriments");
+		}
+
+	}
+
 	public String getImage_url() {
 		return image_url;
 	}
@@ -153,9 +205,9 @@ public class OFFProduct {
 		try{
 			List<Document> ingredientsList = (List<Document>) ingredients;
 			if(ingredientsList.size() > 0){
-			for(Document o : ingredientsList){
-				this.ingredients.put(o.getString("id"), o.getString("text"));
-			}
+				for(Document o : ingredientsList){
+					this.ingredients.put(o.getString("id"), o.getString("text"));
+				}
 			}else{
 				this.ingredients = null;
 			}

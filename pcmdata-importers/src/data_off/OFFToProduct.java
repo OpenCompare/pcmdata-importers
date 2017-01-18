@@ -26,14 +26,15 @@ public class OFFToProduct {
 	}
 	
 	public static String[] mkOFFProductStrings(OFFProduct product) throws IOException{
-		String[] strArr = new String[7];
+		String[] strArr = new String[8];
 		strArr[0] = product.getId();
 		strArr[1] = product.getProduct_name();
 		strArr[2] = product.getCountriesString();
 		strArr[3] = product.getIngredientsString();
 		strArr[4] = product.getBrandsString();
 		strArr[5] = product.getStoresString();
-		strArr[6] = product.getImage_url();
+		strArr[6] = product.getNutrimentsString();
+		strArr[7] = product.getImage_url();
 		return strArr;
 	}
 	
@@ -74,15 +75,18 @@ public class OFFToProduct {
 		OFFProduct.setIngredientsFromObject(product.get("ingredients"));
 		OFFProduct.setBrandsFromString(product.getString("brands"));
 		OFFProduct.setStoresFromString(product.getString("stores"));
+//		OFFProduct.setNutrimentsFromObject(product.get("nutriments"));
 		OFFProduct.setImage_url((GET_IMAGE_URL?getImageUrl(OFFProduct.getId()):""));
 		
+		OFFStats.TOTAL_PRODUCTS++;
 		return OFFProduct;
 	}
 	
-	
+	public static boolean getImageUrl(){
+		return GET_IMAGE_URL;
+	}
 	
 	private static String getImageUrl(String id) throws IOException, JSONException {
-		OFFStats.TOTAL_PRODUCTS++;
 		URL url = new URL("http://world.openfoodfacts.org/api/v0/product/"+ id +".json");
 		BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream(), StandardCharsets.UTF_8));
 		String input = in.readLine();
