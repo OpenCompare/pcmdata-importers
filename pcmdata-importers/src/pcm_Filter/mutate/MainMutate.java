@@ -68,6 +68,21 @@ public class MainMutate {
 					PCMInfoContainer pcmic = new PCMInfoContainer(pcm);
 
 					
+					/*	filtres version lignes/colonnes
+						// for using multiple filters
+						PCMCompositeFilter pFilter = new PCMCompositeFilter();
+						pFilter.addFilter(new PCMPredicateMinRowProduct());
+						pFilter.addFilter(new PCMPredicateMinColumnProduct());
+					*/
+					
+					/*
+						Boolean isNiceLIGNE = pFilter.isSatisfiable(pcmic);
+
+						if(!isNiceLIGNE){
+							Deleteligne;
+						}
+					
+					*/
 					
 					/*
 					// "ligne par ligne"
@@ -89,6 +104,8 @@ public class MainMutate {
 					
 					*/
 
+					
+					
 					if (writefile) {
 						KMFJSONExporter pcmExporter = new KMFJSONExporter();
 						String pcmString = pcmExporter.export(pcmContainer);
