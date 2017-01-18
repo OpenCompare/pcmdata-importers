@@ -1,4 +1,4 @@
-package pcm_MutateFilter;
+package pcm_Filter.mutate;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,18 +11,24 @@ import java.util.stream.Stream;
 
 import org.opencompare.api.java.PCM;
 import org.opencompare.api.java.PCMContainer;
+import org.opencompare.api.java.Product;
 import org.opencompare.api.java.impl.io.KMFJSONExporter;
 import org.opencompare.api.java.impl.io.KMFJSONLoader;
 
 import org.opencompare.api.java.io.PCMLoader;
 
 import pcm_Filter.PCMInfoContainer;
-import pcm_Filter.pcm_predicate.PCMCompositeFilter;
-import pcm_Filter.pcm_predicate.PCMPredicateMinColumnProduct;
-import pcm_Filter.pcm_predicate.PCMPredicateMinRowProduct;
+import pcm_Filter.simple.pcm_predicate.PCMCompositeFilter;
+import pcm_Filter.simple.pcm_predicate.PCMPredicateMinColumnProduct;
+import pcm_Filter.simple.pcm_predicate.PCMPredicateMinRowProduct;
 
-public class Main {
+public class MainMutate {
 
+	/*
+	 * https://github.com/FAMILIAR-project/productcharts/blob/master/src/main/java/org/opencompare/PCMHelper.java
+	 * https://github.com/OpenCompare/wikipedia-dump-analysis/blob/master/src/main/scala/org/opencompare/analysis/analyzer/ValueAnalyzer.scala
+	 */
+	
 	public static final boolean writefile = false;
 
 	public static final String pcm_path = "";
@@ -58,7 +64,21 @@ public class Main {
 				for (PCMContainer pcmContainer : pcmContainers) {
 					// Get the PCM
 					PCM pcm = pcmContainer.getPcm();
+					
+					PCMInfoContainer pcmic = new PCMInfoContainer(pcm);
 
+					
+					
+					/*
+					// "ligne par ligne"
+					List<Product> pdts = pcm.getProducts();
+					for (Product pr : pdts) {
+						pr.getCells();
+					}
+					
+					// colonne par colonne
+					pcm.getFeatures();
+					*/
 					/*
 					
 						TO DO : Filtre mutant.

@@ -1,4 +1,4 @@
-package pcm_Filter.pcm_predicate;
+package pcm_Filter.simple.pcm_predicate;
 
 import org.opencompare.model.PCM;
 
