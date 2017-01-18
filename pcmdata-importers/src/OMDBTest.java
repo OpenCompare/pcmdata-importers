@@ -24,8 +24,11 @@ import org.opencompare.api.java.impl.io.KMFJSONExporter;
 import org.opencompare.api.java.io.CSVLoader;
 import org.opencompare.api.java.io.PCMDirection;
 
+import data_omdb.ConformanceProduct;
+import data_omdb.ConformanceProductOK;
 import data_omdb.OMDBCSVProductFactory;
 import data_omdb.OMDBMediaType;
+import data_omdb.OMDBProduct;
 import data_omdb.OMDBToProduct;
 
 
@@ -171,7 +174,16 @@ public class OMDBTest {
                 PCMDirection.PRODUCTS_AS_LINES);
 		
 		String h = OMDBCSVProductFactory.getInstance().mkHeaders(OMDBMediaType.MOVIE);
-		String m = new OMDBToProduct().mkCSV(OMDBMediaType.MOVIE);
+		String m = 
+				new OMDBToProduct(new ConformanceProduct() {
+					
+					@Override
+					public boolean isOK(OMDBProduct pro) {
+						return !pro.getPoster().equals("N/A") 
+								&& !pro.getImdbRating().equals("N/A") 
+								&& !pro.getImdbVotes().equals("N/A");
+					}
+				}).mkCSV(OMDBMediaType.MOVIE);
 
 		String csv = h + System.getProperty("line.separator") + m;
 		System.err.println("CSV: " + csv);

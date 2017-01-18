@@ -32,10 +32,20 @@ public class OMDBToProduct {
 	 * Could be parameters of procedures
 	 */
 	public static final int STARTING_OMDB_ID = 944000;
-	public static final int NUMBER_OF_OMDB_PRODUCTS = 200; 
+	public static final int NUMBER_OF_OMDB_PRODUCTS = 500; 
+	
+	private ConformanceProduct conformanceProduct = null;
+	
+	public OMDBToProduct(ConformanceProduct conformanceProduct) {
+		this.conformanceProduct = conformanceProduct;
+	}
+	
+	public OMDBToProduct() {
+		this.conformanceProduct = new ConformanceProductOK(); // always true, no constraints 
+	}
 
 	
-	public static OMDBProduct createProductFromJson(JSONObject obj) throws JSONException  {
+	public OMDBProduct createProductFromJson(JSONObject obj) throws JSONException  {
 		
 		List<String> vide = new ArrayList<String>(); // FIXME very dangerous to reuse the same reference
 		vide.add("");
@@ -83,6 +93,13 @@ public class OMDBToProduct {
 			catch (JSONException e) {
 				_log.warning("JSON exception OMDB " + e.getMessage());
 			}
+			
+			/*
+			if (pro.getPoster() == null) {
+				return null; 
+			}*/
+			if (!conformanceProduct.isOK(pro)) 
+				return null;
 			
 			return pro ;
 			
@@ -144,6 +161,8 @@ public class OMDBToProduct {
 		for(int i = STARTING_OMDB_ID ; i < (STARTING_OMDB_ID + NUMBER_OF_OMDB_PRODUCTS); i++)	{
 					
 			 OMDBProduct p  = createProductFromJson(idToJson(i)) ;
+			 			 
+			 
 			 if (p != null)
 			 {
 				 // seeking if it is a movie, an episode, etc.
