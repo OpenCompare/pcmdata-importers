@@ -17,27 +17,36 @@ import com.mongodb.client.MongoCursor;
 import scala.Array;
 
 public class OFFToProduct {
-	
+
 	private static boolean GET_IMAGE_URL = false;
-	
-	
+
+
 	public static void setGetImageUrl(boolean getImageUrl){
 		GET_IMAGE_URL = getImageUrl;
 	}
-	
+
 	public static String[] mkOFFProductStrings(OFFProduct product) throws IOException{
-		String[] strArr = new String[8];
+		String[] strArr = new String[17];
 		strArr[0] = product.getId();
 		strArr[1] = product.getProduct_name();
 		strArr[2] = product.getCountriesString();
 		strArr[3] = product.getIngredientsString();
 		strArr[4] = product.getBrandsString();
 		strArr[5] = product.getStoresString();
-		strArr[6] = product.getNutrimentsString();
-		strArr[7] = product.getImage_url();
+		strArr[6] = product.getEnergy_100g();
+		strArr[7] = product.getSugars();
+		strArr[8] = product.getFat();
+		strArr[9] = product.getFiber();
+		strArr[10] = product.getSodium();
+		strArr[11] = product.getProteins();
+		strArr[12] = product.getCarbohydrates();
+		strArr[13] = product.getSalt();
+		strArr[14] = product.getSaturated_fat();
+		strArr[15] = product.getNutrimentsString();
+		strArr[16] = product.getImage_url();
 		return strArr;
 	}
-	
+
 	public static List<String[]> mkOFFProductsStrings(List<OFFProduct> products) throws IOException{
 		List<String[]> res = new ArrayList<>();
 		for(OFFProduct p : products){
@@ -45,7 +54,7 @@ public class OFFToProduct {
 		}
 		return res;
 	}
-	
+
 	public static List<OFFProduct> mkOFFProductsFromMongoCursor(MongoCursor<Document> cursor) throws IOException, JSONException{
 		List<OFFProduct> list = new ArrayList<>();
 		Document product;
@@ -68,24 +77,34 @@ public class OFFToProduct {
 	@SuppressWarnings("unchecked")
 	public static OFFProduct mkOFFProductFromBSON(Document product) throws IOException, JSONException{
 		OFFProduct OFFProduct = new OFFProduct();
-
+		Document nutriments = (Document) product.get("nutriments");
+		//TODO initialiser les valeurs a 0 pour eviter les trous
 		OFFProduct.setId(product.getString("id"));
 		OFFProduct.setProduct_name(product.getString("product_name"));
 		OFFProduct.setCountriesFromString(product.getString("countries"));
 		OFFProduct.setIngredientsFromObject(product.get("ingredients"));
 		OFFProduct.setBrandsFromString(product.getString("brands"));
 		OFFProduct.setStoresFromString(product.getString("stores"));
-		OFFProduct.setNutrimentsFromObject(product.get("nutriments"));
+		OFFProduct.setEnergy_100g(nutriments.get("energy_100g"), nutriments.getString("energy_unit"));
+		OFFProduct.setFat(nutriments.get("fat_value"));
+		OFFProduct.setSugars(nutriments.get("sugars_value"));
+		OFFProduct.setFiber(nutriments.get("fibre_value"));
+		OFFProduct.setSodium(nutriments.get("sodium_value"));
+		OFFProduct.setProteins(nutriments.get("proteins_value"));
+		OFFProduct.setCarbohydrates(nutriments.get("carbohydrates_value"));
+		OFFProduct.setSalt(nutriments.get("salt_value"));
+		OFFProduct.setSaturated_fat(nutriments.get("saturated-fat_value"));
+		OFFProduct.setNutrimentsFromObject(nutriments);
 		OFFProduct.setImage_url((GET_IMAGE_URL?getImageUrl(OFFProduct.getId()):""));
-		
+
 		OFFStats.TOTAL_PRODUCTS++;
 		return OFFProduct;
 	}
-	
+
 	public static boolean getImageUrl(){
 		return GET_IMAGE_URL;
 	}
-	
+
 	private static String getImageUrl(String id) throws IOException, JSONException {
 		URL url = new URL("http://world.openfoodfacts.org/api/v0/product/"+ id +".json");
 		BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream(), StandardCharsets.UTF_8));

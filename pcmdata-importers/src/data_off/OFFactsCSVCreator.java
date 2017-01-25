@@ -83,7 +83,10 @@ public class OFFactsCSVCreator {
 		try (Writer writer = new BufferedWriter(new FileWriter(file))) {
 			
 			CSVWriter csvwriter = new CSVWriter(writer, ';', '\"');
-			String[] header  = {"id","product_name","countries","ingredients","brands","stores", "nutriments", "image_url"};
+			String[] header  = {"id", "product_name", "countries", "ingredients", "brands", "stores",
+								"energy_100g (kcal)","sugars (g)", "fat (g)", "fiber (g)", "sodium (g)",
+								"proteins (g)", "carbohydrates (g)", "salt (g)", "saturated-fat (g)",
+								"nutriments", "image_url"};
 			csvwriter.writeNext(header);//writing the header
 			Document product;
 			int count = 0;
