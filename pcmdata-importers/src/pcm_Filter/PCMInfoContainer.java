@@ -23,8 +23,15 @@ public class PCMInfoContainer {
 	public PCMInfoContainer(PCM pcm) {
 		this.pcm = pcm;
 		this.print();
-		// computeRows();
-		// computeColumns();
+	}
+	
+	public PCMInfoContainer(PCM pcm,Boolean compute) {
+		this.pcm = pcm;
+		this.print();
+		if(compute){
+			computeRows();
+			computeColumns();
+		}
 	}
 
 	public void print() {

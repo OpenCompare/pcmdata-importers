@@ -75,7 +75,7 @@ public class OFFToProduct {
 		OFFProduct.setIngredientsFromObject(product.get("ingredients"));
 		OFFProduct.setBrandsFromString(product.getString("brands"));
 		OFFProduct.setStoresFromString(product.getString("stores"));
-//		OFFProduct.setNutrimentsFromObject(product.get("nutriments"));
+		OFFProduct.setNutrimentsFromObject(product.get("nutriments"));
 		OFFProduct.setImage_url((GET_IMAGE_URL?getImageUrl(OFFProduct.getId()):""));
 		
 		OFFStats.TOTAL_PRODUCTS++;

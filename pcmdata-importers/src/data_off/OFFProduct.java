@@ -25,21 +25,24 @@ import kotlin.MapIterator;
  *
  */
 public class OFFProduct {
-	
+
 	private final Logger _log = Logger.getLogger(OFFProduct.class.getName());
 
 	private String id;
 	private String product_name;
-	private String[] countries;
-	private Map<String, String> ingredients;
-	private String[] brands;
-	private String[] stores;
-	private Map<String, Float> nutriments;
+	private List<String> countries;
+	private List<String> ingredients;
+	private List<String> brands;
+	private List<String> stores;
+	private List<String> nutriments;
 	private String image_url;
 
 	public OFFProduct(){
-		ingredients = new HashMap<>();
-		nutriments = new HashMap<>();
+		this.countries = new ArrayList<>();
+		this.ingredients = new ArrayList<>();
+		this.brands = new ArrayList<>();
+		this.stores = new ArrayList<>();
+		this.nutriments = new ArrayList<>();
 	}
 
 	public String getId() {
@@ -58,132 +61,115 @@ public class OFFProduct {
 		this.product_name = product_name;
 	}
 
-	public String[] getCountries() {
+	public List<String> getCountries() {
 		return countries;
 	}
 
 	public String getCountriesString() throws IOException {
-		return OFFactsCSVCreator.OBJECT_MAPPER.writeValueAsString(countries);
+		return listToString(countries);
+//		return OFFactsCSVCreator.OBJECT_MAPPER.writeValueAsString(countries);
 	}
 
-	public void setCountries(String[] countries) {
+	public void setCountries(List<String> countries) {
 		this.countries = countries;
 	}
 
 	public void setCountriesFromString(String countries) {
 		try{
-			if(countries.isEmpty()){
-				this.countries = null;
-			}else{
-				this.countries = countries.split(",");
+			if(!countries.isEmpty()){
+				this.countries = Arrays.asList(countries.split(","));
 			}
 		}
 		catch(NullPointerException e){
-			this.stores = null;
+			e.printStackTrace();
 		}
 	}
 
-	public Map<String, String> getIngredients() {
+	public List<String> getIngredients() {
 		return ingredients;
 	}
 
 	public String getIngredientsString() throws IOException{
-		return OFFactsCSVCreator.OBJECT_MAPPER.writeValueAsString(ingredients);
+		return listToString(ingredients);
+//		return OFFactsCSVCreator.OBJECT_MAPPER.writeValueAsString(str);
 	}
 
-	public void setIngredients(Map<String, String> ingredients) {
+	public void setIngredients(List<String> ingredients) {
 		this.ingredients = ingredients;
 	}
 
-	public String[] getBrands() {
+	public List<String> getBrands() {
 		return brands;
 	}
 
 	public String getBrandsString() throws IOException {
-		return OFFactsCSVCreator.OBJECT_MAPPER.writeValueAsString(brands);
+		return listToString(brands);
+//		return OFFactsCSVCreator.OBJECT_MAPPER.writeValueAsString(str);
 	}
 
-	public void setBrands(String[] brands) {
+	public void setBrands(List<String> brands) {
 		this.brands = brands;
 	}
 
 	public void setBrandsFromString(String brands) {
 		try{
-			if(brands.isEmpty()){
-				this.brands = null;
-			}else{
-				this.brands = brands.split(",");
+			if(!brands.isEmpty()){
+				this.brands = Arrays.asList(brands.split(","));
 			}
 		}
 		catch(NullPointerException e){
-			this.brands = null;
+			e.printStackTrace();
 		}
 	}
 
-	public String[] getStores() {
+	public List<String> getStores() {
 		return stores;
 	}
 
 	public String getStoresString() throws IOException {
-		return OFFactsCSVCreator.OBJECT_MAPPER.writeValueAsString(stores);
+		return listToString(stores);
+//		return OFFactsCSVCreator.OBJECT_MAPPER.writeValueAsString(str);
 	}
 
-	public void setStores(String[] stores) {
+	public void setStores(List<String> stores) {
 		this.stores = stores;
 	}
 
 	public void setStoresFromString(String stores) {
 		try{
-			if(stores.isEmpty()){
-				this.stores = null;
-			}else{
-				this.stores = stores.split(",");
+			if(!stores.isEmpty()){
+				this.stores = Arrays.asList(stores.split(","));
 			}
 		}
 		catch(NullPointerException e){
-			this.stores = null;
+			e.printStackTrace();;
 		}
 
 	}
 
-	public Map<String, Float> getNutriments() {
+	public List<String> getNutriments() {
 		return nutriments;
 	}
 
 	public String getNutrimentsString() throws IOException{
-		return OFFactsCSVCreator.OBJECT_MAPPER.writeValueAsString(nutriments);
+		return listToString(nutriments);
+//		return OFFactsCSVCreator.OBJECT_MAPPER.writeValueAsString(nutriments);
 	}
 
-	public void setNutriments(Map<String, Float> nutriments) {
+	public void setNutriments(List<String> nutriments) {
 		this.nutriments = nutriments;
 	}
 
 	public void setNutrimentsFromObject(Object nutriments){
 		try{
 			Set<Entry<String, Object>> nutrimentsSet = ((Document) nutriments).entrySet();
-			if(nutrimentsSet.size() > 0){
-				Object o;
-				String key, value;
-				for(Entry<String, Object> e : nutrimentsSet){
-					key = e.getKey();
-					o = e.getValue();
-					if(key.endsWith("_value") || key.equals("energy_100g")){
-//						System.out.println(key + " '" + o + "'");
-						if(o.getClass().equals(Integer.class)){
-//							System.out.println("###################");
-							this.nutriments.put(key,((Integer) o).floatValue());
-						}else if(o.getClass().equals(Double.class)){
-							this.nutriments.put(key,((Double) o).floatValue());
-						}else{
-							value = (String) o;
-							try{this.nutriments.put(key, Float.valueOf(value));}catch(java.lang.NumberFormatException excep){
-								excep.printStackTrace();
-							}
-						}
-					}
+			String key, value;
+			for(Entry<String, Object> e : nutrimentsSet){
+				key = e.getKey();
+				value = e.getValue().toString();
+				if(key.endsWith("_value") || key.equals("energy_100g")){
+					this.nutriments.add(key + " " + value);
 				}
-			}else{
-				this.nutriments = null;
 			}
 		}catch(NullPointerException e){
 			_log.warning("Product " + id + " null pointer exception on nutriments");
@@ -204,17 +190,19 @@ public class OFFProduct {
 	public void setIngredientsFromObject(Object ingredients) {
 		try{
 			List<Document> ingredientsList = (List<Document>) ingredients;
-			if(ingredientsList.size() > 0){
-				for(Document o : ingredientsList){
-					this.ingredients.put(o.getString("id"), o.getString("text"));
-				}
-			}else{
-				this.ingredients = null;
+			for(Document o : ingredientsList){
+				this.ingredients.add(o.getString("text"));
 			}
-
 		}catch(NullPointerException e){
-			System.err.println("Product " + id + " null pointer exception on ingredientsList");
+			_log.warning("Product " + id + " null pointer exception on ingredientsList");
 		}
 	}
 
+	private String listToString(List<String> list){
+		String str = "";
+		for (String e : list) {
+			str += e + ", ";
+		}
+		return (str.isEmpty())?str:str.substring(0, str.length()-2);
+	}
 }
