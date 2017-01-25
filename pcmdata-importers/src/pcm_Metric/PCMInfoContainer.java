@@ -19,6 +19,9 @@ public class PCMInfoContainer {
 
 	private int rows;
 	private int columns;
+	private int cells;
+	private int emptyCells;
+	private int uncompleteProducts;
 
 	public PCMInfoContainer(PCM pcm) {
 		this.pcm = pcm;
