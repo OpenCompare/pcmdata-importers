@@ -20,7 +20,7 @@ import com.opencsv.CSVWriter;
 
 public class PCMInfoTest {
 
-	public static final String inputpath = "metrics";
+	public static final String inputpath = "../../input-model";
 
 	// @Test
 	public static void main(String[] args) throws IOException {
@@ -37,7 +37,7 @@ public class PCMInfoTest {
 
 		try (Writer writer = new BufferedWriter(new FileWriter(outputcsv))) {
 			CSVWriter csvwriter = new CSVWriter(writer, ';', '\"');
-			String[] header = { "Name", "cells" };
+			String[] header = { "Name", "Feature ", "Products ", "Cells", "Empty Cells", "Ratio EmCell" };
 			csvwriter.writeNext(header);// writing the header
 
 			paths.forEach(filePath -> {
@@ -60,12 +60,9 @@ public class PCMInfoTest {
 
 						PCMInfoContainer pcmic = new PCMInfoContainer(pcm);
 
-						// create csv file
-
-						String[] str = { filePath.toString(), pcmic.nbCells().toString() };
-						System.out.println(str[0]);
-						System.out.println(str[1]);
-
+						String[] str = { filePath.getFileName().toString(), pcmic.nbFeatures().toString(),
+								pcmic.nbRows().toString(), pcmic.nbCells().toString(), pcmic.nbEmptyCells().toString(),
+								pcmic.ratioEmptyCells().toString() };
 						csvwriter.writeNext(str);
 
 					}
@@ -80,20 +77,6 @@ public class PCMInfoTest {
 		}
 
 		paths.close();
-
-		assert (true);
-
-		/*
-		 * for // {
-		 * 
-		 * PCM pcm = null;
-		 * 
-		 * PCMInfoContainer pcmInfo = new PCMInfoContainer(pcm);
-		 * 
-		 * pcmInfo.nbCells(); pcmInfo.nbEmptyCells(); // ...
-		 * 
-		 * // create CSV file
-		 */
 
 	}
 }

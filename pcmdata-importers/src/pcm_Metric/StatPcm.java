@@ -11,7 +11,7 @@ public class StatPcm {
 	private int nbFeatures;
 	private int nbCells;
 	private int nbEmptyCells;
-	private int ratioEmptyCells;
+	private double ratioEmptyCells;
 	
 	
 
@@ -47,11 +47,11 @@ public class StatPcm {
 		this.nbEmptyCells = nbEmptyCells;
 	}
 	
-	public int getRatioEmptyCells() {
+	public double getRatioEmptyCells() {
 		return ratioEmptyCells;
 	}
 	
-	public void setRatioEmptyCells(int ratioEmptyCells) {
+	public void setRatioEmptyCells(Double ratioEmptyCells) {
 		this.ratioEmptyCells = ratioEmptyCells;
 	}
 	

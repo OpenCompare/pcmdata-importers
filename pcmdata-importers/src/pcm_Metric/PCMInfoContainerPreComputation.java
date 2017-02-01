@@ -44,8 +44,8 @@ public class PCMInfoContainerPreComputation implements IPCMInfoContainer {
 	}
 
 	@Override
-	public Integer ratioEmptyCells() {
-		return _statPcm.getRatioEmptyCells();
+	public Double ratioEmptyCells() {
+		return (double) _statPcm.getRatioEmptyCells();
 	}
 	
 	

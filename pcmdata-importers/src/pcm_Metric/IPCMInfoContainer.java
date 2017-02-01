@@ -7,7 +7,7 @@ public interface IPCMInfoContainer {
 	public Integer nbFeatures();
 	public Integer nbCells();
 	public Integer nbEmptyCells();
-	public Integer ratioEmptyCells() ;
+	public Double ratioEmptyCells() ;
 
 	
 	// TODO 
