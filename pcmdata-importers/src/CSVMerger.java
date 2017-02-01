@@ -1,8 +1,13 @@
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileFilter;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
@@ -13,8 +18,10 @@ import org.opencompare.api.java.Feature;
 import org.opencompare.api.java.PCM;
 import org.opencompare.api.java.PCMContainer;
 import org.opencompare.api.java.PCMFactory;
+import org.opencompare.api.java.PCMMetadata;
 import org.opencompare.api.java.Product;
 import org.opencompare.api.java.impl.PCMFactoryImpl;
+import org.opencompare.api.java.impl.io.KMFJSONExporter;
 import org.opencompare.api.java.io.CSVExporter;
 
 public class CSVMerger {
@@ -37,6 +44,8 @@ public class CSVMerger {
 		PCMContainer newPcmContainer = new PCMContainer();
 		PCM newPcm = pcmFactory.createPCM();
 		newPcmContainer.setPcm(newPcm);
+		PCMMetadata metaData = new PCMMetadata(newPcm);
+		newPcmContainer.setMetadata(metaData);
 		
 		
 		Feature primaryFt = pcmFactory.createFeature();
@@ -97,6 +106,7 @@ public class CSVMerger {
 			
 			_log.info("fts= " + fts);
 			int i = 0;
+			int position = 0;
 			for (Feature ft : fts) {
 									
 //				if (ft == pcm.getProductsKey())
@@ -178,6 +188,8 @@ public class CSVMerger {
 			        Product newProduct = 
 							newPcm.getOrCreateProduct(p.getKeyContent(), pcmFactory);
 			        
+			        metaData.setProductPosition(newProduct, position++);
+			        
 			        if (!found) {
 			        		Cell cellProduct = pcmFactory.createCell();
 			             cellProduct.setContent(p.getKeyCell().getContent());
@@ -208,8 +220,25 @@ public class CSVMerger {
 		
 		newPcm.setName("merged");
 		
-		_log.info("csv: " + new CSVExporter().export(newPcmContainer));
 		
+		
+		
+		
+		// _log.info("csv: " + new CSVExporter().export(newPcmContainer));
+		
+		KMFJSONExporter exporter = new KMFJSONExporter();
+		String json = exporter.export(newPcmContainer);
+		String jsonFileName = "output/" + "mergedPL.pcm";
+		// Write modified PCM
+		writeToFile("" + jsonFileName, json);
+		
+	}
+	
+	private void writeToFile(String path, String content) throws IOException {
+		BufferedWriter writer = new BufferedWriter(
+				new OutputStreamWriter(new FileOutputStream(path), StandardCharsets.UTF_8));
+		writer.write(content);
+		writer.close();
 	}
 
 	private int computeNbCells(PCM newPcm) {
