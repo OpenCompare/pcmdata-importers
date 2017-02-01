@@ -91,7 +91,8 @@ public class OFFactsCSVCreator {
 			csvwriter.writeNext(header);//writing the header
 			Document product;
 			int count = 0;
-			while(cursor.hasNext()){
+			int maxProducts = 100;
+			while(cursor.hasNext() && count < maxProducts){
 				product = cursor.next();
 				csvwriter.writeNext(OFFToProduct.mkOFFProductStrings(OFFToProduct.mkOFFProductFromBSON(product), nutriments));
 				count++;
