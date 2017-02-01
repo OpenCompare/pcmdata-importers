@@ -20,9 +20,11 @@ public class PCMInfoContainer {
 	private int rows;
 	private int columns;
 	private int cells;
+	private int ratio_emptycells_cells ;
 	private int emptyCells;
 	private int uncompleteProducts;
-
+	private boolean same_val ; 
+	
 	public PCMInfoContainer(PCM pcm) {
 		this.pcm = pcm;
 		this.print();
@@ -47,6 +49,14 @@ public class PCMInfoContainer {
 				}
 			}
 		}
+	}
+	
+	public void computecells() {
+		cells = 0 ;
+		for (Product product : pcm.getProducts()){
+			
+		}
+			
 	}
 
 	public void computeRows() {
