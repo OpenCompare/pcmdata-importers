@@ -16,7 +16,10 @@ public class PCMInfoContainerPreComputation implements IPCMInfoContainer {
 		PCMInfoContainer infoPcm = new PCMInfoContainer(_pcm);
 		_statPcm = new StatPcm();		
 		_statPcm.setNbRows(infoPcm.nbRows());
-		_statPcm.setNbFeatures(infoPcm.nbRows());
+		_statPcm.setNbFeatures(infoPcm.nbFeatures());
+		_statPcm.setNbCells(infoPcm.nbCells());
+		_statPcm.setNbEmptyCells(infoPcm.nbEmptyCells());
+		_statPcm.setRatioEmptyCells(infoPcm.ratioEmptyCells());
 	}
 	
 	@Override
@@ -31,14 +34,17 @@ public class PCMInfoContainerPreComputation implements IPCMInfoContainer {
 
 	@Override
 	public int nbCells() {
-		// TODO Auto-generated method stub
-		return 0;
+		return _statPcm.getNbCells();
 	}
 
 	@Override
 	public int nbEmptyCells() {
-		// TODO Auto-generated method stub
-		return 0;
+		return _statPcm.getNbEmptyCells();
+	}
+
+	@Override
+	public int ratioEmptyCells() {
+		return _statPcm.getRatioEmptyCells();
 	}
 	
 	

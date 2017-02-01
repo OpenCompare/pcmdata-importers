@@ -6,10 +6,10 @@ public interface IPCMInfoContainer {
 	public int nbFeatures();
 	public int nbCells();
 	public int nbEmptyCells();
+	public int ratioEmptyCells() ;
 	
 	// TODO 
 	
-	// public int ratioEmptyCells() ;
 	// public int nbUcompleteProducts;
 	// private boolean same_val ; 
 
