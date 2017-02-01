@@ -71,4 +71,9 @@ public class PCMInfoContainer implements IPCMInfoContainer {
 		}
 		return nbEmptyCell;
 	}
+
+	@Override
+	public Integer ratioEmptyCells() {
+		return nbEmptyCells()/nbCells()*100;
+	}
 }
