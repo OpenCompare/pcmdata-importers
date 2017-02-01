@@ -3,44 +3,28 @@ package pcm_Metric;
 import java.util.List;
 import java.util.logging.Logger;
 
-import org.opencompare.api.java.AbstractFeature;
 import org.opencompare.api.java.Cell;
 import org.opencompare.api.java.PCM;
 import org.opencompare.api.java.Product;
 import org.opencompare.api.java.Value;
+import org.opencompare.api.java.value.NotAvailable;
 import org.opencompare.model.BooleanValue;
 
 
-public class PCMInfoContainer {
+public class PCMInfoContainer implements IPCMInfoContainer {
 
 	private static final Logger _log = Logger.getLogger(PCMInfoContainer.class.getName());
 	
-	private PCM pcm;
+	private PCM _pcm;
 
-	private int rows;
-	private int columns;
-	private int cells;
-	private int ratio_emptycells_cells ;
-	private int emptyCells;
-	private int uncompleteProducts;
-	private boolean same_val ; 
 	
 	public PCMInfoContainer(PCM pcm) {
-		this.pcm = pcm;
-		this.print();
-	}
+		_pcm = pcm;
+	}	
 	
-	public PCMInfoContainer(PCM pcm,Boolean compute) {
-		this.pcm = pcm;
-		this.print();
-		if(compute){
-			computeRows();
-			computeColumns();
-		}
-	}
-
+	/* 
 	public void print() {
-		for (Product product : pcm.getProducts()) {
+		for (Product product : _pcm.getProducts()) {
 			List<Cell> cells = product.getCells();
 			for (Cell cell : cells) {
 				Value v = cell.getInterpretation();
@@ -50,38 +34,41 @@ public class PCMInfoContainer {
 			}
 		}
 	}
+	*/
 	
-	public void computecells() {
-		cells = 0 ;
-		for (Product product : pcm.getProducts()){
-			
+	@Override
+	public int nbRows() {		
+		return _pcm.getProducts().size();
+	}
+
+	@Override
+	public int nbFeatures() {
+		return _pcm.getConcreteFeatures().size();
+	}
+
+	@Override
+	public int nbCells() {
+		int nbCell = 0;
+		List<Product> pdts = _pcm.getProducts();
+		for (Product pdt : pdts) {
+			nbCell += pdt.getCells().size();
 		}
-			
+		return nbCell;
 	}
 
-	public void computeRows() {
-		rows = 0;
-		for (Product product : pcm.getProducts()) {
-			rows++;
-			// System.out.println(product.getKeyContent());
+	@Override
+	public int nbEmptyCells() {
+		int nbEmptyCell = 0;
+		List<Product> pdts = _pcm.getProducts();
+		for (Product pdt : pdts) {
+			List<Cell> cells = pdt.getCells();
+			for (Cell cell : cells) {
+				if (cell.getContent().isEmpty())
+					nbEmptyCell++;
+				//if (cell.getInterpretation() instanceof NotAvailable)
+				//	nbEmptyCell++;
+			}
 		}
-		// System.out.println(rows);
-	}
-
-	public void computeColumns() {
-		columns = 0;
-		for (AbstractFeature feature : pcm.getFeatures()) {
-			columns++;
-			// System.out.println(feature.getName());
-		}
-		// System.out.println(columns);
-	}
-
-	public int getRows() {
-		return rows;
-	}
-
-	public int getColumns() {
-		return columns;
+		return nbEmptyCell;
 	}
 }
