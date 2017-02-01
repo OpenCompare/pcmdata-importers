@@ -37,17 +37,17 @@ public class PCMInfoContainer implements IPCMInfoContainer {
 	*/
 	
 	@Override
-	public int nbRows() {		
+	public Integer nbRows() {		
 		return _pcm.getProducts().size();
 	}
 
 	@Override
-	public int nbFeatures() {
+	public Integer nbFeatures() {
 		return _pcm.getConcreteFeatures().size();
 	}
 
 	@Override
-	public int nbCells() {
+	public Integer nbCells() {
 		int nbCell = 0;
 		List<Product> pdts = _pcm.getProducts();
 		for (Product pdt : pdts) {
@@ -57,7 +57,7 @@ public class PCMInfoContainer implements IPCMInfoContainer {
 	}
 
 	@Override
-	public int nbEmptyCells() {
+	public Integer nbEmptyCells() {
 		int nbEmptyCell = 0;
 		List<Product> pdts = _pcm.getProducts();
 		for (Product pdt : pdts) {

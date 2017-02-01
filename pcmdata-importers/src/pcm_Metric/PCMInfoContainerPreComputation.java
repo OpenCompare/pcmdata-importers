@@ -20,23 +20,23 @@ public class PCMInfoContainerPreComputation implements IPCMInfoContainer {
 	}
 	
 	@Override
-	public int nbRows() {
+	public Integer nbRows() {
 		return _statPcm.getNbRows();
 	}
 
 	@Override
-	public int nbFeatures() {
+	public Integer nbFeatures() {
 		return _statPcm.getNbFeatures();
 	}
 
 	@Override
-	public int nbCells() {
+	public Integer nbCells() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public int nbEmptyCells() {
+	public Integer nbEmptyCells() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
