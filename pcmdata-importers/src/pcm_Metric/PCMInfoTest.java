@@ -37,7 +37,8 @@ public class PCMInfoTest {
 
 		try (Writer writer = new BufferedWriter(new FileWriter(outputcsv))) {
 			CSVWriter csvwriter = new CSVWriter(writer, ';', '\"');
-			String[] header = { "Name", "Feature ", "Products ", "Cells", "Empty Cells", "Ratio EmCell" };
+			String[] header = { "Name", "Feature ", "Products ", "Cells", "Empty Cells", "Ratio EmCell",
+					"Nombre de Features Homogenes", "Ratio de Features Homogenes" };
 			csvwriter.writeNext(header);// writing the header
 
 			paths.forEach(filePath -> {
@@ -62,7 +63,7 @@ public class PCMInfoTest {
 
 						String[] str = { filePath.getFileName().toString(), pcmic.nbFeatures().toString(),
 								pcmic.nbRows().toString(), pcmic.nbCells().toString(), pcmic.nbEmptyCells().toString(),
-								pcmic.ratioEmptyCells().toString() };
+								pcmic.ratioEmptyCells().toString(), pcmic.nbFeaturesHomog().toString(),pcmic.ratioFeatureHomog().toString()};
 						csvwriter.writeNext(str);
 
 					}

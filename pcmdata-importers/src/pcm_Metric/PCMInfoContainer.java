@@ -80,4 +80,14 @@ public class PCMInfoContainer implements IPCMInfoContainer {
 		}
 		return (double)(nbEmptyCells()*100)/nbCells();
 	}
+
+	public Integer nbFeaturesHomog() {
+		return null;
+	}
+	
+	public Double ratioFeatureHomog() {
+		return null;
+	}
+
+
 }
