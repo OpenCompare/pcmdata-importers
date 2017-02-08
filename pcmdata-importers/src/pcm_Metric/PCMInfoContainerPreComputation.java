@@ -1,27 +1,29 @@
 package pcm_Metric;
 
+import java.text.DecimalFormat;
+
 import org.opencompare.api.java.PCM;
 
 public class PCMInfoContainerPreComputation implements IPCMInfoContainer {
-	
-	private StatPcm _statPcm ; 
+
+	private StatPcm _statPcm;
 	private PCM _pcm;
-	
+
 	public PCMInfoContainerPreComputation(PCM pcm) {
-		_pcm = pcm; 
+		_pcm = pcm;
 		preCompute();
 	}
-	
+
 	private void preCompute() {
 		PCMInfoContainer infoPcm = new PCMInfoContainer(_pcm);
-		_statPcm = new StatPcm();		
+		_statPcm = new StatPcm();
 		_statPcm.setNbRows(infoPcm.nbRows());
 		_statPcm.setNbFeatures(infoPcm.nbFeatures());
 		_statPcm.setNbCells(infoPcm.nbCells());
 		_statPcm.setNbEmptyCells(infoPcm.nbEmptyCells());
 		_statPcm.setRatioEmptyCells(infoPcm.ratioEmptyCells());
 	}
-	
+
 	@Override
 	public Integer nbRows() {
 		return _statPcm.getNbRows();
@@ -50,17 +52,24 @@ public class PCMInfoContainerPreComputation implements IPCMInfoContainer {
 
 	public Integer nbFeaturesHomog() {
 		// TODO Auto-generated method stub
-		return null;
+		return 0;
 	}
-	
+
 	public Double ratioFeatureHomog() {
 		// TODO Auto-generated method stub
-		return null;
+		return 0.0;
 	}
-	
-	public Integer testScore() {
-		// TODO Auto-generated method stub
-		return null;
+
+	public Double testScore() {
+		Double score = 0.0;
+		score += (_statPcm.scoreCell());
+		score += (_statPcm.scoreEmptyCells());
+		//score += (_statPcm.getNbFeatures() * 0.1);
+		System.out.println(score);
+		score = Math.round(score * 100.0) / 100.0;
+
+
+		return score;
 	}
 
 }

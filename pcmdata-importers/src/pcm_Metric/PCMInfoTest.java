@@ -20,8 +20,10 @@ import com.opencsv.CSVWriter;
 
 public class PCMInfoTest {
 
-	public static final String inputpath = "../../input-model";
-
+	public static final String inputpath = "input-pcm";
+	
+	//"../../input-model"
+	//"input-pcm"
 	// @Test
 	public static void main(String[] args) throws IOException {
 
