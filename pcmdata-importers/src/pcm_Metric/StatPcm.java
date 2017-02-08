@@ -12,7 +12,9 @@ public class StatPcm {
 	private int nbCells;
 	private int nbEmptyCells;
 	private double ratioEmptyCells;
-	
+	private int nbFeaturesHomog;
+	private double ratioFeaturesHomog;
+	private int score;
 	
 
 	public int getNbRows() {

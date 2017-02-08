@@ -47,8 +47,20 @@ public class PCMInfoContainerPreComputation implements IPCMInfoContainer {
 	public Double ratioEmptyCells() {
 		return (double) _statPcm.getRatioEmptyCells();
 	}
+
+	public Integer nbFeaturesHomog() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
+	public Double ratioFeatureHomog() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
-	
+	public Integer testScore() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

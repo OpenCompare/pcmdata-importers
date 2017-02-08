@@ -38,7 +38,7 @@ public class PCMInfoTest {
 		try (Writer writer = new BufferedWriter(new FileWriter(outputcsv))) {
 			CSVWriter csvwriter = new CSVWriter(writer, ';', '\"');
 			String[] header = { "Name", "Feature ", "Products ", "Cells", "Empty Cells", "Ratio EmCell",
-					"Nombre de Features Homogenes", "Ratio de Features Homogenes" };
+					"Nombre de Features Homogenes", "Ratio de Features Homogenes", "Testing Score" };
 			csvwriter.writeNext(header);// writing the header
 
 			paths.forEach(filePath -> {
@@ -59,11 +59,12 @@ public class PCMInfoTest {
 						// Get the PCM
 						PCM pcm = pcmContainer.getPcm();
 
-						PCMInfoContainer pcmic = new PCMInfoContainer(pcm);
+						PCMInfoContainerPreComputation pcmic = new PCMInfoContainerPreComputation(pcm);
 
 						String[] str = { filePath.getFileName().toString(), pcmic.nbFeatures().toString(),
 								pcmic.nbRows().toString(), pcmic.nbCells().toString(), pcmic.nbEmptyCells().toString(),
-								pcmic.ratioEmptyCells().toString(), pcmic.nbFeaturesHomog().toString(),pcmic.ratioFeatureHomog().toString()};
+								pcmic.ratioEmptyCells().toString(), pcmic.nbFeaturesHomog().toString(),
+								pcmic.ratioFeatureHomog().toString(),pcmic.testScore().toString() };
 						csvwriter.writeNext(str);
 
 					}
