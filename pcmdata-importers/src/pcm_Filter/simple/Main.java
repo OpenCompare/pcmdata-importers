@@ -23,9 +23,9 @@ import pcm_Filter.simple.pcm_predicate.PCMPredicateMinRowProduct;
 
 public class Main {
 
-	public static final boolean writefile = true;
+	public static final boolean writefile = false;
 
-	public static final String inputpath = "../../input-model";
+	public static final String inputpath = "input-pcm";
 	public static final String outputpath = "../../output-model/";
 
 	// "input-pcm" testing inputs

@@ -220,9 +220,7 @@ public class CSVMerger {
 		
 		newPcm.setName("merged");
 		
-		
-		
-		
+				
 		
 		// _log.info("csv: " + new CSVExporter().export(newPcmContainer));
 		
@@ -233,6 +231,7 @@ public class CSVMerger {
 		writeToFile("" + jsonFileName, json);
 		
 	}
+	
 	
 	private void writeToFile(String path, String content) throws IOException {
 		BufferedWriter writer = new BufferedWriter(

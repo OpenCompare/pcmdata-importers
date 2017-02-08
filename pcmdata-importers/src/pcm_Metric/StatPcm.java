@@ -16,6 +16,8 @@ public class StatPcm {
 	private double ratioFeaturesHomog;
 	private int score;
 	
+	final double nbCellsWeigth=1.0;
+	final double nbEmptyCellsWeigth=-0.1;
 
 	public int getNbRows() {
 		return nbRows;
@@ -55,6 +57,15 @@ public class StatPcm {
 	
 	public void setRatioEmptyCells(Double ratioEmptyCells) {
 		this.ratioEmptyCells = ratioEmptyCells;
+	}
+
+	public Double scoreCell()  {
+		return (Math.sqrt(nbCells)*nbCellsWeigth);
+	}
+
+	public Double scoreEmptyCells() {
+		System.out.println(nbEmptyCells+":"+Math.pow(nbEmptyCells,2));
+		return (Math.pow(nbEmptyCells,2)*nbEmptyCellsWeigth);
 	}
 	
 	public int getNbFeaturesHomog() {
