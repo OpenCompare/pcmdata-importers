@@ -49,18 +49,15 @@ public class PCMInfoContainerPreComputation implements IPCMInfoContainer {
 	}
 
 	public Integer nbFeaturesHomog() {
-		// TODO Auto-generated method stub
-		return null;
+		return _statPcm.getNbFeaturesHomog();
 	}
 	
 	public Double ratioFeatureHomog() {
-		// TODO Auto-generated method stub
-		return null;
+		return _statPcm.getRatioFeaturesHomog();
 	}
 	
-	public Integer testScore() {
-		// TODO Auto-generated method stub
-		return null;
+	public Integer score() {
+		return _statPcm.getScore();
 	}
 
 }

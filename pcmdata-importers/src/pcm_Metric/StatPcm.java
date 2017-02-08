@@ -57,4 +57,27 @@ public class StatPcm {
 		this.ratioEmptyCells = ratioEmptyCells;
 	}
 	
+	public int getNbFeaturesHomog() {
+		return nbFeaturesHomog;
+	}
+
+	public void setNbFeaturesHomog(int nbFeaturesHomog) {
+		this.nbFeaturesHomog = nbFeaturesHomog;
+	}
+
+	public double getRatioFeaturesHomog() {
+		return ratioFeaturesHomog;
+	}
+
+	public void setRatioFeaturesHomog(double ratioFeaturesHomog) {
+		this.ratioFeaturesHomog = ratioFeaturesHomog;
+	}
+
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
+	}
 }

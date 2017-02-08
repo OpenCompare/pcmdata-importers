@@ -8,6 +8,9 @@ public interface IPCMInfoContainer {
 	public Integer nbCells();
 	public Integer nbEmptyCells();
 	public Double ratioEmptyCells() ;
+	public Integer nbFeaturesHomog();
+	public Double ratioFeatureHomog();
+	public Integer score();
 
 	
 	// TODO 

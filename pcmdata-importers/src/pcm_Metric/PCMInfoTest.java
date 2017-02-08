@@ -64,7 +64,7 @@ public class PCMInfoTest {
 						String[] str = { filePath.getFileName().toString(), pcmic.nbFeatures().toString(),
 								pcmic.nbRows().toString(), pcmic.nbCells().toString(), pcmic.nbEmptyCells().toString(),
 								pcmic.ratioEmptyCells().toString(), pcmic.nbFeaturesHomog().toString(),
-								pcmic.ratioFeatureHomog().toString(),pcmic.testScore().toString() };
+								pcmic.ratioFeatureHomog().toString(),pcmic.score().toString() };
 						csvwriter.writeNext(str);
 
 					}
