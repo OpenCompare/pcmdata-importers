@@ -1,7 +1,6 @@
 package data_off;
 
 import java.io.IOException;
-import java.util.*;
 
 import org.json.JSONException;
 
@@ -15,7 +14,7 @@ public static void main(String[] arg0) throws IOException, JSONException{
 //		OFFPCMCreator.mkPCMFromCategory("en:beers");
 //		creator.createCSVFromCategory("en:candies", false);
 //		OFFPCMCreator.mkPCMFromCategory("en:candies");
-		creator.createCSVFromCategory("en:seeds", false);
+		creator.createCSVFromCategory("en:seeds", true);
 		OFFPCMCreator.mkPCMFromCategory("en:seeds");
 		
 		OFFStats.printStats();

@@ -14,8 +14,6 @@ import org.json.JSONObject;
 
 import com.mongodb.client.MongoCursor;
 
-import scala.Array;
-
 public class OFFToProduct {
 
 	private static boolean GET_IMAGE_URL = false;
@@ -25,15 +23,16 @@ public class OFFToProduct {
 		GET_IMAGE_URL = getImageUrl;
 	}
 
-	public static String[] mkOFFProductStrings(OFFProduct product, List<String> nutriments) throws IOException{
-		String[] strArr = new String[7 + nutriments.size()];
-		strArr[0] = product.getId();
-		strArr[1] = product.getProduct_name();
-		strArr[2] = product.getCountriesString();
-		strArr[3] = product.getIngredientsString();
-		strArr[4] = product.getBrandsString();
-		strArr[5] = product.getStoresString();
-		int i = 6;
+	public static String[] mkOFFProductStrings(OFFProduct product, List<String> nutriments, int length) throws IOException{
+		String[] strArr = new String[length];
+		int i = 0;
+		strArr[i] = product.getId(); i++;
+		strArr[i] = product.getProduct_name(); i++;
+		strArr[i] = product.getCountriesString(); i++;
+		strArr[i] = product.getIngredientsString(); i++;
+		strArr[i] = product.getBrandsString(); i++;
+		strArr[i] = product.getStoresString(); i++;
+		
 		for(String nut : nutriments){
 //			System.out.println(product.getNutrimentValue(nut));
 			strArr[i] = product.getNutrimentValue(nut);
@@ -70,7 +69,6 @@ public class OFFToProduct {
 		return list;
 	}
 
-	@SuppressWarnings("unchecked")
 	public static OFFProduct mkOFFProductFromBSON(Document product) throws IOException, JSONException{
 		OFFProduct OFFProduct = new OFFProduct();
 		OFFProduct.setId(product.getString("id"));

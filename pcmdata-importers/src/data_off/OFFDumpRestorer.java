@@ -8,13 +8,25 @@ public class OFFDumpRestorer {
 		return System.getProperty("os.name").toLowerCase().indexOf("win") >= 0;
 	}
 	
+	private static boolean isLinux() {
+		return true;
+	}
+	
 	public static void main(String[] args) throws IOException, InterruptedException {
 		
 		System.out.println("Restoring...");
 		try {
 			String dumpDir = "data/dump";
-			String mongoRestore = "\"C:/Program Files/MongoDB/Server/3.2/bin/mongorestore.exe\" ";
-            String[] command = {"cmd.exe", "/C", mongoRestore + dumpDir};
+			String[] command;
+			if(isWindows()){
+				String mongoRestore = "\"C:/Program Files/MongoDB/Server/3.2/bin/mongorestore.exe\" ";
+	            command = new String[]{"cmd.exe", "/C", mongoRestore + dumpDir};
+			}else if(isLinux()){
+				command = new String[]{"/bin/sh", "-c", "mongorestore " + dumpDir};
+			}else{
+				command = new String[0];
+			}
+			
             Process p = Runtime.getRuntime().exec(command);
             DisplayStream outStream = new DisplayStream(p.getInputStream());
             DisplayStream errStream = new DisplayStream(p.getErrorStream());

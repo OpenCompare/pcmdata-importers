@@ -2,23 +2,14 @@ package data_off;
 
 import org.bson.Document;
 import org.json.JSONException;
-import org.json.JSONObject;
 
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.Writer;
-import java.net.URL;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -28,15 +19,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mongodb.*;
 import com.mongodb.client.*;
 import com.opencsv.CSVWriter;
-import com.opencsv.bean.BeanToCsv;
-
-import data_off.OFFCSVProductFactory.A;
 
 public class OFFactsCSVCreator {
 	
 	/*
 	 *  ps -ef | grep mongo
 	 */
+	
 	public static ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 	private MongoClient mongo;
 	private MongoCollection<Document> collection;
@@ -91,10 +80,11 @@ public class OFFactsCSVCreator {
 			csvwriter.writeNext(header);//writing the header
 			Document product;
 			int count = 0;
+			boolean maxOn = true;
 			int maxProducts = 100;
-			while(cursor.hasNext() && count < maxProducts){
+			while(cursor.hasNext() && (maxOn)?count < maxProducts:true){
 				product = cursor.next();
-				csvwriter.writeNext(OFFToProduct.mkOFFProductStrings(OFFToProduct.mkOFFProductFromBSON(product), nutriments));
+				csvwriter.writeNext(OFFToProduct.mkOFFProductStrings(OFFToProduct.mkOFFProductFromBSON(product), nutriments, header.length));
 				count++;
 			}
 			csvwriter.close();
@@ -130,23 +120,29 @@ public class OFFactsCSVCreator {
 			nutrimentsSet = ((Document) product.get("nutriments")).entrySet();
 			for(Entry<String, Object> entry : nutrimentsSet){
 				key = entry.getKey();
-				if(key.endsWith("_value")){
+				if(key.endsWith("_value") && !key.equals("energy_value")){
 					key = key.substring(0, key.length()-6);
 					if(!nutriments.containsKey(key)){
 						nutriments.put(key, 1); //adding the nutriment to the map if it is not already in
 					}else{
 						nutriments.put(key, nutriments.get(key) + 1); //incrementing
 					}
-				}   
+				}else if(key.equals("energy_100g")){
+					if(!nutriments.containsKey(key)){
+						nutriments.put(key, 1); //adding the nutriment to the map if it is not already in
+					}else{
+						nutriments.put(key, nutriments.get(key) + 1); //incrementing
+					}
+				}
 			}
 		}
 
 		return filterNMostUsedNutriments(nutriments, 10);
 	}
 
-	private static List<String> filterNMostUsedNutriments(Map<String, Integer> nutriments, Integer i) {
+	private static List<String> filterNMostUsedNutriments(Map<String, Integer> nutriments, Integer N) {
 		List<String> list = new ArrayList<String>();
-		while(list.size() < i){
+		while(list.size() < N){
 			int max = 0;
 			String key = null;
 			for(Entry<String, Integer> entry : nutriments.entrySet()){

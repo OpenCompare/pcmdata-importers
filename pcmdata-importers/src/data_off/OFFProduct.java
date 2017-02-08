@@ -12,12 +12,6 @@ import java.util.Set;
 
 import org.bson.Document;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.opencsv.CSVWriter;
-
-import data_off.OFFCSVProductFactory.A;
-import kotlin.MapIterator;
-
 /**
  * OFFProduct class
  * 
@@ -156,12 +150,11 @@ public class OFFProduct {
 				key = e.getKey();
 				value = e.getValue().toString();
 				if(key.endsWith("_value") && !key.equals("energy_value")){
-//					System.out.println(key.substring(0, key.length()-6) + " " + value);
 					this.nutriments.put(key.substring(0, key.length()-6), value);
 				}else if(key.equals("energy_100g")){
 					if(nutrimentsDoc.getString("energy_unit").toLowerCase().equals("kj")){
 						Float val = Float.parseFloat(value);
-						val = val * 43 / 180;
+						val = val * 43 / 180; //kJ to kcal
 						value = val.toString();
 					}
 					this.nutriments.put(key, value);

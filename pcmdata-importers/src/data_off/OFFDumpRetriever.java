@@ -3,7 +3,6 @@ package data_off;
 import java.io.*;
 import java.net.URL;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.logging.Logger;
@@ -114,10 +113,10 @@ public class OFFDumpRetriever {
 		File gzFile = new File(gzPath);
 		File tarFile = new File(tarPath);
 		File outputDir = new File("data/");
-		getInstance().retrieveDump(gzPath);
-//		getInstance().unGzip(gzFile, tarFile);
-//		getInstance().unTar(tarFile, outputDir);
-//		Files.delete(gzFile.toPath());
-//		Files.delete(tarFile.toPath());
+//		getInstance().retrieveDump(gzPath);
+		getInstance().unGzip(gzFile, tarFile);
+		getInstance().unTar(tarFile, outputDir);
+		Files.delete(gzFile.toPath());
+		Files.delete(tarFile.toPath());
 	}
 }
