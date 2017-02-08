@@ -24,8 +24,7 @@ public class WikidataImageRetrieval {
 		// encode imageName (blank spaces)
 		String encodedImageName = _encode (imageName);
 		
-		System.err.println("imageName " + encodedImageName);
-		
+	
 		// (3) Wikimedia 
 		String wikimediaReq = "https://commons.wikimedia.org/w/api.php?action=query&prop=imageinfo&iiprop=url&titles=File:" + encodedImageName + "&format=json";
 		
