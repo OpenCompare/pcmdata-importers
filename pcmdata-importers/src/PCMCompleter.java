@@ -28,7 +28,7 @@ public class PCMCompleter {
 		PCMContainer pcmContainer = PCMUtil.loadPCMContainer("output/mergedPL.pcm");
 		PCM pcm = pcmContainer.getPcm();
 		PCMFactory pcmFactory = new PCMFactoryImpl();
-		Map<String, String> product2Images = new PCMComplementerImageOfProduct(pcmFactory).completeByProduct(pcm);
+		Map<String, String> product2Images = new PCMComplementerImageOfProduct().completeByProduct(pcm);
 		System.err.println("product2Images found: " + product2Images);
 				
 		// add a column/feature
@@ -63,7 +63,7 @@ public class PCMCompleter {
 		PCMContainer pcmContainer = PCMUtil.loadPCMContainer("input-pcm/euro2016.pcm");
 		PCM pcm = pcmContainer.getPcm();
 		PCMFactory pcmFactory = new PCMFactoryImpl();
-		Map<String, String> product2Images = new PCMComplementerImageOfProduct(pcmFactory).completeByProduct(pcm);
+		Map<String, String> product2Images = new PCMComplementerImageOfProduct().completeByProduct(pcm);
 		System.err.println("product2Images found: " + product2Images);
 				
 		// add a column/feature
@@ -100,7 +100,7 @@ public class PCMCompleter {
 		PCM pcm = pcmContainer.getPcm();
 		
 		PCMFactory pcmFactory = new PCMFactoryImpl();
-		Map<String, String> ft2Images = new PCMComplementerImageOfProduct(pcmFactory).completeByFeature(pcm, ftName);
+		Map<String, String> ft2Images = new PCMComplementerImageOfProduct().completeByFeature(pcm, ftName);
 		System.err.println("product2Images found: " + ft2Images);
 		
 		

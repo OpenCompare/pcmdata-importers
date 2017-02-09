@@ -20,16 +20,16 @@ import com.google.gson.JsonParser;
 public class PCMComplementerImageOfProduct {
 
 	
+	// TODO: an array of "languages" (en, fr) and an array of "properties" (P18, ...) 
+	// we can basically try (brute force approach)  
+	// another related TODO: allows users to configure to precisely avoid the brute force approach
+	// ie user knows the language or the property (or we can infer it and pass/breath such knowledge here) 
+	
 	public static String LANGUAGE = "en"; // by default "en"
 	
-	private PCMFactory _pcmFactory;
 	
-	public PCMComplementerImageOfProduct(PCMFactory pcmFactory) {
-		_pcmFactory = pcmFactory;// do we really need a factory? // FIXME
-	}
 	
 	public PCMComplementerImageOfProduct() {
-		// do we need a factory?
 	}
 
 	/**
