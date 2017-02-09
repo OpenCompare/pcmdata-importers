@@ -6,7 +6,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.opencompare.api.java.Cell;
+import org.opencompare.api.java.Feature;
 import org.opencompare.api.java.PCM;
+import org.opencompare.api.java.PCMFactory;
 import org.opencompare.api.java.Product;
 
 import com.google.gson.JsonArray;
@@ -17,12 +20,95 @@ import com.google.gson.JsonParser;
 public class PCMComplementerImageOfProduct {
 
 	
+	public static String LANGUAGE = "en"; // by default "en"
 	
-	public Map<String, String> complete(PCM newPcm) throws Exception {
+	private PCMFactory _pcmFactory;
+	
+	public PCMComplementerImageOfProduct(PCMFactory pcmFactory) {
+		_pcmFactory = pcmFactory;// do we really need a factory? // FIXME
+	}
+	
+	public PCMComplementerImageOfProduct() {
+		// do we need a factory?
+	}
+
+	/**
+	 * returns a map associating feature name to image URL as found in Wikidata
+	 * this map is typically used to add a new column (ft + values) and complete a PCM
+	 * @param pcm
+	 * @param ftName
+	 * @return
+	 * @throws Exception
+	 */
+	public Map<String, String> completeByFeature(PCM pcm, String ftName) throws Exception {
+		
+		Map<String, String> ftNames2Images = new HashMap<>();
+		
+		List<Feature> fts = pcm.getConcreteFeatures();
+		Feature ft = null;
+		for (Feature feature : fts) {
+			if (feature.getName().equals(ftName)) {
+				ft = feature;
+				break;
+			}
+		}
+		
+		if (ft == null) // not found 
+			return ftNames2Images;
+		
+		assert(ft != null);
+		
+		
+		
+		List<Cell> cells = ft.getCells();
+		for (Cell cell : cells) {
+			
+			String valueName = cell.getContent();
+			
+			// TODO compute entityID
+			try {
+				String entityID = computeEntityWikidataID(valueName);
+							
+				String propertyID = "P41"; //"P154" ; // "P18" 
+				String wikidataImage = "";
+				try {
+					wikidataImage = new WikidataImageRetrieval().retrieve(entityID, propertyID);
+				}
+				catch (Exception e) {
+					try {
+					wikidataImage = new WikidataImageRetrieval().retrieve(entityID, "P18");
+					}
+					catch (Exception e1) {					
+					}				
+				}
+				
+				if (!wikidataImage.isEmpty()) {
+					ftNames2Images.put(valueName, wikidataImage);
+				}
+				else {
+					System.err.println("Image unfound for " + valueName);
+				}
+			}
+			catch (Exception e) {
+				System.err.println("Image unfound for " + valueName + " because unable to found entity");
+			}
+			
+		}
+		return ftNames2Images;
+	}
+	
+	/**
+	 * returns a map associating product name to image URL as found in Wikidata
+	 * this map is typically used to add a new column (ft + values) and complete a PCM
+	 * @param pcm
+	 * @return
+	 * @throws Exception
+	 */
+	public Map<String, String> completeByProduct(PCM pcm) throws Exception {
 		
 		Map<String, String> pdtNames2Images = new HashMap<>();
 		
-		List<Product> pdts = newPcm.getProducts();
+		List<Product> pdts = pcm.getProducts();
 		for (Product product : pdts) {
 			
 			String productName = product.getKeyCell().getContent();
@@ -31,7 +117,7 @@ public class PCMComplementerImageOfProduct {
 			try {
 				String entityID = computeEntityWikidataID(productName);
 							
-				String propertyID = "P18"; //"P154" ; //  
+				String propertyID = "P41"; //"P154" ; //"P18";  
 				String wikidataImage = "";
 				try {
 					wikidataImage = new WikidataImageRetrieval().retrieve(entityID, propertyID);
@@ -61,7 +147,7 @@ public class PCMComplementerImageOfProduct {
 
 	private String computeEntityWikidataID(String productName) throws Exception {
 		
-		String wikiDataReq = "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=" + productName + "&format=json&language=en&type=item&continue=0";
+		String wikiDataReq = "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=" + productName + "&format=json&type=item&continue=0" + "&language=" + LANGUAGE;
 		
 		/* 
 		 * disambiguation 
