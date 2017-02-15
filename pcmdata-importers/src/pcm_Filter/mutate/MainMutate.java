@@ -5,10 +5,12 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
+import org.opencompare.api.java.Cell;
+import org.opencompare.api.java.Feature;
 import org.opencompare.api.java.PCM;
 import org.opencompare.api.java.PCMContainer;
 import org.opencompare.api.java.Product;
@@ -28,6 +30,9 @@ public class MainMutate {
 	 * https://github.com/FAMILIAR-project/productcharts/blob/master/src/main/java/org/opencompare/PCMHelper.java
 	 * https://github.com/OpenCompare/wikipedia-dump-analysis/blob/master/src/main/scala/org/opencompare/analysis/analyzer/ValueAnalyzer.scala
 	 */
+	
+	
+	public static final double ratio_vide = 0.5 ;
 	
 	public static final boolean writefile = false;
 
@@ -67,6 +72,15 @@ public class MainMutate {
 					
 					PCMInfoContainer pcmic = new PCMInfoContainer(pcm);
 
+					
+					// Il faut appeler une fonction pour déterminer
+					// le detail sur les lignes
+					pcm = clear_ligne(pcmic , pcm) ;
+					
+					
+					// Il faut appeler une fonction pour déterminer
+					// le detail sur les colonnes
+					pcm = clear_colonne(pcmic , pcm) ;
 					
 					/*	filtres version lignes/colonnes
 						// for using multiple filters
@@ -129,5 +143,63 @@ public class MainMutate {
 		System.out.println("Took " + (endTime - startTime) / (1000000000) + " s");
 
 	}
+	
+	/**
+    Enlever les lignes inutiles
+    @param pcmic : Le pcm info container du pcm
+    @param pcm : Le pcm
+    @return Le pcm avec les lignes inutiles en moins
+	 */
+	public static PCM clear_ligne(PCMInfoContainer pcmic , PCM pcm){
+		List<Product> pdts = pcm.getProducts();
+		List<Cell> cells = new ArrayList<Cell>() ;
+		for (Product pr : pdts) {
+			int nbCellsEmpty = 0 ;
+			// On ajoute les cellules du product dans une liste
+			cells = pr.getCells();
+			// On traite les infos des cellules
+			for(Cell c : cells){
+				if(c.getContent().isEmpty()){
+					nbCellsEmpty ++ ;
+				}
+			}
+			if(nbCellsEmpty/cells.size()> 0.5){
+				pcm.removeProduct(pr);
+			}
+			
+		}
+		
+		return pcm;
+	}
+	
+	/**
+    Enlever les colonnes inutiles
+    @param pcmic : Le pcm info container du pcm
+    @param pcm : Le pcm
+    @return Le pcm avec les colonnes inutiles en moins
+	 */
+	public static PCM clear_colonne(PCMInfoContainer pcmic , PCM pcm){
+		List<Feature> pdts = pcm.getConcreteFeatures();
+		List<Cell> cells = new ArrayList<Cell>() ;
+		for (Feature pr : pdts) {
+			int nbCellsEmpty = 0 ;
+			// On ajoute les cellules du product dans une liste
+			cells = pr.getCells();
+			// On traite les infos des cellules
+			for(Cell c : cells){
+				if(c.getContent().isEmpty()){
+					nbCellsEmpty ++ ;
+				}
+			}
+			if(nbCellsEmpty/cells.size()> 0.5){
+				pcm.removeFeature(pr);;
+			}
+			
+		}
+		
+		return pcm;
+	}
 
+	
+	
 }
