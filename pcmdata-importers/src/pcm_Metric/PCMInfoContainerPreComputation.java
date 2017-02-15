@@ -1,7 +1,5 @@
 package pcm_Metric;
 
-import java.text.DecimalFormat;
-
 import org.opencompare.api.java.PCM;
 
 public class PCMInfoContainerPreComputation implements IPCMInfoContainer {
@@ -22,6 +20,8 @@ public class PCMInfoContainerPreComputation implements IPCMInfoContainer {
 		_statPcm.setNbCells(infoPcm.nbCells());
 		_statPcm.setNbEmptyCells(infoPcm.nbEmptyCells());
 		_statPcm.setRatioEmptyCells(infoPcm.ratioEmptyCells());
+		_statPcm.setNbFeaturesHomog(infoPcm.nbFeaturesHomog());
+		_statPcm.setRatioFeaturesHomog(infoPcm.ratioFeatureHomog());
 	}
 
 	@Override
@@ -54,27 +54,27 @@ public class PCMInfoContainerPreComputation implements IPCMInfoContainer {
 	public Integer nbFeaturesHomog() {
 		return _statPcm.getNbFeaturesHomog();
 	}
-	
+
 	@Override
 	public Double ratioFeatureHomog() {
 		return _statPcm.getRatioFeaturesHomog();
 	}
-	
+
 	@Override
 	public Integer score() {
 		return _statPcm.getScore();
 	}
 
-
-	
 	public Double testScore() {
 		Double score = 0.0;
-		score += (_statPcm.scoreCell());
-		score += (_statPcm.scoreEmptyCells());
-		//score += (_statPcm.getNbFeatures() * 0.1);
+		score += (_statPcm.scoreFeature() * 20);
+		score += (_statPcm.scoreProduct() * 20);
+		score += (_statPcm.scoreRatioEmptyCells() * 20);
+		score += (_statPcm.scoreFeatureHomog() * 20);
+		score += (_statPcm.scoreRatioFeatureHomog() * 20);
 		System.out.println(score);
-		score = Math.round(score * 100.0) / 100.0;
 
+		score = Math.round(score * 100.0) / 100.0;
 
 		return score;
 	}
