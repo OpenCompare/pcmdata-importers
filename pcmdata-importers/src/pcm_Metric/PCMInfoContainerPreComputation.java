@@ -50,19 +50,23 @@ public class PCMInfoContainerPreComputation implements IPCMInfoContainer {
 		return (double) _statPcm.getRatioEmptyCells();
 	}
 
+	@Override
 	public Integer nbFeaturesHomog() {
 		return _statPcm.getNbFeaturesHomog();
 	}
 	
+	@Override
 	public Double ratioFeatureHomog() {
 		return _statPcm.getRatioFeaturesHomog();
 	}
 	
+	@Override
 	public Integer score() {
 		return _statPcm.getScore();
 	}
 
 
+	
 	public Double testScore() {
 		Double score = 0.0;
 		score += (_statPcm.scoreCell());
