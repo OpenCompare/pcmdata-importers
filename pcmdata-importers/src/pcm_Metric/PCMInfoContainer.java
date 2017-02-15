@@ -1,8 +1,10 @@
 package pcm_Metric;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 import java.util.logging.Logger;
 
 import jdk.internal.org.objectweb.asm.tree.analysis.Analyzer;
@@ -14,6 +16,7 @@ import org.opencompare.api.java.Feature;
 import org.opencompare.api.java.PCM;
 import org.opencompare.api.java.Product;
 import org.opencompare.api.java.Value;
+import org.opencompare.api.java.value.Conditional;
 import org.opencompare.api.java.value.IntegerValue;
 import org.opencompare.api.java.value.NotAvailable;
 import org.opencompare.model.BooleanValue;
@@ -91,96 +94,116 @@ public class PCMInfoContainer implements IPCMInfoContainer {
 
 	@Override
 	public Integer nbFeaturesHomog() {
-		int nbFeaturesHomog = 0;
-		int cBooleanValue = 0;
-		int cConditional = 0;
-		int cDateValue = 0;
-		int cDimension = 0;
-		int cIntegerValue = 0;
-		int cMultiple = 0;
-		int cNotApplicable = 0;
-		int cNotAvailable = 0;
-		int cPartial = 0;
-		int cRealValue = 0;
-		int cStringValue = 0;
-		int cUnit = 0;
-		int cVersion = 0;
-		int cNoInterpreation = 0;
-		boolean featureHomog;
-		Map<Value, Integer> mapMetrics = new HashMap<Value, Integer>();
+		
+		int nbFeaturesHomog =0;
 		List<Feature> feats = _pcm.getConcreteFeatures();
 		for(Feature feat : feats){
-			featureHomog = false;
+			int cBooleanValue = 0;
+			int cConditional = 0;
+			int cDateValue = 0;
+			int cDimension = 0;
+			int cIntegerValue = 0;
+			int cMultiple = 0;
+			int cNotApplicable = 0;                               //init counter value of cells
+			int cNotAvailable = 0;
+			int cPartial = 0;
+			int cRealValue = 0;
+			int cStringValue = 0;
+			int cUnit = 0;
+			int cVersion = 0;
+			int cNoInterpreation = 0;
+			TreeMap<Value, Integer> mapMetrics = new TreeMap();
 			List<Cell> cells = feat.getCells();
 			for(Cell cell : cells){
 				String c = cell.getInterpretation().toString();
 				switch (c) {
 				case "BooleanValue":
-					cBooleanValue++;	
+					cBooleanValue++;
+					mapMetrics.put(cell.getInterpretation(), cBooleanValue);
 					break;
 					
 				case "Conditional":
-					cConditional++;		
+					cConditional++;
+					mapMetrics.put(cell.getInterpretation(), cConditional);
 					break;
 					
 				case "DateValue":
 					cDateValue++;	
+					mapMetrics.put(cell.getInterpretation(), cDateValue);
 					break;
 					
 				case "Dimension":
-					cDimension++;		
+					cDimension++;
+					mapMetrics.put(cell.getInterpretation(), cDimension);
 					break;
 					
 				case "IntegerValue":
 					cIntegerValue++;
+					mapMetrics.put(cell.getInterpretation(), cIntegerValue);
 					break;
 					
 				case "Multiple":
 					cMultiple++;
+					mapMetrics.put(cell.getInterpretation(), cMultiple);
 					break;
 					
 				case "NotApplicable":
-					cNotApplicable++;	
+					cNotApplicable++;
+					mapMetrics.put(cell.getInterpretation(), cNotApplicable);
 					break;
 					
 				case "NotAvailable":
-					cNotAvailable++;	
+					cNotAvailable++;
+					mapMetrics.put(cell.getInterpretation(), cNotAvailable);
 					break;
 					
 				case "Partial":
-					cPartial++;		
+					cPartial++;
+					mapMetrics.put(cell.getInterpretation(), cPartial);
 					break;
 					
 				case "RealValue":
 					cRealValue++;
+					mapMetrics.put(cell.getInterpretation(), cRealValue);
 					break;
 	
 				case "StringValue":
 					cStringValue++;
+					mapMetrics.put(cell.getInterpretation(), cStringValue);
 					break;
 					
 				case "Unit":
-					cUnit++;	
+					cUnit++;
+					mapMetrics.put(cell.getInterpretation(), cUnit);
 					break;
 					
 				case "Version":
 					cVersion++;
+					mapMetrics.put(cell.getInterpretation(), cVersion);
 					break;
 					
 				case "None":
 					cNoInterpreation++;
+					mapMetrics.put(cell.getInterpretation(), cNoInterpreation);
 					break;
 
 				default:
 					break;
-				}
-				
-			}
-			
-			if(featureHomog) nbFeaturesHomog++;
-		}	
+				}	
+			} // end for cells
+			if(tauxHomg(feat, mapMetrics) == 100) nbFeaturesHomog++;
+		} //end for features	
 		
 		return nbFeaturesHomog;
+	}
+	
+	
+	public Double tauxHomg(Feature f, TreeMap<Value,Integer> tmap){
+		double tHomog = 0;
+		if(tmap.size()==1){
+			return tHomog=100;
+		};
+			return (double) (tmap.get(tmap.lastKey())*100/tmap.size());		
 	}
 	
 	@Override
