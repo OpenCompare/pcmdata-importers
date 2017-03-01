@@ -20,8 +20,16 @@ public class PCMInfoContainerPreComputation implements IPCMInfoContainer {
 		_statPcm.setNbCells(infoPcm.nbCells());
 		_statPcm.setNbEmptyCells(infoPcm.nbEmptyCells());
 		_statPcm.setRatioEmptyCells(infoPcm.ratioEmptyCells());
-		_statPcm.setNbFeaturesHomog(infoPcm.nbFeaturesHomog());
-		_statPcm.setRatioFeaturesHomog(infoPcm.ratioFeatureHomog());
+		Integer nbFeaturesHom = infoPcm.nbFeaturesHomog();
+		_statPcm.setNbFeaturesHomog(nbFeaturesHom);
+		
+		double ratioFeatureHom = 0;
+		if(!nbFeaturesHom.equals(0))
+			ratioFeatureHom = (double)(nbFeaturesHomog()*100)/nbFeatures();
+		
+		_statPcm.setRatioFeaturesHomog(ratioFeatureHom);
+		
+		
 	}
 
 	@Override
