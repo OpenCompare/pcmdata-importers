@@ -13,6 +13,7 @@ import java.util.stream.Stream;
 
 //import org.junit.Test;
 import org.opencompare.api.java.*;
+import org.opencompare.api.java.impl.io.KMFJSONExporter;
 import org.opencompare.api.java.impl.io.KMFJSONLoader;
 import org.opencompare.api.java.io.PCMLoader;
 
@@ -20,7 +21,8 @@ import com.opencsv.CSVWriter;
 
 public class PCMInfoTest {
 
-	public static final String inputpath = "input-pcm";
+	public static final String inputpath = "../../input-model";
+	public static final String outputpath = "../../output-model/";
 	
 	//"../../input-model"
 	//"input-pcm"
@@ -40,7 +42,7 @@ public class PCMInfoTest {
 		try (Writer writer = new BufferedWriter(new FileWriter(outputcsv))) {
 			CSVWriter csvwriter = new CSVWriter(writer, ';', '\"');
 			String[] header = { "Name", "Feature ", "Products ", "Cells", "Empty Cells", "Ratio EmCell",
-					"Nombre de Features Homogenes", "Ratio de Features Homogenes", "Testing Score" };
+					"Nombre de Features Homogenes", "Ratio de Features Homogenes","Nombre de Features Homogenes Numeriques","Product Chartable","Testing Score" };
 			csvwriter.writeNext(header);// writing the header
 
 			paths.forEach(filePath -> {
@@ -66,9 +68,22 @@ public class PCMInfoTest {
 						String[] str = { filePath.getFileName().toString(), pcmic.nbFeatures().toString(),
 								pcmic.nbRows().toString(), pcmic.nbCells().toString(), pcmic.nbEmptyCells().toString(),
 								pcmic.ratioEmptyCells().toString(), pcmic.nbFeaturesHomog().toString(),
-								pcmic.ratioFeatureHomog().toString(),pcmic.score().toString() };
+								pcmic.ratioFeatureHomog().toString(),pcmic.nbFeaturesHomogNumeric().toString(),pcmic.isProductChartable().toString(),pcmic.score().toString() };
 						csvwriter.writeNext(str);
+						
+						if(pcmic.isProductChartable()){
+							KMFJSONExporter pcmExporter = new KMFJSONExporter();
+							String pcmString = pcmExporter.export(pcmContainer);
 
+							Path p = Paths.get(outputpath + filePath.getFileName());
+							try {
+								Files.write(p, pcmString.getBytes());
+							} catch (Exception e) {
+								e.printStackTrace();
+							}
+							System.out.println("> PCM exported to " + p);
+						}
+						
 					}
 
 				}

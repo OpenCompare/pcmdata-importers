@@ -20,16 +20,9 @@ public class PCMInfoContainerPreComputation implements IPCMInfoContainer {
 		_statPcm.setNbCells(infoPcm.nbCells());
 		_statPcm.setNbEmptyCells(infoPcm.nbEmptyCells());
 		_statPcm.setRatioEmptyCells(infoPcm.ratioEmptyCells());
-		Integer nbFeaturesHom = infoPcm.nbFeaturesHomog();
-		_statPcm.setNbFeaturesHomog(nbFeaturesHom);
-		
-		double ratioFeatureHom = 0;
-		if(!nbFeaturesHom.equals(0))
-			ratioFeatureHom = (double)(nbFeaturesHomog()*100)/nbFeatures();
-		
-		_statPcm.setRatioFeaturesHomog(ratioFeatureHom);
-		
-		
+		_statPcm.setNbFeaturesHomog(infoPcm.nbFeaturesHomog());
+		_statPcm.setRatioFeaturesHomog(infoPcm.ratioFeatureHomog());
+		_statPcm.setNbFeaturesHomogNumeric(infoPcm.nbFeaturesHomogNumeric());
 	}
 
 	@Override
@@ -86,5 +79,19 @@ public class PCMInfoContainerPreComputation implements IPCMInfoContainer {
 
 		return score;
 	}
+
+	public Integer nbFeaturesHomogNumeric() {
+		return _statPcm.getNbFeaturesHomogNumeric();
+	}
+	
+	public Boolean isProductChartable() {
+		if(_statPcm.scoreProductChartable()>=0.5)
+			return true;
+		else
+			return false;
+			
+	}
+
+
 
 }
