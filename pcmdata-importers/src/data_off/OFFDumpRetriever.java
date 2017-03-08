@@ -116,7 +116,7 @@ public class OFFDumpRetriever {
 //		getInstance().retrieveDump(gzPath);
 		getInstance().unGzip(gzFile, tarFile);
 		getInstance().unTar(tarFile, outputDir);
-		Files.delete(gzFile.toPath());
+//		Files.delete(gzFile.toPath());
 		Files.delete(tarFile.toPath());
 		System.out.println("DONE");
 	}

@@ -9,7 +9,7 @@ public class OFFDumpRestorer {
 	}
 	
 	private static boolean isLinux() {
-		return true;
+		return System.getProperty("os.name").toLowerCase().indexOf("linux") >= 0;
 	}
 	
 	public static void main(String[] args) throws IOException, InterruptedException {

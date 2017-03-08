@@ -30,7 +30,7 @@ public class OFFPCMModifier {
 		
 		//System.in.read();
 		
-		//check(pcm);
+		check(pcm);
 		
 
 		PCMInterpreter._serializeToPCMJSON(new PCMContainer(pcm), "off_output/pcms/"+category+"_m.pcm");
@@ -41,6 +41,7 @@ public class OFFPCMModifier {
 		for(Feature f : pcm.getConcreteFeatures()){
 			if(isMultiple(f.getName())){
 				for(Cell c : f.getCells()){
+					System.out.println(c.getContent());
 					for (Value val : ((Multiple)c.getInterpretation()).getSubValues()) {
 						System.out.println(((StringValue) val).getValue());
 					}
@@ -55,7 +56,6 @@ public class OFFPCMModifier {
 				for(Cell c : f.getCells()){
 					Multiple multiple = toMultipleValue(c.getContent());
 					c.setInterpretation(multiple);
-					//System.out.println(c.getRawContent() + " " + ((Multiple)c.getInterpretation()).getSubValues().size());
 				}
 			}
 		}
@@ -82,8 +82,7 @@ public class OFFPCMModifier {
 		for(String s : content.split(OFFProduct.separator)){
 			if(!s.isEmpty()){
 				StringValue val = f.createStringValue();
-				val.setValue(s);
-				//System.out.println(val.getValue());
+				val.setValue(s+"#");
 				multiple.addSubValue(val);
 			}
 		}

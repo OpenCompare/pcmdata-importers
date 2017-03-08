@@ -11,7 +11,8 @@ public class Run {
 
 		OFFactsCSVCreator creator = new OFFactsCSVCreator();
 
-		Set<String> cat = creator.getCategoriesWithBetween(1, 1);
+		Set<String> cat = creator.getCategoriesWithBetween(100, 400);
+		
 //		int max = cat.size();
 
 //		int count = 0;
