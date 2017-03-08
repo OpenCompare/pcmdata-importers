@@ -20,6 +20,8 @@ import org.bson.Document;
  */
 public class OFFProduct {
 
+	public static String separator = ",";
+
 	private final Logger _log = Logger.getLogger(OFFProduct.class.getName());
 
 	private String id;
@@ -61,7 +63,6 @@ public class OFFProduct {
 
 	public String getCountriesString() throws IOException {
 		return listToString(countries);
-		//		return OFFactsCSVCreator.OBJECT_MAPPER.writeValueAsString(countries);
 	}
 
 	public void setCountries(List<String> countries) {
@@ -71,7 +72,8 @@ public class OFFProduct {
 	public void setCountriesFromString(String countries) {
 		try{
 			if(!countries.isEmpty()){
-				this.countries = Arrays.asList(countries.split(","));
+				countries = enhanceText(countries);
+				this.countries = Arrays.asList(countries.split(separator));
 			}
 		}
 		catch(NullPointerException e){
@@ -85,7 +87,6 @@ public class OFFProduct {
 
 	public String getIngredientsString() throws IOException{
 		return listToString(ingredients);
-		//		return OFFactsCSVCreator.OBJECT_MAPPER.writeValueAsString(str);
 	}
 
 	public void setIngredients(List<String> ingredients) {
@@ -98,7 +99,6 @@ public class OFFProduct {
 
 	public String getBrandsString() throws IOException {
 		return listToString(brands);
-		//		return OFFactsCSVCreator.OBJECT_MAPPER.writeValueAsString(str);
 	}
 
 	public void setBrands(List<String> brands) {
@@ -108,7 +108,7 @@ public class OFFProduct {
 	public void setBrandsFromString(String brands) {
 		try{
 			if(!brands.isEmpty()){
-				this.brands = Arrays.asList(brands.split(","));
+				this.brands = Arrays.asList(brands.split(separator));
 			}
 		}
 		catch(NullPointerException e){
@@ -122,7 +122,6 @@ public class OFFProduct {
 
 	public String getStoresString() throws IOException {
 		return listToString(stores);
-		//		return OFFactsCSVCreator.OBJECT_MAPPER.writeValueAsString(str);
 	}
 
 	public void setStores(List<String> stores) {
@@ -132,7 +131,7 @@ public class OFFProduct {
 	public void setStoresFromString(String stores) {
 		try{
 			if(!stores.isEmpty()){
-				this.stores = Arrays.asList(stores.split(","));
+				this.stores = Arrays.asList(stores.split(separator));
 			}
 		}
 		catch(NullPointerException e){
@@ -149,15 +148,17 @@ public class OFFProduct {
 			for(Entry<String, Object> e : nutrimentsSet){
 				key = e.getKey();
 				value = e.getValue().toString();
-				if(key.endsWith("_value") && !key.equals("energy_value")){
-					this.nutriments.put(key.substring(0, key.length()-6), value);
-				}else if(key.equals("energy_100g")){
-					if(nutrimentsDoc.getString("energy_unit").toLowerCase().equals("kj")){
-						Float val = Float.parseFloat(value);
-						val = val * 43 / 180; //kJ to kcal
-						value = val.toString();
+				if(!value.isEmpty()){
+					if(key.endsWith("_value") && !key.equals("energy_value")){
+						this.nutriments.put(key.substring(0, key.length()-6), value);
+					}else if(key.equals("energy_100g")){
+						if(nutrimentsDoc.getString("energy_unit").toLowerCase().equals("kj")){
+							Float val = Float.parseFloat(value);
+							val = val * 43 / 180; //kJ to kcal
+							value = val.toString();
+						}
+						this.nutriments.put(key, value);
 					}
-					this.nutriments.put(key, value);
 				}
 			}
 		}catch(NullPointerException e){
@@ -165,7 +166,7 @@ public class OFFProduct {
 		}
 
 	}
-	
+
 	public String getNutrimentValue(String nutriment){
 		String val = this.nutriments.get(nutriment); 
 		return (val == null)?"0":val;
@@ -184,20 +185,43 @@ public class OFFProduct {
 	public void setIngredientsFromObject(Object ingredients) {
 		try{
 			List<Document> ingredientsList = (List<Document>) ingredients;
+			String text;
 			for(Document o : ingredientsList){
-				this.ingredients.add(o.getString("text"));
+				text = o.getString("text");
+
+				text = enhanceText(text);
+
+				if(!text.isEmpty()){
+					this.ingredients.add(text);
+				}
 			}
 		}catch(NullPointerException e){
 			_log.warning("Product " + id + " null pointer exception on ingredientsList");
 		}
 	}
 
+	public static String enhanceText(String text) {
+		//replace Single Low-9 Quotation Mark with Comma
+		text = text.replace((char)8218, ',');
+
+		//remove _ ( and ) anywhere and remove dot and comma at the end of the string
+		text = text.replaceAll("[_)(]|[.,]$", "");
+
+		//remove number at the end of the string if the preceding char is a space //TODO MAYBE DISABLE
+		text = text.replaceAll("[ ][0-9]+$", "");
+
+		//remove white spaces in front and back
+		text = text.replaceAll("^[\\s]|[\\s]$", "");
+
+		return text;
+	}
+
 	private String listToString(List<String> list){
 		String str = "";
 		for (String e : list) {
-			str += e + ", ";
+			str += e + separator;
 		}
-		return (str.isEmpty())?str:str.substring(0, str.length()-2);
+		return (str.isEmpty())?str:str.substring(0, str.length() - separator.length());
 	}
 
 

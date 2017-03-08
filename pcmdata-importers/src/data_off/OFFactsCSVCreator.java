@@ -27,6 +27,8 @@ public class OFFactsCSVCreator {
 	 */
 	
 	public static ObjectMapper OBJECT_MAPPER = new ObjectMapper();
+	public static boolean MAX_ON = true;
+	public static int MAX_PRODUCTS = 1000;
 	private MongoClient mongo;
 	private MongoCollection<Document> collection;
 	
@@ -80,9 +82,7 @@ public class OFFactsCSVCreator {
 			csvwriter.writeNext(header);//writing the header
 			Document product;
 			int count = 0;
-			boolean maxOn = true;
-			int maxProducts = 100;
-			while(cursor.hasNext() && (maxOn)?count < maxProducts:true){
+			while(cursor.hasNext() && (MAX_ON)?count < MAX_PRODUCTS:true){
 				product = cursor.next();
 				csvwriter.writeNext(OFFToProduct.mkOFFProductStrings(OFFToProduct.mkOFFProductFromBSON(product), nutriments, header.length));
 				count++;

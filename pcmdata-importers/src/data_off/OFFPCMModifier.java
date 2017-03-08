@@ -6,38 +6,87 @@ import org.opencompare.api.java.AbstractFeature;
 import org.opencompare.api.java.Cell;
 import org.opencompare.api.java.Feature;
 import org.opencompare.api.java.PCM;
+import org.opencompare.api.java.PCMContainer;
 import org.opencompare.api.java.PCMFactory;
 import org.opencompare.api.java.Product;
 import org.opencompare.api.java.Value;
 import org.opencompare.api.java.impl.PCMFactoryImpl;
 import org.opencompare.api.java.impl.value.*;
 import org.opencompare.api.java.value.Multiple;
+import org.opencompare.api.java.value.StringValue;
 
 
 public class OFFPCMModifier {
-	
-	
 
-	public static void main(String[] args) throws IOException {
+	public static void addMultiplesToFile(String category) throws IOException{
 		
-		String filename = "off_output/pcms/en_seeds.pcm";
+		category = category.replace(":", "_");
+		String filename = "off_output/pcms/"+category+".pcm";
 		PCM pcm = PCMUtil.loadPCM(filename);
+
+		//check(pcm);
 		
+		pcm = computeMultiples(pcm); //FIXME doesn't change the pcm (or Multiple are wrongly interpreted in JS)
+		
+		//System.in.read();
+		
+		//check(pcm);
+		
+
+		PCMInterpreter._serializeToPCMJSON(new PCMContainer(pcm), "off_output/pcms/"+category+"_m.pcm");
+		System.out.println("DONE");
+	}
+	
+	private static void check(PCM pcm) {
 		for(Feature f : pcm.getConcreteFeatures()){
-			if(f.getName().equals("ingredients")){
+			if(isMultiple(f.getName())){
 				for(Cell c : f.getCells()){
-					c.setInterpretation(toMultipleValue(c.getContent()));
+					for (Value val : ((Multiple)c.getInterpretation()).getSubValues()) {
+						System.out.println(((StringValue) val).getValue());
+					}
 				}
 			}
 		}
 	}
 
-	private static Value toMultipleValue(String content) {
-		//TODO Spliter le content et remplir la multiple value
-		PCMFactory f = new PCMFactoryImpl();
-		Multiple multiple = f.createMultiple();
-		multiple.addSubValue(/*TODO*/);
-		return multiple;
+	public static PCM computeMultiples(PCM pcm){
+		for(Feature f : pcm.getConcreteFeatures()){
+			if(isMultiple(f.getName())){
+				for(Cell c : f.getCells()){
+					Multiple multiple = toMultipleValue(c.getContent());
+					c.setInterpretation(multiple);
+					//System.out.println(c.getRawContent() + " " + ((Multiple)c.getInterpretation()).getSubValues().size());
+				}
+			}
+		}
+		System.out.println("Multiples computed");
+		return pcm;
 	}
 
+	private static boolean isMultiple(String name) {
+		switch(name){
+		case "ingredients":
+		case "countries":
+		case "stores":
+		case "brands":
+			return true;
+
+		default : 
+			return false;
+		}
+	}
+
+	private static Multiple toMultipleValue(String content) {
+		PCMFactory f = new PCMFactoryImpl();
+		Multiple multiple = f.createMultiple();
+		for(String s : content.split(OFFProduct.separator)){
+			if(!s.isEmpty()){
+				StringValue val = f.createStringValue();
+				val.setValue(s);
+				//System.out.println(val.getValue());
+				multiple.addSubValue(val);
+			}
+		}
+		return multiple;
+	}
 }
