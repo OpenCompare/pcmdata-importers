@@ -33,7 +33,6 @@ public class PCMInfoContainer implements IPCMInfoContainer {
 	private static final double THRESHOLD_HOMOGENEOUS = 90;
 	
 	private PCM _pcm;
-
 	
 	public PCMInfoContainer(PCM pcm) {
 		_pcm = pcm;
@@ -187,7 +186,12 @@ public class PCMInfoContainer implements IPCMInfoContainer {
 			return (double) 0;
 			
 		}
-		return (double)(nbFeaturesHomog()*100)/nbFeatures();
+		return (double)(nbFeaturesHomog()*100)/(nbFeatures()-1);
+	}
+	
+	public int nbFeaturesHomogNumeric() {
+		// TODO Auto-generated method stub 
+		return 0;
 	}
 	
 	@Override
@@ -195,5 +199,7 @@ public class PCMInfoContainer implements IPCMInfoContainer {
 		return null;
 		
 	}
+
+
 
 }

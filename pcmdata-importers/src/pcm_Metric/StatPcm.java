@@ -15,6 +15,7 @@ public class StatPcm {
 	private double ratioEmptyCells;
 	private int nbFeaturesHomog;
 	private double ratioFeaturesHomog;
+	private int nbFeaturesHomogNumeric;
 	private int score;
 
 	// final double nbCellsWeigth = 1.0;
@@ -76,6 +77,14 @@ public class StatPcm {
 		this.ratioFeaturesHomog = ratioFeaturesHomog;
 	}
 
+	public int getNbFeaturesHomogNumeric() {
+		return nbFeaturesHomogNumeric;
+	}
+
+	public void setNbFeaturesHomogNumeric(int nbFeaturesHomogNumeric) {
+		this.nbFeaturesHomogNumeric = nbFeaturesHomogNumeric;
+	}
+	
 	public int getScore() {
 		return score;
 	}
@@ -169,5 +178,12 @@ public class StatPcm {
 			sc = 1.0;
 		}
 		return sc;
+	}
+
+	public double scoreChartable() {
+		if(nbFeaturesHomogNumeric>=2)
+			return 1.0;
+		else
+			return 0;
 	}
 }
