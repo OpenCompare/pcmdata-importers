@@ -84,8 +84,8 @@ public class PCMInfoContainerPreComputation implements IPCMInfoContainer {
 		return _statPcm.getNbFeaturesHomogNumeric();
 	}
 	
-	public Boolean isChartable() {
-		if(_statPcm.scoreChartable()>=0.5)
+	public Boolean isProductChartable() {
+		if(_statPcm.scoreProductChartable()>=0.5)
 			return true;
 		else
 			return false;

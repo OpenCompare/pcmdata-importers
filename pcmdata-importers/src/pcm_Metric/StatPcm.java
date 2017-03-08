@@ -180,7 +180,7 @@ public class StatPcm {
 		return sc;
 	}
 
-	public double scoreChartable() {
+	public double scoreProductChartable() {
 		if(nbFeaturesHomogNumeric>=2)
 			return 1.0;
 		else
