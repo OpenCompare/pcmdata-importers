@@ -99,17 +99,12 @@ public class PCMInfoContainer implements IPCMInfoContainer {
 
 	@Override
 	public Integer nbFeaturesHomog() {
-		
-		
-		
 		int nbFeaturesHomog =0;
 		List<Feature> feats = _pcm.getConcreteFeatures();
 		for(Feature feat : feats){
 			
 			if (feat.equals(_pcm.getProductsKey()))
 				continue;
-			
-		
 			//TreeMap<String, Integer> mapMetrics = new TreeMap();
 			TreeMap<String, Integer> mapMetrics2 = new TreeMap();
 			List<Cell> cells = feat.getCells();
@@ -142,7 +137,6 @@ public class PCMInfoContainer implements IPCMInfoContainer {
 	
 
 	
-	 
 	public Double tauxHomg(Feature f, TreeMap<String,Integer> tmap){
 		double tHomog = 0;
 		if(tmap.size()==1) return tHomog=100;
@@ -189,9 +183,59 @@ public class PCMInfoContainer implements IPCMInfoContainer {
 		return (double)(nbFeaturesHomog()*100)/(nbFeatures()-1);
 	}
 	
-	public int nbFeaturesHomogNumeric() {
-		// TODO Auto-generated method stub 
-		return 0;
+	
+	public Integer nbFeaturesHomogNumeric() {
+		int nbFeaturesHomogNumeric =0;
+		List<Feature> feats = _pcm.getConcreteFeatures();
+		for(Feature feat : feats){
+			
+			if (feat.equals(_pcm.getProductsKey()))
+				continue;
+			//TreeMap<String, Integer> mapMetrics = new TreeMap();
+			TreeMap<String, Integer> mapMetrics2 = new TreeMap();
+			List<Cell> cells = feat.getCells();
+			for(Cell cell : cells) {
+				Value v = cell.getInterpretation();
+				
+				String cl = v.getClass().toString();
+				if (v instanceof RealValue || v instanceof IntegerValue)
+					cl = "Numeric";
+					
+				if (!mapMetrics2.containsKey(cl)) 
+					mapMetrics2.put(cl, 0);
+				else 
+					mapMetrics2.put(cl, mapMetrics2.get(cl) + 1);
+				
+				
+			} // end for cells
+			Double tauxHomogeneity = tauxHomg(feat, mapMetrics2);
+			System.err.println("mapMetrics2: " + mapMetrics2 + " taux=" + tauxHomogeneity);
+			if(tauxHomogeneity >= THRESHOLD_HOMOGENEOUS) 
+				{ 
+				if(isFeatureNumeric(feat)){
+					nbFeaturesHomogNumeric++;
+					System.err.println("mapMetrics2: " + mapMetrics2 + " taux=" + tauxHomogeneity);
+					}
+				}
+		} //end for features	
+		
+		return nbFeaturesHomogNumeric;
+	}		
+	
+	/**
+	 * 
+	 * @param f feature homogeneous
+	 * @return if the feature is numeric or not
+	 */
+	public boolean isFeatureNumeric(Feature f){
+		Cell cell = f.getCells().get(0);
+		Value v = cell.getInterpretation();
+		if (v instanceof RealValue || v instanceof IntegerValue){
+			return true;	
+		}
+		else{
+			return false;
+		}		
 	}
 	
 	@Override
