@@ -26,11 +26,11 @@ public class OFFPCMModifier {
 
 		//check(pcm);
 		
-		pcm = computeMultiples(pcm); //FIXME doesn't change the pcm (or Multiple are wrongly interpreted in JS)
+		pcm = computeMultiples(pcm);
 		
 		//System.in.read();
 		
-		check(pcm);
+		//check(pcm);
 		
 
 		PCMInterpreter._serializeToPCMJSON(new PCMContainer(pcm), "off_output/pcms/"+category+"_m.pcm");
@@ -41,11 +41,15 @@ public class OFFPCMModifier {
 		for(Feature f : pcm.getConcreteFeatures()){
 			if(isMultiple(f.getName())){
 				for(Cell c : f.getCells()){
-					System.out.println(c.getContent());
 					for (Value val : ((Multiple)c.getInterpretation()).getSubValues()) {
 						System.out.println(((StringValue) val).getValue());
 					}
 				}
+			}else if(f.getName().equals("image_url")){
+				for(Cell c : f.getCells()){
+					System.out.println(c.getRawContent());
+				}
+				//System.out.println(f.getCells().get(0).getInterpretation().getClass().getName());
 			}
 		}
 	}
@@ -57,6 +61,28 @@ public class OFFPCMModifier {
 					Multiple multiple = toMultipleValue(c.getContent());
 					c.setInterpretation(multiple);
 				}
+			}else if(f.getName().equals("image_url")){
+				for(Cell c : f.getCells()){
+					PCMFactory fac = new PCMFactoryImpl();
+					StringValue str = fac.createStringValue();
+					str.setValue(c.getRawContent());
+					c.setInterpretation(str);
+				}
+				System.out.println("image_url feature reverted back from MultipleValue to StringValue");
+			}else if(f.getName().equals("product_name")){
+				/*
+				 * l'outil de génération de pcm a partir de csv prend des libertés assez étranges comme convertir "Mike and Ike" en ["Mike", "Ike"] (Multiple)
+				 * et aussi avec "/" et "," mais pas tout le temps
+				 */
+				for(Cell c : f.getCells()){
+					if(c.getInterpretation().getClass().equals(MultipleImpl.class)){
+						PCMFactory fac = new PCMFactoryImpl();
+						StringValue str = fac.createStringValue();
+						str.setValue(c.getRawContent());
+						c.setInterpretation(str);
+					}
+				}
+				System.out.println("converted eventual MultipleValues to StringValues in product_name");
 			}
 		}
 		System.out.println("Multiples computed");
@@ -82,7 +108,7 @@ public class OFFPCMModifier {
 		for(String s : content.split(OFFProduct.separator)){
 			if(!s.isEmpty()){
 				StringValue val = f.createStringValue();
-				val.setValue(s+"#");
+				val.setValue(s);
 				multiple.addSubValue(val);
 			}
 		}

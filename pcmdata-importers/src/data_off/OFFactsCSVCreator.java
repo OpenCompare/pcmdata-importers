@@ -28,7 +28,7 @@ public class OFFactsCSVCreator {
 	
 	public static ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 	public static boolean MAX_ON = true;
-	public static int MAX_PRODUCTS = 1000;
+	public static int MAX_PRODUCTS = 100;
 	private MongoClient mongo;
 	private MongoCollection<Document> collection;
 	

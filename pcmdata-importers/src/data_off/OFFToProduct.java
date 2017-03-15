@@ -97,7 +97,7 @@ public class OFFToProduct {
 		if(json.getString("status_verbose").equals("product not found")){
 			System.out.println("Product " + id + " not found");
 			OFFStats.PRODUCTS_NOT_FOUND_THROUGH_API++;
-			return "";
+			return "https://upload.wikimedia.org/wikipedia/commons/f/f8/Question_mark_alternate.svg";
 		}else{
 			try {
 				return json.getJSONObject("product").getString("image_url");
@@ -106,6 +106,6 @@ public class OFFToProduct {
 				System.out.println("No image found for product " + id);
 			}
 		}
-		return "";
+		return "https://upload.wikimedia.org/wikipedia/commons/f/f8/Question_mark_alternate.svg";
 	}
 }

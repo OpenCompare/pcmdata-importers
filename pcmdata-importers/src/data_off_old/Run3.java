@@ -30,7 +30,6 @@ public class Run3 {
 			try (Writer writer = new BufferedWriter(new FileWriter(file))) {
 				writer.append(doc.get("nutriments").toString());
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			break;

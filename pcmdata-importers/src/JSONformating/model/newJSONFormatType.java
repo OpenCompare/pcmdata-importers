@@ -1,4 +1,4 @@
-package JSONformating;
+package JSONformating.model;
 
 public enum newJSONFormatType {
 	BOOLEAN,
@@ -10,5 +10,5 @@ public enum newJSONFormatType {
 	UNDEFINED, // when the value is undefined
 	MULTIPLE,
 	URL,
-	IMAGE,
+	IMAGE
 }

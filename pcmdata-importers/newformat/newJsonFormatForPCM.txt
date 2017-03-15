@@ -36,7 +36,7 @@ pcm : {
             boolean // for a boolean value
             number // for an integer or a real value
             string // for a string, a date, a version (21.7.33...), an url, an image (must be an url to the image)
-            array of string // for a multiple value (['mario', 'peach', 'bowser', ...])
+            array of string // for a multiple value (['mario', 'peach', 'bowser', ...])  
         }
         ...
       }
