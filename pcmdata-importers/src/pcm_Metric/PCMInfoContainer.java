@@ -110,7 +110,6 @@ public class PCMInfoContainer implements IPCMInfoContainer {
 			List<Cell> cells = feat.getCells();
 			for(Cell cell : cells) {
 				Value v = cell.getInterpretation();
-				
 				String cl = v.getClass().toString();
 				if (v instanceof RealValue || v instanceof IntegerValue)
 					cl = "Numeric";
