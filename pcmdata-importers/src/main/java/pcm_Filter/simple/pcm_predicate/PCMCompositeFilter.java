@@ -3,7 +3,9 @@ package main.java.pcm_Filter.simple.pcm_predicate;
 import java.util.Collection;
 import java.util.LinkedList;
 
-import pcm_Filter.PCMInfoContainer;
+import main.java.pcm_Filter.PCMInfoContainer;
+
+
 
 public class PCMCompositeFilter implements PCMPredicateFilter {
 	

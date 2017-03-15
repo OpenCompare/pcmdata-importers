@@ -2,7 +2,8 @@ package main.java.pcm_Filter.simple.pcm_predicate;
 
 import org.opencompare.model.PCM;
 
-import pcm_Filter.PCMInfoContainer;
+import main.java.pcm_Filter.PCMInfoContainer;
+
 
 public class PCMPredicateMinColumnProduct implements PCMPredicateFilter {
 
