@@ -7,6 +7,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 import org.opencompare.api.java.*;
 import org.opencompare.api.java.impl.value.*;
 import org.opencompare.api.java.value.*;
@@ -198,7 +201,30 @@ public class PCMtonewJSON {
 		newJSONFormat nf = mkNewJSONFormatFromPCM(pcmC);
 		System.out.println(nf.toString());
 //		PCMInterpreter.writeToFile("off_output/pcms/new_en_candies.pcm", nf.export());
-		PCMInterpreter.writeToFile("output/new_movies.pcm", nf.export());
+		String jsonRes = nf.export();
+		PCMInterpreter.writeToFile("output/new_movies.pcm", jsonRes);
+
+
+		// a fictive example to show how GSON works
+		String jsonExample = "{\n" +
+				"\t\t\t\"data\": {\n" +
+				"\t\t\t\"translations\": [\n" +
+				"\t\t\t{\n" +
+				"\t\t\t\t\"translatedText\": \"Hello world\"\n" +
+				"\t\t\t}\n" +
+				"\t\t\t]\n" +
+				"\t\t}\n" +
+				"\t\t}";
+
+		System.out.println("" + new JsonParser().parse(jsonExample));
+
+		// error
+		// does not work
+		JsonElement jelement = new JsonParser().parse(jsonRes);
+
+
+
+
 	}
 
 }

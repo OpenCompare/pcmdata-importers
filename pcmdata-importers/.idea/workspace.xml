@@ -2,68 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="79754a22-4ac1-494c-b1b0-4d99e6bc7438" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_fastjson_boon_0_32.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_json_json_20160212.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_bson_3_4_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_mongo_java_driver_3_4_2.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_11.xml" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_off/DisplayStream.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/DisplayStream.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_off/OFFCSVProductFactory.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/OFFCSVProductFactory.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_off/OFFDumpRestorer.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/OFFDumpRestorer.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_off/OFFDumpRetriever.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/OFFDumpRetriever.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_off/OFFPCMCreator.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/OFFPCMCreator.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_off/OFFPCMModifier.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/OFFPCMModifier.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_off/OFFProduct.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/OFFProduct.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_off/OFFStats.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/OFFStats.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_off/OFFToProduct.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/OFFToProduct.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_off/OFFactsCSVCreator.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/OFFactsCSVCreator.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_off/PCMInterpreter.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/PCMInterpreter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_off/PCMUtil.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/PCMUtil.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_off/Run.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/Run.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_off/Run2.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/Run2.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_off/Run3.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/Run3.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_omdb/ConformanceProduct.java" afterPath="$PROJECT_DIR$/src/main/java/data_omdb/ConformanceProduct.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_omdb/ConformanceProductOK.java" afterPath="$PROJECT_DIR$/src/main/java/data_omdb/ConformanceProductOK.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_omdb/Create_file.java" afterPath="$PROJECT_DIR$/src/main/java/data_omdb/Create_file.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_omdb/OMDBCSVProductFactory.java" afterPath="$PROJECT_DIR$/src/main/java/data_omdb/OMDBCSVProductFactory.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_omdb/OMDBMediaType.java" afterPath="$PROJECT_DIR$/src/main/java/data_omdb/OMDBMediaType.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_omdb/OMDBProduct.java" afterPath="$PROJECT_DIR$/src/main/java/data_omdb/OMDBProduct.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_omdb/OMDBToProduct.java" afterPath="$PROJECT_DIR$/src/main/java/data_omdb/OMDBToProduct.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_omdb/Recuperation_Omdb.java" afterPath="$PROJECT_DIR$/src/main/java/data_omdb/Recuperation_Omdb.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_omdb/TexttoFile.java" afterPath="$PROJECT_DIR$/src/main/java/data_omdb/TexttoFile.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_omdb/Write_file.java" afterPath="$PROJECT_DIR$/src/main/java/data_omdb/Write_file.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_rennes/PCMInterpreter.java" afterPath="$PROJECT_DIR$/src/main/java/data_rennes/PCMInterpreter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pcmdata-importers.iml" afterPath="$PROJECT_DIR$/pcmdata-importers.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CSVMerger.java" afterPath="$PROJECT_DIR$/src/main/java/CSVMerger.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CSVtoPCMTest.java" afterPath="$PROJECT_DIR$/src/main/java/CSVtoPCMTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/JSONformating/PCMVisitorImpl.java" afterPath="$PROJECT_DIR$/src/main/java/JSONformating/PCMVisitorImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/JSONformating/PCMtonewJSON.java" afterPath="$PROJECT_DIR$/src/main/java/JSONformating/PCMtonewJSON.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/JSONformating/model/JBooleanValue.java" afterPath="$PROJECT_DIR$/src/main/java/JSONformating/model/JBooleanValue.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/JSONformating/model/JCell.java" afterPath="$PROJECT_DIR$/src/main/java/JSONformating/model/JCell.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/JSONformating/model/JFeature.java" afterPath="$PROJECT_DIR$/src/main/java/JSONformating/model/JFeature.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/JSONformating/model/JMultipleValue.java" afterPath="$PROJECT_DIR$/src/main/java/JSONformating/model/JMultipleValue.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/JSONformating/model/JNumberValue.java" afterPath="$PROJECT_DIR$/src/main/java/JSONformating/model/JNumberValue.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/JSONformating/model/JProduct.java" afterPath="$PROJECT_DIR$/src/main/java/JSONformating/model/JProduct.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/JSONformating/model/JStringValue.java" afterPath="$PROJECT_DIR$/src/main/java/JSONformating/model/JStringValue.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/JSONformating/model/JValue.java" afterPath="$PROJECT_DIR$/src/main/java/JSONformating/model/JValue.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/JSONformating/model/newJSONFormat.java" afterPath="$PROJECT_DIR$/src/main/java/JSONformating/model/newJSONFormat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/JSONformating/model/newJSONFormatType.java" afterPath="$PROJECT_DIR$/src/main/java/JSONformating/model/newJSONFormatType.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/OMDBTest.java" afterPath="$PROJECT_DIR$/src/main/java/OMDBTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/PCMComplementerImageOfProduct.java" afterPath="$PROJECT_DIR$/src/main/java/PCMComplementerImageOfProduct.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/PCMCompleter.java" afterPath="$PROJECT_DIR$/src/main/java/PCMCompleter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/PCMInterpreter.java" afterPath="$PROJECT_DIR$/src/main/java/PCMInterpreter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/WikidataImageRetrieval.java" afterPath="$PROJECT_DIR$/src/main/java/WikidataImageRetrieval.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/WikidataImageRetrievalTest.java" afterPath="$PROJECT_DIR$/src/main/java/WikidataImageRetrievalTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pcm_Export_Mongo/Main.java" afterPath="$PROJECT_DIR$/src/main/java/pcm_Export_Mongo/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pcm_Export_Mongo/PCMInfoContainer.java" afterPath="$PROJECT_DIR$/src/main/java/pcm_Export_Mongo/PCMInfoContainer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pcm_Export_Mongo/StatPcm.java" afterPath="$PROJECT_DIR$/src/main/java/pcm_Export_Mongo/StatPcm.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pcm_Filter/hints/GettingStartedTest.java" afterPath="$PROJECT_DIR$/src/main/java/pcm_Filter/hints/GettingStartedTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pcm_Filter/hints/MyPCMPrinter.java" afterPath="$PROJECT_DIR$/src/main/java/pcm_Filter/hints/MyPCMPrinter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pcm_Filter/hints/VisitorTest.java" afterPath="$PROJECT_DIR$/src/main/java/pcm_Filter/hints/VisitorTest.java" />
     </list>
     <ignored path="pcmdata-importers.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -157,21 +97,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PCMtonewJSON.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PCMtonewJSON.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/PCMtonewJSON.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="192" column="26" selection-start-line="192" selection-start-column="26" selection-end-line="192" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="new_movies.pcm" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/output/new_movies.pcm">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="29423" />
+            <state relative-caret-position="272">
+              <caret line="207" column="51" selection-start-line="207" selection-start-column="51" selection-end-line="207" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -216,7 +146,6 @@
         <option value="$PROJECT_DIR$/src/main/java/JSONformating/model/JStringValue.java" />
         <option value="$PROJECT_DIR$/src/main/java/JSONformating/model/JValue.java" />
         <option value="$PROJECT_DIR$/src/main/java/JSONformating/model/newJSONFormatType.java" />
-        <option value="$PROJECT_DIR$/src/main/java/JSONformating/PCMtonewJSON.java" />
         <option value="$PROJECT_DIR$/src/main/java/PCMCompleter.java" />
         <option value="$PROJECT_DIR$/src/main/java/PCMComplementerImageOfProduct.java" />
         <option value="$PROJECT_DIR$/src/main/java/WikidataImageRetrievalTest.java" />
@@ -234,6 +163,7 @@
         <option value="$PROJECT_DIR$/src/main/java/pcm_Export_Mongo/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/data_off/OFFPCMModifier.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/JSONformating/PCMtonewJSON.java" />
       </list>
     </option>
   </component>
@@ -726,7 +656,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32985386" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32985386" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1176,18 +1106,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/PCMtonewJSON.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="192" column="26" selection-start-line="192" selection-start-column="26" selection-end-line="192" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/output/new_movies.pcm">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="29423" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/PCMtonewJSON.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="207" column="51" selection-start-line="207" selection-start-column="51" selection-end-line="207" selection-end-column="51" />
           <folding />
         </state>
       </provider>
