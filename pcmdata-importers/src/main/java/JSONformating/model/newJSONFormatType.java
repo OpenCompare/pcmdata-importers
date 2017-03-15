@@ -1,4 +1,4 @@
-package main.java.JSONformating.model;
+package JSONformating.model;
 
 public enum newJSONFormatType {
 	BOOLEAN("boolean"),

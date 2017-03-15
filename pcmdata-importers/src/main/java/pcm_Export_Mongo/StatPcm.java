@@ -1,4 +1,4 @@
-package main.java.pcm_Export_Mongo;
+package pcm_Export_Mongo;
 
 /**
  * contains "metrics" of PCM

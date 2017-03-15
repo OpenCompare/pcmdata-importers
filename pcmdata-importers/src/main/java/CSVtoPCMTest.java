@@ -1,6 +1,3 @@
-package main.java;
-
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
@@ -9,6 +6,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
+import data_off.PCMUtil;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.opencompare.api.java.PCMContainer;

@@ -24,14 +24,6 @@
 			<version>0.7</version>
 		</dependency>
 
-		<!-- Dependency to Junit for testing our project -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.11</version>
-			<scope>test</scope>
-		</dependency>
-
 		<!-- Dependency for compressed files management -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
@@ -50,6 +42,41 @@
 			<artifactId>gson</artifactId>
 			<version>2.8.0</version>
 		</dependency>
+
+
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>bson</artifactId>
+			<version>3.4.2</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>io.fastjson</groupId>
+			<artifactId>boon</artifactId>
+			<version>0.32</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongo-java-driver</artifactId>
+			<version>3.4.2</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.json/json -->
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20160212</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+		</dependency>
+
+
 	</dependencies>
 
 	<build>

@@ -1,4 +1,4 @@
-package main.java.pcm_Export_Mongo;
+package pcm_Export_Mongo;
 
 
 import java.io.File;
@@ -18,8 +18,9 @@ import org.opencompare.api.java.io.PCMLoader;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 
-import main.java.JSONformating.PCMtonewJSON;
-import main.java.JSONformating.model.newJSONFormat;
+import JSONformating.PCMtonewJSON;
+import JSONformating.model.newJSONFormat;
+
 
 
 public class Main {
@@ -57,7 +58,7 @@ public class Main {
 						PCMInfoContainer pcmic = null;
 
 						try {
-							pcmic = new PCMInfoContainer(pcm);
+							pcmic = new pcm_Export_Mongo.PCMInfoContainer(pcm);
 						} catch (Exception e) {
 
 						}

@@ -1,4 +1,4 @@
-package main.java.JSONformating.model;
+package JSONformating.model;
 
 public class JBooleanValue extends JValue {
 	private boolean value;

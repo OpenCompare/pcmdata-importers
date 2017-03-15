@@ -1,4 +1,4 @@
-package main.java.JSONformating;
+package JSONformating;
 
 import org.opencompare.api.java.Cell;
 import org.opencompare.api.java.Feature;
@@ -20,7 +20,7 @@ import org.opencompare.api.java.value.StringValue;
 import org.opencompare.api.java.value.Unit;
 import org.opencompare.api.java.value.Version;
 
-import main.java.JSONformating.model.newJSONFormat;
+import JSONformating.model.newJSONFormat;
 
 
 public class PCMVisitorImpl implements PCMVisitor {

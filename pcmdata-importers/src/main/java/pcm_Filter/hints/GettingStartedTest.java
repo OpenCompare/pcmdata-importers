@@ -1,4 +1,4 @@
-package main.java.pcm_Filter.hints;
+package pcm_Filter.hints;
 
 import org.junit.Test;
 import org.opencompare.api.java.*;

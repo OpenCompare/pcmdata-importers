@@ -71,7 +71,7 @@ public class OFFPCMModifier {
 				System.out.println("image_url feature reverted back from MultipleValue to StringValue");
 			}else if(f.getName().equals("product_name")){
 				/*
-				 * l'outil de génération de pcm a partir de csv prend des libertés assez étranges comme convertir "Mike and Ike" en ["Mike", "Ike"] (Multiple)
+				 * l'outil de generation de pcm a partir de csv prend des libertes assez etranges comme convertir "Mike and Ike" en ["Mike", "Ike"] (Multiple)
 				 * et aussi avec "/" et "," mais pas tout le temps
 				 */
 				for(Cell c : f.getCells()){

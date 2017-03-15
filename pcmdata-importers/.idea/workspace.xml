@@ -1,7 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" readonly="true" id="79754a22-4ac1-494c-b1b0-4d99e6bc7438" name="Default" comment="" />
+    <list default="true" readonly="true" id="79754a22-4ac1-494c-b1b0-4d99e6bc7438" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_fastjson_boon_0_32.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_json_json_20160212.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_bson_3_4_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_mongo_java_driver_3_4_2.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_11.xml" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_off/DisplayStream.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/DisplayStream.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_off/OFFCSVProductFactory.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/OFFCSVProductFactory.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_off/OFFDumpRestorer.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/OFFDumpRestorer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_off/OFFDumpRetriever.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/OFFDumpRetriever.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_off/OFFPCMCreator.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/OFFPCMCreator.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_off/OFFPCMModifier.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/OFFPCMModifier.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_off/OFFProduct.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/OFFProduct.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_off/OFFStats.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/OFFStats.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_off/OFFToProduct.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/OFFToProduct.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_off/OFFactsCSVCreator.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/OFFactsCSVCreator.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_off/PCMInterpreter.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/PCMInterpreter.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_off/PCMUtil.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/PCMUtil.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_off/Run.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/Run.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_off/Run2.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/Run2.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_off/Run3.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/Run3.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_omdb/ConformanceProduct.java" afterPath="$PROJECT_DIR$/src/main/java/data_omdb/ConformanceProduct.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_omdb/ConformanceProductOK.java" afterPath="$PROJECT_DIR$/src/main/java/data_omdb/ConformanceProductOK.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_omdb/Create_file.java" afterPath="$PROJECT_DIR$/src/main/java/data_omdb/Create_file.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_omdb/OMDBCSVProductFactory.java" afterPath="$PROJECT_DIR$/src/main/java/data_omdb/OMDBCSVProductFactory.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_omdb/OMDBMediaType.java" afterPath="$PROJECT_DIR$/src/main/java/data_omdb/OMDBMediaType.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_omdb/OMDBProduct.java" afterPath="$PROJECT_DIR$/src/main/java/data_omdb/OMDBProduct.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_omdb/OMDBToProduct.java" afterPath="$PROJECT_DIR$/src/main/java/data_omdb/OMDBToProduct.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_omdb/Recuperation_Omdb.java" afterPath="$PROJECT_DIR$/src/main/java/data_omdb/Recuperation_Omdb.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_omdb/TexttoFile.java" afterPath="$PROJECT_DIR$/src/main/java/data_omdb/TexttoFile.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_omdb/Write_file.java" afterPath="$PROJECT_DIR$/src/main/java/data_omdb/Write_file.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data_rennes/PCMInterpreter.java" afterPath="$PROJECT_DIR$/src/main/java/data_rennes/PCMInterpreter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pcmdata-importers.iml" afterPath="$PROJECT_DIR$/pcmdata-importers.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CSVMerger.java" afterPath="$PROJECT_DIR$/src/main/java/CSVMerger.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CSVtoPCMTest.java" afterPath="$PROJECT_DIR$/src/main/java/CSVtoPCMTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/JSONformating/PCMVisitorImpl.java" afterPath="$PROJECT_DIR$/src/main/java/JSONformating/PCMVisitorImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/JSONformating/PCMtonewJSON.java" afterPath="$PROJECT_DIR$/src/main/java/JSONformating/PCMtonewJSON.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/JSONformating/model/JBooleanValue.java" afterPath="$PROJECT_DIR$/src/main/java/JSONformating/model/JBooleanValue.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/JSONformating/model/JCell.java" afterPath="$PROJECT_DIR$/src/main/java/JSONformating/model/JCell.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/JSONformating/model/JFeature.java" afterPath="$PROJECT_DIR$/src/main/java/JSONformating/model/JFeature.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/JSONformating/model/JMultipleValue.java" afterPath="$PROJECT_DIR$/src/main/java/JSONformating/model/JMultipleValue.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/JSONformating/model/JNumberValue.java" afterPath="$PROJECT_DIR$/src/main/java/JSONformating/model/JNumberValue.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/JSONformating/model/JProduct.java" afterPath="$PROJECT_DIR$/src/main/java/JSONformating/model/JProduct.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/JSONformating/model/JStringValue.java" afterPath="$PROJECT_DIR$/src/main/java/JSONformating/model/JStringValue.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/JSONformating/model/JValue.java" afterPath="$PROJECT_DIR$/src/main/java/JSONformating/model/JValue.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/JSONformating/model/newJSONFormat.java" afterPath="$PROJECT_DIR$/src/main/java/JSONformating/model/newJSONFormat.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/JSONformating/model/newJSONFormatType.java" afterPath="$PROJECT_DIR$/src/main/java/JSONformating/model/newJSONFormatType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/OMDBTest.java" afterPath="$PROJECT_DIR$/src/main/java/OMDBTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/PCMComplementerImageOfProduct.java" afterPath="$PROJECT_DIR$/src/main/java/PCMComplementerImageOfProduct.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/PCMCompleter.java" afterPath="$PROJECT_DIR$/src/main/java/PCMCompleter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/PCMInterpreter.java" afterPath="$PROJECT_DIR$/src/main/java/PCMInterpreter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/WikidataImageRetrieval.java" afterPath="$PROJECT_DIR$/src/main/java/WikidataImageRetrieval.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/WikidataImageRetrievalTest.java" afterPath="$PROJECT_DIR$/src/main/java/WikidataImageRetrievalTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pcm_Export_Mongo/Main.java" afterPath="$PROJECT_DIR$/src/main/java/pcm_Export_Mongo/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pcm_Export_Mongo/PCMInfoContainer.java" afterPath="$PROJECT_DIR$/src/main/java/pcm_Export_Mongo/PCMInfoContainer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pcm_Export_Mongo/StatPcm.java" afterPath="$PROJECT_DIR$/src/main/java/pcm_Export_Mongo/StatPcm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pcm_Filter/hints/GettingStartedTest.java" afterPath="$PROJECT_DIR$/src/main/java/pcm_Filter/hints/GettingStartedTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pcm_Filter/hints/MyPCMPrinter.java" afterPath="$PROJECT_DIR$/src/main/java/pcm_Filter/hints/MyPCMPrinter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pcm_Filter/hints/VisitorTest.java" afterPath="$PROJECT_DIR$/src/main/java/pcm_Filter/hints/VisitorTest.java" />
+    </list>
     <ignored path="pcmdata-importers.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -22,196 +85,112 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="JFeature.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/JFeature.java">
+      <file leaf-file-name="OFFactsCSVCreator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/data_off/OFFactsCSVCreator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#152#153#0" expanded="false" />
-                <element signature="e#168#169#0" expanded="false" />
-                <element signature="e#200#201#0" expanded="false" />
-                <element signature="e#219#220#0" expanded="false" />
-                <element signature="e#246#247#0" expanded="false" />
-                <element signature="e#264#265#0" expanded="false" />
-                <element signature="e#300#301#0" expanded="false" />
-                <element signature="e#323#324#0" expanded="false" />
-                <element signature="e#361#362#0" expanded="false" />
-                <element signature="e#379#380#0" expanded="false" />
-                <element signature="e#426#427#0" expanded="false" />
-                <element signature="e#449#450#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JProduct.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/JProduct.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#199#200#0" expanded="false" />
-                <element signature="e#215#216#0" expanded="false" />
-                <element signature="e#247#248#0" expanded="false" />
-                <element signature="e#266#267#0" expanded="false" />
-                <element signature="e#299#300#0" expanded="false" />
-                <element signature="e#318#319#0" expanded="false" />
-                <element signature="e#361#362#0" expanded="false" />
-                <element signature="e#386#387#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JNumberValue.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/JNumberValue.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#120#121#0" expanded="false" />
-                <element signature="e#139#140#0" expanded="false" />
-                <element signature="e#177#178#0" expanded="false" />
-                <element signature="e#202#203#0" expanded="false" />
-                <element signature="e#231#232#0" expanded="false" />
-                <element signature="e#266#267#0" expanded="false" />
-                <element signature="e#293#294#0" expanded="false" />
-                <element signature="e#328#329#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JStringValue.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/JStringValue.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#123#124#0" expanded="false" />
-                <element signature="e#142#143#0" expanded="false" />
-                <element signature="e#181#182#0" expanded="false" />
-                <element signature="e#206#207#0" expanded="false" />
-                <element signature="e#235#236#0" expanded="false" />
-                <element signature="e#254#255#0" expanded="false" />
-                <element signature="e#281#282#0" expanded="false" />
-                <element signature="e#314#315#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JBooleanValue.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/JBooleanValue.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#125#126#0" expanded="false" />
-                <element signature="e#144#145#0" expanded="false" />
-                <element signature="e#184#185#0" expanded="false" />
-                <element signature="e#209#210#0" expanded="false" />
-                <element signature="e#238#239#0" expanded="false" />
-                <element signature="e#273#274#0" expanded="false" />
-                <element signature="e#300#301#0" expanded="false" />
-                <element signature="e#335#336#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="newJSONFormat.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/newJSONFormat.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#425#426#0" expanded="false" />
-                <element signature="e#443#444#0" expanded="false" />
-                <element signature="e#480#481#0" expanded="false" />
-                <element signature="e#503#504#0" expanded="false" />
-                <element signature="e#534#535#0" expanded="false" />
-                <element signature="e#555#556#0" expanded="false" />
-                <element signature="e#598#599#0" expanded="false" />
-                <element signature="e#627#628#0" expanded="false" />
-                <element signature="e#657#658#0" expanded="false" />
-                <element signature="e#677#678#0" expanded="false" />
-                <element signature="e#718#719#0" expanded="false" />
-                <element signature="e#745#746#0" expanded="false" />
-                <element signature="e#776#777#0" expanded="false" />
-                <element signature="e#797#798#0" expanded="false" />
-                <element signature="e#840#841#0" expanded="false" />
-                <element signature="e#869#870#0" expanded="false" />
-                <element signature="e#909#910#0" expanded="false" />
-                <element signature="e#939#940#0" expanded="false" />
-                <element signature="e#1000#1001#0" expanded="false" />
-                <element signature="e#1047#1048#0" expanded="false" />
-                <element signature="e#1085#1086#0" expanded="false" />
-                <element signature="e#1107#1108#0" expanded="false" />
-                <element signature="e#1146#1147#0" expanded="false" />
-                <element signature="e#1168#1169#0" expanded="false" />
-                <element signature="e#3499#3500#0" expanded="false" />
-                <element signature="e#3521#3522#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JMultipleValue.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/JMultipleValue.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#209#210#0" expanded="false" />
-                <element signature="e#228#229#0" expanded="false" />
-                <element signature="e#273#274#0" expanded="false" />
-                <element signature="e#298#299#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="newJSONFormatType.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/newJSONFormatType.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#345#346#0" expanded="false" />
-                <element signature="e#368#369#0" expanded="false" />
-                <element signature="e#396#397#0" expanded="false" />
-                <element signature="e#414#415#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PCMInfoContainer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pcm_Metric/PCMInfoContainer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+            <state relative-caret-position="45">
+              <caret line="3" column="30" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StatPcm.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pcm_Export_Mongo/StatPcm.java">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+            <state relative-caret-position="90">
+              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OFFPCMModifier.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/data_off/OFFPCMModifier.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="73" column="90" selection-start-line="73" selection-start-column="90" selection-end-line="73" selection-end-column="90" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WikidataImageRetrieval.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/WikidataImageRetrieval.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="149">
+              <caret line="43" column="27" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WikidataImageRetrievalTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/WikidataImageRetrievalTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="27" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CSVtoPCMTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/CSVtoPCMTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PCMVisitorImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/PCMVisitorImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PCMtonewJSON.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/PCMtonewJSON.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="192" column="26" selection-start-line="192" selection-start-column="26" selection-end-line="192" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new_movies.pcm" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/output/new_movies.pcm">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="29423" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pcmdata-importers.iml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pcmdata-importers.iml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="GradleLocalSettings">
     <option name="modificationStamps">
@@ -227,6 +206,34 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/java/pcm_Metric/PCMInfoContainer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/JSONformating/model/newJSONFormat.java" />
+        <option value="$PROJECT_DIR$/src/main/java/JSONformating/model/JBooleanValue.java" />
+        <option value="$PROJECT_DIR$/src/main/java/JSONformating/model/JCell.java" />
+        <option value="$PROJECT_DIR$/src/main/java/JSONformating/model/JFeature.java" />
+        <option value="$PROJECT_DIR$/src/main/java/JSONformating/model/JMultipleValue.java" />
+        <option value="$PROJECT_DIR$/src/main/java/JSONformating/model/JNumberValue.java" />
+        <option value="$PROJECT_DIR$/src/main/java/JSONformating/model/JProduct.java" />
+        <option value="$PROJECT_DIR$/src/main/java/JSONformating/model/JStringValue.java" />
+        <option value="$PROJECT_DIR$/src/main/java/JSONformating/model/JValue.java" />
+        <option value="$PROJECT_DIR$/src/main/java/JSONformating/model/newJSONFormatType.java" />
+        <option value="$PROJECT_DIR$/src/main/java/JSONformating/PCMtonewJSON.java" />
+        <option value="$PROJECT_DIR$/src/main/java/PCMCompleter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/PCMComplementerImageOfProduct.java" />
+        <option value="$PROJECT_DIR$/src/main/java/WikidataImageRetrievalTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/WikidataImageRetrieval.java" />
+        <option value="$PROJECT_DIR$/src/main/java/PCMInterpreter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/OMDBTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CSVtoPCMTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CSVMerger.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pcm_Filter/hints/GettingStartedTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pcm_Filter/hints/MyPCMPrinter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pcm_Filter/hints/VisitorTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/JSONformating/PCMVisitorImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pcm_Export_Mongo/PCMInfoContainer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pcm_Export_Mongo/StatPcm.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pcm_Export_Mongo/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/data_off/OFFPCMModifier.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -236,14 +243,19 @@
         <option name="mavenHome" value="Bundled (Maven 3)" />
       </MavenGeneralSettings>
     </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1959" />
+    <option name="x" value="1920" />
     <option name="y" value="23" />
     <option name="width" value="1920" />
     <option name="height" value="1053" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -268,8 +280,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -277,15 +289,9 @@
               <option name="myItemId" value="pcmdata-importers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pcmdata-importers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pcmdata-importers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -294,15 +300,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pcmdata-importers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemId" value="Maven: org.opencompare:api-java:0.7" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
+              <option name="myItemId" value="api-java-0.7.jar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -316,23 +322,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven: org.opencompare:api-java:0.7" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api-java-0.7.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
               <option name="myItemId" value="pcmdata-importers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pcm_Export_Mongo" />
+              <option name="myItemId" value="pcmdata-importers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -346,17 +354,19 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="output" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -364,7 +374,27 @@
       <recent name="$PROJECT_DIR$/src/main" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.PCMtonewJSON">
+    <configuration default="false" name="PCMtonewJSON" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="JSONformating.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="JSONformating.PCMtonewJSON" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="pcmdata-importers" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -644,6 +674,14 @@
       <envs />
       <method />
     </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Application.PCMtonewJSON" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Application.PCMtonewJSON" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SbtLocalSettings">
     <option name="modificationStamps">
@@ -677,16 +715,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1959" y="23" width="1920" height="1053" extended-state="0" />
+    <frame x="1920" y="23" width="1920" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985386" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32985386" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -696,14 +736,13 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -723,378 +762,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/JFeature.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#152#153#0" expanded="false" />
-            <element signature="e#168#169#0" expanded="false" />
-            <element signature="e#200#201#0" expanded="false" />
-            <element signature="e#219#220#0" expanded="false" />
-            <element signature="e#246#247#0" expanded="false" />
-            <element signature="e#264#265#0" expanded="false" />
-            <element signature="e#300#301#0" expanded="false" />
-            <element signature="e#323#324#0" expanded="false" />
-            <element signature="e#361#362#0" expanded="false" />
-            <element signature="e#379#380#0" expanded="false" />
-            <element signature="e#426#427#0" expanded="false" />
-            <element signature="e#449#450#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/JProduct.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#199#200#0" expanded="false" />
-            <element signature="e#215#216#0" expanded="false" />
-            <element signature="e#247#248#0" expanded="false" />
-            <element signature="e#266#267#0" expanded="false" />
-            <element signature="e#299#300#0" expanded="false" />
-            <element signature="e#318#319#0" expanded="false" />
-            <element signature="e#361#362#0" expanded="false" />
-            <element signature="e#386#387#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/JNumberValue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#120#121#0" expanded="false" />
-            <element signature="e#139#140#0" expanded="false" />
-            <element signature="e#177#178#0" expanded="false" />
-            <element signature="e#202#203#0" expanded="false" />
-            <element signature="e#231#232#0" expanded="false" />
-            <element signature="e#266#267#0" expanded="false" />
-            <element signature="e#293#294#0" expanded="false" />
-            <element signature="e#328#329#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/JStringValue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#123#124#0" expanded="false" />
-            <element signature="e#142#143#0" expanded="false" />
-            <element signature="e#181#182#0" expanded="false" />
-            <element signature="e#206#207#0" expanded="false" />
-            <element signature="e#235#236#0" expanded="false" />
-            <element signature="e#254#255#0" expanded="false" />
-            <element signature="e#281#282#0" expanded="false" />
-            <element signature="e#314#315#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/JBooleanValue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#125#126#0" expanded="false" />
-            <element signature="e#144#145#0" expanded="false" />
-            <element signature="e#184#185#0" expanded="false" />
-            <element signature="e#209#210#0" expanded="false" />
-            <element signature="e#238#239#0" expanded="false" />
-            <element signature="e#273#274#0" expanded="false" />
-            <element signature="e#300#301#0" expanded="false" />
-            <element signature="e#335#336#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/newJSONFormat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#425#426#0" expanded="false" />
-            <element signature="e#443#444#0" expanded="false" />
-            <element signature="e#480#481#0" expanded="false" />
-            <element signature="e#503#504#0" expanded="false" />
-            <element signature="e#534#535#0" expanded="false" />
-            <element signature="e#555#556#0" expanded="false" />
-            <element signature="e#598#599#0" expanded="false" />
-            <element signature="e#627#628#0" expanded="false" />
-            <element signature="e#657#658#0" expanded="false" />
-            <element signature="e#677#678#0" expanded="false" />
-            <element signature="e#718#719#0" expanded="false" />
-            <element signature="e#745#746#0" expanded="false" />
-            <element signature="e#776#777#0" expanded="false" />
-            <element signature="e#797#798#0" expanded="false" />
-            <element signature="e#840#841#0" expanded="false" />
-            <element signature="e#869#870#0" expanded="false" />
-            <element signature="e#909#910#0" expanded="false" />
-            <element signature="e#939#940#0" expanded="false" />
-            <element signature="e#1000#1001#0" expanded="false" />
-            <element signature="e#1047#1048#0" expanded="false" />
-            <element signature="e#1085#1086#0" expanded="false" />
-            <element signature="e#1107#1108#0" expanded="false" />
-            <element signature="e#1146#1147#0" expanded="false" />
-            <element signature="e#1168#1169#0" expanded="false" />
-            <element signature="e#3499#3500#0" expanded="false" />
-            <element signature="e#3521#3522#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/JMultipleValue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#209#210#0" expanded="false" />
-            <element signature="e#228#229#0" expanded="false" />
-            <element signature="e#273#274#0" expanded="false" />
-            <element signature="e#298#299#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/newJSONFormatType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#345#346#0" expanded="false" />
-            <element signature="e#368#369#0" expanded="false" />
-            <element signature="e#396#397#0" expanded="false" />
-            <element signature="e#414#415#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pcm_Metric/PCMInfoContainer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/JValue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/JFeature.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#152#153#0" expanded="false" />
-            <element signature="e#168#169#0" expanded="false" />
-            <element signature="e#200#201#0" expanded="false" />
-            <element signature="e#219#220#0" expanded="false" />
-            <element signature="e#246#247#0" expanded="false" />
-            <element signature="e#264#265#0" expanded="false" />
-            <element signature="e#300#301#0" expanded="false" />
-            <element signature="e#323#324#0" expanded="false" />
-            <element signature="e#361#362#0" expanded="false" />
-            <element signature="e#379#380#0" expanded="false" />
-            <element signature="e#426#427#0" expanded="false" />
-            <element signature="e#449#450#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/JProduct.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#199#200#0" expanded="false" />
-            <element signature="e#215#216#0" expanded="false" />
-            <element signature="e#247#248#0" expanded="false" />
-            <element signature="e#266#267#0" expanded="false" />
-            <element signature="e#299#300#0" expanded="false" />
-            <element signature="e#318#319#0" expanded="false" />
-            <element signature="e#361#362#0" expanded="false" />
-            <element signature="e#386#387#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/JNumberValue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#120#121#0" expanded="false" />
-            <element signature="e#139#140#0" expanded="false" />
-            <element signature="e#177#178#0" expanded="false" />
-            <element signature="e#202#203#0" expanded="false" />
-            <element signature="e#231#232#0" expanded="false" />
-            <element signature="e#266#267#0" expanded="false" />
-            <element signature="e#293#294#0" expanded="false" />
-            <element signature="e#328#329#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/JStringValue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#123#124#0" expanded="false" />
-            <element signature="e#142#143#0" expanded="false" />
-            <element signature="e#181#182#0" expanded="false" />
-            <element signature="e#206#207#0" expanded="false" />
-            <element signature="e#235#236#0" expanded="false" />
-            <element signature="e#254#255#0" expanded="false" />
-            <element signature="e#281#282#0" expanded="false" />
-            <element signature="e#314#315#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/JBooleanValue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#125#126#0" expanded="false" />
-            <element signature="e#144#145#0" expanded="false" />
-            <element signature="e#184#185#0" expanded="false" />
-            <element signature="e#209#210#0" expanded="false" />
-            <element signature="e#238#239#0" expanded="false" />
-            <element signature="e#273#274#0" expanded="false" />
-            <element signature="e#300#301#0" expanded="false" />
-            <element signature="e#335#336#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/newJSONFormat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#425#426#0" expanded="false" />
-            <element signature="e#443#444#0" expanded="false" />
-            <element signature="e#480#481#0" expanded="false" />
-            <element signature="e#503#504#0" expanded="false" />
-            <element signature="e#534#535#0" expanded="false" />
-            <element signature="e#555#556#0" expanded="false" />
-            <element signature="e#598#599#0" expanded="false" />
-            <element signature="e#627#628#0" expanded="false" />
-            <element signature="e#657#658#0" expanded="false" />
-            <element signature="e#677#678#0" expanded="false" />
-            <element signature="e#718#719#0" expanded="false" />
-            <element signature="e#745#746#0" expanded="false" />
-            <element signature="e#776#777#0" expanded="false" />
-            <element signature="e#797#798#0" expanded="false" />
-            <element signature="e#840#841#0" expanded="false" />
-            <element signature="e#869#870#0" expanded="false" />
-            <element signature="e#909#910#0" expanded="false" />
-            <element signature="e#939#940#0" expanded="false" />
-            <element signature="e#1000#1001#0" expanded="false" />
-            <element signature="e#1047#1048#0" expanded="false" />
-            <element signature="e#1085#1086#0" expanded="false" />
-            <element signature="e#1107#1108#0" expanded="false" />
-            <element signature="e#1146#1147#0" expanded="false" />
-            <element signature="e#1168#1169#0" expanded="false" />
-            <element signature="e#3499#3500#0" expanded="false" />
-            <element signature="e#3521#3522#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/JMultipleValue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#209#210#0" expanded="false" />
-            <element signature="e#228#229#0" expanded="false" />
-            <element signature="e#273#274#0" expanded="false" />
-            <element signature="e#298#299#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/newJSONFormatType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#345#346#0" expanded="false" />
-            <element signature="e#368#369#0" expanded="false" />
-            <element signature="e#396#397#0" expanded="false" />
-            <element signature="e#414#415#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pcm_Metric/PCMInfoContainer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pcm_Export_Mongo/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pcm_Export_Mongo/PCMInfoContainer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pcm_Filter/hints/VisitorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pcm_Filter/hints/MyPCMPrinter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pcm_Filter/hints/GettingStartedTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pcm_Filter/mutate/MainMutate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pcm_Filter/simple/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1109,28 +776,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CSVtoPCMTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pcm_Filter/simple/pcm_predicate/PCMPredicateFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/PCMtonewJSON.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/PCMVisitorImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1144,89 +790,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/JCell.java">
+    <entry file="file://$PROJECT_DIR$/pom2.xml" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/pcm_Metric/PCMInfoContainer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/JValue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/JFeature.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="165">
+          <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
           <folding>
-            <element signature="e#152#153#0" expanded="false" />
-            <element signature="e#168#169#0" expanded="false" />
-            <element signature="e#200#201#0" expanded="false" />
-            <element signature="e#219#220#0" expanded="false" />
-            <element signature="e#246#247#0" expanded="false" />
-            <element signature="e#264#265#0" expanded="false" />
-            <element signature="e#300#301#0" expanded="false" />
-            <element signature="e#323#324#0" expanded="false" />
-            <element signature="e#361#362#0" expanded="false" />
-            <element signature="e#379#380#0" expanded="false" />
-            <element signature="e#426#427#0" expanded="false" />
-            <element signature="e#449#450#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/JProduct.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#199#200#0" expanded="false" />
-            <element signature="e#215#216#0" expanded="false" />
-            <element signature="e#247#248#0" expanded="false" />
-            <element signature="e#266#267#0" expanded="false" />
-            <element signature="e#299#300#0" expanded="false" />
-            <element signature="e#318#319#0" expanded="false" />
-            <element signature="e#361#362#0" expanded="false" />
-            <element signature="e#386#387#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/JNumberValue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#120#121#0" expanded="false" />
-            <element signature="e#139#140#0" expanded="false" />
-            <element signature="e#177#178#0" expanded="false" />
-            <element signature="e#202#203#0" expanded="false" />
-            <element signature="e#231#232#0" expanded="false" />
-            <element signature="e#266#267#0" expanded="false" />
-            <element signature="e#293#294#0" expanded="false" />
-            <element signature="e#328#329#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/JStringValue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#123#124#0" expanded="false" />
-            <element signature="e#142#143#0" expanded="false" />
-            <element signature="e#181#182#0" expanded="false" />
-            <element signature="e#206#207#0" expanded="false" />
-            <element signature="e#235#236#0" expanded="false" />
-            <element signature="e#254#255#0" expanded="false" />
-            <element signature="e#281#282#0" expanded="false" />
-            <element signature="e#314#315#0" expanded="false" />
+            <marker date="1489607524000" expanded="true" signature="38:768" ph="..." />
+            <marker date="1489607524000" expanded="false" signature="1081:1086" ph=" { " />
+            <marker date="1489607524000" expanded="false" signature="1097:1100" ph=" }" />
+            <marker date="1489607524000" expanded="false" signature="1413:1420" ph=" { " />
+            <marker date="1489607524000" expanded="false" signature="1453:1456" ph=" }" />
+            <marker date="1489607524000" expanded="false" signature="1497:1502" ph=" { " />
+            <marker date="1489607524000" expanded="false" signature="1543:1546" ph=" }" />
+            <marker date="1489607524000" expanded="true" signature="1585:1736" ph="{...}" />
+            <marker date="1489607524000" expanded="true" signature="1780:2116" ph="{...}" />
+            <marker date="1489607524000" expanded="true" signature="2005:2082" ph="//..." />
+            <marker date="1489607524000" expanded="true" signature="2162:2272" ph="{...}" />
+            <marker date="1489607524000" expanded="true" signature="2319:3365" ph="{...}" />
+            <marker date="1489607524000" expanded="true" signature="3437:4211" ph="{...}" />
+            <marker date="1489607524000" expanded="true" signature="3559:3623" ph="//..." />
+            <marker date="1489607524000" expanded="true" signature="3857:3916" ph="//..." />
+            <marker date="1489607524000" expanded="true" signature="4260:4393" ph="{...}" />
+            <marker date="1489607524000" expanded="true" signature="4439:5552" ph="{...}" />
+            <marker date="1489607524000" expanded="true" signature="5558:5649" ph="/**...*/" />
+            <marker date="1489607524000" expanded="true" signature="5693:5882" ph="{...}" />
+            <marker date="1489607524000" expanded="true" signature="5919:5941" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1234,96 +823,371 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/JBooleanValue.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#125#126#0" expanded="false" />
-            <element signature="e#144#145#0" expanded="false" />
-            <element signature="e#184#185#0" expanded="false" />
-            <element signature="e#209#210#0" expanded="false" />
-            <element signature="e#238#239#0" expanded="false" />
-            <element signature="e#273#274#0" expanded="false" />
-            <element signature="e#300#301#0" expanded="false" />
-            <element signature="e#335#336#0" expanded="false" />
-          </folding>
+          <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/newJSONFormat.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/JCell.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#425#426#0" expanded="false" />
-            <element signature="e#443#444#0" expanded="false" />
-            <element signature="e#480#481#0" expanded="false" />
-            <element signature="e#503#504#0" expanded="false" />
-            <element signature="e#534#535#0" expanded="false" />
-            <element signature="e#555#556#0" expanded="false" />
-            <element signature="e#598#599#0" expanded="false" />
-            <element signature="e#627#628#0" expanded="false" />
-            <element signature="e#657#658#0" expanded="false" />
-            <element signature="e#677#678#0" expanded="false" />
-            <element signature="e#718#719#0" expanded="false" />
-            <element signature="e#745#746#0" expanded="false" />
-            <element signature="e#776#777#0" expanded="false" />
-            <element signature="e#797#798#0" expanded="false" />
-            <element signature="e#840#841#0" expanded="false" />
-            <element signature="e#869#870#0" expanded="false" />
-            <element signature="e#909#910#0" expanded="false" />
-            <element signature="e#939#940#0" expanded="false" />
-            <element signature="e#1000#1001#0" expanded="false" />
-            <element signature="e#1047#1048#0" expanded="false" />
-            <element signature="e#1085#1086#0" expanded="false" />
-            <element signature="e#1107#1108#0" expanded="false" />
-            <element signature="e#1146#1147#0" expanded="false" />
-            <element signature="e#1168#1169#0" expanded="false" />
-            <element signature="e#3499#3500#0" expanded="false" />
-            <element signature="e#3521#3522#0" expanded="false" />
-          </folding>
+          <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/JFeature.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/JMultipleValue.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#209#210#0" expanded="false" />
-            <element signature="e#228#229#0" expanded="false" />
-            <element signature="e#273#274#0" expanded="false" />
-            <element signature="e#298#299#0" expanded="false" />
-          </folding>
+          <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/JNumberValue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/JProduct.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/JStringValue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/JValue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/newJSONFormat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/newJSONFormatType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
+          <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/data_off/Run.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/data_off/Run2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/data_off/Run3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/data_off/PCMUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/data_off/OFFStats.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/data_off/OFFProduct.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/data_off/OFFToProduct.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/data_off/DisplayStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/data_off/OFFPCMCreator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/data_off/PCMInterpreter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
           <folding>
-            <element signature="e#345#346#0" expanded="false" />
-            <element signature="e#368#369#0" expanded="false" />
-            <element signature="e#396#397#0" expanded="false" />
-            <element signature="e#414#415#0" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom2.xml" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/pcm_Metric/PCMInfoContainer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/PCMCompleter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+        <state relative-caret-position="450">
+          <caret line="31" column="60" selection-start-line="31" selection-start-column="60" selection-end-line="31" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/PCMComplementerImageOfProduct.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-555">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/PCMInterpreter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="54" column="38" selection-start-line="54" selection-start-column="38" selection-end-line="54" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CSVMerger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1425">
+          <caret line="58" column="40" selection-start-line="58" selection-start-column="40" selection-end-line="58" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pcm_Filter/hints/GettingStartedTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="41" column="17" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pcm_Filter/hints/MyPCMPrinter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pcm_Filter/hints/VisitorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/OMDBTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="39" column="42" selection-start-line="39" selection-start-column="42" selection-end-line="39" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/data_omdb/OMDBToProduct.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/data_omdb/OMDBCSVProductFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/opencompare/api-java/0.7/api-java-0.7-sources.jar!/org/opencompare/api/java/PCM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pcm_Export_Mongo/PCMInfoContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pcm_Export_Mongo/StatPcm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+        <state relative-caret-position="0">
+          <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/Contents/Home/jre/lib/plugin.jar!/sun/plugin/javascript/navig/JSType.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pcm_Export_Mongo/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/data_off/OFFactsCSVCreator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="30" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/data_off/OFFPCMModifier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="73" column="90" selection-start-line="73" selection-start-column="90" selection-end-line="73" selection-end-column="90" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/WikidataImageRetrieval.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="43" column="27" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pcmdata-importers.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/WikidataImageRetrievalTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="27" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CSVtoPCMTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/PCMVisitorImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/PCMtonewJSON.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="192" column="26" selection-start-line="192" selection-start-column="26" selection-end-line="192" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/output/new_movies.pcm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="29423" />
           <folding />
         </state>
       </provider>
