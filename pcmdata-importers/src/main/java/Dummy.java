@@ -1,4 +1,4 @@
-package JSONformating;
+package main.java;
 
 import java.util.regex.Pattern;
 

@@ -1,3 +1,5 @@
+package main.java;
+
 import org.opencompare.api.java.Feature;
 import org.opencompare.api.java.PCM;
 import org.opencompare.api.java.PCMContainer;

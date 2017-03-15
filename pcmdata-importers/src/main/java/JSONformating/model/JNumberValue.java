@@ -1,4 +1,4 @@
-package JSONformating.model;
+package main.java.JSONformating.model;
 
 public class JNumberValue extends JValue{
 	private float value;

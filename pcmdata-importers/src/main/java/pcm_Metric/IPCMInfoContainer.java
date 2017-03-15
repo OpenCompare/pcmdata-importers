@@ -1,4 +1,4 @@
-package pcm_Metric;
+package main.java.pcm_Metric;
 
 public interface IPCMInfoContainer {
 
