@@ -12,17 +12,20 @@ import org.opencompare.api.java.impl.value.*;
 import org.opencompare.api.java.value.*;
 
 import JSONformating.model.*;
+import data_off.PCMInterpreter;
 import data_off.PCMUtil;
 
 public class PCMtonewJSON {
 
-	public static newJSONFormat mkNewJSONFormatFromPCM(PCM pcm){
+	public static newJSONFormat mkNewJSONFormatFromPCM(PCMContainer pcmC){
 
+		PCM pcm = pcmC.getPcm();
 		newJSONFormat nJSONf = new newJSONFormat();
 
 		nJSONf.setName(pcm.getName());
-		nJSONf.setLicense(""); //TODO
-		nJSONf.setSource(""); //TODO
+		nJSONf.setCreator(pcmC.getMetadata().getCreator());
+		nJSONf.setLicense(pcmC.getMetadata().getLicense());
+		nJSONf.setSource(pcmC.getMetadata().getSource());
 
 		Map<Feature,String> features = new HashMap<>();
 
@@ -113,7 +116,9 @@ public class PCMtonewJSON {
 		}else if(valClass.equals(StringValueImpl.class)){
 
 			StringValue sv = (StringValue) c.getInterpretation();
-			if(Pattern.matches(".*\\.jpg\\s*$"
+			if(Pattern.matches("^\\s*http:\\/\\/.*"
+					+ "|^\\s*https:\\/\\/.*", sv.getValue())
+			&& Pattern.matches(".*\\.jpg\\s*$"
 					+ "|.*\\.svg\\s*$"
 					+ "|.*\\.jpeg\\s*$"
 					+ "|.*\\.bmp\\s*$"
@@ -187,10 +192,13 @@ public class PCMtonewJSON {
 
 	public static void main(String[] args) throws IOException {
 
-		String filename = "off_output/pcms/en_candies_m.pcm";
-		PCM pcm = PCMUtil.loadPCM(filename);
-		newJSONFormat nf = mkNewJSONFormatFromPCM(pcm);
+//		String filename = "off_output/pcms/en_candies_m.pcm";
+		String filename = "output/movies.json";
+		PCMContainer pcmC = PCMUtil.loadPCMContainer(filename);
+		newJSONFormat nf = mkNewJSONFormatFromPCM(pcmC);
 		System.out.println(nf.toString());
+//		PCMInterpreter.writeToFile("off_output/pcms/new_en_candies.pcm", nf.export());
+		PCMInterpreter.writeToFile("output/new_movies.pcm", nf.export());
 	}
 
 }

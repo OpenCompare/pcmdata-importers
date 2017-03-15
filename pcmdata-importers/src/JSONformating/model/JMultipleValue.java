@@ -22,4 +22,14 @@ public class JMultipleValue extends JValue{
 		}
 		return res;
 	}
+	
+	public String export(){
+		String res = "[";
+		for(JValue val : value){
+			res += val.export() + ",";
+		}
+		res = value.isEmpty() ? res : res.substring(0, res.length() - 1);
+		res += "]";
+		return res;
+	}
 }

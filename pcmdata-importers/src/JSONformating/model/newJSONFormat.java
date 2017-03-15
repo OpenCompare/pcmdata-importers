@@ -10,6 +10,7 @@ public class newJSONFormat {
 	private String name;
 	private String license;
 	private String source;
+	private String creator;
 	private String primaryFeatureID;
 	private List<JFeature> features = new ArrayList<>();
 	private List<JProduct> products = new ArrayList<>();
@@ -38,6 +39,14 @@ public class newJSONFormat {
 		this.source = source;
 	}
 
+	public String getCreator() {
+		return creator;
+	}
+
+	public void setCreator(String creator) {
+		this.creator = creator;
+	}
+
 	public String getPrimaryFeatureID() {
 		return primaryFeatureID;
 	}
@@ -54,8 +63,51 @@ public class newJSONFormat {
 		products.add(p);
 	}
 
-	public void export(){
+	public String export(){
 		//TODO to text
+		String res = "pcm:{"; //open pcm
+		
+		res += "name:\"" + name;
+		res += "\",license:\"" + license;
+		res += "\",source:\"" + source;
+		res += "\",creator:\"" + creator;
+		res += "\",primaryFeatureID:\"" + primaryFeatureID;
+		res += "\",features:{"; //open features
+		
+		for(JFeature f : features){
+			res += f.getId() + ":{"; //open feature f
+			res += "id:\"" + f.getId();
+			res += "\",name:\"" + f.getName();
+			res += "\",type:\"" + f.getType().toString();
+			res += "\"},"; //close feature f
+		}
+		
+		res = features.isEmpty() ? res : res.substring(0, res.length() - 1);
+		res += "},"; //close features
+		res += "products:{"; //open products
+		
+		for(JProduct p : products){
+			res += p.getId() + ":{"; //open product
+			res += "cells:{"; //open cells
+			for(JCell c : p.getCells()){
+				res += c.getId() + ":{"; //open cell
+				res += "productID:\"" + c.getProductID();
+				res += "\",featureID:\"" + c.getFeatureID();
+				res += "\",type:\"" + c.getType();
+				res += "\",isPartial:\"" + "false"; //FIXME temp isPartial value
+				res += "\",unit:\"" + "undefined"; //FIXME temp isPartial value
+				res += "\",value:" + (c.getValue() == null ? "undefined" : c.getValue().export());
+				res += "},";//close cell
+			}
+			res = p.getCells().isEmpty() ? res : res.substring(0, res.length() - 1);
+			res += "}";
+			res += "},"; //close product
+		}
+		res = products.isEmpty() ? res : res.substring(0, res.length() - 1);
+		
+		res += "}"; //close products
+		res += "}"; //close pcm
+		return res;
 	}
 	
 	public String toString(){

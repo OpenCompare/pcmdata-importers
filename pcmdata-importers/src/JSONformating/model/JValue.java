@@ -15,4 +15,8 @@ public class JValue {
 	public String toString(){
 		return "";
 	}
+
+	public String export() {
+		return "";
+	}
 }

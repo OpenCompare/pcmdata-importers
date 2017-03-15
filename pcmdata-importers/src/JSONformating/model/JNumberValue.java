@@ -14,4 +14,8 @@ public class JNumberValue extends JValue{
 	public String toString(){
 		return String.valueOf(value);
 	}
+	
+	public String export(){
+		return String.valueOf(value);
+	}
 }
