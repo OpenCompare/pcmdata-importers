@@ -61,7 +61,9 @@ public class Main {
 						} catch (Exception e) {
 
 						}
-
+						System.out.println("pcmic != null ? " + pcmic != null);
+						if(pcmic != null)
+							System.out.println("is pcmic productChartable ? " + pcmic.isProductChartable());
 						if (pcmic != null && pcmic.isProductChartable()) {
 
 							// TODO

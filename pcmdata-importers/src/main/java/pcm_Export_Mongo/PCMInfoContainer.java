@@ -24,7 +24,7 @@ public class PCMInfoContainer {
 	}
 
 	private void preCompute(PCM pcm) {
-		StatPcm _statPcm = new StatPcm(_pcm);
+		/*StatPcm*/ _statPcm = new StatPcm(_pcm);
 
 	}
 
