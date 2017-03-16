@@ -1,4 +1,4 @@
-package data_omdb;
+package main.java.data_omdb;
 //Package à importer afin d'utiliser l'objet File
 import java.io.File;
 

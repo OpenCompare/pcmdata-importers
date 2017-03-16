@@ -1,3 +1,5 @@
+package main.java;
+
 import static org.junit.Assert.*;
 
 import java.io.BufferedWriter;
@@ -24,12 +26,13 @@ import org.opencompare.api.java.impl.io.KMFJSONExporter;
 import org.opencompare.api.java.io.CSVLoader;
 import org.opencompare.api.java.io.PCMDirection;
 
-import data_omdb.ConformanceProduct;
-import data_omdb.ConformanceProductOK;
-import data_omdb.OMDBCSVProductFactory;
-import data_omdb.OMDBMediaType;
-import data_omdb.OMDBProduct;
-import data_omdb.OMDBToProduct;
+import main.java.data_omdb.ConformanceProduct;
+import main.java.data_omdb.OMDBCSVProductFactory;
+import main.java.data_omdb.OMDBMediaType;
+import main.java.data_omdb.OMDBProduct;
+import main.java.data_omdb.OMDBToProduct;
+
+
 
 
 public class OMDBTest {

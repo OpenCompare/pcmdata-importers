@@ -1,7 +1,4 @@
-package data_off;
-
-import org.bson.Document;
-import org.json.JSONException;
+package main.java.data_off;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -12,12 +9,18 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.Map.Entry;
+import java.util.Set;
+
+import org.bson.Document;
+import org.json.JSONException;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mongodb.*;
-import com.mongodb.client.*;
+import com.mongodb.BasicDBObject;
+import com.mongodb.MongoClient;
+import com.mongodb.client.FindIterable;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoCursor;
 import com.opencsv.CSVWriter;
 
 public class OFFactsCSVCreator {

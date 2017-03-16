@@ -1,4 +1,4 @@
-package pcm_Export_Mongo;
+package main.java.pcm_Export_Mongo;
 
 import java.util.List;
 import java.util.Set;

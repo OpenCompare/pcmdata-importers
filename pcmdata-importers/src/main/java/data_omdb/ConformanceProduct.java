@@ -1,4 +1,4 @@
-package data_omdb;
+package main.java.data_omdb;
 
 public abstract class ConformanceProduct {
 

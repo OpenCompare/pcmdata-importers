@@ -1,4 +1,4 @@
-package JSONformating;
+package main.java.JSONformating;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -7,16 +7,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import org.opencompare.api.java.*;
 import org.opencompare.api.java.impl.value.*;
 import org.opencompare.api.java.value.*;
 
-import JSONformating.model.*;
-
-import data_off.*;
+import main.java.JSONformating.model.*;
+import main.java.data_off.PCMInterpreter;
+import main.java.data_off.PCMUtil;
 
 public class PCMtonewJSON {
 

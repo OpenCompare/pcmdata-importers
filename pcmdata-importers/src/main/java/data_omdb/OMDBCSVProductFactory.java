@@ -1,4 +1,4 @@
-package data_omdb;
+package main.java.data_omdb;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,7 +8,6 @@ import org.bson.Document;
 
 import com.opencsv.CSVWriter;
 
-import data_off.OFFToProduct;
 
 public class OMDBCSVProductFactory {
 	

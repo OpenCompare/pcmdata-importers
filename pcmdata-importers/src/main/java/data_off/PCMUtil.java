@@ -1,4 +1,8 @@
-package data_off;
+package main.java.data_off;
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
+
 import org.opencompare.api.java.Feature;
 import org.opencompare.api.java.PCM;
 import org.opencompare.api.java.PCMContainer;
@@ -8,10 +12,6 @@ import org.opencompare.api.java.impl.io.KMFJSONLoader;
 import org.opencompare.api.java.io.CSVLoader;
 import org.opencompare.api.java.io.PCMDirection;
 import org.opencompare.api.java.io.PCMLoader;
-
-import java.io.File;
-import java.io.IOException;
-import java.util.List;
 
 /**
  * Created by macher1 on 12/05/2016.

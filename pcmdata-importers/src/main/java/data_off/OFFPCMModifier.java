@@ -1,17 +1,15 @@
-package data_off;
+package main.java.data_off;
 
 import java.io.IOException;
 
-import org.opencompare.api.java.AbstractFeature;
 import org.opencompare.api.java.Cell;
 import org.opencompare.api.java.Feature;
 import org.opencompare.api.java.PCM;
 import org.opencompare.api.java.PCMContainer;
 import org.opencompare.api.java.PCMFactory;
-import org.opencompare.api.java.Product;
 import org.opencompare.api.java.Value;
 import org.opencompare.api.java.impl.PCMFactoryImpl;
-import org.opencompare.api.java.impl.value.*;
+import org.opencompare.api.java.impl.value.MultipleImpl;
 import org.opencompare.api.java.value.Multiple;
 import org.opencompare.api.java.value.StringValue;
 

@@ -1,4 +1,4 @@
-package data_omdb;
+package main.java.data_omdb;
 import java.io.IOException;
 import java.io.* ;
 import java.net.URL ;
