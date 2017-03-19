@@ -1,4 +1,4 @@
-package main.java.data_off;
+package data_off;
 
 import java.io.BufferedWriter;
 import java.io.File;

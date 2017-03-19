@@ -1,4 +1,4 @@
-package main.java.JSONformating;
+package JSONformating;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,9 +13,9 @@ import org.opencompare.api.java.*;
 import org.opencompare.api.java.impl.value.*;
 import org.opencompare.api.java.value.*;
 
-import main.java.JSONformating.model.*;
-import main.java.data_off.PCMInterpreter;
-import main.java.data_off.PCMUtil;
+import JSONformating.model.*;
+import data_off.PCMInterpreter;
+import data_off.PCMUtil;
 
 public class PCMtonewJSON {
 

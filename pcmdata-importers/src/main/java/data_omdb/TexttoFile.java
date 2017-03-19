@@ -1,8 +1,8 @@
-package main.java.data_omdb;
+package data_omdb;
 
 
 
-// io = input/output (entrée/sortie)  
+// io = input/output (entree/sortie)
 import java.io.*;
 //ce package est necessaire pour executer ce programme
 

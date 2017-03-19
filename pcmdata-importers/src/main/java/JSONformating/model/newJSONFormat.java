@@ -1,4 +1,4 @@
-package main.java.JSONformating.model;
+package JSONformating.model;
 
 import java.util.ArrayList;
 import java.util.HashSet;

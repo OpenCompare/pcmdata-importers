@@ -1,4 +1,4 @@
-package main.java.data_omdb;
+package data_omdb;
 
 public enum OMDBMediaType {
 	

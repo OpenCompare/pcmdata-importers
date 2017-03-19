@@ -1,4 +1,4 @@
-package main.java;
+package misc;
 
 import org.opencompare.api.java.Feature;
 import org.opencompare.api.java.PCM;
@@ -107,11 +107,36 @@ public class PCMUtil {
      */
     public static List<PCMContainer> loadCSV(File file, PCMDirection pcmDir) throws IOException {
 
-        CSVLoader csvL = new CSVLoader(
+        CSVLoader csvL =
+                new CSVLoader(
                 new PCMFactoryImpl(),
                 new CellContentInterpreter(new PCMFactoryImpl()), pcmDir);
+
+
         return csvL.load(file);
     }
+
+    /**
+     * A helper method to get a PCMContainer from a CSV file (limited in a sense we only retrieve the 1st element of containers)
+     * @param file
+     * @return
+     * @throws IOException
+     */
+    public static List<PCMContainer> loadCSV(File file, PCMDirection pcmDir, char sep) throws IOException {
+
+        CSVLoader csvL =
+                new CSVLoader(new PCMFactoryImpl(),
+                        new CellContentInterpreter(new PCMFactoryImpl()), sep, '"', pcmDir);
+
+
+        return csvL.load(file);
+    }
+
+
+
+
+
+
 
     /**
      * A helper method to get a PCMContainer from a CSV file (limited in a sense we only retrieve the 1st element of containers)

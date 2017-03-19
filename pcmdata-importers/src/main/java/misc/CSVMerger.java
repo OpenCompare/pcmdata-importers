@@ -1,4 +1,4 @@
-package main.java;
+package misc;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;

@@ -1,4 +1,4 @@
-package main.java.data_rennes;
+package data_rennes;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

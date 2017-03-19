@@ -1,4 +1,4 @@
-package main.java;
+package misc;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;

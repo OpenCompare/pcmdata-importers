@@ -1,4 +1,4 @@
-package main.java.JSONformating.model;
+package JSONformating.model;
 
 public class JFeature {
 	private String id;

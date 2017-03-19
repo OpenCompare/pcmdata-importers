@@ -1,4 +1,4 @@
-package main.java;
+package misc;
 
 import static org.junit.Assert.*;
 
@@ -9,7 +9,7 @@ import java.io.OutputStreamWriter;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 
-import main.java.data_off.PCMUtil;
+import data_off.PCMUtil;
 import org.junit.Test;
 import org.opencompare.api.java.Cell;
 import org.opencompare.api.java.PCM;

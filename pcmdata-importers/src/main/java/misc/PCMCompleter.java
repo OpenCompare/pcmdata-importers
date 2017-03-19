@@ -1,4 +1,4 @@
-package main.java;
+package misc;
 
 import static org.junit.Assert.*;
 
@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import main.java.data_off.PCMUtil;
+import data_off.PCMUtil;
 import org.junit.Test;
 import org.opencompare.api.java.Cell;
 import org.opencompare.api.java.Feature;
