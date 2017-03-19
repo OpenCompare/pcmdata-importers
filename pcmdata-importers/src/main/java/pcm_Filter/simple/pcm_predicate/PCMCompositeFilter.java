@@ -1,9 +1,9 @@
-package main.java.pcm_Filter.simple.pcm_predicate;
+package pcm_Filter.simple.pcm_predicate;
 
 import java.util.Collection;
 import java.util.LinkedList;
 
-import main.java.pcm_Filter.PCMInfoContainer;
+import pcm_Filter.PCMInfoContainer;
 
 
 

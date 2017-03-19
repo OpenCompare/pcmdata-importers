@@ -2,60 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="79754a22-4ac1-494c-b1b0-4d99e6bc7438" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input-csv/parrainagestotal.csv" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/data_omdb/Create_file.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/CSVMerger.java" afterPath="$PROJECT_DIR$/src/main/java/misc/CSVMerger.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/CSVtoPCMTest.java" afterPath="$PROJECT_DIR$/src/main/java/misc/CSVtoPCMTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Dummy.java" afterPath="$PROJECT_DIR$/src/main/java/misc/Dummy.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/OMDBTest.java" afterPath="$PROJECT_DIR$/src/main/java/misc/OMDBTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/PCMComplementerImageOfProduct.java" afterPath="$PROJECT_DIR$/src/main/java/misc/PCMComplementerImageOfProduct.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/PCMCompleter.java" afterPath="$PROJECT_DIR$/src/main/java/misc/PCMCompleter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/PCMInterpreter.java" afterPath="$PROJECT_DIR$/src/main/java/misc/PCMInterpreter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/PCMUtil.java" afterPath="$PROJECT_DIR$/src/main/java/misc/PCMUtil.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/WikidataImageRetrieval.java" afterPath="$PROJECT_DIR$/src/main/java/misc/WikidataImageRetrieval.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/WikidataImageRetrievalTest.java" afterPath="$PROJECT_DIR$/src/main/java/misc/WikidataImageRetrievalTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/igdb.java" afterPath="$PROJECT_DIR$/src/main/java/misc/igdb.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.classpath" afterPath="$PROJECT_DIR$/.classpath" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/JSONformating/PCMVisitorImpl.java" afterPath="$PROJECT_DIR$/src/main/java/JSONformating/PCMVisitorImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/JSONformating/PCMtonewJSON.java" afterPath="$PROJECT_DIR$/src/main/java/JSONformating/PCMtonewJSON.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/JSONformating/model/JBooleanValue.java" afterPath="$PROJECT_DIR$/src/main/java/JSONformating/model/JBooleanValue.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/JSONformating/model/JCell.java" afterPath="$PROJECT_DIR$/src/main/java/JSONformating/model/JCell.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/JSONformating/model/JFeature.java" afterPath="$PROJECT_DIR$/src/main/java/JSONformating/model/JFeature.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/JSONformating/model/JMultipleValue.java" afterPath="$PROJECT_DIR$/src/main/java/JSONformating/model/JMultipleValue.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/JSONformating/model/JNumberValue.java" afterPath="$PROJECT_DIR$/src/main/java/JSONformating/model/JNumberValue.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/JSONformating/model/JProduct.java" afterPath="$PROJECT_DIR$/src/main/java/JSONformating/model/JProduct.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/JSONformating/model/JStringValue.java" afterPath="$PROJECT_DIR$/src/main/java/JSONformating/model/JStringValue.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/JSONformating/model/JValue.java" afterPath="$PROJECT_DIR$/src/main/java/JSONformating/model/JValue.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/JSONformating/model/newJSONFormat.java" afterPath="$PROJECT_DIR$/src/main/java/JSONformating/model/newJSONFormat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/JSONformating/model/newJSONFormatType.java" afterPath="$PROJECT_DIR$/src/main/java/JSONformating/model/newJSONFormatType.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/data_off/DisplayStream.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/DisplayStream.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/data_off/OFFCSVProductFactory.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/OFFCSVProductFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/data_off/OFFDumpRestorer.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/OFFDumpRestorer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/data_off/OFFDumpRetriever.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/OFFDumpRetriever.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/data_off/OFFPCMCreator.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/OFFPCMCreator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/data_off/OFFPCMModifier.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/OFFPCMModifier.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/data_off/OFFProduct.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/OFFProduct.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/data_off/OFFStats.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/OFFStats.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/data_off/OFFToProduct.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/OFFToProduct.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/data_off/OFFactsCSVCreator.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/OFFactsCSVCreator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/data_off/PCMInterpreter.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/PCMInterpreter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/data_off/PCMUtil.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/PCMUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/data_off/Run.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/Run.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/data_off/Run2.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/Run2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/data_off/Run3.java" afterPath="$PROJECT_DIR$/src/main/java/data_off/Run3.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/data_omdb/ConformanceProduct.java" afterPath="$PROJECT_DIR$/src/main/java/data_omdb/ConformanceProduct.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/data_omdb/ConformanceProductOK.java" afterPath="$PROJECT_DIR$/src/main/java/data_omdb/ConformanceProductOK.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/data_omdb/OMDBCSVProductFactory.java" afterPath="$PROJECT_DIR$/src/main/java/data_omdb/OMDBCSVProductFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/data_omdb/OMDBMediaType.java" afterPath="$PROJECT_DIR$/src/main/java/data_omdb/OMDBMediaType.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/data_omdb/OMDBProduct.java" afterPath="$PROJECT_DIR$/src/main/java/data_omdb/OMDBProduct.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/data_omdb/OMDBToProduct.java" afterPath="$PROJECT_DIR$/src/main/java/data_omdb/OMDBToProduct.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/data_omdb/Recuperation_Omdb.java" afterPath="$PROJECT_DIR$/src/main/java/data_omdb/Recuperation_Omdb.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/data_omdb/TexttoFile.java" afterPath="$PROJECT_DIR$/src/main/java/data_omdb/TexttoFile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/data_rennes/PCMInterpreter.java" afterPath="$PROJECT_DIR$/src/main/java/data_rennes/PCMInterpreter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pcm_Export_Mongo/Main.java" afterPath="$PROJECT_DIR$/src/main/java/pcm_Export_Mongo/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pcm_Export_Mongo/PCMInfoContainer.java" afterPath="$PROJECT_DIR$/src/main/java/pcm_Export_Mongo/PCMInfoContainer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pcm_Export_Mongo/StatPcm.java" afterPath="$PROJECT_DIR$/src/main/java/pcm_Export_Mongo/StatPcm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/data_omdb/Write_file.java" afterPath="$PROJECT_DIR$/src/main/java/data_omdb/Write_file.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pcm_Filter/PCMInfoContainer.java" afterPath="$PROJECT_DIR$/src/main/java/pcm_Filter/PCMInfoContainer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pcm_Filter/hints/GettingStartedTest.java" afterPath="$PROJECT_DIR$/src/main/java/pcm_Filter/hints/GettingStartedTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pcm_Filter/hints/MyPCMPrinter.java" afterPath="$PROJECT_DIR$/src/main/java/pcm_Filter/hints/MyPCMPrinter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pcm_Filter/hints/VisitorTest.java" afterPath="$PROJECT_DIR$/src/main/java/pcm_Filter/hints/VisitorTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pcm_Filter/mutate/MainMutate.java" afterPath="$PROJECT_DIR$/src/main/java/pcm_Filter/mutate/MainMutate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pcm_Filter/simple/Main.java" afterPath="$PROJECT_DIR$/src/main/java/pcm_Filter/simple/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pcm_Filter/simple/pcm_predicate/PCMCompositeFilter.java" afterPath="$PROJECT_DIR$/src/main/java/pcm_Filter/simple/pcm_predicate/PCMCompositeFilter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pcm_Filter/simple/pcm_predicate/PCMPredicateFilter.java" afterPath="$PROJECT_DIR$/src/main/java/pcm_Filter/simple/pcm_predicate/PCMPredicateFilter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pcm_Filter/simple/pcm_predicate/PCMPredicateMinColumnProduct.java" afterPath="$PROJECT_DIR$/src/main/java/pcm_Filter/simple/pcm_predicate/PCMPredicateMinColumnProduct.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pcm_Filter/simple/pcm_predicate/PCMPredicateMinRowProduct.java" afterPath="$PROJECT_DIR$/src/main/java/pcm_Filter/simple/pcm_predicate/PCMPredicateMinRowProduct.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pcm_Metric/IPCMInfoContainer.java" afterPath="$PROJECT_DIR$/src/main/java/pcm_Metric/IPCMInfoContainer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pcm_Metric/PCMInfoContainer.java" afterPath="$PROJECT_DIR$/src/main/java/pcm_Metric/PCMInfoContainer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pcm_Metric/PCMInfoContainerPreComputation.java" afterPath="$PROJECT_DIR$/src/main/java/pcm_Metric/PCMInfoContainerPreComputation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pcm_Metric/PCMInfoTest.java" afterPath="$PROJECT_DIR$/src/main/java/pcm_Metric/PCMInfoTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pcm_Metric/StatPcm.java" afterPath="$PROJECT_DIR$/src/main/java/pcm_Metric/StatPcm.java" />
     </list>
     <ignored path="pcmdata-importers.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -121,7 +85,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CSVtoPCMTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CSVtoPCMTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/misc/CSVtoPCMTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="438">
@@ -129,6 +93,16 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PCMInfoContainer.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pcm_Filter/PCMInfoContainer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -185,7 +159,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/pcm_Filter/hints/MyPCMPrinter.java" />
         <option value="$PROJECT_DIR$/src/main/java/pcm_Filter/hints/VisitorTest.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/PCMUtil.java" />
@@ -236,6 +209,7 @@
         <option value="$PROJECT_DIR$/src/main/java/JSONformating/PCMVisitorImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/misc/PCMUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/misc/CSVtoPCMTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pcm_Filter/PCMInfoContainer.java" />
       </list>
     </option>
   </component>
@@ -731,6 +705,14 @@
       <option name="presentableId" value="Default" />
       <updated>1489594069247</updated>
     </task>
+    <task id="LOCAL-00001" summary="refactoring packages">
+      <created>1489943968526</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1489943968526</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -789,6 +771,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="refactoring packages" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring packages" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
@@ -803,14 +789,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/JNumberValue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/JSONformating/model/JMultipleValue.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -848,7 +826,7 @@
         <state relative-caret-position="-1425">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -874,7 +852,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1186,7 +1164,7 @@
         <state relative-caret-position="204">
           <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
-            <element signature="e#780#781#0" expanded="true" />
+            <element signature="e#780#781#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1229,6 +1207,14 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pcm_Filter/PCMInfoContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>

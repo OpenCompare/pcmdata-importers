@@ -1,4 +1,4 @@
-package main.java.pcm_Filter.simple;
+package pcm_Filter.simple;
 
 import java.io.File;
 import java.io.IOException;
@@ -16,8 +16,8 @@ import org.opencompare.api.java.impl.io.KMFJSONLoader;
 
 import org.opencompare.api.java.io.PCMLoader;
 
-import main.java.pcm_Filter.PCMInfoContainer;
-import main.java.pcm_Filter.simple.pcm_predicate.*;
+import pcm_Filter.PCMInfoContainer;
+import pcm_Filter.simple.pcm_predicate.*;
 
 
 

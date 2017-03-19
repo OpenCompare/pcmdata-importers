@@ -1,4 +1,4 @@
-package main.java.pcm_Filter.mutate;
+package pcm_Filter.mutate;
 
 import java.io.File;
 import java.io.IOException;
@@ -19,7 +19,7 @@ import org.opencompare.api.java.impl.io.KMFJSONLoader;
 
 import org.opencompare.api.java.io.PCMLoader;
 
-import main.java.pcm_Filter.PCMInfoContainer;
+import pcm_Filter.PCMInfoContainer;
 
 
 public class MainMutate {

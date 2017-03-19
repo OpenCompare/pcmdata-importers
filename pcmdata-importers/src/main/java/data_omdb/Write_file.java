@@ -1,4 +1,4 @@
-package main.java.data_omdb;
+package data_omdb;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
