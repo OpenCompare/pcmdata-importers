@@ -12,9 +12,9 @@ public static void main(String[] arg0) throws IOException, JSONException{
 		
 //		creator.createCSVFromCategory("en:beers", false);
 //		OFFPCMCreator.mkPCMFromCategory("en:beers");
-//		creator.createCSVFromCategory("en:candies", true);
-//		OFFPCMCreator.mkPCMFromCategory("en:candies");
-		OFFPCMModifier.addMultiplesToFile("en:candies");
+		creator.createCSVFromCategory("en:breaded-products", true);
+		OFFPCMCreator.mkPCMFromCategory("en:breaded-products");
+		OFFPCMCreator.mkNewPCMFromCategory("en:breaded-products");
 //		creator.createCSVFromCategory("en:seeds", true);
 //		OFFPCMCreator.mkPCMFromCategory("en:seeds");
 		

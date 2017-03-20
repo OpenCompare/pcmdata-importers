@@ -85,37 +85,36 @@ public class PCMtonewJSON {
 	}
 
 	public static JValue createJValueFromCellForJCell(Cell c, JCell jc){
-		Class<? extends Value> valClass = c.getInterpretation().getClass();
-
-		if(valClass.equals(BooleanValueImpl.class)){
+		Value value =  c.getInterpretation();
+		if(value instanceof BooleanValueImpl){
 
 			jc.setType(newJSONFormatType.BOOLEAN);
 			JBooleanValue bool = new JBooleanValue();
 			bool.setValue(((BooleanValue) c.getInterpretation()).getValue());
 			return bool;
 
-		}else if(valClass.equals(DateValueImpl.class)){
+		}else if(value instanceof DateValueImpl){
 
 			jc.setType(newJSONFormatType.DATE);
-			JStringValue value = new JStringValue();
-			value.setValue(((DateValue) c.getInterpretation()).getValue());
-			return value;
+			JStringValue stringValue = new JStringValue();
+			stringValue.setValue(((DateValue) c.getInterpretation()).getValue());
+			return stringValue;
 
-		}else if(valClass.equals(IntegerValueImpl.class)){
+		}else if(value instanceof IntegerValueImpl){
 
 			jc.setType(newJSONFormatType.INTEGER);
 			JNumberValue numValue = new JNumberValue();
 			numValue.setValue(((IntegerValue) c.getInterpretation()).getValue());
 			return numValue;
 
-		}else if(valClass.equals(RealValueImpl.class)){
+		}else if(value instanceof RealValueImpl){
 
 			jc.setType(newJSONFormatType.REAL);
-			JNumberValue value = new JNumberValue();
-			value.setValue(((RealValue) c.getInterpretation()).getValue());
-			return value;
+			JNumberValue numValue = new JNumberValue();
+			numValue.setValue(((RealValue) c.getInterpretation()).getValue());
+			return numValue;
 
-		}else if(valClass.equals(StringValueImpl.class)){
+		}else if(value instanceof StringValueImpl){
 
 			StringValue sv = (StringValue) c.getInterpretation();
 			if(Pattern.matches("^\\s*http:\\/\\/.*"
@@ -133,17 +132,17 @@ public class PCMtonewJSON {
 			}else{
 				jc.setType(newJSONFormatType.STRING);
 			}
-			JStringValue value = new JStringValue();
-			value.setValue(((StringValue) c.getInterpretation()).getValue());
-			return value;
-		}else if(valClass.equals(MultipleImpl.class)){
+			JStringValue stringValue = new JStringValue();
+			stringValue.setValue(((StringValue) c.getInterpretation()).getValue());
+			return stringValue;
+		}else if(value instanceof MultipleImpl){
 			jc.setType(newJSONFormatType.MULTIPLE);
 			JMultipleValue mulvalue = new JMultipleValue();
 			mulvalue.setValue(createJValuesForMultiple(((Multiple) c.getInterpretation()).getSubValues()));
 			return mulvalue;
-		}else if(valClass.equals(VersionImpl.class)){
+		}else if(value instanceof VersionImpl){
 			jc.setType(newJSONFormatType.VERSION);
-		}else if(valClass.equals(NotApplicableImpl.class)){
+		}else if(value instanceof NotApplicableImpl){
 			jc.setType(newJSONFormatType.UNDEFINED);
 		}else{
 			jc.setType(newJSONFormatType.UNDEFINED);
@@ -153,35 +152,33 @@ public class PCMtonewJSON {
 
 	public static List<JValue> createJValuesForMultiple(List<Value> values){
 		List<JValue> jvalues = new ArrayList<>();
-		Class<? extends Value> valClass;
 		
 		for(Value val : values){
-			valClass = val.getClass();
-			if(valClass.equals(BooleanValueImpl.class)){
+			if(val instanceof BooleanValueImpl){
 				JBooleanValue value = new JBooleanValue();
 				value.setValue(((BooleanValue) val).getValue());
 				jvalues.add(value);
-			}else if(valClass.equals(DateValueImpl.class)){
+			}else if(val instanceof DateValueImpl){
 				JStringValue value = new JStringValue();
 				value.setValue(((DateValue) val).getValue());
 				jvalues.add(value);
-			}else if(valClass.equals(IntegerValueImpl.class)){
+			}else if(val instanceof IntegerValueImpl){
 				JNumberValue value = new JNumberValue();
 				value.setValue(((IntegerValue) val).getValue());
 				jvalues.add(value);
-			}else if(valClass.equals(RealValueImpl.class)){
+			}else if(val instanceof RealValueImpl){
 				JNumberValue value = new JNumberValue();
 				value.setValue(((RealValue) val).getValue());
 				jvalues.add(value);
-			}else if(valClass.equals(StringValueImpl.class)){
+			}else if(val instanceof StringValueImpl){
 				JStringValue value = new JStringValue();
 				value.setValue(((StringValue) val).getValue());
 				jvalues.add(value);
-			}else if(valClass.equals(MultipleImpl.class)){
+			}else if(val instanceof MultipleImpl){
 				
-			}else if(valClass.equals(VersionImpl.class)){
+			}else if(val instanceof VersionImpl){
 				
-			}else if(valClass.equals(NotApplicableImpl.class)){
+			}else if(val instanceof NotApplicableImpl){
 				
 			}else{
 				
@@ -194,17 +191,21 @@ public class PCMtonewJSON {
 
 	public static void main(String[] args) throws IOException {
 
-//		String filename = "off_output/pcms/en_candies_m.pcm";
-		String filename = "output/movies.json";
-		PCMContainer pcmC = PCMUtil.loadPCMContainer(filename);
+		String inFilename = "off_output/pcms/en_beverages_m.pcm";
+		String outFilename = "off_output/pcms/new_en_beverages.pcm";
+		PCMContainer pcmC = PCMUtil.loadPCMContainer(inFilename);
+		System.out.println("PCM loaded");
 		newJSONFormat nf = mkNewJSONFormatFromPCM(pcmC);
-		System.out.println(nf.toString());
-//		PCMInterpreter.writeToFile("off_output/pcms/new_en_candies.pcm", nf.export());
-		String jsonRes = nf.export();
-		PCMInterpreter.writeToFile("output/new_movies.pcm", jsonRes);
+		System.out.println("new format created");
+		//String jsonRes = nf.export();
+		nf.exportToFile(outFilename);
+		System.out.println("exported");
+		//PCMInterpreter.writeToFile("off_output/pcms/new_en_beverages.pcm", jsonRes);
+		System.out.println("written");
 
 
 		// a fictive example to show how GSON works
+		/*
 		String jsonExample = "{\n" +
 				"\t\t\t\"data\": {\n" +
 				"\t\t\t\"translations\": [\n" +
@@ -216,10 +217,10 @@ public class PCMtonewJSON {
 				"\t\t}";
 
 		System.out.println("" + new JsonParser().parse(jsonExample));
-
+		*/
 		// error
 		// does not work
-		JsonElement jelement = new JsonParser().parse(jsonRes);
+		//JsonElement jelement = new JsonParser().parse(jsonRes);
 
 
 

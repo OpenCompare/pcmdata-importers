@@ -135,7 +135,7 @@ public class OFFProduct {
 			}
 		}
 		catch(NullPointerException e){
-			e.printStackTrace();;
+			_log.warning("Product " + id + " null pointer exception on stores");
 		}
 
 	}
@@ -162,6 +162,7 @@ public class OFFProduct {
 				}
 			}
 		}catch(NullPointerException e){
+			OFFStats.NULL_NUTRIMENTS++;
 			_log.warning("Product " + id + " null pointer exception on nutriments");
 		}
 
@@ -211,7 +212,10 @@ public class OFFProduct {
 		text = text.replaceAll("[ ][0-9]+$", "");
 
 		//remove white spaces in front and back
-		text = text.replaceAll("^[\\s]|[\\s]$", "");
+		text = text.replaceAll("^[\\s]|[\\s]$|[\\n\\r]", "");
+		
+		//remove all \n
+//		text = text.replaceAll("\\n", ""); //FIXME still some ingredients have 
 
 		return text;
 	}

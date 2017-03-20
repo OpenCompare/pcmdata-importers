@@ -32,9 +32,9 @@ public class OFFToProduct {
 		strArr[i] = product.getIngredientsString(); i++;
 		strArr[i] = product.getBrandsString(); i++;
 		strArr[i] = product.getStoresString(); i++;
-		
+
 		for(String nut : nutriments){
-//			System.out.println(product.getNutrimentValue(nut));
+			//			System.out.println(product.getNutrimentValue(nut));
 			strArr[i] = product.getNutrimentValue(nut);
 			i++;
 		}
@@ -42,13 +42,13 @@ public class OFFToProduct {
 		return strArr;
 	}
 
-//	public static List<String[]> mkOFFProductsStrings(List<OFFProduct> products) throws IOException{
-//		List<String[]> res = new ArrayList<>();
-//		for(OFFProduct p : products){
-//			res.add(mkOFFProductStrings(p));
-//		}
-//		return res;
-//	}
+	//	public static List<String[]> mkOFFProductsStrings(List<OFFProduct> products) throws IOException{
+	//		List<String[]> res = new ArrayList<>();
+	//		for(OFFProduct p : products){
+	//			res.add(mkOFFProductStrings(p));
+	//		}
+	//		return res;
+	//	}
 
 	public static List<OFFProduct> mkOFFProductsFromMongoCursor(MongoCursor<Document> cursor) throws IOException, JSONException{
 		List<OFFProduct> list = new ArrayList<>();
@@ -89,10 +89,21 @@ public class OFFToProduct {
 	}
 
 	private static String getImageUrl(String id) throws IOException, JSONException {
+		if(id == null){
+			OFFStats.NULL_IDS++;
+			return "https://upload.wikimedia.org/wikipedia/commons/f/f8/Question_mark_alternate.svg";
+		}
 		URL url = new URL("http://world.openfoodfacts.org/api/v0/product/"+ id +".json");
-		BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream(), StandardCharsets.UTF_8));
-		String input = in.readLine();
-		in.close();
+		String input;
+		try{
+			BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream(), StandardCharsets.UTF_8));
+			input = in.readLine();
+			in.close();
+		}catch(IOException e){
+			e.printStackTrace();
+			return "https://upload.wikimedia.org/wikipedia/commons/f/f8/Question_mark_alternate.svg";
+		}
+
 		JSONObject json = new JSONObject(input);
 		if(json.getString("status_verbose").equals("product not found")){
 			System.out.println("Product " + id + " not found");

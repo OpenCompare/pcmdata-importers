@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.NoSuchElementException;
 import java.util.Set;
 
 import org.bson.Document;
@@ -24,17 +25,17 @@ import com.mongodb.client.MongoCursor;
 import com.opencsv.CSVWriter;
 
 public class OFFactsCSVCreator {
-	
+
 	/*
 	 *  ps -ef | grep mongo
 	 */
-	
+
 	public static ObjectMapper OBJECT_MAPPER = new ObjectMapper();
-	public static boolean MAX_ON = true;
+	public static boolean MAX_ON = false;
 	public static int MAX_PRODUCTS = 100;
 	private MongoClient mongo;
 	private MongoCollection<Document> collection;
-	
+
 	public OFFactsCSVCreator(){
 
 		mongo = new MongoClient();
@@ -59,14 +60,14 @@ public class OFFactsCSVCreator {
 		}
 		OFFToProduct.setGetImageUrl(getImageUrl);
 		int count = createCSVFromMongoCursor(category, cursor, cursorForHeader);
-		
+
 		System.out.println(count + " products in the category " + category);
 	}
 
 	public static int createCSVFromMongoCursor(String fileName, MongoCursor<Document> cursor, MongoCursor<Document> cursorForHeader) throws JSONException{
 		System.out.println("Writing to file " + fileName);
-		//		DateFormat dateFormat = new SimpleDateFormat("-ddMMyyyy-HHmmss");
-		//		Date date = new Date();
+//		DateFormat dateFormat = new SimpleDateFormat("-ddMMyyyy-HHmmss");
+//		Date date = new Date();
 		String newFileName = "off_output/" + fileName /* + dateFormat.format(date)*/ + ".csv";
 		File file = new File(newFileName);
 
@@ -76,26 +77,32 @@ public class OFFactsCSVCreator {
 			e1.printStackTrace();
 		}
 
+		int count = 0;
 		try (Writer writer = new BufferedWriter(new FileWriter(file))) {
-			
+
 			CSVWriter csvwriter = new CSVWriter(writer, ';', '\"');
 			List<String> nutriments = getNutrimentsList(cursorForHeader);
 			String[] header  = makeHeader(nutriments);
 //			System.out.println(header.length);
 			csvwriter.writeNext(header);//writing the header
 			Document product;
-			int count = 0;
-			while(cursor.hasNext() && (MAX_ON)?count < MAX_PRODUCTS:true){
+			while(cursor.hasNext() && (MAX_ON ?count < MAX_PRODUCTS:true)){
 				product = cursor.next();
 				csvwriter.writeNext(OFFToProduct.mkOFFProductStrings(OFFToProduct.mkOFFProductFromBSON(product), nutriments, header.length));
 				count++;
+				if(count%1000 == 0){
+					System.out.println(count + " products written");
+				}
+
 			}
 			csvwriter.close();
 			return count;
 		} catch (IOException e) {
 			e.printStackTrace();
+			System.out.println("OK WTF");
+
 		}
-		return 0;
+		return count;
 	}
 
 
@@ -157,18 +164,22 @@ public class OFFactsCSVCreator {
 			list.add(key);
 			nutriments.remove(key);
 		}
-		
+
 		return list;
 	}
 
 	@SuppressWarnings("unchecked")
 	public Set<String> getCategoriesWithBetween(int min, int max){
+		long total = collection.count();
 		FindIterable<Document> test = collection.find();
 		MongoCursor<Document> cursor = test.iterator();
 		Document product;
 		List<String> catList;
 		Map<String, Integer> catMap = new HashMap<String, Integer>();
 		int count = 0;
+		int ratio = 0;
+		int ratioDelta = 10;
+		System.out.println("Checking categories...");
 		while(cursor.hasNext()){
 			product = cursor.next();
 			catList = (ArrayList<String>) product.get("categories_tags");
@@ -182,8 +193,12 @@ public class OFFactsCSVCreator {
 				}
 			}
 			count++;
-			if(count%1000 == 0){
-				System.out.println(count + " products checked");
+			//			if(count%1000 == 0){
+			//				System.out.println(count + " products checked");
+			//			}
+			if(count*100/total>=ratio){
+				System.out.println(ratio + "% of products checked");
+				ratio += ratioDelta;
 			}
 		}
 		catMap.remove("");
