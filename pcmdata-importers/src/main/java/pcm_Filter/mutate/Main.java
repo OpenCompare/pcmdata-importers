@@ -8,33 +8,26 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.stream.Stream;
 
-import org.bson.Document;
-//import org.junit.Test;
 import org.opencompare.api.java.*;
 import org.opencompare.api.java.impl.io.KMFJSONExporter;
 import org.opencompare.api.java.impl.io.KMFJSONLoader;
 import org.opencompare.api.java.io.PCMLoader;
 
-import com.mongodb.MongoClient;
-import com.mongodb.client.MongoCollection;
-
-import JSONformating.PCMtonewJSON;
-import JSONformating.model.newJSONFormat;
-import pcm_Export_Mongo.PCMInfoContainer;
-
-
 public class Main {
 
 	public static String inputpath = ""; // give path with argv
+	public static String outputpath = ""; // give path with argv
 
 	public static void main(String[] args) throws IOException {
 
 		// inputpath = args[0];
 		inputpath = "input-pcm/";
+		outputpath = "output-pcm/";
 
-		//MongoClient mongoClient = new MongoClient();
+		// MongoClient mongoClient = new MongoClient();
 		try {
-			//MongoCollection<Document> collection = mongoClient.getDatabase("OpenCompare").getCollection("pcms");
+			// MongoCollection<Document> collection =
+			// mongoClient.getDatabase("OpenCompare").getCollection("pcms");
 
 			Stream<Path> paths = Files.walk(Paths.get(inputpath));
 
@@ -57,39 +50,30 @@ public class Main {
 						PCM pcm = pcmContainer.getPcm();
 						PCMInfoContainer pcmic = null;
 
+						pcmic = new PCMInfoContainer(pcm);
+						pcmContainer.setPcm(pcmic.getMutedPcm());
+
+						KMFJSONExporter pcmExporter = new KMFJSONExporter();
+						String pcmString = pcmExporter.export(pcmContainer);
+
+						Path p = Paths.get(outputpath + "muted_" + filePath.getFileName());
 						try {
-							pcmic = new PCMInfoContainer(pcm);
+							Files.write(p, pcmString.getBytes());
 						} catch (Exception e) {
 							e.printStackTrace();
 						}
-						System.out.println("pcmic != null ? " + (pcmic != null));
-						
-						if(pcmic != null)
-							System.out.println("is pcmic productChartable ? " + pcmic.isProductChartable());
-						if (pcmic != null && pcmic.isProductChartable()) {
-
-							// TODO
-							// Export to mongoDB database
-
-							//newJSONFormat json = PCMtonewJSON.mkNewJSONFormatFromPCM(pcmContainer);
-							KMFJSONExporter json = new KMFJSONExporter();
-							String pcmString = json.export(pcmContainer);
-							Document doc = Document.parse(pcmString);
-							//collection.insertOne(doc);
-							System.out.println("> PCM exported to Database");
-
-						}
+						System.out.println("> PCM exported to " + p);
 
 					}
 
 				}
 
 			});
-			//mongoClient.close();
+			// mongoClient.close();
 			paths.close();
 
 		} catch (Exception e) {
-			//mongoClient.close();
+			// mongoClient.close();
 			e.printStackTrace();
 		}
 	}
