@@ -8,8 +8,8 @@ public class Run3 {
 
 
 //		OFFPCMModifier.addMultiplesToFile("en:candies");
-		
-		System.out.println(System.getProperty("os.name"));
+		OFFPCMCreator.mkNewPCMFromCategory("fr:biscottes-pauvres-en-sel");
+//		System.out.println(System.getProperty("os.name"));
 
 	}
 

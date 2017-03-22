@@ -191,17 +191,15 @@ public class PCMtonewJSON {
 
 	public static void main(String[] args) throws IOException {
 
-		String inFilename = "off_output/pcms/en_beverages_m.pcm";
-		String outFilename = "off_output/pcms/new_en_beverages.pcm";
+		String inFilename = "off_output/pcms/fr_biscottes-pauvres-en-sel.pcm";
+		//String outFilename = "off_output/pcms/new_en_beverages.pcm";
 		PCMContainer pcmC = PCMUtil.loadPCMContainer(inFilename);
 		System.out.println("PCM loaded");
 		newJSONFormat nf = mkNewJSONFormatFromPCM(pcmC);
 		System.out.println("new format created");
-		//String jsonRes = nf.export();
-		nf.exportToFile(outFilename);
-		System.out.println("exported");
+		String jsonRes = nf.export();
+		//nf.exportToFile(outFilename);
 		//PCMInterpreter.writeToFile("off_output/pcms/new_en_beverages.pcm", jsonRes);
-		System.out.println("written");
 
 
 		// a fictive example to show how GSON works
@@ -220,11 +218,8 @@ public class PCMtonewJSON {
 		*/
 		// error
 		// does not work
-		//JsonElement jelement = new JsonParser().parse(jsonRes);
-
-
-
-
+		JsonElement jelement = new JsonParser().parse(jsonRes);
+		System.out.println(jelement.toString());
 	}
 
 }

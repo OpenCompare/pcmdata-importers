@@ -14,19 +14,19 @@ public class Run {
 
 		OFFactsCSVCreator creator = new OFFactsCSVCreator();
 
-		Set<String> cat = creator.getCategoriesWithBetween(900, 1000);
-		
-		int max = cat.size();
-
-		int count = 0;
-		for(String s : cat){
-			count++;
-			System.out.println(s + " " + count + " / " + max);
-			creator.createCSVFromCategory(s, true);
-			OFFPCMCreator.mkPCMFromCategory(s);
-			OFFPCMCreator.mkNewPCMFromCategory(s);
-
-		}
+		Set<String> cat = creator.getCategoriesWithBetween(10, 10);
+		System.out.println(cat);
+//		int max = cat.size();
+//
+//		int count = 0;
+//		for(String s : cat){
+//			count++;
+//			System.out.println(s + " " + count + " / " + max);
+//			creator.createCSVFromCategory(s, true);
+//			OFFPCMCreator.mkPCMFromCategory(s);
+//			OFFPCMCreator.mkNewPCMFromCategory(s);
+//
+//		}
 
 		OFFStats.printStats();
 
