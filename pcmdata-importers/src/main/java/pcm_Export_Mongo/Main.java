@@ -31,9 +31,9 @@ public class Main {
 		// inputpath = args[0];
 		inputpath = "input-pcm/";
 
-		MongoClient mongoClient = new MongoClient();
+		//MongoClient mongoClient = new MongoClient();
 		try {
-			MongoCollection<Document> collection = mongoClient.getDatabase("OpenCompare").getCollection("pcms");
+			//MongoCollection<Document> collection = mongoClient.getDatabase("OpenCompare").getCollection("pcms");
 
 			Stream<Path> paths = Files.walk(Paths.get(inputpath));
 
@@ -59,9 +59,10 @@ public class Main {
 						try {
 							pcmic = new PCMInfoContainer(pcm);
 						} catch (Exception e) {
-
+							e.printStackTrace();
 						}
-						System.out.println("pcmic != null ? " + pcmic != null);
+						System.out.println("pcmic != null ? " + (pcmic != null));
+						
 						if(pcmic != null)
 							System.out.println("is pcmic productChartable ? " + pcmic.isProductChartable());
 						if (pcmic != null && pcmic.isProductChartable()) {
@@ -72,7 +73,7 @@ public class Main {
 							newJSONFormat json = PCMtonewJSON.mkNewJSONFormatFromPCM(pcmContainer);
 							String pcmString = json.export();
 							Document doc = Document.parse(pcmString);
-							collection.insertOne(doc);
+							//collection.insertOne(doc);
 							System.out.println("> PCM exported to Database");
 
 						}
@@ -82,11 +83,11 @@ public class Main {
 				}
 
 			});
-			mongoClient.close();
+			//mongoClient.close();
 			paths.close();
 
 		} catch (Exception e) {
-			mongoClient.close();
+			//mongoClient.close();
 			e.printStackTrace();
 		}
 	}

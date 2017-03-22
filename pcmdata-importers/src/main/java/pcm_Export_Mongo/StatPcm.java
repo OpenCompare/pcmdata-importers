@@ -34,6 +34,7 @@ public class StatPcm {
 	private int nbFeaturesHomogNumeric;
 	
 	public StatPcm(PCM _pcm) {
+		pcm=_pcm;
 		setNbRows();
 		setNbFeatures();
 		setNbCells();
@@ -136,10 +137,10 @@ public class StatPcm {
 
 			} // end for cells
 			Double tauxHomogeneity = tauxHomg(feat, mapMetrics2);
-			System.err.println("mapMetrics2: " + mapMetrics2 + " taux=" + tauxHomogeneity);
+			//System.err.println("mapMetrics2: " + mapMetrics2 + " taux=" + tauxHomogeneity);
 			if (tauxHomogeneity >= THRESHOLD_HOMOGENEOUS) {
 				nbFeaturesHomog++;
-				System.err.println("mapMetrics2: " + mapMetrics2 + " taux=" + tauxHomogeneity);
+				//System.err.println("mapMetrics2: " + mapMetrics2 + " taux=" + tauxHomogeneity);
 			}
 		} // end for features
 
@@ -190,11 +191,11 @@ public class StatPcm {
 
 			} // end for cells
 			Double tauxHomogeneity = tauxHomg(feat, mapMetrics2);
-			System.err.println("mapMetrics2: " + mapMetrics2 + " taux=" + tauxHomogeneity);
+			//System.err.println("mapMetrics2: " + mapMetrics2 + " taux=" + tauxHomogeneity);
 			if (tauxHomogeneity >= THRESHOLD_HOMOGENEOUS) {
 				if (isFeatureNumeric(feat)) {
 					nbFeaturesHomogNumeric++;
-					System.err.println("mapMetrics2: " + mapMetrics2 + " taux=" + tauxHomogeneity);
+					//System.err.println("mapMetrics2: " + mapMetrics2 + " taux=" + tauxHomogeneity);
 				}
 			}
 		} // end for features
