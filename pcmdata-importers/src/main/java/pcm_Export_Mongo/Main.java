@@ -26,14 +26,14 @@ import pcm_Export_Mongo.PCMInfoContainer;
 public class Main {
 
 	public static String inputpath = ""; // give path with argv
-	
-	public static int total=0;
-	public static int count=0;
+
+	public static int total = 0;
+	public static int count = 0;
 
 	public static void main(String[] args) throws IOException {
-		
+
 		// inputpath = args[0];
-		//inputpath = "input-pcm/";
+		// inputpath = "input-pcm/";
 		inputpath = "../../New_Model/output114/";
 
 		// MongoClient mongoClient = new MongoClient();
@@ -70,22 +70,30 @@ public class Main {
 
 						if (pcmic != null && pcmic.isProductChartable()) {
 
+							newJSONFormat json = null;
 							// Export to mongoDB database
-							
-							newJSONFormat json = PCMtonewJSON.mkNewJSONFormatFromPCM(pcmContainer);
-							
-							String pcmString = json.export();
-							
-							//KMFJSONExporter pcmExporter = new KMFJSONExporter();
-							//String pcmString = pcmExporter.export(pcmContainer);
 							try {
-								Document doc = Document.parse(pcmString);
-							} catch (org.bson.json.JsonParseException e2) {
+								json = PCMtonewJSON.mkNewJSONFormatFromPCM(pcmContainer);
+							} catch (java.lang.NullPointerException e2) {
 								//e2.printStackTrace();
 							}
-							// collection.insertOne(doc);
-							System.out.println("> PCM exported to Database");
-							count++;
+
+							if (json != null) {
+								String pcmString = json.export();
+
+								// KMFJSONExporter pcmExporter = new
+								// KMFJSONExporter();
+								// String pcmString =
+								// pcmExporter.export(pcmContainer);
+								try {
+									Document doc = Document.parse(pcmString);
+								} catch (org.bson.json.JsonParseException e2) {
+									// e2.printStackTrace();
+								}
+								// collection.insertOne(doc);
+								System.out.println("> PCM exported to Database");
+								count++;
+							}
 						}
 					}
 				}
