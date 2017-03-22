@@ -20,6 +20,7 @@ import com.mongodb.client.MongoCollection;
 
 import JSONformating.PCMtonewJSON;
 import JSONformating.model.newJSONFormat;
+import data_off.PCMInterpreter;
 import pcm_Export_Mongo.PCMInfoContainer;
 
 public class Main {
@@ -70,14 +71,18 @@ public class Main {
 						if (pcmic != null && pcmic.isProductChartable()) {
 
 							// Export to mongoDB database
-							// newJSONFormat json =
-							// PCMtonewJSON.mkNewJSONFormatFromPCM(pcmContainer);
-							// String pcmString = json.export();
-
-							KMFJSONExporter pcmExporter = new KMFJSONExporter();
-							String pcmString = pcmExporter.export(pcmContainer);
-
-							Document doc = Document.parse(pcmString);
+							
+							newJSONFormat json = PCMtonewJSON.mkNewJSONFormatFromPCM(pcmContainer);
+							
+							String pcmString = json.export();
+							
+							//KMFJSONExporter pcmExporter = new KMFJSONExporter();
+							//String pcmString = pcmExporter.export(pcmContainer);
+							try {
+								Document doc = Document.parse(pcmString);
+							} catch (org.bson.json.JsonParseException e2) {
+								//e2.printStackTrace();
+							}
 							// collection.insertOne(doc);
 							System.out.println("> PCM exported to Database");
 							count++;
