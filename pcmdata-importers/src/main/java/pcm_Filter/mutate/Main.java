@@ -11,6 +11,7 @@ import java.util.stream.Stream;
 import org.bson.Document;
 //import org.junit.Test;
 import org.opencompare.api.java.*;
+import org.opencompare.api.java.impl.io.KMFJSONExporter;
 import org.opencompare.api.java.impl.io.KMFJSONLoader;
 import org.opencompare.api.java.io.PCMLoader;
 
@@ -70,8 +71,9 @@ public class Main {
 							// TODO
 							// Export to mongoDB database
 
-							newJSONFormat json = PCMtonewJSON.mkNewJSONFormatFromPCM(pcmContainer);
-							String pcmString = json.export();
+							//newJSONFormat json = PCMtonewJSON.mkNewJSONFormatFromPCM(pcmContainer);
+							KMFJSONExporter json = new KMFJSONExporter();
+							String pcmString = json.export(pcmContainer);
 							Document doc = Document.parse(pcmString);
 							//collection.insertOne(doc);
 							System.out.println("> PCM exported to Database");
