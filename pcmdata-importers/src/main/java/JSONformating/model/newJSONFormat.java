@@ -13,7 +13,9 @@ import java.util.Set;
 import com.google.gson.Gson;
 
 public class newJSONFormat {
-
+	private String quote = "\"";
+	private String qcq = quote + ":" + quote;
+	private String commaquo = "," + quote;
 	private String name;
 	private String license;
 	private String source;
@@ -75,57 +77,84 @@ public class newJSONFormat {
 
 		return gson.toJson(this);
 	}
+	
+	public String exportHeader(){
+		String header = quote + "name" + qcq + name + quote;
+		header += commaquo + "license" + qcq + license + quote;
+		header += commaquo + "source" + qcq + source + quote;
+		header += commaquo + "creator" + qcq + creator + quote;
+		header += commaquo + "primaryFeatureID" + qcq + primaryFeatureID + quote;
+		return header;
+	}
+	
+	public String exportFeature(JFeature f){
+		String feature = quote + f.getId() + quote + ":{"; //open feature f
+		feature += quote + "id" + qcq + f.getId() + quote;
+		feature += commaquo + "name" + qcq + f.getName() + quote;
+		feature += commaquo + "type" + qcq + f.getType().toString() + quote;
+		feature += "},"; //close feature f
+		return feature;
+	}
+	
+	public String exportFeatures(){
+		String features = quote + "features" + quote + ":{"; //open features
+		for(JFeature f : this.features){
+			features += exportFeature(f);
+		}
+		features = this.features.isEmpty() ? features : features.substring(0, features.length() - 1); //remove last comma
+		features += "}";
+		System.out.println("Features exported");
+		return features;
+	}
+	
+	public String exportCell(JCell c){
+		String cell = quote + c.getId() + quote + ":{"; //open cell
+		cell += quote + "productID" + qcq + c.getProductID() + quote;
+		cell += commaquo + "featureID" + qcq + c.getFeatureID() + quote;
+		cell += commaquo + "type" + qcq + c.getType() + quote;
+		cell += commaquo + "isPartial" + qcq + "false" + quote; //FIXME temp isPartial value
+		cell += commaquo + "unit" + qcq + "undefined" + quote; //FIXME temp unit value
+		cell += commaquo + "value" + quote + ":" + (c.getValue() == null ? quote + "undefined" + quote : c.getValue().export());
+		cell += "},";//close cell
+		return cell;
+	}
+	
+	public String exportProduct(JProduct p){
+		String sProduct = quote + p.getId() + quote + ":{"; //open product
+		sProduct += quote + "cells" + quote + ":{"; //open cells
+		for(JCell c : p.getCells()){
+			sProduct += exportCell(c);
+		}
+		sProduct = p.getCells().isEmpty() ? sProduct : sProduct.substring(0, sProduct.length() - 1); //remove last comma
+		sProduct += "},"; //close product
+		return sProduct;
+	}
+	
+	public String exportProducts(){
+		String sProducts = quote + "products"+ quote + ":{"; //open products
+		for(JProduct p : products){
+			sProducts += exportProduct(p);
+		}
+		sProducts = products.isEmpty() ? sProducts : sProducts.substring(0, sProducts.length() - 1); //remove last comma
+		sProducts += "}"; //close products
+		return sProducts;
+	}
 
 	public String export(){
 		System.out.println("Exporting...");
 
 		String res = "{"; //open pcm
 
-		res += "\"name\":\"" + name;
-		res += "\",\"license\":\"" + license;
-		res += "\",\"source\":\"" + source;
-		res += "\",\"creator\":\"" + creator;
-		res += "\",\"primaryFeatureID\":\"" + primaryFeatureID;
-		res += "\",\"features\":{"; //open features
-
-		for(JFeature f : features){
-			res += "\"" + f.getId() + "\":{"; //open feature f
-			res += "\"id\":\"" + f.getId();
-			res += "\",\"name\":\"" + f.getName();
-			res += "\",\"type\":\"" + f.getType().toString();
-			res += "\"},"; //close feature f
-		}
-
-		res = features.isEmpty() ? res : res.substring(0, res.length() - 1);
-		System.out.println("Features exported");
-		res += "},"; //close features
-		res += "\"products\":{"; //open products
-
-		for(JProduct p : products){
-			res += "\"" + p.getId() + "\":{"; //open product
-			res += "\"cells\":{"; //open cells
-			for(JCell c : p.getCells()){
-				res += "\"" + c.getId() + "\":{"; //open cell
-				res += "\"productID\":\"" + c.getProductID();
-				res += "\",\"featureID\":\"" + c.getFeatureID();
-				res += "\",\"type\":\"" + c.getType();
-				res += "\",\"isPartial\":\"" + "false"; //FIXME temp isPartial value
-				res += "\",\"unit\":\"" + "undefined"; //FIXME temp unit value
-				res += "\",\"value\":" + (c.getValue() == null ? "\"undefined\"" : c.getValue().export());
-				res += "},";//close cell
-			}
-			res = p.getCells().isEmpty() ? res : res.substring(0, res.length() - 1);
-			res += "}";
-			res += "},"; //close product
-		}
-		res = products.isEmpty() ? res : res.substring(0, res.length() - 1);
-		System.out.println("Products exported");
-		res += "}"; //close products
+		res += exportHeader();
+		res += ",";
+		res += exportFeatures(); //open features
+		res += ",";
+		res += exportProducts(); //open products
 		res += "}"; //close pcm
 		return res;
 	}
 
-	public void exportToFile(String filename){
+	public void exportToFile(String filename){ //TODO convert with new methods
 		File file = new File(filename);
 		try{
 			FileWriter fw;
