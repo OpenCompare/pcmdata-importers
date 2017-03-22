@@ -192,17 +192,17 @@ public class PCMtonewJSON {
 	public static void main(String[] args) throws IOException {
 
 		String inFilename = "off_output/pcms/fr_biscottes-pauvres-en-sel.pcm";
-		String outFilename = "off_output/pcms/fr_biscottes-pauvres-en-sel.GSON";
+		String outFilename = "off_output/pcms/fr_biscottes-pauvres-en-sel.test";
 		PCMContainer pcmC = PCMUtil.loadPCMContainer(inFilename);
 		System.out.println("PCM loaded");
 		newJSONFormat nf = mkNewJSONFormatFromPCM(pcmC);
 		System.out.println("new format created");
-		String jsonRes = nf.exportGson();
+		String jsonRes = nf.export();
 		System.out.println(jsonRes);
 		PCMInterpreter.writeToFile(outFilename, jsonRes);
 
-//		JsonElement jelement = new JsonParser().parse(jsonRes);
-//		System.out.println(jelement.toString());
+		JsonElement jelement = new JsonParser().parse(jsonRes);
+		System.out.println(jelement.toString());
 	}
 
 }
