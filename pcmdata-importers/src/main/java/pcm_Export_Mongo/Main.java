@@ -22,19 +22,23 @@ import JSONformating.PCMtonewJSON;
 import JSONformating.model.newJSONFormat;
 import pcm_Export_Mongo.PCMInfoContainer;
 
-
 public class Main {
 
 	public static String inputpath = ""; // give path with argv
+	
+	public static int total=0;
+	public static int count=0;
 
 	public static void main(String[] args) throws IOException {
-
+		
 		// inputpath = args[0];
-		inputpath = "input-pcm/";
+		//inputpath = "input-pcm/";
+		inputpath = "../../New_Model/output114/";
 
-		MongoClient mongoClient = new MongoClient();
+		// MongoClient mongoClient = new MongoClient();
 		try {
-			MongoCollection<Document> collection = mongoClient.getDatabase("OpenCompare").getCollection("pcms");
+			// MongoCollection<Document> collection =
+			// mongoClient.getDatabase("OpenCompare").getCollection("pcms");
 
 			Stream<Path> paths = Files.walk(Paths.get(inputpath));
 
@@ -53,6 +57,7 @@ public class Main {
 					}
 
 					for (PCMContainer pcmContainer : pcmContainers) {
+						total++;
 						// Get the PCM
 						PCM pcm = pcmContainer.getPcm();
 						PCMInfoContainer pcmic = null;
@@ -60,37 +65,32 @@ public class Main {
 						try {
 							pcmic = new PCMInfoContainer(pcm);
 						} catch (Exception e) {
-							e.printStackTrace();
 						}
-						System.out.println("pcmic != null ? " + (pcmic != null));
-						
-						if(pcmic != null)
-							System.out.println("is pcmic productChartable ? " + pcmic.isProductChartable());
+
 						if (pcmic != null && pcmic.isProductChartable()) {
 
 							// Export to mongoDB database
-							//newJSONFormat json = PCMtonewJSON.mkNewJSONFormatFromPCM(pcmContainer);
-							//String pcmString = json.export();
+							// newJSONFormat json =
+							// PCMtonewJSON.mkNewJSONFormatFromPCM(pcmContainer);
+							// String pcmString = json.export();
 
 							KMFJSONExporter pcmExporter = new KMFJSONExporter();
 							String pcmString = pcmExporter.export(pcmContainer);
-							
+
 							Document doc = Document.parse(pcmString);
-							collection.insertOne(doc);
+							// collection.insertOne(doc);
 							System.out.println("> PCM exported to Database");
-
+							count++;
 						}
-
 					}
-
 				}
-
 			});
-			mongoClient.close();
+			System.out.println(count + "/" + total + " PCMs exported");
+			// mongoClient.close();
 			paths.close();
 
 		} catch (Exception e) {
-			mongoClient.close();
+			// mongoClient.close();
 			e.printStackTrace();
 		}
 	}

@@ -21,8 +21,8 @@ import com.opencsv.CSVWriter;
 
 public class PCMInfoTest {
 
-	public static final String inputpath = "../../New_Model/output114";
-	public static final String outputpath = "../../New_Model/output114";
+	public static final String inputpath = "../../New_Model/output88";
+	public static final String outputpath = "../../New_Model/output88";
 
 	// "../../input-model"
 	// "input-pcm"

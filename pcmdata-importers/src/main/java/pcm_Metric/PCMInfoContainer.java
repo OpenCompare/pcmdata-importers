@@ -119,11 +119,11 @@ public class PCMInfoContainer implements IPCMInfoContainer {
 				
 			} // end for cells
 			Double tauxHomogeneity = tauxHomg(feat, mapMetrics2);
-			System.err.println("mapMetrics2: " + mapMetrics2 + " taux=" + tauxHomogeneity);
+			//System.err.println("mapMetrics2: " + mapMetrics2 + " taux=" + tauxHomogeneity);
 			if(tauxHomogeneity >= THRESHOLD_HOMOGENEOUS) 
 				{ 
 				nbFeaturesHomog++;
-				System.err.println("mapMetrics2: " + mapMetrics2 + " taux=" + tauxHomogeneity);
+				//System.err.println("mapMetrics2: " + mapMetrics2 + " taux=" + tauxHomogeneity);
 				}
 		} //end for features	
 		
@@ -205,12 +205,12 @@ public class PCMInfoContainer implements IPCMInfoContainer {
 				
 			} // end for cells
 			Double tauxHomogeneity = tauxHomg(feat, mapMetrics2);
-			System.err.println("mapMetrics2: " + mapMetrics2 + " taux=" + tauxHomogeneity);
+			//System.err.println("mapMetrics2: " + mapMetrics2 + " taux=" + tauxHomogeneity);
 			if(tauxHomogeneity >= THRESHOLD_HOMOGENEOUS) 
 				{ 
 				if(isFeatureNumeric(feat)){
 					nbFeaturesHomogNumeric++;
-					System.err.println("mapMetrics2: " + mapMetrics2 + " taux=" + tauxHomogeneity);
+					//System.err.println("mapMetrics2: " + mapMetrics2 + " taux=" + tauxHomogeneity);
 					}
 				}
 		} //end for features	
