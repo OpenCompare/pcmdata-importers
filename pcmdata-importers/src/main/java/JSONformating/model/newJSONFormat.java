@@ -71,7 +71,7 @@ public class newJSONFormat {
 	public String export(){
 		System.out.println("Exporting...");
 
-		String res = "pcm:{"; //open pcm
+		String res = "{pcm:{"; //open pcm
 
 		res += "name:\"" + name;
 		res += "\",license:\"" + license;
@@ -113,7 +113,7 @@ public class newJSONFormat {
 		res = products.isEmpty() ? res : res.substring(0, res.length() - 1);
 		System.out.println("Products exported");
 		res += "}"; //close products
-		res += "}"; //close pcm
+		res += "}}"; //close pcm
 		return res;
 	}
 
@@ -131,7 +131,7 @@ public class newJSONFormat {
 			bw = new BufferedWriter(fw);
 			PrintWriter out = new PrintWriter(bw);
 
-			String res = "pcm:{"; //open pcm
+			String res = "{pcm:{"; //open pcm
 
 			res += "name:\"" + name;
 			res += "\",license:\"" + license;
@@ -179,7 +179,7 @@ public class newJSONFormat {
 			}
 			res = products.isEmpty() ? res : res.substring(0, res.length() - 1);
 			res += "}"; //close products
-			res += "}"; //close pcm
+			res += "}}"; //close pcm
 			out.print(res);
 			out.close();
 			System.out.println("Exported");

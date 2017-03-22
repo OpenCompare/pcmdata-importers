@@ -32,9 +32,9 @@ public class Main {
 		// inputpath = args[0];
 		inputpath = "input-pcm/";
 
-		//MongoClient mongoClient = new MongoClient();
+		MongoClient mongoClient = new MongoClient();
 		try {
-			//MongoCollection<Document> collection = mongoClient.getDatabase("OpenCompare").getCollection("pcms");
+			MongoCollection<Document> collection = mongoClient.getDatabase("OpenCompare").getCollection("pcms");
 
 			Stream<Path> paths = Files.walk(Paths.get(inputpath));
 
@@ -76,7 +76,7 @@ public class Main {
 							String pcmString = pcmExporter.export(pcmContainer);
 							
 							Document doc = Document.parse(pcmString);
-							//collection.insertOne(doc);
+							collection.insertOne(doc);
 							System.out.println("> PCM exported to Database");
 
 						}
@@ -86,11 +86,11 @@ public class Main {
 				}
 
 			});
-			//mongoClient.close();
+			mongoClient.close();
 			paths.close();
 
 		} catch (Exception e) {
-			//mongoClient.close();
+			mongoClient.close();
 			e.printStackTrace();
 		}
 	}
