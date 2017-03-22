@@ -25,7 +25,7 @@ public class PCMInfoContainer {
 	public PCMInfoContainer(PCM pcm) {
 		_pcm = pcm;
 		_pcmMutate = PCMMutate.Mutate(pcm);
-		preCompute(_pcmMutate);
+		preComputeMutate(_pcmMutate);
 		preCompute(_pcm);
 	}
 
@@ -33,13 +33,17 @@ public class PCMInfoContainer {
 		_statPcm = new StatPcm(_pcm);
 
 	}
-
-	public Boolean isProductChartable() {
-		if (_statPcm.scoreProductChartable() >= 0.5)
-			return true;
-		else
-			return false;
+	
+	private void preComputeMutate(PCM pcm) {
+		_statPcmMutate = new StatPcm(_pcmMutate);
 
 	}
+
+	public Boolean isProductChartable() {
+		return _statPcm.scoreProductChartable() >= 0.5;
+	}
 	
+	public Boolean isProductChartableMutate() {
+		return _statPcmMutate.scoreProductChartable() >= 0.5;
+	}
 }
