@@ -18,7 +18,7 @@ public class JStringValue extends JValue {
 	}
 	
 	public String export(){
-		return "\"" + strValue + "\"";
+		return strValue;
 	}
 	
 }

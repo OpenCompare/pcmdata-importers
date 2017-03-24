@@ -13,6 +13,9 @@ import java.util.Set;
 import org.json.JSONObject;
 
 import com.google.gson.Gson;
+import com.mongodb.util.JSON;
+
+import kotlin.deprecated;
 
 public class newJSONFormat {
 	private String quote = "\"";
@@ -89,7 +92,16 @@ public class newJSONFormat {
 		return header;
 	}
 	
-	public String exportFeature(JFeature f){
+	public JSONObject exportFeature(JFeature f){
+		JSONObject feature = new JSONObject();
+		feature.put("id", f.getId());
+		feature.put("name", f.getName());
+		feature.put("type", f.getType().toString());
+		return feature;
+	}
+	
+	@Deprecated
+	public String exportFeatureOLD(JFeature f){
 		String feature = quote + f.getId() + quote + ":{"; //open feature f
 		feature += quote + "id" + qcq + f.getId() + quote;
 		feature += commaquo + "name" + qcq + f.getName() + quote;
@@ -99,6 +111,20 @@ public class newJSONFormat {
 	}
 	
 	public String exportFeatures(){
+		JSONObject features = new JSONObject();
+		for(JFeature f : this.features){
+			features.put(f.getId(), exportFeature(f));
+		}
+//		String features = quote + "features" + quote + ":{"; //open features
+//		for(JFeature f : this.features){
+//			features += exportFeature(f) + (this.features.indexOf(f) == this.features.size()-1 ? "" : ",");
+//		}
+//		features += "}"; //close features
+		return quote + "features" + quote + ":" + features.toString();
+	}
+	
+	@Deprecated
+	public String exportFeaturesOLD(){
 		String features = quote + "features" + quote + ":{"; //open features
 		for(JFeature f : this.features){
 			features += exportFeature(f) + (this.features.indexOf(f) == this.features.size()-1 ? "" : ",");
@@ -107,18 +133,19 @@ public class newJSONFormat {
 		return features;
 	}
 	
-	public String exportCellJSON(JCell c){
+	public JSONObject exportCell(JCell c){
 		JSONObject cell = new JSONObject();
 		cell.put("productID", c.getProductID());
 		cell.put("featureID", c.getFeatureID());
 		cell.put("type", c.getType());
 //		cell.put("isPartial", false);
 //		cell.put("unit", "undefined");
-		cell.put("value", c.getValue().export());
-		return cell.toString();
+		cell.put("value", (c.getValue() == null ? "undefined" : c.getValue().export()));
+		return cell;
 	}
 	
-	public String exportCell(JCell c){
+	@Deprecated
+	public String exportCellOLD(JCell c){
 		String cell = quote + c.getId() + quote + ":{"; //open cell
 		cell += quote + "productID" + qcq + c.getProductID() + quote;
 		cell += commaquo + "featureID" + qcq + c.getFeatureID() + quote;
@@ -131,6 +158,17 @@ public class newJSONFormat {
 	}
 	
 	public String exportProduct(JProduct p){
+		JSONObject prod = new JSONObject();
+		JSONObject cells = new JSONObject();
+		for(JCell c : p.getCells()){
+			cells.put(c.getId(), exportCell(c));
+		}
+		prod.put("cells", cells);
+		return quote + p.getId() + "\":" + prod.toString();
+	}
+	
+	@Deprecated
+	public String exportProductOLD(JProduct p){
 		String sProduct = quote + p.getId() + quote + ":{"; //open product
 		sProduct += quote + "cells" + quote + ":{"; //open cells
 		for(JCell c : p.getCells()){
@@ -182,7 +220,6 @@ public class newJSONFormat {
 			String res = "{" + exportHeader() + ",";
 			out.print(res);
 			res = exportFeatures() + ",";
-			System.out.println(res);
 			out.print(res);
 			exportProducts(out);
 			res = "}";
@@ -236,8 +273,11 @@ public class newJSONFormat {
 			}
 		}
 		if(types.size() == 1){
-			newJSONFormatType[] a = new newJSONFormatType[0];;
-			return types.toArray(a)[0];
+			return types.toArray(new newJSONFormatType[0])[0];
+		}
+		if(types.size() == 2 && types.contains(newJSONFormatType.UNDEFINED)){ //if only undefined and 1 other type the return this other type
+			types.remove(newJSONFormatType.UNDEFINED);
+			return types.toArray(new newJSONFormatType[0])[0];
 		}
 		List<newJSONFormatType> input = new ArrayList<>();
 		input.add(newJSONFormatType.BOOLEAN);

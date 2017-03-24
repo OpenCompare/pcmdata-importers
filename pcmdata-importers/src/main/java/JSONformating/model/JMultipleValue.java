@@ -3,6 +3,8 @@ package JSONformating.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.json.JSONArray;
+
 public class JMultipleValue extends JValue{
 
 	private List<JValue> mulValue = new ArrayList<>();
@@ -23,13 +25,8 @@ public class JMultipleValue extends JValue{
 		return res;
 	}
 	
-	public String export(){
-		String res = "[";
-		for(JValue val : mulValue){
-			res += val.export() + ",";
-		}
-		res = mulValue.isEmpty() ? res : res.substring(0, res.length() - 1);
-		res += "]";
-		return res;
+	public JSONArray export(){
+		JSONArray array = new JSONArray(mulValue);
+		return array;
 	}
 }

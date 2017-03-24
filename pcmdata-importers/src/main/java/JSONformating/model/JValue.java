@@ -18,7 +18,7 @@ public class JValue {
 		return "";
 	}
 
-	public String export() {
+	public Object export() {
 		return "";
 	}
 }
