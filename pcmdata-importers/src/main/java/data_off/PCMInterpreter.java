@@ -24,7 +24,10 @@ import JSONformating.model.newJSONFormat;
 public class PCMInterpreter {
 
 	public static void CSVToPCM(String filename) throws IOException{
-		_serializeToPCMJSON(mkPCMInterpreted(filename),filename.replace("off_output/", "off_output/pcms/").replace(".csv", ".pcm"));
+		PCMContainer pcmC = mkPCMInterpreted(filename);
+		PCM pcm = OFFPCMModifier.computeMultiples(pcmC.getPcm());
+		pcmC = new PCMContainer(pcm);
+		_serializeToPCMJSON(pcmC,filename.replace("off_output/", "off_output/pcms/").replace(".csv", ".pcm"));
 	}
 	
 	public static void CSVTonewPCM(String filename) throws IOException{

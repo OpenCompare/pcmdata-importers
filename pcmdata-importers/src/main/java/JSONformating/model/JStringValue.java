@@ -1,5 +1,7 @@
 package JSONformating.model;
 
+import org.json.JSONObject;
+
 public class JStringValue extends JValue {
 	private String strValue;
 
@@ -18,4 +20,5 @@ public class JStringValue extends JValue {
 	public String export(){
 		return "\"" + strValue + "\"";
 	}
+	
 }

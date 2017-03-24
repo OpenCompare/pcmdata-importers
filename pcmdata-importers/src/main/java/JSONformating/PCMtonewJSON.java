@@ -198,11 +198,12 @@ public class PCMtonewJSON {
 		newJSONFormat nf = mkNewJSONFormatFromPCM(pcmC);
 		System.out.println("new format created");
 		String jsonRes = nf.export();
-		System.out.println(jsonRes);
-		PCMInterpreter.writeToFile(outFilename, jsonRes);
+//		System.out.println(jsonRes);
+		nf.exportToFile(outFilename);
+		PCMInterpreter.writeToFile(outFilename + ".conf", jsonRes);
 
-		JsonElement jelement = new JsonParser().parse(jsonRes);
-		System.out.println(jelement.toString());
+//		JsonElement jelement = new JsonParser().parse(jsonRes);
+//		System.out.println(jelement.toString());
 	}
 
 }
