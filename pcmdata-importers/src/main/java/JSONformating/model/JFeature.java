@@ -3,7 +3,7 @@ package JSONformating.model;
 public class JFeature {
 	private String id;
 	private String name;
-	private newJSONFormatType type;
+	private JSONFormatType type;
 	public String getId() {
 		return id;
 	}
@@ -16,10 +16,10 @@ public class JFeature {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public newJSONFormatType getType() {
+	public JSONFormatType getType() {
 		return type;
 	}
-	public void setType(newJSONFormatType type) {
+	public void setType(JSONFormatType type) {
 		this.type = type;
 	}
 }

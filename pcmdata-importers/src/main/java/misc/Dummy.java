@@ -11,8 +11,8 @@ import JSONformating.model.JMultipleValue;
 import JSONformating.model.JProduct;
 import JSONformating.model.JStringValue;
 import JSONformating.model.JValue;
-import JSONformating.model.newJSONFormat;
-import JSONformating.model.newJSONFormatType;
+import JSONformating.model.JSONFormat;
+import JSONformating.model.JSONFormatType;
 
 public class Dummy {
 
@@ -21,7 +21,7 @@ public class Dummy {
 		cell.setFeatureID("F0");
 		cell.setId("C0");
 		cell.setProductID("P0");
-		cell.setType(newJSONFormatType.MULTIPLE);
+		cell.setType(JSONFormatType.MULTIPLE);
 		JStringValue val = new JStringValue();
 		val.setValue("test");
 		JBooleanValue bool = new JBooleanValue();
@@ -37,7 +37,7 @@ public class Dummy {
 		List<JCell> cells = new ArrayList<>();
 		cells.add(cell);
 		prod.setCells(cells);
-		newJSONFormat nf = new newJSONFormat();
+		JSONFormat nf = new JSONFormat();
 		System.out.println(nf.exportCell(cell));
 		System.out.println(nf.exportProduct(prod));
 		

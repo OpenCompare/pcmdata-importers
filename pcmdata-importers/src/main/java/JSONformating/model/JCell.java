@@ -4,7 +4,7 @@ public class JCell{
 	private String id;
 	private String productID;
 	private String featureID;
-	private newJSONFormatType type;
+	private JSONFormatType type;
 	private boolean isPartial;
 	private String unit;
 	private JValue value;
@@ -26,10 +26,10 @@ public class JCell{
 	public void setFeatureID(String featureID) {
 		this.featureID = featureID;
 	}
-	public newJSONFormatType getType() {
+	public JSONFormatType getType() {
 		return type;
 	}
-	public void setType(newJSONFormatType type) {
+	public void setType(JSONFormatType type) {
 		this.type = type;
 	}
 	public boolean isPartial() {
