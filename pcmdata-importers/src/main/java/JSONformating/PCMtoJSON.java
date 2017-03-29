@@ -1,10 +1,12 @@
 package JSONformating;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.regex.Pattern;
 
 import com.google.gson.JsonElement;
@@ -90,33 +92,33 @@ public class PCMtoJSON {
 
 			jc.setType(JSONFormatType.BOOLEAN);
 			JBooleanValue bool = new JBooleanValue();
-			bool.setValue(((BooleanValue) c.getInterpretation()).getValue());
+			bool.setValue(((BooleanValue) value).getValue());
 			return bool;
 
 		}else if(value instanceof DateValueImpl){
 
 			jc.setType(JSONFormatType.DATE);
 			JStringValue stringValue = new JStringValue();
-			stringValue.setValue(((DateValue) c.getInterpretation()).getValue());
+			stringValue.setValue(((DateValue) value).getValue());
 			return stringValue;
 
 		}else if(value instanceof IntegerValueImpl){
 
 			jc.setType(JSONFormatType.INTEGER);
 			JNumberValue numValue = new JNumberValue();
-			numValue.setValue(((IntegerValue) c.getInterpretation()).getValue());
+			numValue.setValue(((IntegerValue) value).getValue());
 			return numValue;
 
 		}else if(value instanceof RealValueImpl){
 
 			jc.setType(JSONFormatType.REAL);
 			JNumberValue numValue = new JNumberValue();
-			numValue.setValue(((RealValue) c.getInterpretation()).getValue());
+			numValue.setValue(((RealValue) value).getValue());
 			return numValue;
 
 		}else if(value instanceof StringValueImpl){
 
-			StringValue sv = (StringValue) c.getInterpretation();
+			StringValue sv = (StringValue) value;
 			if(Pattern.matches("^\\s*http:\\/\\/.*"
 					+ "|^\\s*https:\\/\\/.*", sv.getValue())
 			&& Pattern.matches(".*\\.jpg\\s*$"
@@ -133,12 +135,12 @@ public class PCMtoJSON {
 				jc.setType(JSONFormatType.STRING);
 			}
 			JStringValue stringValue = new JStringValue();
-			stringValue.setValue(((StringValue) c.getInterpretation()).getValue());
+			stringValue.setValue(((StringValue) value).getValue());
 			return stringValue;
 		}else if(value instanceof MultipleImpl){
 			jc.setType(JSONFormatType.MULTIPLE);
 			JMultipleValue mulvalue = new JMultipleValue();
-			mulvalue.setValue(createJValuesForMultiple(((Multiple) c.getInterpretation()).getSubValues()));
+			mulvalue.setValue(createJValuesForMultiple(((Multiple) value).getSubValues()));
 			return mulvalue;
 		}else if(value instanceof VersionImpl){
 			jc.setType(JSONFormatType.VERSION);
@@ -192,17 +194,25 @@ public class PCMtoJSON {
 	public static void main(String[] args) throws IOException {
 
 		String inFilename = "off_output/pcms/fr_biscottes-pauvres-en-sel.pcm";
-		String outFilename = "off_output/pcms/test.pcm";
+		String outFilename = "off_output/pcms/test2.pcm";
 		PCMContainer pcmC = PCMUtil.loadPCMContainer(inFilename);
 		System.out.println("PCM loaded");
 		JSONFormat nf = mkNewJSONFormatFromPCM(pcmC);
 		System.out.println("new format created");
-		String jsonRes = nf.export();
+//		String jsonRes = nf.export();
 //		System.out.println(jsonRes);
-//		nf.exportToFile(outFilename);
-//		PCMInterpreter.writeToFile(outFilename + ".conf", jsonRes);
+		nf.exportToFile(outFilename);
+//		PCMInterpreter.writeToFile(outFilename, jsonRes);
 
-		JsonElement jelement = new JsonParser().parse(jsonRes);
+//		JsonElement jelement = new JsonParser().parse(jsonRes);
+		System.out.println("EXPORT OK");
+		
+		Scanner scanner = new Scanner(new File(outFilename));
+		String json = scanner.useDelimiter("\\Z").next();
+		scanner.close();
+		System.out.println(json);
+		JsonElement jelement = new JsonParser().parse(json);
+		System.out.println("IMPORT OK");
 //		System.out.println(jelement.toString());
 	}
 
