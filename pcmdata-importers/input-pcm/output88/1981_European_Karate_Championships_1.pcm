@@ -1,0 +1,44 @@
+{
+ "pcm" : 
+{"class":"org.opencompare.model.PCM@11935013841475055506168","name":"","generated_KMF_ID":"11935013841475055506168","productsKey":["features[6281965711475055506168]"],"products":[
+{"class":"org.opencompare.model.Product@2825019421475055506168","generated_KMF_ID":"2825019421475055506168","pcm":[""],"cells":[
+{"class":"org.opencompare.model.Cell@11591777801475055506168","content":"","rawContent":"","generated_KMF_ID":"11591777801475055506168","feature":["features[12792456591475055506168]"],"product":["products[2825019421475055506168]"],"interpretation":[
+{"class":"org.opencompare.model.NotAvailable@8741033931475055506168","generated_KMF_ID":"8741033931475055506168"}
+]}
+,
+{"class":"org.opencompare.model.Cell@9589705391475055506168","content":"S3VtaXRl","rawContent":"JycnS3VtaXRlJycn","generated_KMF_ID":"9589705391475055506168","feature":["features[6281965711475055506168]"],"product":["products[2825019421475055506168]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@17775511731475055506168","value":"S3VtaXRl","generated_KMF_ID":"17775511731475055506168"}
+]}
+,
+{"class":"org.opencompare.model.Cell@19536958761475055506168","content":"RlJB","rawContent":"e3tGUkF9fQ==","generated_KMF_ID":"19536958761475055506168","feature":["features[9195630491475055506168]"],"product":["products[2825019421475055506168]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@13173736251475055506168","value":"RlJB","generated_KMF_ID":"13173736251475055506168"}
+]}
+]}
+],"features":[
+{"class":"org.opencompare.model.Feature@9195630491475055506168","name":"SVRB","generated_KMF_ID":"9195630491475055506168","parentGroup":[],"cells":["products[2825019421475055506168]/cells[19536958761475055506168]"]}
+,
+{"class":"org.opencompare.model.Feature@6281965711475055506168","name":"S2F0YQ==","generated_KMF_ID":"6281965711475055506168","parentGroup":[],"cells":["products[2825019421475055506168]/cells[9589705391475055506168]"]}
+,
+{"class":"org.opencompare.model.Feature@12792456591475055506168","name":"U1VJ","generated_KMF_ID":"12792456591475055506168","parentGroup":[],"cells":["products[2825019421475055506168]/cells[11591777801475055506168]"]}
+]}
+,
+ "metadata" : {
+  "productPositions" : [ {
+    "product" : "2825019421475055506168",
+    "position" : 1
+  } ],
+  "featurePositions" : [ {
+    "feature" : "9195630491475055506168",
+    "position" : 1
+  }, {
+    "feature" : "6281965711475055506168",
+    "position" : 0
+  }, {
+    "feature" : "12792456591475055506168",
+    "position" : 2
+  } ],
+  "source" : "",
+  "license" : "",
+  "creator" : ""
+}
+}

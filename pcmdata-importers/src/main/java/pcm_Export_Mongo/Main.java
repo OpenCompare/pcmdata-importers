@@ -34,7 +34,7 @@ public class Main {
 
 		// inputpath = args[0];
 		// inputpath = "input-pcm/";
-		inputpath = "../../New_Model/output114/";
+		inputpath = "input-pcm-test/";
 
 		// MongoClient mongoClient = new MongoClient();
 		try {

@@ -2,6 +2,8 @@ package pcm_Filter.mutate;
 
 import org.opencompare.api.java.PCM;
 
+import pcm_Export_Mongo.StatPcm;
+
 
 public class PCMInfoContainer {
 
@@ -41,5 +43,10 @@ public class PCMInfoContainer {
 	
 	public PCM getMutedPcm() {
 		return _pcmMutate;
+	}
+	
+	public boolean isSameSizePcm(){
+		return _pcm.getFeatures().size() == _pcmMutate.getFeatures().size() && _pcm.getProducts().size() == _pcmMutate.getProducts().size() ;
+		
 	}
 }

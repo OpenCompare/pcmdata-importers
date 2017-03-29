@@ -11,7 +11,7 @@ import org.opencompare.api.java.Product;
 
 public class PCMMutate {
 	
-	private static final double RATIO_EMPTY_CELL = 0.4;
+	private static final double RATIO_EMPTY_CELL = 0.001;
 	
 	public static PCM Mutate(PCM pcm){
 		// Il faut appeler une fonction pour déterminer
@@ -43,10 +43,11 @@ public class PCMMutate {
 					nbCellsEmpty ++ ;
 				}
 			}
-			if(nbCellsEmpty/cells.size()> RATIO_EMPTY_CELL){
-				pcm.removeProduct(pr);
-			}
-			
+			if(cells.size() != 0){
+				if(nbCellsEmpty/cells.size()> RATIO_EMPTY_CELL){
+					pcm.removeProduct(pr);
+				}
+			}			
 		}
 		
 		return pcm;
@@ -71,10 +72,11 @@ public class PCMMutate {
 					nbCellsEmpty ++ ;
 				}
 			}
-			if(nbCellsEmpty/cells.size()> RATIO_EMPTY_CELL){
-				pcm.removeFeature(pr);;
+			if(cells.size() != 0){
+				if(nbCellsEmpty/cells.size()> RATIO_EMPTY_CELL){
+					pcm.removeFeature(pr);;
+				}
 			}
-			
 		}
 		
 		return pcm;

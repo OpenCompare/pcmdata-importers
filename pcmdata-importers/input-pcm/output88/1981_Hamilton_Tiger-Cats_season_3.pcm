@@ -1,0 +1,62 @@
+{
+ "pcm" : 
+{"class":"org.opencompare.model.PCM@4970257251475055282288","name":"","generated_KMF_ID":"4970257251475055282288","productsKey":["features[14516006421475055282288]"],"products":[
+{"class":"org.opencompare.model.Product@13818491591475055282288","generated_KMF_ID":"13818491591475055282288","pcm":[""],"cells":[
+{"class":"org.opencompare.model.Cell@12737470491475055282288","content":"RWFzdCBGaW5hbA==","rawContent":"RWFzdCBGaW5hbA==","generated_KMF_ID":"12737470491475055282288","feature":["features[14516006421475055282288]"],"product":["products[13818491591475055282288]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@14143388871475055282288","value":"RWFzdCBGaW5hbA==","generated_KMF_ID":"14143388871475055282288"}
+]}
+,
+{"class":"org.opencompare.model.Cell@10023023331475055282288","content":"MTfigJMxMw==","rawContent":"MTfigJMxMw==","generated_KMF_ID":"10023023331475055282288","feature":["features[7191600551475055282288]"],"product":["products[13818491591475055282288]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@4267569621475055282288","value":"MTfigJMxMw==","generated_KMF_ID":"4267569621475055282288"}
+]}
+,
+{"class":"org.opencompare.model.Cell@520366651475055282288","content":"dnMuIE90dGF3YSBSb3VnaCBSaWRlcnM=","rawContent":"dnMuIE90dGF3YSBSb3VnaCBSaWRlcnM=","generated_KMF_ID":"520366651475055282288","feature":["features[9388552621475055282288]"],"product":["products[13818491591475055282288]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@7809711031475055282288","value":"dnMuIE90dGF3YSBSb3VnaCBSaWRlcnM=","generated_KMF_ID":"7809711031475055282288"}
+]}
+,
+{"class":"org.opencompare.model.Cell@2332589691475055282288","content":"Tm92IDE1","rawContent":"Tm92IDE1","generated_KMF_ID":"2332589691475055282288","feature":["features[8361283631475055282288]"],"product":["products[13818491591475055282288]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@21375847781475055282288","value":"Tm92IDE1","generated_KMF_ID":"21375847781475055282288"}
+]}
+,
+{"class":"org.opencompare.model.Cell@7791070691475055282288","content":"TG9zcw==","rawContent":"TG9zcw==","generated_KMF_ID":"7791070691475055282288","feature":["features[13670730451475055282288]"],"product":["products[13818491591475055282288]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@6346788251475055282288","value":"TG9zcw==","generated_KMF_ID":"6346788251475055282288"}
+]}
+]}
+],"features":[
+{"class":"org.opencompare.model.Feature@13670730451475055282288","name":"UmVzdWx0","generated_KMF_ID":"13670730451475055282288","parentGroup":[],"cells":["products[13818491591475055282288]/cells[7791070691475055282288]"]}
+,
+{"class":"org.opencompare.model.Feature@7191600551475055282288","name":"U2NvcmU=","generated_KMF_ID":"7191600551475055282288","parentGroup":[],"cells":["products[13818491591475055282288]/cells[10023023331475055282288]"]}
+,
+{"class":"org.opencompare.model.Feature@8361283631475055282288","name":"RGF0ZQ==","generated_KMF_ID":"8361283631475055282288","parentGroup":[],"cells":["products[13818491591475055282288]/cells[2332589691475055282288]"]}
+,
+{"class":"org.opencompare.model.Feature@14516006421475055282288","name":"R2FtZQ==","generated_KMF_ID":"14516006421475055282288","parentGroup":[],"cells":["products[13818491591475055282288]/cells[12737470491475055282288]"]}
+,
+{"class":"org.opencompare.model.Feature@9388552621475055282288","name":"T3Bwb25lbnQ=","generated_KMF_ID":"9388552621475055282288","parentGroup":[],"cells":["products[13818491591475055282288]/cells[520366651475055282288]"]}
+]}
+,
+ "metadata" : {
+  "productPositions" : [ {
+    "product" : "13818491591475055282288",
+    "position" : 1
+  } ],
+  "featurePositions" : [ {
+    "feature" : "13670730451475055282288",
+    "position" : 4
+  }, {
+    "feature" : "7191600551475055282288",
+    "position" : 3
+  }, {
+    "feature" : "8361283631475055282288",
+    "position" : 1
+  }, {
+    "feature" : "14516006421475055282288",
+    "position" : 0
+  }, {
+    "feature" : "9388552621475055282288",
+    "position" : 2
+  } ],
+  "source" : "",
+  "license" : "",
+  "creator" : ""
+}
+}

@@ -1,0 +1,35 @@
+{
+ "pcm" : 
+{"class":"org.opencompare.model.PCM@3945332381475055196416","name":"","generated_KMF_ID":"3945332381475055196416","productsKey":["features[6386481481475055196416]/subFeatures[18919866251475055196416]"],"products":[
+{"class":"org.opencompare.model.Product@6946643461475055196416","generated_KMF_ID":"6946643461475055196416","pcm":[""],"cells":[
+{"class":"org.opencompare.model.Cell@1454931811475055196416","content":"c2hhcmVkIHRpdGxl","rawContent":"Y29sc3Bhbj0yfHNoYXJlZCB0aXRsZQ==","generated_KMF_ID":"1454931811475055196416","feature":["features[6386481481475055196416]/subFeatures[18919866251475055196416]"],"product":["products[6946643461475055196416]"],"interpretation":[]}
+,
+{"class":"org.opencompare.model.Cell@14064542851475055196416","content":"c2hhcmVkIHRpdGxl","rawContent":"Y29sc3Bhbj0yfHNoYXJlZCB0aXRsZQ==","generated_KMF_ID":"14064542851475055196416","feature":["features[6386481481475055196416]/subFeatures[5137555421475055196416]"],"product":["products[6946643461475055196416]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@15163464511475055196416","value":"c2hhcmVkIHRpdGxl","generated_KMF_ID":"15163464511475055196416"}
+]}
+]}
+],"features":[
+{"class":"org.opencompare.model.FeatureGroup@6386481481475055196416","name":"UHJlc2lkZW50J3MgQ3VwIDE5ODEgV2lubmVycw==","generated_KMF_ID":"6386481481475055196416","parentGroup":[],"subFeatures":[
+{"class":"org.opencompare.model.Feature@18919866251475055196416","name":"S29yZWEgUmVwdWJsaWMKN3RoIFRpdGxl","generated_KMF_ID":"18919866251475055196416","parentGroup":["features[6386481481475055196416]"],"cells":["products[6946643461475055196416]/cells[1454931811475055196416]"]}
+,
+{"class":"org.opencompare.model.Feature@5137555421475055196416","name":"UmFjaW5nIEPDs3Jkb2JhCjFzdCBUaXRsZQ==","generated_KMF_ID":"5137555421475055196416","parentGroup":["features[6386481481475055196416]"],"cells":["products[6946643461475055196416]/cells[14064542851475055196416]"]}
+]}
+]}
+,
+ "metadata" : {
+  "productPositions" : [ {
+    "product" : "6946643461475055196416",
+    "position" : 2
+  } ],
+  "featurePositions" : [ {
+    "feature" : "18919866251475055196416",
+    "position" : 0
+  }, {
+    "feature" : "5137555421475055196416",
+    "position" : 1
+  } ],
+  "source" : "",
+  "license" : "",
+  "creator" : ""
+}
+}

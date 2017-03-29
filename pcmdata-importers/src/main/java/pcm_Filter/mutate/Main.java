@@ -13,6 +13,10 @@ import org.opencompare.api.java.impl.io.KMFJSONExporter;
 import org.opencompare.api.java.impl.io.KMFJSONLoader;
 import org.opencompare.api.java.io.PCMLoader;
 
+import JSONformating.PCMtonewJSON;
+import JSONformating.model.newJSONFormat;
+import data_off.PCMUtil;
+
 public class Main {
 
 	public static String inputpath = ""; // give path with argv
@@ -21,7 +25,7 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 
 		// inputpath = args[0];
-		inputpath = "input-pcm/";
+		inputpath = "input-pcm-test/";
 		outputpath = "output-pcm/";
 
 		// MongoClient mongoClient = new MongoClient();
@@ -32,9 +36,10 @@ public class Main {
 			Stream<Path> paths = Files.walk(Paths.get(inputpath));
 
 			paths.forEach(filePath -> {
+				
 				if (Files.isRegularFile(filePath) && filePath.toString().endsWith(".pcm")) {
 					System.out.println("> PCM read from " + filePath);
-
+				     
 					File pcmFile = new File(filePath.toString());
 
 					PCMLoader loader = new KMFJSONLoader();
@@ -50,20 +55,31 @@ public class Main {
 						PCM pcm = pcmContainer.getPcm();
 						PCMInfoContainer pcmic = null;
 
-						pcmic = new PCMInfoContainer(pcm);
-						pcmContainer.setPcm(pcmic.getMutedPcm());
-
-						KMFJSONExporter pcmExporter = new KMFJSONExporter();
-						String pcmString = pcmExporter.export(pcmContainer);
-
-						Path p = Paths.get(outputpath + "muted_" + filePath.getFileName());
 						try {
-							Files.write(p, pcmString.getBytes());
+							pcmic = new PCMInfoContainer(pcm);
 						} catch (Exception e) {
 							e.printStackTrace();
 						}
-						System.out.println("> PCM exported to " + p);
-
+						if (pcmic != null) {
+							if (pcmic.isSameSizePcm()) {
+								System.out.println("> PCM muted is the same");
+							} else {
+								pcmContainer.setPcm(pcmic.getMutedPcm());
+								KMFJSONExporter pcmExporter = new KMFJSONExporter();
+								String pcmString = pcmExporter.export(pcmContainer);
+								
+								Path p = Paths.get(outputpath + "muted_" ) ;//filePath.getFileName());
+								try {
+									Files.write(p, pcmString.getBytes());
+								} catch (Exception e) {
+									e.printStackTrace();
+								}
+								System.out.println("> PCM exported to " + p);
+							}
+						}
+						else {
+							System.out.println("> PCM corrompu");
+						}
 					}
 
 				}

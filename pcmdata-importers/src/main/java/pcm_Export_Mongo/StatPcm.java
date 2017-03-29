@@ -126,14 +126,16 @@ public class StatPcm {
 			List<Cell> cells = feat.getCells();
 			for (Cell cell : cells) {
 				Value v = cell.getInterpretation();
-				String cl = v.getClass().toString();
-				if (v instanceof RealValue || v instanceof IntegerValue)
-					cl = "Numeric";
-
-				if (!mapMetrics2.containsKey(cl))
-					mapMetrics2.put(cl, 0);
-				else
-					mapMetrics2.put(cl, mapMetrics2.get(cl) + 1);
+				if(v != null) {
+					String cl = v.getClass().toString();
+					if (v instanceof RealValue || v instanceof IntegerValue)
+						cl = "Numeric";
+	
+					if (!mapMetrics2.containsKey(cl))
+						mapMetrics2.put(cl, 0);
+					else
+						mapMetrics2.put(cl, mapMetrics2.get(cl) + 1);
+				}
 
 			} // end for cells
 			Double tauxHomogeneity = tauxHomg(feat, mapMetrics2);
@@ -184,16 +186,17 @@ public class StatPcm {
 			List<Cell> cells = feat.getCells();
 			for (Cell cell : cells) {
 				Value v = cell.getInterpretation();
-
-				String cl = v.getClass().toString();
-				if (v instanceof RealValue || v instanceof IntegerValue)
-					cl = "Numeric";
-
-				if (!mapMetrics2.containsKey(cl))
-					mapMetrics2.put(cl, 0);
-				else
-					mapMetrics2.put(cl, mapMetrics2.get(cl) + 1);
-
+				if( v != null){
+					String cl = v.getClass().toString();
+					
+					if (v instanceof RealValue || v instanceof IntegerValue)
+						cl = "Numeric";
+	
+					if (!mapMetrics2.containsKey(cl))
+						mapMetrics2.put(cl, 0);
+					else
+						mapMetrics2.put(cl, mapMetrics2.get(cl) + 1);
+				}
 			} // end for cells
 			Double tauxHomogeneity = tauxHomg(feat, mapMetrics2);
 			// System.err.println("mapMetrics2: " + mapMetrics2 + " taux=" +
