@@ -13,8 +13,7 @@ import org.opencompare.api.java.impl.io.KMFJSONExporter;
 import org.opencompare.api.java.impl.io.KMFJSONLoader;
 import org.opencompare.api.java.io.PCMLoader;
 
-import JSONformating.PCMtonewJSON;
-import JSONformating.model.newJSONFormat;
+
 import data_off.PCMUtil;
 
 public class Main {
