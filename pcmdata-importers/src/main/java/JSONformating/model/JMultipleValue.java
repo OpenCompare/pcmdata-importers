@@ -16,6 +16,10 @@ public class JMultipleValue extends JValue{
 	public void setValue(List<JValue> value) {
 		this.mulValue = value;
 	}
+	
+	public void addValue(JValue value){
+		mulValue.add(value);
+	}
 
 	public String toString(){
 		String res = ""+ mulValue.size();

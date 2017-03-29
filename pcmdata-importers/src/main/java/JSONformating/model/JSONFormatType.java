@@ -23,4 +23,20 @@ public enum JSONFormatType {
 	public String toString(){
 		return name;
 	}
+	
+	public static JSONFormatType getType(String str){
+		str = str.toLowerCase();
+		switch(str){
+		case "real" : return REAL;
+		case "boolean": return BOOLEAN;
+		case "integer":return INTEGER;
+		case "string":return STRING;
+		case "date":return DATE;
+		case "version":return VERSION;
+		case "multiple":return MULTIPLE;
+		case "url":return URL;
+		case "image":return IMAGE;
+		default: return UNDEFINED;
+		}
+	}
 }

@@ -19,4 +19,7 @@ public class JProduct {
 	public void setCells(List<JCell> cells) {
 		this.cells = cells;
 	}
+	public void addCell(JCell cell){
+		this.cells.add(cell);
+	}
 }
