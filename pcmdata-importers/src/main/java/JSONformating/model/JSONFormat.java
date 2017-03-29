@@ -17,7 +17,7 @@ import com.mongodb.util.JSON;
 
 import kotlin.deprecated;
 
-public class newJSONFormat {
+public class JSONFormat {
 	private String quote = "\"";
 	private String qcq = quote + ":" + quote;
 	private String commaquo = "," + quote;
@@ -263,8 +263,8 @@ public class newJSONFormat {
 		return features;
 	}
 
-	public newJSONFormatType getTypeForFeature(String featureID){
-		Set<newJSONFormatType> types = new HashSet<>();
+	public JSONFormatType getTypeForFeature(String featureID){
+		Set<JSONFormatType> types = new HashSet<>();
 		for(JProduct p : products){
 			for(JCell c : p.getCells()){
 				if(c.getFeatureID().equals(featureID)){
@@ -273,33 +273,33 @@ public class newJSONFormat {
 			}
 		}
 		if(types.size() == 1){
-			return types.toArray(new newJSONFormatType[0])[0];
+			return types.toArray(new JSONFormatType[0])[0];
 		}
-		if(types.size() == 2 && types.contains(newJSONFormatType.UNDEFINED)){ //if only undefined and 1 other type the return this other type
-			types.remove(newJSONFormatType.UNDEFINED);
-			return types.toArray(new newJSONFormatType[0])[0];
+		if(types.size() == 2 && types.contains(JSONFormatType.UNDEFINED)){ //if only undefined and 1 other type the return this other type
+			types.remove(JSONFormatType.UNDEFINED);
+			return types.toArray(new JSONFormatType[0])[0];
 		}
-		List<newJSONFormatType> input = new ArrayList<>();
-		input.add(newJSONFormatType.BOOLEAN);
-		input.add(newJSONFormatType.INTEGER);
-		input.add(newJSONFormatType.REAL);
-		input.add(newJSONFormatType.UNDEFINED);
+		List<JSONFormatType> input = new ArrayList<>();
+		input.add(JSONFormatType.BOOLEAN);
+		input.add(JSONFormatType.INTEGER);
+		input.add(JSONFormatType.REAL);
+		input.add(JSONFormatType.UNDEFINED);
 		if(containsOnly(types, input)){
-			return newJSONFormatType.REAL; //bool, int, real and undef are grouped as reals
+			return JSONFormatType.REAL; //bool, int, real and undef are grouped as reals
 		}
-		input.add(newJSONFormatType.STRING);
-		input.add(newJSONFormatType.DATE);
-		input.add(newJSONFormatType.IMAGE);
-		input.add(newJSONFormatType.URL);
-		input.add(newJSONFormatType.VERSION);
+		input.add(JSONFormatType.STRING);
+		input.add(JSONFormatType.DATE);
+		input.add(JSONFormatType.IMAGE);
+		input.add(JSONFormatType.URL);
+		input.add(JSONFormatType.VERSION);
 		if(containsOnly(types, input)){
-			return newJSONFormatType.STRING; //all of the above plus string, date, image, url and version are grouped as strings
+			return JSONFormatType.STRING; //all of the above plus string, date, image, url and version are grouped as strings
 		}
-		return newJSONFormatType.UNDEFINED; //undefined if multiples are mixed up
+		return JSONFormatType.UNDEFINED; //undefined if multiples are mixed up
 	}
 
-	private boolean containsOnly(Set<newJSONFormatType> set, List<newJSONFormatType> input){
-		for(newJSONFormatType t : set){
+	private boolean containsOnly(Set<JSONFormatType> set, List<JSONFormatType> input){
+		for(JSONFormatType t : set){
 			if(!input.contains(t)){ //si t n'est pas dans input, set ne contient pas uniquement des elements de input
 
 				return false;

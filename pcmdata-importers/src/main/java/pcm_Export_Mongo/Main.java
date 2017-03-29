@@ -18,8 +18,8 @@ import org.opencompare.api.java.io.PCMLoader;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 
-import JSONformating.PCMtonewJSON;
-import JSONformating.model.newJSONFormat;
+import JSONformating.PCMtoJSON;
+import JSONformating.model.JSONFormat;
 import data_off.PCMInterpreter;
 import pcm_Export_Mongo.PCMInfoContainer;
 
@@ -70,10 +70,10 @@ public class Main {
 
 						if (pcmic != null && pcmic.isProductChartable()) {
 
-							newJSONFormat json = null;
+							JSONFormat json = null;
 							// Export to mongoDB database
 							try {
-								json = PCMtonewJSON.mkNewJSONFormatFromPCM(pcmContainer);
+								json = PCMtoJSON.mkNewJSONFormatFromPCM(pcmContainer);
 							} catch (java.lang.NullPointerException e2) {
 								//e2.printStackTrace();
 							}

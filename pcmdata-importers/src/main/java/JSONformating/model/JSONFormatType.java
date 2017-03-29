@@ -1,6 +1,6 @@
 package JSONformating.model;
 
-public enum newJSONFormatType {
+public enum JSONFormatType {
 	BOOLEAN("boolean"),
 	REAL("real"),
 	INTEGER("integer"),
@@ -16,7 +16,7 @@ public enum newJSONFormatType {
 	private String name = "";
 
 
-	newJSONFormatType(String name){
+	JSONFormatType(String name){
 		this.name = name;
 	}
 
