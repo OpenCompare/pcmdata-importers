@@ -33,13 +33,13 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 
 		// inputpath = args[0];
-		// inputpath = "input-pcm/";
-		inputpath = "input-pcm-test/";
+		inputpath = "input-pcm/";
+		//inputpath = "input-pcm-test/";
 
 		try {
-			MongoClient mongoClient = new MongoClient();
-			MongoCollection<Document> collection =
-			mongoClient.getDatabase("OpenCompare").getCollection("pcms");
+//			MongoClient mongoClient = new MongoClient();
+//			MongoCollection<Document> collection =
+//			mongoClient.getDatabase("OpenCompare").getCollection("pcms");
 
 			Stream<Path> paths = Files.walk(Paths.get(inputpath));
 
@@ -83,8 +83,8 @@ public class Main {
 								String pcmString = json.export();
 
 								try {
-									Document doc = Document.parse(pcmString);
-									collection.insertOne(doc);
+									//Document doc = Document.parse(pcmString);
+									//collection.insertOne(doc);
 									System.out.println("> PCM exported to Database");
 									count++;
 								} catch (org.bson.json.JsonParseException e) {
@@ -96,7 +96,7 @@ public class Main {
 				}
 			});
 			System.out.println(count + "/" + total + " PCMs exported");
-			mongoClient.close();
+			//mongoClient.close();
 			paths.close();
 
 		} catch (Exception e) {
