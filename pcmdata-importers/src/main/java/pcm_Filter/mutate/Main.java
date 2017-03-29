@@ -13,8 +13,6 @@ import org.opencompare.api.java.impl.io.KMFJSONExporter;
 import org.opencompare.api.java.impl.io.KMFJSONLoader;
 import org.opencompare.api.java.io.PCMLoader;
 
-import JSONformating.PCMtonewJSON;
-import JSONformating.model.newJSONFormat;
 import data_off.PCMUtil;
 
 public class Main {
@@ -24,6 +22,9 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 
+		
+		// TODO : le pcm mutate est bien différent du pcm de base, mais les changements ne sont pas pris en compte. A travailler !
+		
 		// inputpath = args[0];
 		inputpath = "input-pcm-test/";
 		outputpath = "output-pcm/";

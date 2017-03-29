@@ -34,7 +34,7 @@ public class PCMMutate {
 		List<Product> pdts = pcm.getProducts();
 		List<Cell> cells = new ArrayList<Cell>() ;
 		for (Product pr : pdts) {
-			int nbCellsEmpty = 0 ;
+			float nbCellsEmpty = 0 ;
 			// On ajoute les cellules du product dans une liste
 			cells = pr.getCells();
 			// On traite les infos des cellules
@@ -44,7 +44,10 @@ public class PCMMutate {
 				}
 			}
 			if(cells.size() != 0){
-				if(nbCellsEmpty/cells.size()> RATIO_EMPTY_CELL){
+				System.out.println("Dans les lignes -- > \n Nombre de cellule vide :" + nbCellsEmpty + "\n Nombre de cellule : " + cells.size());
+				System.out.println("Valeur du if : " + nbCellsEmpty/cells.size());
+				if((nbCellsEmpty/cells.size()) > RATIO_EMPTY_CELL){
+					System.out.println("on dégage la ligne !");
 					pcm.removeProduct(pr);
 				}
 			}			
@@ -63,7 +66,7 @@ public class PCMMutate {
 		List<Feature> pdts = pcm.getConcreteFeatures();
 		List<Cell> cells = new ArrayList<Cell>() ;
 		for (Feature pr : pdts) {
-			int nbCellsEmpty = 0 ;
+			float nbCellsEmpty = 0 ;
 			// On ajoute les cellules du product dans une liste
 			cells = pr.getCells();
 			// On traite les infos des cellules
@@ -73,7 +76,10 @@ public class PCMMutate {
 				}
 			}
 			if(cells.size() != 0){
-				if(nbCellsEmpty/cells.size()> RATIO_EMPTY_CELL){
+				System.out.println("Dans les colonnes -- > \n Nombre de cellule vide :" + nbCellsEmpty + "\n Nombre de cellule : " + cells.size());
+				System.out.println("Valeur du if : " + nbCellsEmpty/cells.size());
+				if((nbCellsEmpty/cells.size()) > RATIO_EMPTY_CELL){
+					System.out.println("on dégage la colonne !");
 					pcm.removeFeature(pr);;
 				}
 			}
