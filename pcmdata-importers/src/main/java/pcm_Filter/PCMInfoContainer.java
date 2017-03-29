@@ -8,7 +8,7 @@ import org.opencompare.api.java.Cell;
 import org.opencompare.api.java.PCM;
 import org.opencompare.api.java.Product;
 import org.opencompare.api.java.Value;
-import org.opencompare.model.BooleanValue;
+import org.opencompare.api.java.value.BooleanValue;
 
 
 public class PCMInfoContainer {

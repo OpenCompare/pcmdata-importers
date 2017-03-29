@@ -17,9 +17,10 @@ import org.opencompare.api.java.impl.io.KMFJSONLoader;
 import org.opencompare.api.java.io.PCMLoader;
 
 import pcm_Filter.PCMInfoContainer;
-import pcm_Filter.simple.pcm_predicate.PCMCompositeFilter;
-import pcm_Filter.simple.pcm_predicate.PCMPredicateMinColumnProduct;
-import pcm_Filter.simple.pcm_predicate.PCMPredicateMinRowProduct;
+import pcm_Filter.simple.pcm_predicate.*;
+
+
+
 
 public class Main {
 

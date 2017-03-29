@@ -1,5 +1,7 @@
 package JSONformating.model;
 
+import java.util.Collection;
+
 public class JValue {
 	
 	private Object value;
@@ -16,7 +18,7 @@ public class JValue {
 		return "";
 	}
 
-	public String export() {
+	public Object export() {
 		return "";
 	}
 }

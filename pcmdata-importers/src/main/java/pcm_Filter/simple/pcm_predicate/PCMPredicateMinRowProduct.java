@@ -4,6 +4,7 @@ import org.opencompare.model.PCM;
 
 import pcm_Filter.PCMInfoContainer;
 
+
 public class PCMPredicateMinRowProduct implements PCMPredicateFilter {
 
 	public static final int minimumRows = 3;
