@@ -31,12 +31,12 @@ import JSONformating.model.JValue;
 
 public class JSONReader {
 
-	public static JSONFormat importJSON(String filename){
+	public static JSONFormat importJSON(String filename) throws IOException{
 		try {
 			Scanner scanner = new Scanner(new File(filename));
 			String json = scanner.useDelimiter("\\Z").next();
 			scanner.close();
-			System.out.println(json);
+//			System.out.println(json);
 			JsonElement jelement = new JsonParser().parse(json);
 			return createJSONFormat(jelement);
 		} catch (FileNotFoundException e1) {
@@ -46,7 +46,7 @@ public class JSONReader {
 		return null;
 	}
 
-	private static JSONFormat createJSONFormat(JsonElement jelement) {
+	private static JSONFormat createJSONFormat(JsonElement jelement) throws IOException {
 		JFeature feature;
 		JProduct product;
 		JCell cell;
@@ -77,53 +77,58 @@ public class JSONReader {
 			for(Entry<String, JsonElement> eC : cells.entrySet()){
 				jC = eC.getValue().getAsJsonObject();
 				cell = new JCell();
-				cell.setId(jC.get("id").getAsString());
+				cell.setId(jC.get("id").getAsString()); //or eC.getKey()
 				cell.setType(JSONFormatType.getType(jC.get("type").getAsString()));
 				cell.setFeatureID(jC.get("featureID").getAsString());
 				cell.setProductID(jC.get("productID").getAsString());
 				cell.setPartial(jC.get("isPartial").getAsBoolean());
 				cell.setUnit(jC.get("unit").getAsString());
-				switch(cell.getType()){
-				case BOOLEAN:
-					JBooleanValue boolValue = new JBooleanValue();
-					boolValue.setValue(jC.get("value").getAsBoolean());
-					cell.setValue(boolValue);
-					product.addCell(cell);
-					break;
-				case DATE:case IMAGE:case STRING:case URL:case VERSION:
-					JStringValue stringValue = new JStringValue();
-					stringValue.setValue(jC.get("value").getAsBoolean());
-					cell.setValue(stringValue);
-					product.addCell(cell);
-					break;
-				case INTEGER:case REAL:
-					JNumberValue numValue = new JNumberValue();
-					numValue.setValue(jC.get("value").getAsFloat());
-					cell.setValue(numValue);
-					product.addCell(cell);
-					break;
-				case MULTIPLE:
-					JMultipleValue mulValue = new JMultipleValue();
-					cell.setValue(mulValue);
-					JsonArray array = jC.get("value").getAsJsonArray();
-					for(JsonElement je : array){
-						//TODO make a recursive method to import JMultipleValue
-					}
-					break;
-				case UNDEFINED:
-				default:
-					break;
-				
-				}
+				cell.setValue(getJValue(jC));
+				product.addCell(cell);
 			}
 		}
 		return jf;
 	}
+	
+	public static JValue getJValue(JsonObject cell) throws IOException{
+		JSONFormatType type = JSONFormatType.getType(cell.get("type").getAsString());
+		JsonElement value = cell.get("value");
+		switch(type){
+		case BOOLEAN:
+			JBooleanValue boolValue = new JBooleanValue();
+			boolValue.setValue(value.getAsBoolean());
+			return boolValue;
+		case DATE:case IMAGE:case STRING:case URL:case VERSION:
+			JStringValue stringValue = new JStringValue();
+			stringValue.setValue(value.getAsString());
+			return stringValue;
+		case INTEGER:case REAL:
+			JNumberValue numValue = new JNumberValue();
+			numValue.setValue(value.getAsFloat());
+			return numValue;
+		case MULTIPLE:
+			JMultipleValue mulValue = new JMultipleValue();
+			JsonArray array = value.getAsJsonArray();
+			for(JsonElement j : array){
+				mulValue.addValue(getJValueForMultiple(j));
+			}
+			return mulValue;
+		case UNDEFINED:
+		default:
+			return null;
+		}
+	}
 
-	public static void main(String[] args) {
+	private static JValue getJValueForMultiple(JsonElement j) {
+		
+		return null;
+	}
+
+	public static void main(String[] args) throws IOException {
 		String filename = "off_output/pcms/test2.pcm";
 		JSONFormat jf = importJSON(filename);
-		System.out.println(jf.getName());
+		for(JFeature f : jf.getFeatures())
+			System.out.println(f.toString());
 	}
 
 }

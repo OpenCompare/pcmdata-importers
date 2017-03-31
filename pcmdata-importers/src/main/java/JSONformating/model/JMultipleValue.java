@@ -1,5 +1,6 @@
 package JSONformating.model;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,12 +14,21 @@ public class JMultipleValue extends JValue{
 		return mulValue;
 	}
 
-	public void setValue(List<JValue> value) {
+	public void setValue(List<JValue> value) throws IOException{
+		for(JValue v : value) { 
+			if(v instanceof JMultipleValue){
+				throw new IOException("Error adding a multiple value in another multiple value");
+				}
+			}
 		this.mulValue = value;
 	}
 	
-	public void addValue(JValue value){
-		mulValue.add(value);
+	public void addValue(JValue value) throws IOException{
+		if(value instanceof JMultipleValue){
+			throw new IOException("Error adding a multiple value in another multiple value");
+		}else{
+			mulValue.add(value);
+		}
 	}
 
 	public String toString(){

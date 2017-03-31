@@ -21,7 +21,7 @@ import data_off.PCMUtil;
 
 public class PCMtoJSON {
 
-	public static JSONFormat mkNewJSONFormatFromPCM(PCMContainer pcmC){
+	public static JSONFormat mkNewJSONFormatFromPCM(PCMContainer pcmC) throws IOException{
 
 		PCM pcm = pcmC.getPcm();
 		JSONFormat nJSONf = new JSONFormat();
@@ -86,7 +86,7 @@ public class PCMtoJSON {
 
 	}
 
-	public static JValue createJValueFromCellForJCell(Cell c, JCell jc){
+	public static JValue createJValueFromCellForJCell(Cell c, JCell jc) throws IOException{
 		Value value =  c.getInterpretation();
 		if(value instanceof BooleanValueImpl){
 
@@ -191,7 +191,7 @@ public class PCMtoJSON {
 		return jvalues;
 	}
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException  {
 
 		String inFilename = "off_output/pcms/fr_biscottes-pauvres-en-sel.pcm";
 		String outFilename = "off_output/pcms/test2.pcm";

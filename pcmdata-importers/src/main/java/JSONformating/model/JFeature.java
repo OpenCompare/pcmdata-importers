@@ -22,4 +22,8 @@ public class JFeature {
 	public void setType(JSONFormatType type) {
 		this.type = type;
 	}
+	
+	public String toString(){
+		return id + " : " + name + ", " + type;
+	}
 }

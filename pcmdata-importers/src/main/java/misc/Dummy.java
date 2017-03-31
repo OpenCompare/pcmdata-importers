@@ -1,5 +1,6 @@
 package misc;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +9,7 @@ import org.json.JSONObject;
 import JSONformating.model.JBooleanValue;
 import JSONformating.model.JCell;
 import JSONformating.model.JMultipleValue;
+import JSONformating.model.JNumberValue;
 import JSONformating.model.JProduct;
 import JSONformating.model.JStringValue;
 import JSONformating.model.JValue;
@@ -16,7 +18,7 @@ import JSONformating.model.JSONFormatType;
 
 public class Dummy {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		JCell cell = new JCell();
 		cell.setFeatureID("F0");
 		cell.setId("C0");
@@ -26,20 +28,19 @@ public class Dummy {
 		val.setValue("test");
 		JBooleanValue bool = new JBooleanValue();
 		bool.setValue(true);
+		JNumberValue num = new JNumberValue();
+		num.setValue(42.42F);
 		JMultipleValue mulval = new JMultipleValue();
-		List<JValue> list = new ArrayList<>();
-		list.add(val);
-		list.add(bool);
-		mulval.setValue(list);;
+		mulval.addValue(val);
+		mulval.addValue(bool);
+		mulval.addValue(num);
 		cell.setValue(mulval);
 		JProduct prod = new JProduct();
 		prod.setId("P0");
-		List<JCell> cells = new ArrayList<>();
-		cells.add(cell);
-		prod.setCells(cells);
+		prod.addCell(cell);
 		JSONFormat nf = new JSONFormat();
-		System.out.println(nf.exportCell(cell));
-		System.out.println(nf.exportProduct(prod));
+		nf.addProduct(prod);
+		System.out.println(nf.export());
 		
 	}
 

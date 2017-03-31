@@ -75,7 +75,7 @@ public class Main {
 							// Export to mongoDB database
 							try {
 								json = PCMtoJSON.mkNewJSONFormatFromPCM(pcmContainer);
-							} catch (java.lang.NullPointerException e) {
+							} catch (java.lang.NullPointerException | IOException e) {
 								e.printStackTrace();
 							}
 
