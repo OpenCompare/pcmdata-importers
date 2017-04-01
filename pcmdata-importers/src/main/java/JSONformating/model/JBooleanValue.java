@@ -3,7 +3,7 @@ package JSONformating.model;
 public class JBooleanValue extends JValue {
 	private boolean boolValue;
 
-	public boolean isValue() {
+	public Boolean getValue() {
 		return boolValue;
 	}
 

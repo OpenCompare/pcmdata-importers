@@ -6,6 +6,10 @@ public class JNumberValue extends JValue{
 	public Float getValue() {
 		return numValue;
 	}
+	
+	public Integer getAsInteger(){
+		return ((Float) numValue).intValue();
+	}
 
 	public void setValue(float value) {
 		this.numValue = value;

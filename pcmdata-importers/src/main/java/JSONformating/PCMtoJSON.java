@@ -144,6 +144,10 @@ public class PCMtoJSON {
 			return mulvalue;
 		}else if(value instanceof VersionImpl){
 			jc.setType(JSONFormatType.VERSION);
+			JStringValue stringValue = new JStringValue();
+			stringValue.setValue(""); //FIXME Version ? .api ? .model ?
+			return stringValue;
+			
 		}else if(value instanceof NotApplicableImpl){
 			jc.setType(JSONFormatType.UNDEFINED);
 		}else{
@@ -193,8 +197,8 @@ public class PCMtoJSON {
 
 	public static void main(String[] args) throws IOException  {
 
-		String inFilename = "off_output/pcms/fr_biscottes-pauvres-en-sel.pcm";
-		String outFilename = "off_output/pcms/test2.pcm";
+		String inFilename = "off_output/pcms/en_french-blue-veined-cheeses.pcm";
+		String outFilename = "off_output/pcms/en_french-blue-veined-cheeses.new.pcm";
 		PCMContainer pcmC = PCMUtil.loadPCMContainer(inFilename);
 		System.out.println("PCM loaded");
 		JSONFormat nf = mkNewJSONFormatFromPCM(pcmC);

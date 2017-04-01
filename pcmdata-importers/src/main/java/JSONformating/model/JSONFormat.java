@@ -21,6 +21,7 @@ public class JSONFormat {
 	private String quote = "\"";
 	private String qcq = quote + ":" + quote;
 	private String commaquo = "," + quote;
+	
 	private String name;
 	private String license;
 	private String source;
@@ -76,6 +77,11 @@ public class JSONFormat {
 	public void addProduct(JProduct p){
 		products.add(p);
 	}
+	
+	public boolean isPrimaryFeature(JFeature f) {
+		return f.getId().equals(primaryFeatureID);
+	}
+
 	
 	public String exportGson(){
 		Gson gson = new Gson();
@@ -262,6 +268,11 @@ public class JSONFormat {
 	public List<JFeature> getFeatures() {
 		return features;
 	}
+	
+	public List<JProduct> getProducts() {
+		return products;
+	}
+
 
 	public JSONFormatType getTypeForFeature(String featureID){
 		Set<JSONFormatType> types = new HashSet<>();

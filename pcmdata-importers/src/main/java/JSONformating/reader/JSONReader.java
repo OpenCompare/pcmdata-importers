@@ -141,15 +141,15 @@ public class JSONReader {
 	}
 
 	public static void main(String[] args) throws IOException {
-		String filename = "off_output/pcms/test2.pcm";
+		String filename = "off_output/pcms/en_french-blue-veined-cheeses.new.pcm";
 		Scanner scanner = new Scanner(new File(filename));
 		String in = scanner.useDelimiter("\\Z").next();
 		scanner.close();
 		JSONFormat jf = importJSON(filename);
 		String out = jf.export();
 		System.out.println(in.equals(out));
-		System.out.println(in);
-		System.out.println(out);
+//		System.out.println(in);
+//		System.out.println(out);
 	}
 
 }
