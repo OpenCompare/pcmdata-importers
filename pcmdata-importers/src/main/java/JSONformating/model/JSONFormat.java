@@ -301,7 +301,6 @@ public class JSONFormat {
 	private boolean containsOnly(Set<JSONFormatType> set, List<JSONFormatType> input){
 		for(JSONFormatType t : set){
 			if(!input.contains(t)){ //si t n'est pas dans input, set ne contient pas uniquement des elements de input
-
 				return false;
 			}
 		}

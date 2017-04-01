@@ -6,6 +6,9 @@ import java.util.List;
 
 import org.json.JSONObject;
 
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
+
 import JSONformating.model.JBooleanValue;
 import JSONformating.model.JCell;
 import JSONformating.model.JMultipleValue;
@@ -42,6 +45,14 @@ public class Dummy {
 		nf.addProduct(prod);
 		System.out.println(nf.export());
 		
+//		JSONObject jo = new JSONObject();
+//		jo.put("string", "test");
+//		jo.put("real", 42.42);
+//		jo.put("bool", true);
+//		JsonElement je = new JsonParser().parse(jo.toString());
+//		System.out.println(je.toString());
+//		System.out.println(je.getAsJsonObject().get("real").getAsFloat());
+//		System.out.println(je.getAsJsonObject().get("string").getAsString());
 	}
 
 }

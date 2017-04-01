@@ -72,20 +72,21 @@ public class JSONReader {
 		for(Entry<String, JsonElement> eP : products.entrySet()){
 			jo = eP.getValue().getAsJsonObject();
 			product = new JProduct();
-			product.setId(jo.get("id").getAsString());
+			product.setId(eP.getKey());
 			cells = jo.get("cells").getAsJsonObject();
 			for(Entry<String, JsonElement> eC : cells.entrySet()){
 				jC = eC.getValue().getAsJsonObject();
 				cell = new JCell();
-				cell.setId(jC.get("id").getAsString()); //or eC.getKey()
+				cell.setId(eC.getKey());
 				cell.setType(JSONFormatType.getType(jC.get("type").getAsString()));
 				cell.setFeatureID(jC.get("featureID").getAsString());
 				cell.setProductID(jC.get("productID").getAsString());
-				cell.setPartial(jC.get("isPartial").getAsBoolean());
-				cell.setUnit(jC.get("unit").getAsString());
+//				cell.setPartial(jC.get("isPartial").getAsBoolean());
+//				cell.setUnit(jC.get("unit").getAsString());
 				cell.setValue(getJValue(jC));
 				product.addCell(cell);
 			}
+			jf.addProduct(product);
 		}
 		return jf;
 	}
@@ -120,15 +121,35 @@ public class JSONReader {
 	}
 
 	private static JValue getJValueForMultiple(JsonElement j) {
-		
-		return null;
+		try{
+			float f = j.getAsFloat();
+			JNumberValue numberValue = new JNumberValue();
+			numberValue.setValue(f);
+			return numberValue;
+		}catch(java.lang.NumberFormatException e){
+			String str = j.getAsString();
+			if(str.equals("true") || str.equals("false")){
+				JBooleanValue booleanValue = new JBooleanValue();
+				booleanValue.setValue(j.getAsBoolean());
+				return booleanValue;
+			}else{
+				JStringValue stringValue = new JStringValue();
+				stringValue.setValue(str);
+				return stringValue;
+			}
+		}
 	}
 
 	public static void main(String[] args) throws IOException {
 		String filename = "off_output/pcms/test2.pcm";
+		Scanner scanner = new Scanner(new File(filename));
+		String in = scanner.useDelimiter("\\Z").next();
+		scanner.close();
 		JSONFormat jf = importJSON(filename);
-		for(JFeature f : jf.getFeatures())
-			System.out.println(f.toString());
+		String out = jf.export();
+		System.out.println(in.equals(out));
+		System.out.println(in);
+		System.out.println(out);
 	}
 
 }

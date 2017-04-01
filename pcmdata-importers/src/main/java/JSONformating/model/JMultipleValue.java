@@ -2,9 +2,14 @@ package JSONformating.model;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.json.JSONArray;
+import org.json.JSONObject;
+
+import com.google.gson.JsonObject;
 
 public class JMultipleValue extends JValue{
 
@@ -15,20 +20,18 @@ public class JMultipleValue extends JValue{
 	}
 
 	public void setValue(List<JValue> value) throws IOException{
-		for(JValue v : value) { 
-			if(v instanceof JMultipleValue){
-				throw new IOException("Error adding a multiple value in another multiple value");
-				}
-			}
-		this.mulValue = value;
+		for(JValue v : value){
+			addValue(v);
+		}
 	}
 	
+
 	public void addValue(JValue value) throws IOException{
 		if(value instanceof JMultipleValue){
 			throw new IOException("Error adding a multiple value in another multiple value");
-		}else{
-			mulValue.add(value);
 		}
+		mulValue.add(value);
+		
 	}
 
 	public String toString(){
