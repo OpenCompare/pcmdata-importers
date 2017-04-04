@@ -214,7 +214,7 @@ public class PCMtoJSON {
 		Scanner scanner = new Scanner(new File(outFilename));
 		String json = scanner.useDelimiter("\\Z").next();
 		scanner.close();
-		System.out.println(json);
+//		System.out.println(json);
 		JsonElement jelement = new JsonParser().parse(json);
 		System.out.println("IMPORT OK");
 //		System.out.println(jelement.toString());

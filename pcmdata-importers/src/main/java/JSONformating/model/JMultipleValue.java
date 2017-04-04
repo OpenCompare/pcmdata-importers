@@ -46,4 +46,23 @@ public class JMultipleValue extends JValue{
 		JSONArray array = new JSONArray(mulValue);
 		return array;
 	}
+	
+	public boolean sameValue(JValue value){
+//		if(! (value instanceof JMultipleValue) || (mulValue.size() != ((JMultipleValue) value).getValue().size())){
+//			return false;
+//		}
+//		List<JValue> tempValues = new ArrayList<>(mulValue);
+//		for(JValue jval : ((JMultipleValue) value).getValue()){
+//			for(JValue thisval : mulValue){
+//				if(thisval.sameValue(jval)){
+//					if(!tempValues.remove(thisval)){
+//						return false;
+//					}
+//				}
+//			}
+//		}
+//		return tempValues.isEmpty();
+		return value instanceof JMultipleValue;
+//		return true;
+	}
 }

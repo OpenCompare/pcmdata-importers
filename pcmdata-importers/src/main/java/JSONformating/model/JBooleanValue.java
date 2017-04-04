@@ -18,4 +18,9 @@ public class JBooleanValue extends JValue {
 	public String export(){
 		return String.valueOf(boolValue);
 	}
+	
+	public boolean sameValue(JValue value){
+		return value instanceof JBooleanValue && this.boolValue == ((JBooleanValue) value).getValue();
+//		return true;
+	}
 }

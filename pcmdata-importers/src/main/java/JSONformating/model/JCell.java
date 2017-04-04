@@ -1,5 +1,7 @@
 package JSONformating.model;
 
+import java.util.Map;
+
 public class JCell{
 	private String id;
 	private String productID;
@@ -49,5 +51,18 @@ public class JCell{
 	}
 	public void setValue(JValue value) {
 		this.value = value;
+	}
+	public boolean sameCell(JCell pC, Map<String, String> featLinks){
+		String featIDbis = featLinks.get(featureID);
+		if(this.value == null){
+			if(pC.value == null){
+				return true;
+			}else{
+				return false;
+			}
+		}
+//		System.out.println(pC.getFeatureID() + " " + featIDbis);
+		return pC.getFeatureID().equals(featIDbis) && this.type.equals(pC.getType()) &&
+				this.value.sameValue(pC.value);
 	}
 }

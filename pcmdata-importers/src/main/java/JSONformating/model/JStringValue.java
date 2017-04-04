@@ -21,4 +21,8 @@ public class JStringValue extends JValue {
 		return strValue;
 	}
 	
+	public boolean sameValue(JValue value){
+		return value instanceof JStringValue;// && this.strValue.equals(((JStringValue) value).getValue());
+//		return true;
+	}
 }

@@ -26,4 +26,13 @@ public class JFeature {
 	public String toString(){
 		return id + " : " + name + ", " + type;
 	}
+	
+	/**
+	 * Compares the name and type of the 2 features
+	 * @param f the feature to compare
+	 * @return true if name and type are the same, omits id
+	 */
+	public boolean sameFeature(JFeature f){
+		return this.name.equals(f.name) && this.type.equals(f.type);
+	}
 }

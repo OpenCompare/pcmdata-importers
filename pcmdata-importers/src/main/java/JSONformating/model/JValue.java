@@ -2,7 +2,7 @@ package JSONformating.model;
 
 import java.util.Collection;
 
-public class JValue {
+public abstract class JValue {
 	
 	private Object value;
 	
@@ -20,5 +20,9 @@ public class JValue {
 
 	public Object export() {
 		return "";
+	}
+
+	public boolean sameValue(JValue value) {
+		return this.equals(value);
 	}
 }

@@ -6,8 +6,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.json.JSONObject;
@@ -317,5 +319,73 @@ public class JSONFormat {
 		}
 		return true;
 	}
+	
+	
+	public boolean sameFeatures(JSONFormat jf, Map<String, String> featLinks){
+		List<JFeature> tempFeat = new ArrayList<>(this.features);
+		if(jf.getFeatures().size() != this.features.size()){
+			return false;
+		}
+		for(JFeature jfF : jf.getFeatures()){
+			for(JFeature thisF : this.features){
+				if(this.isPrimaryFeature(thisF) == jf.isPrimaryFeature(jfF) && jfF.sameFeature(thisF)){
+					featLinks.put(thisF.getId(), jfF.getId());
+//					System.out.println(thisF.getName() + " " + jfF.getName());
+					if(!tempFeat.remove(thisF)){
+						return false;
+					}
+				}
+			}
+		}
+		
+		System.out.println(featLinks.toString());
+		System.out.println(tempFeat.size() + " features are different : ");
+		for(JFeature p : tempFeat){
+			System.out.print(p.getId() + ", ");
+		}
+		return tempFeat.isEmpty();
+	}
+	
+	public boolean sameProducts(JSONFormat jf, Map<String, String> featLinks) {
+		List<JProduct> tempProd = new ArrayList<>(this.products);
+		if(jf.getProducts().size() != this.products.size()){
+			System.out.println("Different number of products");
+			return false;
+		}
+		for(JProduct jfP : jf.getProducts()){
+			for(JProduct thisP : this.products){
+				if(thisP.sameProduct(jfP, featLinks)){ //FIXME
+					if(!tempProd.remove(thisP)){
+//						return false;
+					}
+				}
+			}
+		}
+		System.out.println(tempProd.size() + " products are different : ");
+		for(JProduct p : tempProd){
+			System.out.print(p.getId() + ", ");
+		}
+		return tempProd.isEmpty();
+	}
+	
+	/**
+	 * Checks if the JSONFormat in parameter is the same as this, omitting ids
+	 * @param jf the format to compare
+	 * @return true if this and jf are the same, omits ids
+	 */
+	public boolean equals(JSONFormat jf){
+		Map<String,String> featLinks = new HashMap<>();
+		if(!this.name.equals(jf.name) || !this.creator.equals(jf.creator) || !this.license.equals(jf.license) || !this.source.equals(jf.source)){
+			return false;
+		}else if(!this.sameFeatures(jf, featLinks)){
+			System.out.println("Differences in features");
+			return false;
+		}else if(!this.sameProducts(jf, featLinks)){
+			System.out.println("Differences in products");
+			return false;
+		}
+		return true;
+	}
+
 
 }
