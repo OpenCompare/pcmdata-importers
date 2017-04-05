@@ -3,9 +3,13 @@ package JSONformating;
 import static org.junit.Assert.*;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.opencompare.api.java.PCMContainer;
+import org.opencompare.api.java.impl.io.KMFJSONExporter;
 
 import JSONformating.model.JSONFormat;
 import JSONformating.reader.JSONReader;
@@ -14,41 +18,38 @@ import data_off.PCMUtil;
 
 public class JSONmetamorphTest {
 	
-	PCMContainer pcmC;
-	JSONFormat jf;
-
-	@Test
-	public void test() {
-		assert(true);
-		//fail("Not yet implemented");
-	}
-
-	public void importOldFormat(String filename) throws IOException{
-		pcmC = PCMUtil.loadPCMContainer(filename);
-		jf = PCMtoJSON.mkNewJSONFormatFromPCM(pcmC);
+	String inputpath="input-pcm/";
+	ArrayList<PCMContainer> listPcmC = new ArrayList<>();
+	
+	@BeforeClass
+	public void loadPCMs(){
+		
 	}
 	
-	public void importNewFormat(String filename) throws IOException{
-		jf = JSONReader.importJSON(filename);
-		pcmC = JSONtoPCM.JSONFormatToPCM(jf);
+	public PCMContainer importOldFormat(String filename) throws IOException{
+		return PCMUtil.loadPCMContainer(filename);
+	}
+	
+	public PCMContainer importNewFormat(String filename) throws IOException{
+		return JSONtoPCM.JSONFormatToPCM(JSONReader.importJSON(filename));
 	}
 	
 	@Deprecated
-	public void exportOldFormat(){
-		
-	}
-	
-	public void exportNewFormat(){
-		
-	}
-	
-	
-	public void importFromUnknow(){
-		
+	public String exportOldFormat(PCMContainer pcmC){
+		return new KMFJSONExporter().export(pcmC);
 	}
 
+	public String exportNewFormat(PCMContainer pcmC) throws IOException{
+		return PCMtoJSON.mkNewJSONFormatFromPCM(pcmC).export();
+	}
+	
 	@Test
-	public void parsable(){
+	public void OldToNewparsable(){
+		
+	}
+	
+	@Test
+	public void NewToNewparsable(){
 		
 	}
 	
@@ -61,6 +62,5 @@ public class JSONmetamorphTest {
 	public void firstJSONequalsToSecondJSON(){
 		
 	}
-
 	
 }	
