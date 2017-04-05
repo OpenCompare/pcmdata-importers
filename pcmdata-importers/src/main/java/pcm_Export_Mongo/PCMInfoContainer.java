@@ -1,19 +1,20 @@
 package pcm_Export_Mongo;
 
 import org.opencompare.api.java.PCM;
+import org.opencompare.api.java.PCMContainer;
 
 public class PCMInfoContainer {
 
 	private StatPcm _statPcm;
-	private PCM _pcm;
+	private PCMContainer _pcm;
 
-	public PCMInfoContainer(PCM pcm) {
+	public PCMInfoContainer(PCMContainer pcm) {
 		_pcm = pcm;
-		preCompute(pcm);
+		preCompute(_pcm.getPcm());
 	}
 
 	private void preCompute(PCM pcm) {
-		_statPcm = new StatPcm(_pcm);
+		_statPcm = new StatPcm(_pcm.getPcm());
 
 	}
 

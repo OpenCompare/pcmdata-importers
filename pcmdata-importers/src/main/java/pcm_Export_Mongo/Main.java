@@ -59,12 +59,11 @@ public class Main {
 
 					for (PCMContainer pcmContainer : pcmContainers) {
 						total++;
-						// Get the PCM
-						PCM pcm = pcmContainer.getPcm();
+						
 						PCMInfoContainer pcmic = null;
 
 						try {
-							pcmic = new PCMInfoContainer(pcm);
+							pcmic = new PCMInfoContainer(pcmContainer);
 						} catch (Exception e) {
 							e.printStackTrace();
 						}
