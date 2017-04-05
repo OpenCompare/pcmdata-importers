@@ -1,0 +1,35 @@
+{
+ "pcm" : 
+{"class":"org.opencompare.model.PCM@8366770351475055312060","name":"","generated_KMF_ID":"8366770351475055312060","productsKey":["features[16892630841475055312060]"],"products":[
+{"class":"org.opencompare.model.Product@808914491475055312060","generated_KMF_ID":"808914491475055312060","pcm":[""],"cells":[
+{"class":"org.opencompare.model.Cell@16164685321475055312060","content":"RGlyZWN0IHJlbGVnYXRpb24gdG8gcmVnaW9uYWwgbGVhZ3Vlcw==","rawContent":"Ymdjb2xvcj0iI2ZmZmZmZiIgYWxpZ249ImxlZnQiIHwgRGlyZWN0IHJlbGVnYXRpb24gdG8gcmVnaW9uYWwgbGVhZ3Vlcw==","generated_KMF_ID":"16164685321475055312060","feature":["features[16892630841475055312060]"],"product":["products[808914491475055312060]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@16488868771475055312060","value":"RGlyZWN0IHJlbGVnYXRpb24gdG8gcmVnaW9uYWwgbGVhZ3Vlcw==","generated_KMF_ID":"16488868771475055312060"}
+]}
+]}
+,
+{"class":"org.opencompare.model.Product@16597387671475055312060","generated_KMF_ID":"16597387671475055312060","pcm":[""],"cells":[
+{"class":"org.opencompare.model.Cell@10761667551475055312060","content":"UGxheW9mZiBmb3IgcHJvbW90aW9uIHRvIEZpcnN0IGxlYWd1ZSBvZiBTZXJiaWE=","rawContent":"Ymdjb2xvcj0iI2ZmZmZmZiIgYWxpZ249ImxlZnQiIHwgUGxheW9mZiBmb3IgcHJvbW90aW9uIHRvIEZpcnN0IGxlYWd1ZSBvZiBTZXJiaWE=","generated_KMF_ID":"10761667551475055312060","feature":["features[16892630841475055312060]"],"product":["products[16597387671475055312060]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@14197809671475055312060","value":"UGxheW9mZiBmb3IgcHJvbW90aW9uIHRvIEZpcnN0IGxlYWd1ZSBvZiBTZXJiaWE=","generated_KMF_ID":"14197809671475055312060"}
+]}
+]}
+],"features":[
+{"class":"org.opencompare.model.Feature@16892630841475055312060","name":"RGlyZWN0IHByb21vdGlvbiB0byBGaXJzdCBsZWFndWUgb2YgU2VyYmlh","generated_KMF_ID":"16892630841475055312060","parentGroup":[],"cells":["products[16597387671475055312060]/cells[10761667551475055312060]","products[808914491475055312060]/cells[16164685321475055312060]"]}
+]}
+,
+ "metadata" : {
+  "productPositions" : [ {
+    "product" : "808914491475055312060",
+    "position" : 2
+  }, {
+    "product" : "16597387671475055312060",
+    "position" : 1
+  } ],
+  "featurePositions" : [ {
+    "feature" : "16892630841475055312060",
+    "position" : 0
+  } ],
+  "source" : "",
+  "license" : "",
+  "creator" : ""
+}
+}

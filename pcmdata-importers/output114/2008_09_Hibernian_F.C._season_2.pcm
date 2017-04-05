@@ -1,0 +1,35 @@
+{
+ "pcm" : 
+{"class":"org.opencompare.model.PCM@1567567741475055146307","name":"","generated_KMF_ID":"1567567741475055146307","productsKey":["features[7353426461475055146307]"],"products":[
+{"class":"org.opencompare.model.Product@2666271441475055146307","generated_KMF_ID":"2666271441475055146307","pcm":[""],"cells":[
+{"class":"org.opencompare.model.Cell@9707633371475055146307","content":"ZmxhZ2ljb25GcmFuY2UgU3RldmUgUGluYXU=","rawContent":"e3tmbGFnaWNvbnxGcmFuY2V9fSBbW1N0ZXZlIFBpbmF1XV0=","generated_KMF_ID":"9707633371475055146307","feature":["features[7353426461475055146307]"],"product":["products[2666271441475055146307]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@21127134271475055146307","value":"ZmxhZ2ljb25GcmFuY2UgU3RldmUgUGluYXU=","generated_KMF_ID":"21127134271475055146307"}
+]}
+,
+{"class":"org.opencompare.model.Cell@8305496361475055146307","content":"R2Vub2E=","rawContent":"W1tHZW5vYSBDLkYuQy58R2Vub2FdXQ==","generated_KMF_ID":"8305496361475055146307","feature":["features[10355969171475055146307]"],"product":["products[2666271441475055146307]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@14562479181475055146307","value":"R2Vub2E=","generated_KMF_ID":"14562479181475055146307"}
+]}
+]}
+],"features":[
+{"class":"org.opencompare.model.Feature@7353426461475055146307","name":"UGxheWVy","generated_KMF_ID":"7353426461475055146307","parentGroup":[],"cells":["products[2666271441475055146307]/cells[9707633371475055146307]"]}
+,
+{"class":"org.opencompare.model.Feature@10355969171475055146307","name":"RnJvbQ==","generated_KMF_ID":"10355969171475055146307","parentGroup":[],"cells":["products[2666271441475055146307]/cells[8305496361475055146307]"]}
+]}
+,
+ "metadata" : {
+  "productPositions" : [ {
+    "product" : "2666271441475055146307",
+    "position" : 1
+  } ],
+  "featurePositions" : [ {
+    "feature" : "7353426461475055146307",
+    "position" : 0
+  }, {
+    "feature" : "10355969171475055146307",
+    "position" : 1
+  } ],
+  "source" : "",
+  "license" : "",
+  "creator" : ""
+}
+}

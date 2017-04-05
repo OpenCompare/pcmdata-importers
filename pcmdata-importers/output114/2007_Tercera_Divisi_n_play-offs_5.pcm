@@ -1,0 +1,57 @@
+{
+ "pcm" : 
+{"class":"org.opencompare.model.PCM@5241827561475055171344","name":"","generated_KMF_ID":"5241827561475055171344","productsKey":["features[1040771371475055171344]"],"products":[
+{"class":"org.opencompare.model.Product@13225528431475055171344","generated_KMF_ID":"13225528431475055171344","pcm":[""],"cells":[
+{"class":"org.opencompare.model.Cell@5238747261475055171344","content":"","rawContent":"","generated_KMF_ID":"5238747261475055171344","feature":["features[8660969641475055171344]"],"product":["products[13225528431475055171344]"],"interpretation":[]}
+,
+{"class":"org.opencompare.model.Cell@6749062091475055171344","content":"SmVyZXogQ0Y=","rawContent":"W1tKZXJleiBDRl1d","generated_KMF_ID":"6749062091475055171344","feature":["features[1040771371475055171344]"],"product":["products[13225528431475055171344]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@21403180111475055171344","value":"SmVyZXogQ0Y=","generated_KMF_ID":"21403180111475055171344"}
+]}
+,
+{"class":"org.opencompare.model.Cell@16004379701475055171344","content":"Q0QgTGVhbHRhZA==","rawContent":"W1tDRCBMZWFsdGFkXV0=","generated_KMF_ID":"16004379701475055171344","feature":["features[2296464961475055171344]"],"product":["products[13225528431475055171344]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@19723591991475055171344","value":"Q0QgTGVhbHRhZA==","generated_KMF_ID":"19723591991475055171344"}
+]}
+]}
+,
+{"class":"org.opencompare.model.Product@16403324701475055171344","generated_KMF_ID":"16403324701475055171344","pcm":[""],"cells":[
+{"class":"org.opencompare.model.Cell@795860221475055171344","content":"NC0w","rawContent":"YWxpZ249Y2VudGVyfCcnJzQtMCcnJw==","generated_KMF_ID":"795860221475055171344","feature":["features[2296464961475055171344]"],"product":["products[16403324701475055171344]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@21197887981475055171344","value":"NC0w","generated_KMF_ID":"21197887981475055171344"}
+]}
+,
+{"class":"org.opencompare.model.Cell@1431240861475055171344","content":"My0x","rawContent":"YWxpZ249Y2VudGVyfCcnJzMtMScnJw==","generated_KMF_ID":"1431240861475055171344","feature":["features[1040771371475055171344]"],"product":["products[16403324701475055171344]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@14100671361475055171344","value":"My0x","generated_KMF_ID":"14100671361475055171344"}
+]}
+,
+{"class":"org.opencompare.model.Cell@7748901091475055171344","content":"","rawContent":"","generated_KMF_ID":"7748901091475055171344","feature":["features[8660969641475055171344]"],"product":["products[16403324701475055171344]"],"interpretation":[]}
+]}
+],"features":[
+{"class":"org.opencompare.model.Feature@8660969641475055171344","name":"SnVuZSAzLCAyMDA3CgpIb21lIE1hdGNoZXM6","generated_KMF_ID":"8660969641475055171344","parentGroup":[],"cells":["products[16403324701475055171344]/cells[7748901091475055171344]","products[13225528431475055171344]/cells[5238747261475055171344]"]}
+,
+{"class":"org.opencompare.model.Feature@2296464961475055171344","name":"UG9saSBFamlkbyBC","generated_KMF_ID":"2296464961475055171344","parentGroup":[],"cells":["products[16403324701475055171344]/cells[795860221475055171344]","products[13225528431475055171344]/cells[16004379701475055171344]"]}
+,
+{"class":"org.opencompare.model.Feature@1040771371475055171344","name":"Q0YgR2F2w6A=","generated_KMF_ID":"1040771371475055171344","parentGroup":[],"cells":["products[16403324701475055171344]/cells[1431240861475055171344]","products[13225528431475055171344]/cells[6749062091475055171344]"]}
+]}
+,
+ "metadata" : {
+  "productPositions" : [ {
+    "product" : "13225528431475055171344",
+    "position" : 2
+  }, {
+    "product" : "16403324701475055171344",
+    "position" : 1
+  } ],
+  "featurePositions" : [ {
+    "feature" : "8660969641475055171344",
+    "position" : 0
+  }, {
+    "feature" : "2296464961475055171344",
+    "position" : 2
+  }, {
+    "feature" : "1040771371475055171344",
+    "position" : 1
+  } ],
+  "source" : "",
+  "license" : "",
+  "creator" : ""
+}
+}

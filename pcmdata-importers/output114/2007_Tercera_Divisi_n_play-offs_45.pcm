@@ -1,0 +1,57 @@
+{
+ "pcm" : 
+{"class":"org.opencompare.model.PCM@17145701941475055171349","name":"","generated_KMF_ID":"17145701941475055171349","productsKey":["features[9810563981475055171349]"],"products":[
+{"class":"org.opencompare.model.Product@12336978741475055171349","generated_KMF_ID":"12336978741475055171349","pcm":[""],"cells":[
+{"class":"org.opencompare.model.Cell@7676685171475055171349","content":"VUIgQ29ucXVlbnNl","rawContent":"W1tVQiBDb25xdWVuc2VdXQ==","generated_KMF_ID":"7676685171475055171349","feature":["features[9810563981475055171349]"],"product":["products[12336978741475055171349]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@5297574691475055171349","value":"VUIgQ29ucXVlbnNl","generated_KMF_ID":"5297574691475055171349"}
+]}
+,
+{"class":"org.opencompare.model.Cell@13492987441475055171349","content":"U0QgQW1vcmViaWV0YQ==","rawContent":"W1tTRCBBbW9yZWJpZXRhXV0=","generated_KMF_ID":"13492987441475055171349","feature":["features[9259644671475055171349]"],"product":["products[12336978741475055171349]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@16450828991475055171349","value":"U0QgQW1vcmViaWV0YQ==","generated_KMF_ID":"16450828991475055171349"}
+]}
+,
+{"class":"org.opencompare.model.Cell@8824388461475055171349","content":"","rawContent":"","generated_KMF_ID":"8824388461475055171349","feature":["features[4830173241475055171349]"],"product":["products[12336978741475055171349]"],"interpretation":[]}
+]}
+,
+{"class":"org.opencompare.model.Product@11310165321475055171349","generated_KMF_ID":"11310165321475055171349","pcm":[""],"cells":[
+{"class":"org.opencompare.model.Cell@20497360931475055171349","content":"MC0w","rawContent":"YWxpZ249Y2VudGVyfCcnJzAtMCcnJw==","generated_KMF_ID":"20497360931475055171349","feature":["features[9810563981475055171349]"],"product":["products[11310165321475055171349]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@7300826551475055171349","value":"MC0w","generated_KMF_ID":"7300826551475055171349"}
+]}
+,
+{"class":"org.opencompare.model.Cell@2263660711475055171349","content":"","rawContent":"","generated_KMF_ID":"2263660711475055171349","feature":["features[4830173241475055171349]"],"product":["products[11310165321475055171349]"],"interpretation":[]}
+,
+{"class":"org.opencompare.model.Cell@11727725871475055171349","content":"MS0w","rawContent":"YWxpZ249Y2VudGVyfCcnJzEtMCcnJw==","generated_KMF_ID":"11727725871475055171349","feature":["features[9259644671475055171349]"],"product":["products[11310165321475055171349]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@17601575721475055171349","value":"MS0w","generated_KMF_ID":"17601575721475055171349"}
+]}
+]}
+],"features":[
+{"class":"org.opencompare.model.Feature@9810563981475055171349","name":"Q0QgU2FuIEZlcm5hbmRv","generated_KMF_ID":"9810563981475055171349","parentGroup":[],"cells":["products[11310165321475055171349]/cells[20497360931475055171349]","products[12336978741475055171349]/cells[7676685171475055171349]"]}
+,
+{"class":"org.opencompare.model.Feature@4830173241475055171349","name":"SnVuZSAzLCAyMDA3CgpIb21lIE1hdGNoZXM6","generated_KMF_ID":"4830173241475055171349","parentGroup":[],"cells":["products[11310165321475055171349]/cells[2263660711475055171349]","products[12336978741475055171349]/cells[8824388461475055171349]"]}
+,
+{"class":"org.opencompare.model.Feature@9259644671475055171349","name":"U0QgTmVncmVpcmE=","generated_KMF_ID":"9259644671475055171349","parentGroup":[],"cells":["products[12336978741475055171349]/cells[13492987441475055171349]","products[11310165321475055171349]/cells[11727725871475055171349]"]}
+]}
+,
+ "metadata" : {
+  "productPositions" : [ {
+    "product" : "12336978741475055171349",
+    "position" : 2
+  }, {
+    "product" : "11310165321475055171349",
+    "position" : 1
+  } ],
+  "featurePositions" : [ {
+    "feature" : "9810563981475055171349",
+    "position" : 1
+  }, {
+    "feature" : "4830173241475055171349",
+    "position" : 0
+  }, {
+    "feature" : "9259644671475055171349",
+    "position" : 2
+  } ],
+  "source" : "",
+  "license" : "",
+  "creator" : ""
+}
+}

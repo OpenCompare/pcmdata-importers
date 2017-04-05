@@ -1,0 +1,56 @@
+{
+ "pcm" : 
+{"class":"org.opencompare.model.PCM@20514543051475055273069","name":"","generated_KMF_ID":"20514543051475055273069","productsKey":["features[18666229811475055273069]"],"products":[
+{"class":"org.opencompare.model.Product@15255893801475055273069","generated_KMF_ID":"15255893801475055273069","pcm":[""],"cells":[
+{"class":"org.opencompare.model.Cell@1290376591475055273069","content":"ZmxhZ2ljb25KQU0gRGVsbG9yZWVuIEVubmlzLUxvbmRvbgpKYW1haWNhIChKQU0p","rawContent":"e3tmbGFnaWNvbnxKQU19fSBbW0RlbGxvcmVlbiBFbm5pcy1Mb25kb25dXTxicj4nJ1tbSmFtYWljYV1dIDxzbWFsbD4oSkFNKTwvc21hbGw+Jyc=","generated_KMF_ID":"1290376591475055273069","feature":["features[13013124821475055273069]"],"product":["products[15255893801475055273069]"],"interpretation":[
+{"class":"org.opencompare.model.Conditional@10751394701475055273069","generated_KMF_ID":"10751394701475055273069","value":[
+{"class":"org.opencompare.model.StringValue@10870239991475055273069","value":"ZmxhZ2ljb25KQU0gRGVsbG9yZWVuIEVubmlzLUxvbmRvbgpKYW1haWNh","generated_KMF_ID":"10870239991475055273069"}
+],"condition":[
+{"class":"org.opencompare.model.StringValue@5289858331475055273069","value":"SkFN","generated_KMF_ID":"5289858331475055273069"}
+]}
+]}
+,
+{"class":"org.opencompare.model.Cell@16716518681475055273069","content":"QnJvbnpl","rawContent":"Ymdjb2xvcj0iQ0M5OTY2InwnJydCcm9uemUnJyc=","generated_KMF_ID":"16716518681475055273069","feature":["features[18666229811475055273069]"],"product":["products[15255893801475055273069]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@6764808901475055273069","value":"QnJvbnpl","generated_KMF_ID":"6764808901475055273069"}
+]}
+]}
+,
+{"class":"org.opencompare.model.Product@6619015651475055273069","generated_KMF_ID":"6619015651475055273069","pcm":[""],"cells":[
+{"class":"org.opencompare.model.Cell@3386807041475055273069","content":"ZmxhZ2ljb25DQU4gUGVyZGl0YSBGZWxpY2llbgpDYW5hZGEgKENBTik=","rawContent":"e3tmbGFnaWNvbnxDQU59fSBbW1BlcmRpdGEgRmVsaWNpZW5dXTxicj4nJ1tbQ2FuYWRhXV0gPHNtYWxsPihDQU4pPC9zbWFsbD4nJw==","generated_KMF_ID":"3386807041475055273069","feature":["features[13013124821475055273069]"],"product":["products[6619015651475055273069]"],"interpretation":[
+{"class":"org.opencompare.model.Conditional@20775288681475055273069","generated_KMF_ID":"20775288681475055273069","value":[
+{"class":"org.opencompare.model.StringValue@6915504701475055273069","value":"ZmxhZ2ljb25DQU4gUGVyZGl0YSBGZWxpY2llbgpDYW5hZGE=","generated_KMF_ID":"6915504701475055273069"}
+],"condition":[
+{"class":"org.opencompare.model.StringValue@1999214081475055273069","value":"Q0FO","generated_KMF_ID":"1999214081475055273069"}
+]}
+]}
+,
+{"class":"org.opencompare.model.Cell@17501728791475055273069","content":"U2lsdmVy","rawContent":"Ymdjb2xvcj0ic2lsdmVyInwnJydTaWx2ZXInJyc=","generated_KMF_ID":"17501728791475055273069","feature":["features[18666229811475055273069]"],"product":["products[6619015651475055273069]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@14366061221475055273069","value":"U2lsdmVy","generated_KMF_ID":"14366061221475055273069"}
+]}
+]}
+],"features":[
+{"class":"org.opencompare.model.Feature@13013124821475055273069","name":"ZmxhZ2ljb25VU0EgTWljaGVsbGUgUGVycnkKVW5pdGVkIFN0YXRlcyAoVVNBKQ==","generated_KMF_ID":"13013124821475055273069","parentGroup":[],"cells":["products[6619015651475055273069]/cells[3386807041475055273069]","products[15255893801475055273069]/cells[1290376591475055273069]"]}
+,
+{"class":"org.opencompare.model.Feature@18666229811475055273069","name":"R29sZA==","generated_KMF_ID":"18666229811475055273069","parentGroup":[],"cells":["products[15255893801475055273069]/cells[16716518681475055273069]","products[6619015651475055273069]/cells[17501728791475055273069]"]}
+]}
+,
+ "metadata" : {
+  "productPositions" : [ {
+    "product" : "15255893801475055273069",
+    "position" : 2
+  }, {
+    "product" : "6619015651475055273069",
+    "position" : 1
+  } ],
+  "featurePositions" : [ {
+    "feature" : "13013124821475055273069",
+    "position" : 1
+  }, {
+    "feature" : "18666229811475055273069",
+    "position" : 0
+  } ],
+  "source" : "",
+  "license" : "",
+  "creator" : ""
+}
+}

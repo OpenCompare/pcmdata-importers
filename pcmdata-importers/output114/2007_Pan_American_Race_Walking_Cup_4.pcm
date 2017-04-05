@@ -1,0 +1,44 @@
+{
+ "pcm" : 
+{"class":"org.opencompare.model.PCM@6039727981475055328231","name":"","generated_KMF_ID":"6039727981475055328231","productsKey":["features[11854980561475055328231]"],"products":[
+{"class":"org.opencompare.model.Product@9959585301475055328231","generated_KMF_ID":"9959585301475055328231","pcm":[""],"cells":[
+{"class":"org.opencompare.model.Cell@16854163921475055328231","content":"MjQgcHRz","rawContent":"MjQgcHRz","generated_KMF_ID":"16854163921475055328231","feature":["features[17424581951475055328231]"],"product":["products[9959585301475055328231]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@12199448591475055328231","value":"MjQgcHRz","generated_KMF_ID":"12199448591475055328231"}
+]}
+,
+{"class":"org.opencompare.model.Cell@9294798421475055328231","content":"Z29sZDE=","rawContent":"YWxpZ249Y2VudGVyfHt7Z29sZDF9fQ==","generated_KMF_ID":"9294798421475055328231","feature":["features[11854980561475055328231]"],"product":["products[9959585301475055328231]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@15345767771475055328231","value":"Z29sZDE=","generated_KMF_ID":"15345767771475055328231"}
+]}
+,
+{"class":"org.opencompare.model.Cell@15768961131475055328231","content":"VVNB","rawContent":"e3tVU0F9fQ==","generated_KMF_ID":"15768961131475055328231","feature":["features[4046433141475055328231]"],"product":["products[9959585301475055328231]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@13685184001475055328231","value":"VVNB","generated_KMF_ID":"13685184001475055328231"}
+]}
+]}
+],"features":[
+{"class":"org.opencompare.model.Feature@4046433141475055328231","name":"Q291bnRyeQ==","generated_KMF_ID":"4046433141475055328231","parentGroup":[],"cells":["products[9959585301475055328231]/cells[15768961131475055328231]"]}
+,
+{"class":"org.opencompare.model.Feature@11854980561475055328231","name":"UGxhY2U=","generated_KMF_ID":"11854980561475055328231","parentGroup":[],"cells":["products[9959585301475055328231]/cells[9294798421475055328231]"]}
+,
+{"class":"org.opencompare.model.Feature@17424581951475055328231","name":"UG9pbnRz","generated_KMF_ID":"17424581951475055328231","parentGroup":[],"cells":["products[9959585301475055328231]/cells[16854163921475055328231]"]}
+]}
+,
+ "metadata" : {
+  "productPositions" : [ {
+    "product" : "9959585301475055328231",
+    "position" : 1
+  } ],
+  "featurePositions" : [ {
+    "feature" : "4046433141475055328231",
+    "position" : 1
+  }, {
+    "feature" : "11854980561475055328231",
+    "position" : 0
+  }, {
+    "feature" : "17424581951475055328231",
+    "position" : 2
+  } ],
+  "source" : "",
+  "license" : "",
+  "creator" : ""
+}
+}

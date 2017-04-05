@@ -1,0 +1,33 @@
+{
+ "pcm" : 
+{"class":"org.opencompare.model.PCM@1164171151475055506177","name":"","generated_KMF_ID":"1164171151475055506177","productsKey":["features[21341755681475055506177]"],"products":[
+{"class":"org.opencompare.model.Product@16320257531475055506177","generated_KMF_ID":"16320257531475055506177","pcm":[""],"cells":[
+{"class":"org.opencompare.model.Cell@10102922031475055506177","content":"","rawContent":"","generated_KMF_ID":"10102922031475055506177","feature":["features[20280519111475055506177]"],"product":["products[16320257531475055506177]"],"interpretation":[]}
+,
+{"class":"org.opencompare.model.Cell@16799478561475055506177","content":"MjAwNyBORUMgIEFsbC1Ub3VybmFtZW50IFRlYW0=","rawContent":"Y29sc3Bhbj0iNyIgc3R5bGU9InRleHQtYWxpZ246Y2VudGVyOyBiYWNrZ3JvdW5kOiNkZGQ7InwgJycnMjAwNyBORUMgIEFsbC1Ub3VybmFtZW50IFRlYW0nJyc=","generated_KMF_ID":"16799478561475055506177","feature":["features[21341755681475055506177]"],"product":["products[16320257531475055506177]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@7340346361475055506177","value":"MjAwNyBORUMgIEFsbC1Ub3VybmFtZW50IFRlYW0=","generated_KMF_ID":"7340346361475055506177"}
+]}
+]}
+],"features":[
+{"class":"org.opencompare.model.Feature@21341755681475055506177","name":"MjAwNyBORUMgIEFsbC1Ub3VybmFtZW50IFRlYW0=","generated_KMF_ID":"21341755681475055506177","parentGroup":[],"cells":["products[16320257531475055506177]/cells[16799478561475055506177]"]}
+,
+{"class":"org.opencompare.model.Feature@20280519111475055506177","name":"SmF2aWVyIE1vamljYSwgQ0NTVQoKVHJpc3RhbiBCbGFja3dvb2QsIENDU1UKCk9iaWUgTndhZGlrZSwgQ0NTVQoKSmFycmlkIEZyeWUsIFNIVQoKSm9leSBIZW5sZXksIFNIVQ==","generated_KMF_ID":"20280519111475055506177","parentGroup":[],"cells":["products[16320257531475055506177]/cells[10102922031475055506177]"]}
+]}
+,
+ "metadata" : {
+  "productPositions" : [ {
+    "product" : "16320257531475055506177",
+    "position" : 1
+  } ],
+  "featurePositions" : [ {
+    "feature" : "21341755681475055506177",
+    "position" : 0
+  }, {
+    "feature" : "20280519111475055506177",
+    "position" : 1
+  } ],
+  "source" : "",
+  "license" : "",
+  "creator" : ""
+}
+}

@@ -1,0 +1,65 @@
+{
+ "pcm" : 
+{"class":"org.opencompare.model.PCM@4936644721475055115567","name":"","generated_KMF_ID":"4936644721475055115567","productsKey":["features[14894637911475055115567]"],"products":[
+{"class":"org.opencompare.model.Product@2633011871475055115567","generated_KMF_ID":"2633011871475055115567","pcm":[""],"cells":[
+{"class":"org.opencompare.model.Cell@18292319331475055115567","content":"MOKAkzE=","rawContent":"MOKAkzE=","generated_KMF_ID":"18292319331475055115567","feature":["features[17052147611475055115567]"],"product":["products[2633011871475055115567]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@18388153501475055115567","value":"MOKAkzE=","generated_KMF_ID":"18388153501475055115567"}
+]}
+,
+{"class":"org.opencompare.model.Cell@13816757201475055115567","content":"QW11ciBCbGFnb3Zlc2hjaGVuc2s=","rawContent":"W1tGQyBBbXVyIEJsYWdvdmVzaGNoZW5za3xBbXVyIEJsYWdvdmVzaGNoZW5za11d","generated_KMF_ID":"13816757201475055115567","feature":["features[14894637911475055115567]"],"product":["products[2633011871475055115567]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@9573202301475055115567","value":"QW11ciBCbGFnb3Zlc2hjaGVuc2s=","generated_KMF_ID":"9573202301475055115567"}
+]}
+,
+{"class":"org.opencompare.model.Cell@13712300371475055115567","content":"U21lbmEgS29tc29tb2xzay1uYS1BbXVyZQ==","rawContent":"JycnW1tGQyBTbWVuYSBLb21zb21vbHNrLW5hLUFtdXJlfFNtZW5hIEtvbXNvbW9sc2stbmEtQW11cmVdXScnJw==","generated_KMF_ID":"13712300371475055115567","feature":["features[651411241475055115567]"],"product":["products[2633011871475055115567]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@19871894671475055115567","value":"U21lbmEgS29tc29tb2xzay1uYS1BbXVyZQ==","generated_KMF_ID":"19871894671475055115567"}
+]}
+]}
+,
+{"class":"org.opencompare.model.Product@20669510001475055115567","generated_KMF_ID":"20669510001475055115567","pcm":[""],"cells":[
+{"class":"org.opencompare.model.Cell@4084689281475055115567","content":"U2liaXItMiBOb3Zvc2liaXJzaw==","rawContent":"W1tGQyBTaWJpci0yIE5vdm9zaWJpcnNrfFNpYmlyLTIgTm92b3NpYmlyc2tdXQ==","generated_KMF_ID":"4084689281475055115567","feature":["features[14894637911475055115567]"],"product":["products[20669510001475055115567]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@17080769951475055115567","value":"U2liaXItMiBOb3Zvc2liaXJzaw==","generated_KMF_ID":"17080769951475055115567"}
+]}
+,
+{"class":"org.opencompare.model.Cell@16292165531475055115567","content":"MeKAkzIgKGFldCk=","rawContent":"MeKAkzIgKFtbRXh0cmEgdGltZXxhZXRdXSk=","generated_KMF_ID":"16292165531475055115567","feature":["features[17052147611475055115567]"],"product":["products[20669510001475055115567]"],"interpretation":[
+{"class":"org.opencompare.model.Conditional@4792638581475055115567","generated_KMF_ID":"4792638581475055115567","value":[
+{"class":"org.opencompare.model.StringValue@18827976431475055115567","value":"MeKAkzI=","generated_KMF_ID":"18827976431475055115567"}
+],"condition":[
+{"class":"org.opencompare.model.StringValue@13768361471475055115567","value":"YWV0","generated_KMF_ID":"13768361471475055115567"}
+]}
+]}
+,
+{"class":"org.opencompare.model.Cell@18325277031475055115567","content":"TWV0YWxsdXJnIEtyYXNub3lhcnNr","rawContent":"JycnW1tGQyBNZXRhbGx1cmcgS3Jhc25veWFyc2t8TWV0YWxsdXJnIEtyYXNub3lhcnNrXV0nJyc=","generated_KMF_ID":"18325277031475055115567","feature":["features[651411241475055115567]"],"product":["products[20669510001475055115567]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@124173001475055115567","value":"TWV0YWxsdXJnIEtyYXNub3lhcnNr","generated_KMF_ID":"124173001475055115567"}
+]}
+]}
+],"features":[
+{"class":"org.opencompare.model.Feature@14894637911475055115567","name":"SG9tZSB0ZWFt","generated_KMF_ID":"14894637911475055115567","parentGroup":[],"cells":["products[20669510001475055115567]/cells[4084689281475055115567]","products[2633011871475055115567]/cells[13816757201475055115567]"]}
+,
+{"class":"org.opencompare.model.Feature@651411241475055115567","name":"QXdheSB0ZWFt","generated_KMF_ID":"651411241475055115567","parentGroup":[],"cells":["products[2633011871475055115567]/cells[13712300371475055115567]","products[20669510001475055115567]/cells[18325277031475055115567]"]}
+,
+{"class":"org.opencompare.model.Feature@17052147611475055115567","name":"U2NvcmU=","generated_KMF_ID":"17052147611475055115567","parentGroup":[],"cells":["products[2633011871475055115567]/cells[18292319331475055115567]","products[20669510001475055115567]/cells[16292165531475055115567]"]}
+]}
+,
+ "metadata" : {
+  "productPositions" : [ {
+    "product" : "2633011871475055115567",
+    "position" : 2
+  }, {
+    "product" : "20669510001475055115567",
+    "position" : 1
+  } ],
+  "featurePositions" : [ {
+    "feature" : "14894637911475055115567",
+    "position" : 0
+  }, {
+    "feature" : "651411241475055115567",
+    "position" : 2
+  }, {
+    "feature" : "17052147611475055115567",
+    "position" : 1
+  } ],
+  "source" : "",
+  "license" : "",
+  "creator" : ""
+}
+}

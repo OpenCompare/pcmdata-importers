@@ -1,0 +1,35 @@
+{
+ "pcm" : 
+{"class":"org.opencompare.model.PCM@16316411011475055088213","name":"","generated_KMF_ID":"16316411011475055088213","productsKey":["features[19998510341475055088213]"],"products":[
+{"class":"org.opencompare.model.Product@13956782131475055088213","generated_KMF_ID":"13956782131475055088213","pcm":[""],"cells":[
+{"class":"org.opencompare.model.Cell@2249740381475055088213","content":"U2lnbmVk","rawContent":"c3R5bGU9IndpZHRoOjcwcHgifCcnJ1NpZ25lZCcnJw==","generated_KMF_ID":"2249740381475055088213","feature":["features[19998510341475055088213]"],"product":["products[13956782131475055088213]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@14018866591475055088213","value":"U2lnbmVk","generated_KMF_ID":"14018866591475055088213"}
+]}
+]}
+,
+{"class":"org.opencompare.model.Product@17825678721475055088213","generated_KMF_ID":"17825678721475055088213","pcm":[""],"cells":[
+{"class":"org.opencompare.model.Cell@1185594911475055088213","content":"Rm9ybWVyIHRlYW0=","rawContent":"c3R5bGU9IndpZHRoOjIxMHB4InwnJydGb3JtZXIgdGVhbScnJw==","generated_KMF_ID":"1185594911475055088213","feature":["features[19998510341475055088213]"],"product":["products[17825678721475055088213]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@6682087821475055088213","value":"Rm9ybWVyIHRlYW0=","generated_KMF_ID":"6682087821475055088213"}
+]}
+]}
+],"features":[
+{"class":"org.opencompare.model.Feature@19998510341475055088213","name":"UGxheWVy","generated_KMF_ID":"19998510341475055088213","parentGroup":[],"cells":["products[13956782131475055088213]/cells[2249740381475055088213]","products[17825678721475055088213]/cells[1185594911475055088213]"]}
+]}
+,
+ "metadata" : {
+  "productPositions" : [ {
+    "product" : "13956782131475055088213",
+    "position" : 1
+  }, {
+    "product" : "17825678721475055088213",
+    "position" : 2
+  } ],
+  "featurePositions" : [ {
+    "feature" : "19998510341475055088213",
+    "position" : 0
+  } ],
+  "source" : "",
+  "license" : "",
+  "creator" : ""
+}
+}

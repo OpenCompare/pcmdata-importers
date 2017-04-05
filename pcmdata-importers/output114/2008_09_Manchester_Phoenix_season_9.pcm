@@ -1,0 +1,35 @@
+{
+ "pcm" : 
+{"class":"org.opencompare.model.PCM@9705513531475055177558","name":"","generated_KMF_ID":"9705513531475055177558","productsKey":["features[1300746541475055177558]"],"products":[
+{"class":"org.opencompare.model.Product@7605246741475055177558","generated_KMF_ID":"7605246741475055177558","pcm":[""],"cells":[
+{"class":"org.opencompare.model.Cell@15938338241475055177558","content":"VHVsc2EgT2lsZXJz","rawContent":"W1tUdWxzYSBPaWxlcnNdXQ==","generated_KMF_ID":"15938338241475055177558","feature":["features[13780272071475055177558]"],"product":["products[7605246741475055177558]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@14148842821475055177558","value":"VHVsc2EgT2lsZXJz","generated_KMF_ID":"14148842821475055177558"}
+]}
+,
+{"class":"org.opencompare.model.Cell@16021162651475055177558","content":"RiBMdWNhcyBCdXJuZXR0","rawContent":"RiBbW0x1Y2FzIEJ1cm5ldHRdXQ==","generated_KMF_ID":"16021162651475055177558","feature":["features[1300746541475055177558]"],"product":["products[7605246741475055177558]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@14208329851475055177558","value":"RiBMdWNhcyBCdXJuZXR0","generated_KMF_ID":"14208329851475055177558"}
+]}
+]}
+],"features":[
+{"class":"org.opencompare.model.Feature@13780272071475055177558","name":"Rm9ybWVyIHRlYW0=","generated_KMF_ID":"13780272071475055177558","parentGroup":[],"cells":["products[7605246741475055177558]/cells[15938338241475055177558]"]}
+,
+{"class":"org.opencompare.model.Feature@1300746541475055177558","name":"UGxheWVy","generated_KMF_ID":"1300746541475055177558","parentGroup":[],"cells":["products[7605246741475055177558]/cells[16021162651475055177558]"]}
+]}
+,
+ "metadata" : {
+  "productPositions" : [ {
+    "product" : "7605246741475055177558",
+    "position" : 1
+  } ],
+  "featurePositions" : [ {
+    "feature" : "13780272071475055177558",
+    "position" : 1
+  }, {
+    "feature" : "1300746541475055177558",
+    "position" : 0
+  } ],
+  "source" : "",
+  "license" : "",
+  "creator" : ""
+}
+}

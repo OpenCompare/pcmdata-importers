@@ -1,0 +1,35 @@
+{
+ "pcm" : 
+{"class":"org.opencompare.model.PCM@8724961411475055037623","name":"","generated_KMF_ID":"8724961411475055037623","productsKey":["features[1764250781475055037623]"],"products":[
+{"class":"org.opencompare.model.Product@15507083771475055037623","generated_KMF_ID":"15507083771475055037623","pcm":[""],"cells":[
+{"class":"org.opencompare.model.Cell@4887326011475055037623","content":"ZmxhZ2ljb25NRVhzaXplPTEwMHB4","rawContent":"e3tmbGFnaWNvbnxNRVh8c2l6ZT0xMDBweH19","generated_KMF_ID":"4887326011475055037623","feature":["features[1764250781475055037623]"],"product":["products[15507083771475055037623]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@9015420071475055037623","value":"ZmxhZ2ljb25NRVhzaXplPTEwMHB4","generated_KMF_ID":"9015420071475055037623"}
+]}
+]}
+,
+{"class":"org.opencompare.model.Product@5535050921475055037623","generated_KMF_ID":"5535050921475055037623","pcm":[""],"cells":[
+{"class":"org.opencompare.model.Cell@1772571091475055037623","content":"QXRsYW50ZQpTZWNvbmQgVGl0bGU=","rawContent":"JycnW1tBdGxhbnRlIEYuQy58QXRsYW50ZV1dJycnPGJyIC8+JycnU2Vjb25kIFRpdGxlJycn","generated_KMF_ID":"1772571091475055037623","feature":["features[1764250781475055037623]"],"product":["products[5535050921475055037623]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@11733933301475055037623","value":"QXRsYW50ZQpTZWNvbmQgVGl0bGU=","generated_KMF_ID":"11733933301475055037623"}
+]}
+]}
+],"features":[
+{"class":"org.opencompare.model.Feature@1764250781475055037623","name":"Q09OQ0FDQUYgQ2hhbXBpb25zIExlYWd1ZQoyMDA5IENoYW1waW9u","generated_KMF_ID":"1764250781475055037623","parentGroup":[],"cells":["products[15507083771475055037623]/cells[4887326011475055037623]","products[5535050921475055037623]/cells[1772571091475055037623]"]}
+]}
+,
+ "metadata" : {
+  "productPositions" : [ {
+    "product" : "15507083771475055037623",
+    "position" : 1
+  }, {
+    "product" : "5535050921475055037623",
+    "position" : 2
+  } ],
+  "featurePositions" : [ {
+    "feature" : "1764250781475055037623",
+    "position" : 0
+  } ],
+  "source" : "",
+  "license" : "",
+  "creator" : ""
+}
+}

@@ -33,13 +33,22 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 
 		// inputpath = args[0];
-		inputpath = "input-pcm/";
+	    //		inputpath = "input-pcm/";
 		//inputpath = "input-pcm-test/";
 
-		try {
+	    //		try {
 //			MongoClient mongoClient = new MongoClient();
 //			MongoCollection<Document> collection =
 //			mongoClient.getDatabase("OpenCompare").getCollection("pcms");
+		inputpath = "output114/";
+		//inputpath = "input-pcm/";
+		//inputpath = "../../New_Model/output114/";
+
+		try {
+			MongoClient mongoClient = new MongoClient();
+			MongoCollection<Document> collection =
+			mongoClient.getDatabase("opencompare").getCollection("pcms");
+>>>>>>> My attempts to experiment with DATA team procedure
 
 			Stream<Path> paths = Files.walk(Paths.get(inputpath));
 
@@ -61,6 +70,7 @@ public class Main {
 						total++;
 						
 						PCMInfoContainer pcmic = null;
+						pcmContainer.getPcm().setName("" + filePath.toString() + "" + total);
 
 						try {
 							pcmic = new PCMInfoContainer(pcmContainer);
@@ -79,7 +89,7 @@ public class Main {
 							}
 
 							if (json != null) {
-								String pcmString = json.export();
+								String pcmString = new KMFJSONExporter().export(pcmContainer); // json.export();
 
 								try {
 									//Document doc = Document.parse(pcmString);

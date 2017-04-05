@@ -1,0 +1,35 @@
+{
+ "pcm" : 
+{"class":"org.opencompare.model.PCM@15117431871475055128190","name":"","generated_KMF_ID":"15117431871475055128190","productsKey":["features[5139919831475055128190]"],"products":[
+{"class":"org.opencompare.model.Product@2631483111475055128190","generated_KMF_ID":"2631483111475055128190","pcm":[""],"cells":[
+{"class":"org.opencompare.model.Cell@13185577681475055128190","content":"ZmxhZ2ljb25NRVhzaXplPTEwMHB4","rawContent":"e3tmbGFnaWNvbnxNRVh8c2l6ZT0xMDBweH19","generated_KMF_ID":"13185577681475055128190","feature":["features[5139919831475055128190]"],"product":["products[2631483111475055128190]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@6222318771475055128190","value":"ZmxhZ2ljb25NRVhzaXplPTEwMHB4","generated_KMF_ID":"6222318771475055128190"}
+]}
+]}
+,
+{"class":"org.opencompare.model.Product@13250546071475055128190","generated_KMF_ID":"13250546071475055128190","pcm":[""],"cells":[
+{"class":"org.opencompare.model.Cell@11990932181475055128190","content":"QXRsYW50ZQpTZWNvbmQgVGl0bGU=","rawContent":"JycnW1tBdGxhbnRlIEYuQy58QXRsYW50ZV1dJycnPGJyIC8+JycnU2Vjb25kIFRpdGxlJycn","generated_KMF_ID":"11990932181475055128190","feature":["features[5139919831475055128190]"],"product":["products[13250546071475055128190]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@12520967931475055128190","value":"QXRsYW50ZQpTZWNvbmQgVGl0bGU=","generated_KMF_ID":"12520967931475055128190"}
+]}
+]}
+],"features":[
+{"class":"org.opencompare.model.Feature@5139919831475055128190","name":"Q09OQ0FDQUYgQ2hhbXBpb25zIExlYWd1ZQoyMDA5IENoYW1waW9u","generated_KMF_ID":"5139919831475055128190","parentGroup":[],"cells":["products[2631483111475055128190]/cells[13185577681475055128190]","products[13250546071475055128190]/cells[11990932181475055128190]"]}
+]}
+,
+ "metadata" : {
+  "productPositions" : [ {
+    "product" : "2631483111475055128190",
+    "position" : 1
+  }, {
+    "product" : "13250546071475055128190",
+    "position" : 2
+  } ],
+  "featurePositions" : [ {
+    "feature" : "5139919831475055128190",
+    "position" : 0
+  } ],
+  "source" : "",
+  "license" : "",
+  "creator" : ""
+}
+}
