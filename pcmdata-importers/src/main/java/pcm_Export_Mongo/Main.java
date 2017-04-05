@@ -48,7 +48,6 @@ public class Main {
 			MongoClient mongoClient = new MongoClient();
 			MongoCollection<Document> collection =
 			mongoClient.getDatabase("opencompare").getCollection("pcms");
->>>>>>> My attempts to experiment with DATA team procedure
 
 			Stream<Path> paths = Files.walk(Paths.get(inputpath));
 
