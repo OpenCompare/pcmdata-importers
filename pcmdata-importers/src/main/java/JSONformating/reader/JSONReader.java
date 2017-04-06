@@ -36,14 +36,17 @@ public class JSONReader {
 			Scanner scanner = new Scanner(new File(filename));
 			String json = scanner.useDelimiter("\\Z").next();
 			scanner.close();
-//			System.out.println(json);
-			JsonElement jelement = new JsonParser().parse(json);
-			return createJSONFormat(jelement);
+			return importJSONString(json);
 		} catch (FileNotFoundException e1) {
 			e1.printStackTrace();
 		}
 	
 		return null;
+	}
+	
+	public static JSONFormat importJSONString(String json) throws IOException{
+		JsonElement jelement = new JsonParser().parse(json);
+		return createJSONFormat(jelement);
 	}
 
 	private static JSONFormat createJSONFormat(JsonElement jelement) throws IOException {
