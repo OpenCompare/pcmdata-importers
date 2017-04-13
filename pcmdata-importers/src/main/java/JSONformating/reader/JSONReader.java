@@ -15,6 +15,7 @@ import org.json.JSONObject;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
+import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
@@ -53,7 +54,7 @@ public class JSONReader {
 		JFeature feature;
 		JProduct product;
 		JCell cell;
-		JsonObject jo, jC, jV, features, obj, products, cells;
+		JsonObject jo, jC, features, obj, products, cells;
 		JSONFormat jf = new JSONFormat();
 		obj = jelement.getAsJsonObject();
 		jf.setName(obj.get("name").getAsString());
@@ -114,7 +115,11 @@ public class JSONReader {
 			JMultipleValue mulValue = new JMultipleValue();
 			JsonArray array = value.getAsJsonArray();
 			for(JsonElement j : array){
-				mulValue.addValue(getJValueForMultiple(j));
+				if(j instanceof JsonNull){
+					System.out.println("coucou");
+				}else{
+					mulValue.addValue(getJValueForMultiple(j));
+				}
 			}
 			return mulValue;
 		case UNDEFINED:
