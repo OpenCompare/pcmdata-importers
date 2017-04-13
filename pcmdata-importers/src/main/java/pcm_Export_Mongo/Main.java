@@ -33,15 +33,8 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 
 		// inputpath = args[0];
-	    //		inputpath = "input-pcm/";
-		//inputpath = "input-pcm-test/";
 
-	    //		try {
-//			MongoClient mongoClient = new MongoClient();
-//			MongoCollection<Document> collection =
-//			mongoClient.getDatabase("OpenCompare").getCollection("pcms");
-		inputpath = "output114/";
-		//inputpath = "input-pcm/";
+		inputpath = "input-pcm/";
 		//inputpath = "../../New_Model/output114/";
 
 		try {
