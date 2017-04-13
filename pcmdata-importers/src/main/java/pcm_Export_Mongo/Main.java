@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.stream.Stream;
 
 import org.bson.Document;
-//import org.junit.Test;
+
 import org.opencompare.api.java.*;
 import org.opencompare.api.java.impl.io.KMFJSONExporter;
 import org.opencompare.api.java.impl.io.KMFJSONLoader;
@@ -20,8 +20,7 @@ import com.mongodb.client.MongoCollection;
 
 import JSONformating.PCMtoJSON;
 import JSONformating.model.JSONFormat;
-import data_off.PCMInterpreter;
-import pcm_Export_Mongo.PCMInfoContainer;
+import pcm_InfoContainer.*;
 
 public class Main {
 

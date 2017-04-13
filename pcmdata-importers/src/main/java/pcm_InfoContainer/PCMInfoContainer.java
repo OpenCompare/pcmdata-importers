@@ -5,8 +5,8 @@ import org.opencompare.api.java.PCMContainer;
 
 public class PCMInfoContainer {
 
-	private StatPcm _statPcm;
-	private PCMContainer _pcm;
+	protected StatPcm _statPcm;
+	protected PCMContainer _pcm;
 
 	public PCMInfoContainer(PCMContainer pcm) {
 		_pcm = pcm;
@@ -14,8 +14,7 @@ public class PCMInfoContainer {
 	}
 
 	private void preCompute(PCM pcm) {
-		_statPcm = new StatPcm(_pcm.getPcm());
-
+		_statPcm = new StatPcm(pcm);
 	}
 
 	public Boolean isProductChartable() {

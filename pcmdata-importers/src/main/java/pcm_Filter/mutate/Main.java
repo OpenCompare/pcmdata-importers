@@ -14,6 +14,7 @@ import org.opencompare.api.java.impl.io.KMFJSONLoader;
 import org.opencompare.api.java.io.PCMLoader;
 
 import data_off.PCMUtil;
+import pcm_InfoContainer.PCMInfoContainer;
 
 public class Main {
 
@@ -29,10 +30,8 @@ public class Main {
 		inputpath = "input-pcm-test/";
 		outputpath = "output-pcm/";
 
-		// MongoClient mongoClient = new MongoClient();
 		try {
-			// MongoCollection<Document> collection =
-			// mongoClient.getDatabase("OpenCompare").getCollection("pcms");
+
 
 			Stream<Path> paths = Files.walk(Paths.get(inputpath));
 
@@ -53,11 +52,11 @@ public class Main {
 
 					for (PCMContainer pcmContainer : pcmContainers) {
 						// Get the PCM
-						PCM pcm = pcmContainer.getPcm();
-						PCMInfoContainer pcmic = null;
-
+						
+						PCMInfoContainerMuted pcmic = null;
+						
 						try {
-							pcmic = new PCMInfoContainer(pcm);
+							pcmic = new PCMInfoContainerMuted(pcmContainer);
 						} catch (Exception e) {
 							e.printStackTrace();
 						}
@@ -65,7 +64,7 @@ public class Main {
 							if (pcmic.isSameSizePcm()) {
 								System.out.println("> PCM muted is the same");
 							} else {
-								pcmContainer.setPcm(pcmic.getMutedPcm());
+								pcmContainer.setPcm(pcmic.getMutedPcm().getPcm());
 								KMFJSONExporter pcmExporter = new KMFJSONExporter();
 								String pcmString = pcmExporter.export(pcmContainer);
 								
