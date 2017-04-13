@@ -221,6 +221,7 @@ public class JSONFormat {
 	public void exportToFile(String filename){
 		File file = new File(filename);
 		try{
+			//file.createNewFile();
 			FileWriter fw = new FileWriter(file);
 			BufferedWriter bw = new BufferedWriter(fw);
 			PrintWriter out = new PrintWriter(bw);

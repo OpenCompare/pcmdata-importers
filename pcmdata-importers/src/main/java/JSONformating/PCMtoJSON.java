@@ -197,8 +197,8 @@ public class PCMtoJSON {
 
 	public static void main(String[] args) throws IOException  {
 
-		String inFilename = "off_output/pcms/en_french-blue-veined-cheeses.pcm";
-		String outFilename = "off_output/pcms/en_french-blue-veined-cheeses.new.pcm";
+		String inFilename = "output-pcm/muted_Comparison_of_VoIP_software_0.pcm";
+		String outFilename = "output-pcm/tests/muted_Comparison_of_VoIP_software_0.new.pcm";
 		PCMContainer pcmC = PCMUtil.loadPCMContainer(inFilename);
 		System.out.println("PCM loaded");
 		JSONFormat nf = mkNewJSONFormatFromPCM(pcmC);
