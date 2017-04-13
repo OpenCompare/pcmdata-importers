@@ -19,7 +19,7 @@ import org.opencompare.api.java.io.PCMLoader;
 
 import com.opencsv.CSVWriter;
 
-public class PCMInfoTest {
+public class PCMMetricMain {
 
 	public static final String inputpath = "../../New_Model/output114";
 	public static final String outputpath = "../../New_Model/PCoutput114";
@@ -63,10 +63,10 @@ public class PCMInfoTest {
 					for (PCMContainer pcmContainer : pcmContainers) {
 						// Get the PCM
 						PCM pcm = pcmContainer.getPcm();
-						PCMInfoContainerPreComputation pcmic = null;
+						OLD_realPCMIC pcmic = null;
 
 						try {
-							pcmic = new PCMInfoContainerPreComputation(pcm);
+							pcmic = new OLD_realPCMIC(pcm);
 						} catch (Exception e) {
 						}
 

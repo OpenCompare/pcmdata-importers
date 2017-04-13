@@ -1,6 +1,6 @@
 package pcm_Metric;
 
-public interface IPCMInfoContainer {
+public interface OLD_interfacePCMIC {
 
 	public Integer nbRows();
 

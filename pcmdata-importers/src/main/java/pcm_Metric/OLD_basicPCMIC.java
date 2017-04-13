@@ -23,15 +23,15 @@ import org.opencompare.api.java.value.RealValue;
 // import org.opencompare.model.BooleanValue;
 
 
-public class PCMInfoContainer implements IPCMInfoContainer {
+public class OLD_basicPCMIC implements OLD_interfacePCMIC {
 
-	private static final Logger _log = Logger.getLogger(PCMInfoContainer.class.getName());
+	private static final Logger _log = Logger.getLogger(OLD_basicPCMIC.class.getName());
 
 	private static final double THRESHOLD_HOMOGENEOUS = 90;
 	
 	private PCM _pcm;
 	
-	public PCMInfoContainer(PCM pcm) {
+	public OLD_basicPCMIC(PCM pcm) {
 		_pcm = pcm;
 	}	
 	

@@ -6,7 +6,7 @@ package pcm_Metric;
  * @author macher1
  *
  */
-public class StatPcm {
+public class OLD_statPCM {
 
 	private int nbRows;
 	private int nbFeatures;

@@ -2,19 +2,19 @@ package pcm_Metric;
 
 import org.opencompare.api.java.PCM;
 
-public class PCMInfoContainerPreComputation implements IPCMInfoContainer {
+public class OLD_realPCMIC implements OLD_interfacePCMIC {
 
-	private StatPcm _statPcm;
+	private OLD_statPCM _statPcm;
 	private PCM _pcm;
 
-	public PCMInfoContainerPreComputation(PCM pcm) {
+	public OLD_realPCMIC(PCM pcm) {
 		_pcm = pcm;
 		preCompute();
 	}
 
 	private void preCompute() {
-		PCMInfoContainer infoPcm = new PCMInfoContainer(_pcm);
-		_statPcm = new StatPcm();
+		OLD_basicPCMIC infoPcm = new OLD_basicPCMIC(_pcm);
+		_statPcm = new OLD_statPCM();
 		_statPcm.setNbRows(infoPcm.nbRows());
 		_statPcm.setNbFeatures(infoPcm.nbFeatures());
 		_statPcm.setNbCells(infoPcm.nbCells());
