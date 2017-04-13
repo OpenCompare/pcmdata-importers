@@ -19,6 +19,8 @@ import org.opencompare.api.java.io.PCMLoader;
 
 import com.opencsv.CSVWriter;
 
+import pcm_InfoContainer.*;
+
 public class PCMMetricMain {
 
 	public static final String inputpath = "../../New_Model/output114";
@@ -62,21 +64,24 @@ public class PCMMetricMain {
 
 					for (PCMContainer pcmContainer : pcmContainers) {
 						// Get the PCM
-						PCM pcm = pcmContainer.getPcm();
-						OLD_realPCMIC pcmic = null;
+						PCMInfoContainer pcmic = null;
 
 						try {
-							pcmic = new OLD_realPCMIC(pcm);
+							pcmic = new PCMInfoContainer(pcmContainer);
 						} catch (Exception e) {
 						}
 
 						if (pcmic != null) {
-							String[] str = { filePath.getFileName().toString(), pcmic.nbFeatures().toString(),
-									pcmic.nbRows().toString(), pcmic.nbCells().toString(),
-									pcmic.nbEmptyCells().toString(), pcmic.ratioEmptyCells().toString(),
-									pcmic.nbFeaturesHomog().toString(), pcmic.ratioFeatureHomog().toString(),
-									pcmic.nbFeaturesHomogNumeric().toString(), pcmic.isProductChartable().toString(),
-									pcmic.score().toString() };
+							String[] str = { filePath.getFileName().toString(),
+									pcmic.getStatPcm().getNbFeatures().toString(),
+									pcmic.getStatPcm().getNbRows().toString(),
+									pcmic.getStatPcm().getNbCells().toString(),
+									pcmic.getStatPcm().getNbEmptyCells().toString(),
+									pcmic.getStatPcm().getRatioEmptyCells().toString(),
+									pcmic.getStatPcm().getNbFeaturesHomog().toString(),
+									pcmic.getStatPcm().getRatioFeaturesHomog().toString(),
+									pcmic.getStatPcm().getNbFeaturesHomogNumeric().toString(),
+									pcmic.isProductChartable().toString(), };
 
 							csvwriter.writeNext(str);
 

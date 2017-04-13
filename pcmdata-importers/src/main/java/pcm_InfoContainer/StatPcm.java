@@ -24,14 +24,14 @@ public class StatPcm {
 
 	private PCM pcm;
 
-	private int nbRows;
-	private int nbFeatures;
-	private int nbCells;
-	private int nbEmptyCells;
-	private double ratioEmptyCells;
-	private int nbFeaturesHomog;
-	private double ratioFeaturesHomog;
-	private int nbFeaturesHomogNumeric;
+	private Integer nbRows;
+	private Integer nbFeatures;
+	private Integer nbCells;
+	private Integer nbEmptyCells;
+	private Double ratioEmptyCells;
+	private Integer nbFeaturesHomog;
+	private Double ratioFeaturesHomog;
+	private Integer nbFeaturesHomogNumeric;
 
 	public StatPcm(PCM _pcm) {
 		pcm = _pcm;
@@ -45,7 +45,7 @@ public class StatPcm {
 		setNbFeaturesHomogNumeric();
 	}
 
-	public int getNbRows() {
+	public Integer getNbRows() {
 		return nbRows;
 	}
 
@@ -53,7 +53,7 @@ public class StatPcm {
 		this.nbRows = pcm.getProducts().size();
 	}
 
-	public int getNbFeatures() {
+	public Integer getNbFeatures() {
 		return nbFeatures;
 	}
 
@@ -61,7 +61,7 @@ public class StatPcm {
 		this.nbFeatures = pcm.getConcreteFeatures().size();
 	}
 
-	public int getNbCells() {
+	public Integer getNbCells() {
 		return nbCells;
 	}
 
@@ -74,7 +74,7 @@ public class StatPcm {
 		this.nbCells = nbCellTmp;
 	}
 
-	public int getNbEmptyCells() {
+	public Integer getNbEmptyCells() {
 		return nbEmptyCells;
 	}
 
@@ -93,7 +93,7 @@ public class StatPcm {
 		this.nbEmptyCells = nbEmptyCell;
 	}
 
-	public double getRatioEmptyCells() {
+	public Double getRatioEmptyCells() {
 		return ratioEmptyCells;
 	}
 
@@ -110,7 +110,7 @@ public class StatPcm {
 		this.ratioEmptyCells = ratioEmptyCells;
 	}
 
-	public int getNbFeaturesHomog() {
+	public Integer getNbFeaturesHomog() {
 		return nbFeaturesHomog;
 	}
 
@@ -151,7 +151,7 @@ public class StatPcm {
 		this.nbFeaturesHomog = nbFeaturesHomog;
 	}
 
-	public double getRatioFeaturesHomog() {
+	public Double getRatioFeaturesHomog() {
 		return ratioFeaturesHomog;
 	}
 
@@ -170,7 +170,7 @@ public class StatPcm {
 		}
 	}
 
-	public int getNbFeaturesHomogNumeric() {
+	public Integer getNbFeaturesHomogNumeric() {
 		return nbFeaturesHomogNumeric;
 	}
 
@@ -212,11 +212,11 @@ public class StatPcm {
 		this.nbFeaturesHomogNumeric = nbFeaturesHomogNumeric;
 	}
 
-	public double scoreProductChartable() {
+	public Double scoreProductChartable() {
 		if (nbFeaturesHomogNumeric >= 2)
 			return 1.0;
 		else
-			return 0;
+			return 0.0;
 	}
 
 	public Double tauxHomg(Feature f, TreeMap<String, Integer> tmap) {

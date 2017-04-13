@@ -25,4 +25,8 @@ public class PCMInfoContainer {
 		
 	}
 	
+	public StatPcm getStatPcm(){
+		return _statPcm;
+	}
+	
 }
