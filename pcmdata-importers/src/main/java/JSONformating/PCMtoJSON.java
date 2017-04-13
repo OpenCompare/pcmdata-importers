@@ -181,7 +181,7 @@ public class PCMtoJSON {
 				value.setValue(((StringValue) val).getValue());
 				jvalues.add(value);
 			}else if(val instanceof MultipleImpl){
-				
+
 			}else if(val instanceof VersionImpl){
 				
 			}else if(val instanceof NotApplicableImpl){
