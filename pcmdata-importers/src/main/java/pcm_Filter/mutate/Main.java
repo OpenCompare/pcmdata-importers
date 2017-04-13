@@ -15,6 +15,9 @@ import org.opencompare.api.java.io.PCMLoader;
 
 import data_off.PCMUtil;
 import pcm_InfoContainer.PCMInfoContainer;
+import JSONformating.model.* ;
+import JSONformating.reader.*;
+
 
 public class Main {
 
@@ -27,8 +30,8 @@ public class Main {
 		// TODO : le pcm mutate est bien différent du pcm de base, mais les changements ne sont pas pris en compte. A travailler !
 		
 		// inputpath = args[0];
-		inputpath = "input-pcm-test/";
-		outputpath = "output-pcm/";
+		inputpath = "off_output/pcms/test_paget/input";
+		outputpath = "off_output/pcms/test_paget/output";
 
 		try {
 
@@ -40,23 +43,26 @@ public class Main {
 				if (Files.isRegularFile(filePath) && filePath.toString().endsWith(".pcm")) {
 					System.out.println("> PCM read from " + filePath);
 				     
-					File pcmFile = new File(filePath.toString());
+					//File pcmFile = new File(filePath.toString());
 
-					PCMLoader loader = new KMFJSONLoader();
-					List<PCMContainer> pcmContainers = null;
+					PCMContainer pcmC = null ;
+					//PCMContainer pcmC = JSONtoPCM.JSONFormatToPCM(JSONReader.importJSON(filePath.toString())) ;
+					//PCMLoader loader = new KMFJSONLoader();
+					//List<PCMContainer> pcmContainers = null;
 					try {
-						pcmContainers = loader.load(pcmFile);
+						pcmC = JSONtoPCM.JSONFormatToPCM(JSONReader.importJSON(filePath.toString())) ;
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
 
-					for (PCMContainer pcmContainer : pcmContainers) {
-						// Get the PCM
+//					for (PCMContainer pcmContainer : pcmContainers) {
+//						// Get the PCM
 						
 						PCMInfoContainerMuted pcmic = null;
 						
 						try {
-							pcmic = new PCMInfoContainerMuted(pcmContainer);
+							System.out.println(pcmic.toString());
+							pcmic = new PCMInfoContainerMuted(pcmC);
 						} catch (Exception e) {
 							e.printStackTrace();
 						}
@@ -64,9 +70,9 @@ public class Main {
 							if (pcmic.isSameSizePcm()) {
 								System.out.println("> PCM muted is the same");
 							} else {
-								pcmContainer.setPcm(pcmic.getMutedPcm().getPcm());
+								pcmC.setPcm(pcmic.getMutedPcm().getPcm());
 								KMFJSONExporter pcmExporter = new KMFJSONExporter();
-								String pcmString = pcmExporter.export(pcmContainer);
+								String pcmString = pcmExporter.export(pcmC);
 								
 								Path p = Paths.get(outputpath + "muted_" ) ;//filePath.getFileName());
 								try {
@@ -80,7 +86,6 @@ public class Main {
 						else {
 							System.out.println("> PCM corrompu");
 						}
-					}
 
 				}
 
