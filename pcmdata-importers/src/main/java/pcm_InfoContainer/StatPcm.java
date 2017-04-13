@@ -24,7 +24,7 @@ public class StatPcm {
 
 	private PCM pcm;
 
-	private Integer nbRows;
+	private Integer nbProducts;
 	private Integer nbFeatures;
 	private Integer nbCells;
 	private Integer nbEmptyCells;
@@ -35,7 +35,7 @@ public class StatPcm {
 
 	public StatPcm(PCM _pcm) {
 		pcm = _pcm;
-		setNbRows();
+		setNbProducts();
 		setNbFeatures();
 		setNbCells();
 		setNbEmptyCells();
@@ -45,12 +45,12 @@ public class StatPcm {
 		setNbFeaturesHomogNumeric();
 	}
 
-	public Integer getNbRows() {
-		return nbRows;
+	public Integer getNbProducts() {
+		return nbProducts;
 	}
 
-	public void setNbRows() {
-		this.nbRows = pcm.getProducts().size();
+	public void setNbProducts() {
+		this.nbProducts = pcm.getProducts().size();
 	}
 
 	public Integer getNbFeatures() {

@@ -23,8 +23,8 @@ import pcm_InfoContainer.*;
 
 public class PCMMetricMain {
 
-	public static final String inputpath = "../../New_Model/output114";
-	public static final String outputpath = "../../New_Model/PCoutput114";
+	public static final String inputpath = "input-pcm/oldformat";
+	public static final String outputpath = "input-pcm/oldformat";
 
 	// "../../input-model"
 	// "input-pcm"
@@ -33,7 +33,7 @@ public class PCMMetricMain {
 
 		Stream<Path> paths = Files.walk(Paths.get(inputpath));
 
-		File outputcsv = new File("./metrics/metrics114.csv");
+		File outputcsv = new File("./metrics/metrictest.csv");
 
 		try {
 			outputcsv.createNewFile();
@@ -74,7 +74,7 @@ public class PCMMetricMain {
 						if (pcmic != null) {
 							String[] str = { filePath.getFileName().toString(),
 									pcmic.getStatPcm().getNbFeatures().toString(),
-									pcmic.getStatPcm().getNbRows().toString(),
+									pcmic.getStatPcm().getNbProducts().toString(),
 									pcmic.getStatPcm().getNbCells().toString(),
 									pcmic.getStatPcm().getNbEmptyCells().toString(),
 									pcmic.getStatPcm().getRatioEmptyCells().toString(),
