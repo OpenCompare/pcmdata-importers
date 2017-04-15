@@ -142,7 +142,7 @@ public class JSONmetamorphTest {
 		}
 		int i;
 		for (i = 0; i < listJson2.size(); i++) {
-			if (!listJson2.get(i).sameJSONFormat(listJson4.get(i))) {
+			if (!listJson2.get(i).equals(listJson4.get(i))) {
 				assert (false);
 			}
 		}
